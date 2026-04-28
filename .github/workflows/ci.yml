@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Configure generator
+        run: cmake -S . -B build
+      - name: Build generator
+        run: cmake --build build --target msgpack-pjsekai-gen
+      - name: Configure generated library
+        run: cmake -S . -B build-generated -DMSGPACK_PJSEKAI_BUILD_GENERATED=ON -DMSGPACK_PJSEKAI_GENERATED_DIR=$PWD/msgpack
+      - name: Build generated library
+        run: cmake --build build-generated --target msgpack_pjsekai
+      - name: Build generated shared bridge
+        run: cmake --build build-generated --target msgpack_pjsekai_shared
+      - name: Check Python wrapper syntax when generated
+        run: |
+          if [ -f msgpack/wrappers/python/msgpack_pjsekai/__init__.py ]; then
+            python3 -m py_compile msgpack/wrappers/python/msgpack_pjsekai/__init__.py
+          fi
+          if [ -f msgpack/wrappers/python/msgpack_pjsekai/__init__.pyi ]; then
+            python3 -c 'from pathlib import Path; compile(Path("msgpack/wrappers/python/msgpack_pjsekai/__init__.pyi").read_text(), "msgpack_pjsekai/__init__.pyi", "exec")'
+          fi
+          if [ -f msgpack/wrappers/python/pyproject.toml ]; then
+            rm -rf /tmp/msgpack-pjsekai-python-src /tmp/msgpack-pjsekai-python
+            cp -R msgpack/wrappers/python /tmp/msgpack-pjsekai-python-src
+            python3 -m pip install --no-deps --target /tmp/msgpack-pjsekai-python /tmp/msgpack-pjsekai-python-src
+          fi
+      - name: Check JS wrapper syntax when generated
+        run: |
+          if [ -f msgpack/wrappers/js/msgpack-pjsekai.js ]; then
+            node --check msgpack/wrappers/js/msgpack-pjsekai.js
+          fi
+          if [ -f msgpack/wrappers/js/package.json ]; then
+            cd msgpack/wrappers/js
+            npm pack --dry-run
+          fi
+      - name: Check Go wrapper module when generated
+        run: |
+          if [ -f msgpack/wrappers/go/go.mod ]; then
+            cd msgpack/wrappers/go
+            test -z "$(gofmt -l msgpack_pjsekai.go)"
+            go build ./...
+          fi
+        env:
+          CGO_LDFLAGS: -L${{ github.workspace }}/build-generated/msgpack
+          LD_LIBRARY_PATH: ${{ github.workspace }}/build-generated/msgpack
+      - name: Check Java wrapper syntax when generated
+        run: |
+          if [ -f msgpack/wrappers/java/pom.xml ]; then
+            if command -v mvn >/dev/null 2>&1; then
+              cd msgpack/wrappers/java
+              mvn -q -DskipTests package
+              cd - >/dev/null
+            else
+              echo "mvn not found; skipping Java package compile"
+            fi
+          fi

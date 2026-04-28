@@ -1,0 +1,27 @@
+{
+  "name": "msgpack-pjsekai",
+  "version": "6.4.1",
+  "description": "Static object-based MessagePack models generated from dump.cs.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/Sekai-World/msgpack-pjsekai#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/Sekai-World/msgpack-pjsekai.git", "directory": "msgpack/wrappers/js" },
+  "bugs": { "url": "https://github.com/Sekai-World/msgpack-pjsekai/issues" },
+  "module": "./msgpack-pjsekai.js",
+  "types": "./msgpack-pjsekai.d.ts",
+  "exports": {
+    ".": { "types": "./msgpack-pjsekai.d.ts", "default": "./msgpack-pjsekai.js" }
+  },
+  "files": [
+    "msgpack-pjsekai.js",
+    "msgpack-pjsekai.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "node --check msgpack-pjsekai.js",
+    "pack:dry-run": "npm pack --dry-run"
+  },
+  "dependencies": {},
+  "keywords": ["msgpack", "pjsekai", "generated", "protobuf-like"],
+  "engines": { "node": ">=18" }
+}

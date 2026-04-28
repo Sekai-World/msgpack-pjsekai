@@ -1,0 +1,157 @@
+name: Publish Packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Package version without a leading v, for example 6.4.1.
+        required: true
+        type: string
+      npm:
+        description: Publish JavaScript package to npm.
+        required: true
+        default: true
+        type: boolean
+      pypi:
+        description: Publish Python package to PyPI.
+        required: true
+        default: true
+        type: boolean
+      maven:
+        description: Publish Java package to Maven Central.
+        required: true
+        default: true
+        type: boolean
+      go:
+        description: Verify the Go submodule release tag.
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  verify-versions:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      go_tag: ${{ steps.version.outputs.go_tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${{ inputs.version }}"
+          case "$version" in
+            v*) echo "version must not start with v" >&2; exit 1 ;;
+          esac
+          test "$(node -p "require('./msgpack/wrappers/js/package.json').version")" = "$version"
+          grep -qx "version = \"$version\"" msgpack/wrappers/python/pyproject.toml
+          grep -qx "  <version>$version</version>" msgpack/wrappers/java/pom.xml
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "go_tag=msgpack/wrappers/go/v$version" >> "$GITHUB_OUTPUT"
+
+  npm:
+    needs: verify-versions
+    if: ${{ inputs.npm }}
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: msgpack/wrappers/js
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm run check
+      - run: npm pack --dry-run
+      - run: npm publish --access public --provenance
+
+  pypi:
+    needs: verify-versions
+    if: ${{ inputs.pypi }}
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python -m pip install --upgrade build
+      - run: python -m build
+        working-directory: msgpack/wrappers/python
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: msgpack/wrappers/python/dist
+
+  maven:
+    needs: verify-versions
+    if: ${{ inputs.maven }}
+    runs-on: ubuntu-latest
+    environment: maven-central
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: msgpack/wrappers/java
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+      - run: mvn -B -Prelease -DskipTests deploy
+        env:
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+  go:
+    needs: verify-versions
+    if: ${{ inputs.go }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: msgpack/wrappers/go/go.mod
+      - run: cmake -S . -B build-generated -DMSGPACK_PJSEKAI_BUILD_GENERATED=ON -DMSGPACK_PJSEKAI_GENERATED_DIR=$PWD/msgpack
+      - run: cmake --build build-generated --target msgpack_pjsekai_shared
+      - run: go build ./...
+        working-directory: msgpack/wrappers/go
+        env:
+          CGO_LDFLAGS: -L${{ github.workspace }}/build-generated/msgpack
+          LD_LIBRARY_PATH: ${{ github.workspace }}/build-generated/msgpack
+      - name: Verify Go module tag exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="${{ needs.verify-versions.outputs.go_tag }}"
+          if ! git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+            echo "Go modules are published by pushing a tag named $tag." >&2
+            echo "Create it with: git tag $tag && git push origin $tag" >&2
+            exit 1
+          fi
