@@ -869,16 +869,23 @@ static void generate_js_package_json(FILE *f) {
     fprintf(f, "  \"module\": \"./msgpack-pjsekai.js\",\n");
     fprintf(f, "  \"types\": \"./msgpack-pjsekai.d.ts\",\n");
     fprintf(f, "  \"exports\": {\n");
-    fprintf(f, "    \".\": { \"types\": \"./msgpack-pjsekai.d.ts\", \"default\": \"./msgpack-pjsekai.js\" }\n");
+    fprintf(f, "    \".\": { \"types\": \"./msgpack-pjsekai.d.ts\", \"default\": \"./msgpack-pjsekai.js\" },\n");
+    fprintf(f, "    \"./wasm\": { \"types\": \"./msgpack-pjsekai-wasm.d.ts\", \"default\": \"./msgpack-pjsekai-wasm.js\" },\n");
+    fprintf(f, "    \"./msgpack-pjsekai-wasm.wasm\": \"./msgpack-pjsekai-wasm.wasm\"\n");
     fprintf(f, "  },\n");
     fprintf(f, "  \"files\": [\n");
     fprintf(f, "    \"msgpack-pjsekai.js\",\n");
     fprintf(f, "    \"msgpack-pjsekai.d.ts\",\n");
+    fprintf(f, "    \"msgpack-pjsekai-wasm.js\",\n");
+    fprintf(f, "    \"msgpack-pjsekai-wasm.wasm\",\n");
+    fprintf(f, "    \"msgpack-pjsekai-wasm.d.ts\",\n");
     fprintf(f, "    \"README.md\"\n");
     fprintf(f, "  ],\n");
     fprintf(f, "  \"scripts\": {\n");
-    fprintf(f, "    \"check\": \"node --check msgpack-pjsekai.js\",\n");
-    fprintf(f, "    \"pack:dry-run\": \"npm pack --dry-run\"\n");
+    fprintf(f, "    \"build:wasm\": \"sh ./build-wasm.sh\",\n");
+    fprintf(f, "    \"check\": \"node --check msgpack-pjsekai.js && (test ! -f msgpack-pjsekai-wasm.js || node --check msgpack-pjsekai-wasm.js)\",\n");
+    fprintf(f, "    \"pack:dry-run\": \"npm pack --dry-run\",\n");
+    fprintf(f, "    \"prepack\": \"npm run build:wasm\"\n");
     fprintf(f, "  },\n");
     fprintf(f, "  \"dependencies\": {},\n");
     fprintf(f, "  \"keywords\": [\"msgpack\", \"pjsekai\", \"generated\", \"protobuf-like\"],\n");
@@ -889,14 +896,14 @@ static void generate_js_package_json(FILE *f) {
 
 static void generate_js_readme(FILE *f) {
     fprintf(f, "# JavaScript object wrapper\n\n");
-    fprintf(f, "This directory is an npm package named `%s`. It does not depend on a JavaScript MessagePack package; encode/decode calls the generated C bridge through a WASM module.\n\n", JS_PACKAGE_NAME);
-    fprintf(f, "The WASM module must be built from the generated C sources and must export `mpj_buffer_*`, `mpj_value_*`, `_malloc`, and `_free`; this wrapper only talks to that project C ABI.\n\n");
+    fprintf(f, "This directory is an npm package named `%s`. It does not depend on a JavaScript MessagePack package; encode/decode calls the bundled generated WASM bridge.\n\n", JS_PACKAGE_NAME);
+    fprintf(f, "The npm package includes `msgpack-pjsekai-wasm.js` and `msgpack-pjsekai-wasm.wasm`, built from the generated C sources with Emscripten before packing or publishing.\n\n");
     fprintf(f, "Install from npm after a release is published:\n\n");
     fprintf(f, "```sh\nnpm install %s\n```\n\n", JS_PACKAGE_NAME);
-    fprintf(f, "```sh\ncd wrappers/js\nnpm install\nnpm run check\nnpm pack --dry-run\n```\n\n");
+    fprintf(f, "```sh\ncd wrappers/js\nnpm install\nnpm run build:wasm\nnpm run check\nnpm pack --dry-run\n```\n\n");
     fprintf(f, "Publish through the repository `Publish Packages` GitHub Actions workflow, or manually with `npm publish --access public --provenance` after npm trusted publishing is configured.\n\n");
     fprintf(f, "`msgpack-pjsekai.d.ts` contains one generated class per MessagePack struct, so editors can show the available fields.\n\n");
-    fprintf(f, "```js\nimport createModule from './path/to/msgpack-pjsekai-wasm.js';\nimport { useMsgpackPjsekaiWasm, Sekai_AssetBundleElement } from '%s';\n\nuseMsgpackPjsekaiWasm(await createModule());\n\nconst value = new Sekai_AssetBundleElement({\n  bundleName: 'example',\n  crc: 1234,\n});\n\nconst bytes = value.encode(); // Uint8Array\nconst out = new Sekai_AssetBundleElement().decode(bytes);\nconsole.log(out.bundleName);\n```\n", JS_PACKAGE_NAME);
+    fprintf(f, "```js\nimport createModule from '%s/wasm';\nimport { useMsgpackPjsekaiWasm, Sekai_AssetBundleElement } from '%s';\n\nuseMsgpackPjsekaiWasm(await createModule());\n\nconst value = new Sekai_AssetBundleElement({\n  bundleName: 'example',\n  crc: 1234,\n});\n\nconst bytes = value.encode(); // Uint8Array\nconst out = new Sekai_AssetBundleElement().decode(bytes);\nconsole.log(out.bundleName);\n```\n", JS_PACKAGE_NAME, JS_PACKAGE_NAME);
 }
 
 
@@ -946,6 +953,96 @@ static void generate_js_types(FILE *f, const Model *m) {
         fprintf(f, "}\n\n");
         free(name);
     }
+}
+
+
+static void generate_js_wasm_types(FILE *f) {
+    fputs("import type { MsgpackPjsekaiWasmModule } from './msgpack-pjsekai.js';\n\n", f);
+    fputs("export interface MsgpackPjsekaiWasmFactoryOptions {\n", f);
+    fputs("  locateFile?(path: string, prefix: string): string;\n", f);
+    fputs("  wasmBinary?: ArrayBuffer | Uint8Array;\n", f);
+    fputs("  [key: string]: unknown;\n", f);
+    fputs("}\n\n", f);
+    fputs("export default function createMsgpackPjsekaiWasm(\n", f);
+    fputs("  options?: MsgpackPjsekaiWasmFactoryOptions\n", f);
+    fputs("): Promise<MsgpackPjsekaiWasmModule>;\n", f);
+}
+
+
+static void generate_js_wasm_build_script(FILE *f) {
+    fputs("#!/usr/bin/env sh\n", f);
+    fputs("set -eu\n\n", f);
+    fputs("if ! command -v emcc >/dev/null 2>&1; then\n", f);
+    fputs("  echo \"emcc not found; install and activate Emscripten SDK before building the WASM package\" >&2\n", f);
+    fputs("  exit 127\n", f);
+    fputs("fi\n\n", f);
+    fputs("SCRIPT_DIR=$(CDPATH= cd -- \"$(dirname -- \"$0\")\" && pwd)\n", f);
+    fputs("ROOT=$(CDPATH= cd -- \"$SCRIPT_DIR/../..\" && pwd)\n", f);
+    fputs("OUT_JS=${1:-\"$SCRIPT_DIR/msgpack-pjsekai-wasm.js\"}\n", f);
+    fputs("TMP_DIR=$(mktemp -d)\n", f);
+    fputs("trap 'rm -rf \"$TMP_DIR\"' EXIT INT TERM\n\n", f);
+    fputs("mkdir -p \"$TMP_DIR/include/msgpack\"\n", f);
+    fputs("sed -e 's/@MSGPACK_ENDIAN_BIG_BYTE@/0/g' \\\n", f);
+    fputs("    -e 's/@MSGPACK_ENDIAN_LITTLE_BYTE@/1/g' \\\n", f);
+    fputs("    \"$ROOT/deps/cmake/sysdep.h.in\" > \"$TMP_DIR/include/msgpack/sysdep.h\"\n", f);
+    fputs("cp \"$TMP_DIR/include/msgpack/sysdep.h\" \"$TMP_DIR/include/sysdep.h\"\n", f);
+    fputs("sed -e 's/@MSGPACK_ENDIAN_BIG_BYTE@/0/g' \\\n", f);
+    fputs("    -e 's/@MSGPACK_ENDIAN_LITTLE_BYTE@/1/g' \\\n", f);
+    fputs("    \"$ROOT/deps/cmake/pack_template.h.in\" > \"$TMP_DIR/include/msgpack/pack_template.h\"\n", f);
+    fputs("cp \"$TMP_DIR/include/msgpack/pack_template.h\" \"$TMP_DIR/include/pack_template.h\"\n\n", f);
+    fputs("SOURCES=$(awk -v root=\"$ROOT\" '\n", f);
+    fputs("  /^[[:space:]]*($|#|\\*)/ { next }\n", f);
+    fputs("  { print root \"/\" $0 }\n", f);
+    fputs("' \"$ROOT/msgpack-pjsekai.files\")\n\n", f);
+    fputs("EXPORTED_FUNCTIONS='[\n", f);
+    fputs("\"_malloc\",\n", f);
+    fputs("\"_free\",\n", f);
+    fputs("\"_mpj_buffer_data\",\n", f);
+    fputs("\"_mpj_buffer_delete\",\n", f);
+    fputs("\"_mpj_buffer_size\",\n", f);
+    fputs("\"_mpj_value_array_get\",\n", f);
+    fputs("\"_mpj_value_array_set\",\n", f);
+    fputs("\"_mpj_value_bool\",\n", f);
+    fputs("\"_mpj_value_data\",\n", f);
+    fputs("\"_mpj_value_free\",\n", f);
+    fputs("\"_mpj_value_kind\",\n", f);
+    fputs("\"_mpj_value_map_key\",\n", f);
+    fputs("\"_mpj_value_map_set\",\n", f);
+    fputs("\"_mpj_value_map_value\",\n", f);
+    fputs("\"_mpj_value_new_array\",\n", f);
+    fputs("\"_mpj_value_new_binary\",\n", f);
+    fputs("\"_mpj_value_new_bool\",\n", f);
+    fputs("\"_mpj_value_new_int\",\n", f);
+    fputs("\"_mpj_value_new_map\",\n", f);
+    fputs("\"_mpj_value_new_nil\",\n", f);
+    fputs("\"_mpj_value_new_number\",\n", f);
+    fputs("\"_mpj_value_new_string\",\n", f);
+    fputs("\"_mpj_value_new_uint\",\n", f);
+    fputs("\"_mpj_value_number\",\n", f);
+    fputs("\"_mpj_value_pack_bytes\",\n", f);
+    fputs("\"_mpj_value_size\",\n", f);
+    fputs("\"_mpj_value_unpack_bytes\"\n", f);
+    fputs("]'\n\n", f);
+    fputs("emcc \\\n", f);
+    fputs("  $SOURCES \\\n", f);
+    fputs("  \"$ROOT/deps/src/objectc.c\" \\\n", f);
+    fputs("  \"$ROOT/deps/src/unpack.c\" \\\n", f);
+    fputs("  \"$ROOT/deps/src/version.c\" \\\n", f);
+    fputs("  \"$ROOT/deps/src/vrefbuffer.c\" \\\n", f);
+    fputs("  \"$ROOT/deps/src/zone.c\" \\\n", f);
+    fputs("  -I\"$ROOT\" \\\n", f);
+    fputs("  -I\"$ROOT/generated\" \\\n", f);
+    fputs("  -I\"$TMP_DIR/include\" \\\n", f);
+    fputs("  -I\"$ROOT/deps/include\" \\\n", f);
+    fputs("  -O3 \\\n", f);
+    fputs("  -sMODULARIZE=1 \\\n", f);
+    fputs("  -sEXPORT_ES6=1 \\\n", f);
+    fputs("  -sENVIRONMENT=web,node \\\n", f);
+    fputs("  -sALLOW_MEMORY_GROWTH=1 \\\n", f);
+    fputs("  -sEXPORT_ALL=1 \\\n", f);
+    fputs("  -sEXPORTED_RUNTIME_METHODS='[\"ccall\"]' \\\n", f);
+    fputs("  -sEXPORTED_FUNCTIONS=\"$EXPORTED_FUNCTIONS\" \\\n", f);
+    fputs("  -o \"$OUT_JS\"\n", f);
 }
 
 static void generate_python_wrapper(FILE *f, const Model *m) {
@@ -1604,6 +1701,16 @@ static int write_generated(const char *out_dir, const Model *m, const char *sour
     snprintf(path, sizeof(path), "%s/msgpack-pjsekai.d.ts", js_dir);
     if (open_generated(&f, path, source_name) != 0) return 1;
     generate_js_types(f, m);
+    fclose(f);
+
+    snprintf(path, sizeof(path), "%s/msgpack-pjsekai-wasm.d.ts", js_dir);
+    if (open_plain(&f, path) != 0) return 1;
+    generate_js_wasm_types(f);
+    fclose(f);
+
+    snprintf(path, sizeof(path), "%s/build-wasm.sh", js_dir);
+    if (open_plain(&f, path) != 0) return 1;
+    generate_js_wasm_build_script(f);
     fclose(f);
 
     snprintf(path, sizeof(path), "%s/package.json", js_dir);

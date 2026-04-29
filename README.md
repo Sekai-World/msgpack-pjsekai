@@ -65,7 +65,7 @@ Field hints are generated statically:
 
 Wrappers need the generated C bridge runtime:
 
-- JavaScript loads a WASM module built from the generated C sources and exports `mpj_buffer_*`, `mpj_value_*`, `_malloc`, and `_free`.
+- JavaScript loads the bundled `msgpack-pjsekai/wasm` module published with the npm package.
 - Python loads `libmsgpack_pjsekai` with `MSGPACK_PJSEKAI_LIB=/path/to/libmsgpack_pjsekai.so` or `load_c_library(path)`.
 - Go links with cgo, for example `CGO_LDFLAGS="-L/path/to/lib"` plus the platform runtime library path.
 - Java loads `libmsgpack_pjsekai_jni`, which links against `libmsgpack_pjsekai`; put both on `java.library.path` or the platform runtime library path.
@@ -81,7 +81,7 @@ npm install msgpack-pjsekai
 ```
 
 ```js
-import createModule from './path/to/msgpack-pjsekai-wasm.js';
+import createModule from 'msgpack-pjsekai/wasm';
 import { useMsgpackPjsekaiWasm, Sekai_AssetBundleElement } from 'msgpack-pjsekai';
 
 useMsgpackPjsekaiWasm(await createModule());
@@ -96,6 +96,7 @@ For local development from this repository:
 ```sh
 cd msgpack/wrappers/js
 npm install
+npm run build:wasm
 npm run check
 npm pack --dry-run
 ```

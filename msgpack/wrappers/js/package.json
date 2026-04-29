@@ -10,16 +10,23 @@
   "module": "./msgpack-pjsekai.js",
   "types": "./msgpack-pjsekai.d.ts",
   "exports": {
-    ".": { "types": "./msgpack-pjsekai.d.ts", "default": "./msgpack-pjsekai.js" }
+    ".": { "types": "./msgpack-pjsekai.d.ts", "default": "./msgpack-pjsekai.js" },
+    "./wasm": { "types": "./msgpack-pjsekai-wasm.d.ts", "default": "./msgpack-pjsekai-wasm.js" },
+    "./msgpack-pjsekai-wasm.wasm": "./msgpack-pjsekai-wasm.wasm"
   },
   "files": [
     "msgpack-pjsekai.js",
     "msgpack-pjsekai.d.ts",
+    "msgpack-pjsekai-wasm.js",
+    "msgpack-pjsekai-wasm.wasm",
+    "msgpack-pjsekai-wasm.d.ts",
     "README.md"
   ],
   "scripts": {
-    "check": "node --check msgpack-pjsekai.js",
-    "pack:dry-run": "npm pack --dry-run"
+    "build:wasm": "sh ./build-wasm.sh",
+    "check": "node --check msgpack-pjsekai.js && (test ! -f msgpack-pjsekai-wasm.js || node --check msgpack-pjsekai-wasm.js)",
+    "pack:dry-run": "npm pack --dry-run",
+    "prepack": "npm run build:wasm"
   },
   "dependencies": {},
   "keywords": ["msgpack", "pjsekai", "generated", "protobuf-like"],

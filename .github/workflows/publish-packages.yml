@@ -72,7 +72,9 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
+      - uses: mymindstorm/setup-emsdk@v14
       - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm run build:wasm
       - run: npm run check
       - run: npm pack --dry-run
       - run: npm publish --access public --provenance

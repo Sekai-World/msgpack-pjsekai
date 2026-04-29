@@ -39,6 +39,7 @@ Manual publish from the generated package, if needed:
 ```sh
 cd msgpack/wrappers/js
 npm install
+npm run build:wasm
 npm run check
 npm publish --access public --provenance
 ```
@@ -49,10 +50,10 @@ Users install it with:
 npm install msgpack-pjsekai
 ```
 
-They must also initialize the package with a WASM module built from the generated C bridge:
+The npm package includes the generated Emscripten loader and `.wasm` file. Initialize it before encoding or decoding:
 
 ```js
-import createModule from './path/to/msgpack-pjsekai-wasm.js';
+import createModule from 'msgpack-pjsekai/wasm';
 import { useMsgpackPjsekaiWasm } from 'msgpack-pjsekai';
 
 useMsgpackPjsekaiWasm(await createModule());
