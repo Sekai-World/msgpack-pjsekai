@@ -7,7 +7,7 @@ Build or install `libmsgpack_pjsekai` from this repository first, then point cgo
 Install after a release tag is pushed:
 
 ```sh
-go get github.com/Sekai-World/msgpack-pjsekai/msgpack/wrappers/go@v6.4.1
+go get github.com/Sekai-World/msgpack-pjsekai/msgpack/wrappers/go@v6.5.0
 ```
 
 ```sh
@@ -15,7 +15,7 @@ cd wrappers/go
 go build ./...
 ```
 
-Publish by pushing the subdirectory module tag `msgpack/wrappers/go/v6.4.1`; the repository `Publish Packages` workflow verifies this tag.
+Publish by pushing the subdirectory module tag `msgpack/wrappers/go/v6.5.0`; the repository `Publish Packages` workflow verifies this tag.
 
 Use it from another module with a local replace while developing from this generated tree:
 

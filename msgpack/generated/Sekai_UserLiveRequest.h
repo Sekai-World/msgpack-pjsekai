@@ -31,6 +31,8 @@ typedef struct Sekai_UserLiveRequest {
     bool isAuto;
     bool has_musicCategoryName;
     char * musicCategoryName;
+    bool has_customMusicScoreId;
+    char * customMusicScoreId;
 } Sekai_UserLiveRequest;
 
 int Sekai_UserLiveRequest_pack(msgpack_packer *pk, const Sekai_UserLiveRequest *value);

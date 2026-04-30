@@ -88,14 +88,14 @@ export MSGPACK_PJSEKAI_LIB=/path/to/libmsgpack_pjsekai.so
 Go modules are published by reachable Git tags, not by uploading to a registry. Because the module lives under `msgpack/wrappers/go`, tag releases with the subdirectory prefix:
 
 ```sh
-git tag msgpack/wrappers/go/v6.4.1
-git push origin msgpack/wrappers/go/v6.4.1
+git tag msgpack/wrappers/go/v6.5.0
+git push origin msgpack/wrappers/go/v6.5.0
 ```
 
 Users install it with:
 
 ```sh
-go get github.com/Sekai-World/msgpack-pjsekai/msgpack/wrappers/go@v6.4.1
+go get github.com/Sekai-World/msgpack-pjsekai/msgpack/wrappers/go@v6.5.0
 export CGO_LDFLAGS="-L/path/to/lib"
 ```
 
@@ -121,14 +121,14 @@ Users install it with Maven:
 <dependency>
   <groupId>io.github.sekai-world</groupId>
   <artifactId>msgpack-pjsekai-java</artifactId>
-  <version>6.4.1</version>
+  <version>6.5.0</version>
 </dependency>
 ```
 
 Or Gradle:
 
 ```gradle
-implementation("io.github.sekai-world:msgpack-pjsekai-java:6.4.1")
+implementation("io.github.sekai-world:msgpack-pjsekai-java:6.5.0")
 ```
 
 They must also provide `libmsgpack_pjsekai_jni` and `libmsgpack_pjsekai` on `java.library.path` or the platform runtime library path.

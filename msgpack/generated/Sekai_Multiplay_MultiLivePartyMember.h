@@ -67,6 +67,8 @@ typedef struct Sekai_Multiplay_MultiLivePartyMember {
     msgpack_object MemberCharacterRank;
     bool has_PlayerFrameId;
     int32_t PlayerFrameId;
+    bool has_CustomScoreId;
+    char * CustomScoreId;
 } Sekai_Multiplay_MultiLivePartyMember;
 
 int Sekai_Multiplay_MultiLivePartyMember_pack(msgpack_packer *pk, const Sekai_Multiplay_MultiLivePartyMember *value);

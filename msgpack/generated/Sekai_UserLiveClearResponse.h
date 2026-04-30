@@ -79,6 +79,8 @@ typedef struct Sekai_UserLiveClearResponse {
     bool isEventMaintenance;
     bool has_isInBreakTime;
     bool isInBreakTime;
+    bool has_customMusicScoreLiveResult;
+    msgpack_object customMusicScoreLiveResult;
 } Sekai_UserLiveClearResponse;
 
 int Sekai_UserLiveClearResponse_pack(msgpack_packer *pk, const Sekai_UserLiveClearResponse *value);

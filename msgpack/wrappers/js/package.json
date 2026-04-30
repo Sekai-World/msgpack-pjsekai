@@ -1,6 +1,6 @@
 {
   "name": "msgpack-pjsekai",
-  "version": "6.4.1",
+  "version": "6.5.0",
   "description": "Static object-based MessagePack models generated from dump.cs.",
   "type": "module",
   "license": "MIT",

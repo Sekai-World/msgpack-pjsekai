@@ -57,6 +57,8 @@ typedef struct Sekai_MultiLiveRequest {
     int32_t selectedMusicId5;
     bool has_privateRoomSettings;
     msgpack_object privateRoomSettings;
+    bool has_customMusicScoreId;
+    char * customMusicScoreId;
 } Sekai_MultiLiveRequest;
 
 int Sekai_MultiLiveRequest_pack(msgpack_packer *pk, const Sekai_MultiLiveRequest *value);

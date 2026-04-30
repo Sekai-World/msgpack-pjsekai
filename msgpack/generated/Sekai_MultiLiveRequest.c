@@ -33,6 +33,7 @@ int Sekai_MultiLiveRequest_pack(msgpack_packer *pk, const Sekai_MultiLiveRequest
     if (value->has_selectedMusicId4) count++;
     if (value->has_selectedMusicId5) count++;
     if (value->has_privateRoomSettings) count++;
+    if (value->has_customMusicScoreId) count++;
     msgpack_pack_map(pk, count);
     if (value->has_multiLiveLobbyId) {
         msgpack_pack_str(pk, 16);
@@ -134,6 +135,11 @@ int Sekai_MultiLiveRequest_pack(msgpack_packer *pk, const Sekai_MultiLiveRequest
         msgpack_pack_str_body(pk, "privateRoomSettings", 19);
         msgpack_pack_object(pk, value->privateRoomSettings);
     }
+    if (value->has_customMusicScoreId) {
+        msgpack_pack_str(pk, 18);
+        msgpack_pack_str_body(pk, "customMusicScoreId", 18);
+        if (value->customMusicScoreId) { size_t len = strlen(value->customMusicScoreId); msgpack_pack_str(pk, len); msgpack_pack_str_body(pk, value->customMusicScoreId, len); } else { msgpack_pack_nil(pk); }
+    }
     return 0;
 }
 
@@ -221,6 +227,10 @@ int Sekai_MultiLiveRequest_unpack(const msgpack_object *obj, Sekai_MultiLiveRequ
         else if (mpj_key_eq_str(key, "privateRoomSettings")) {
             out->privateRoomSettings = *val; out->has_privateRoomSettings = true;
         }
+        else if (mpj_key_eq_str(key, "customMusicScoreId")) {
+            if (val->type == MSGPACK_OBJECT_NIL) { out->customMusicScoreId = NULL; out->has_customMusicScoreId = true; }
+            else if (val->type == MSGPACK_OBJECT_STR) { out->customMusicScoreId = mpj_copy_msgpack_str(val); out->has_customMusicScoreId = (out->customMusicScoreId != NULL); }
+        }
     }
     return 0;
 }
@@ -230,4 +240,7 @@ void Sekai_MultiLiveRequest_free(Sekai_MultiLiveRequest *value) {
     free(value->photonRoomName);
     value->photonRoomName = NULL;
     value->has_photonRoomName = false;
+    free(value->customMusicScoreId);
+    value->customMusicScoreId = NULL;
+    value->has_customMusicScoreId = false;
 }

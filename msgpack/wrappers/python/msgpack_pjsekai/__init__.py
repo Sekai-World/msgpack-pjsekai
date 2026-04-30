@@ -2268,6 +2268,8 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "musicCollaborationId", 'key': "musicCollaborationId", 'key_kind': "string"},
         {'name': "isNewlyWrittenMusic", 'key': "isNewlyWrittenMusic", 'key_kind': "string"},
         {'name': "isFullLength", 'key': "isFullLength", 'key_kind': "string"},
+        {'name': "secForMusicScoreMaker", 'key': "secForMusicScoreMaker", 'key_kind': "string"},
+        {'name': "isAvailableForMusicScoreMaker", 'key': "isAvailableForMusicScoreMaker", 'key_kind': "string"},
     ],
     "Sekai_MasterMusicAchievement": [
         {'name': "id", 'key': "id", 'key_kind': "string"},
@@ -2728,6 +2730,10 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "virtualLiveGroups", 'key': "virtualLiveGroups", 'key_kind': "string"},
         {'name': "virtualLiveTransitionItems", 'key': "virtualLiveTransitionItems", 'key_kind': "string"},
         {'name': "collaborationModes", 'key': "collaborationModes", 'key_kind': "string"},
+        {'name': "customMusicScoreTags", 'key': "customMusicScoreTags", 'key_kind': "string"},
+        {'name': "customMusicScoreDifficultyPlayLevels", 'key': "customMusicScoreDifficultyPlayLevels", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreatorProfiles", 'key': "customMusicScoreOfficialCreatorProfiles", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreators", 'key': "customMusicScoreOfficialCreators", 'key_kind': "string"},
         {'name': "mysekaiSites", 'key': "mysekaiSites", 'key_kind': "string"},
         {'name': "mysekaiSiteLevels", 'key': "mysekaiSiteLevels", 'key_kind': "string"},
         {'name': "mysekaiSiteGroups", 'key': "mysekaiSiteGroups", 'key_kind': "string"},
@@ -3105,6 +3111,10 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "virtualLiveGroups", 'key': "virtualLiveGroups", 'key_kind': "string"},
         {'name': "virtualLiveTransitionItems", 'key': "virtualLiveTransitionItems", 'key_kind': "string"},
         {'name': "collaborationModes", 'key': "collaborationModes", 'key_kind': "string"},
+        {'name': "customMusicScoreTags", 'key': "customMusicScoreTags", 'key_kind': "string"},
+        {'name': "customMusicScoreDifficultyPlayLevels", 'key': "customMusicScoreDifficultyPlayLevels", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreatorProfiles", 'key': "customMusicScoreOfficialCreatorProfiles", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreators", 'key': "customMusicScoreOfficialCreators", 'key_kind': "string"},
         {'name': "mysekaiSystemFixtures", 'key': "mysekaiSystemFixtures", 'key_kind': "string"},
         {'name': "mysekaiSystemFixtureTypeIcons", 'key': "mysekaiSystemFixtureTypeIcons", 'key_kind': "string"},
         {'name': "mysekaiFixtures", 'key': "mysekaiFixtures", 'key_kind': "string"},
@@ -3823,6 +3833,8 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "userBirthdayParties", 'key': "userBirthdayParties", 'key_kind': "string"},
         {'name': "userMysekaiSystemFixtureActions", 'key': "userMysekaiSystemFixtureActions", 'key_kind': "string"},
         {'name': "userVirtualLiveTransitionItems", 'key': "userVirtualLiveTransitionItems", 'key_kind': "string"},
+        {'name': "userCustomMusicScorePublisheds", 'key': "userCustomMusicScorePublisheds", 'key_kind': "string"},
+        {'name': "userCustomMusicScoreBookmarks", 'key': "userCustomMusicScoreBookmarks", 'key_kind': "string"},
         {'name': "userRateChoiceGachaWishes", 'key': "userRateChoiceGachaWishes", 'key_kind': "string"},
     ],
     "Sekai_SuiteUserCommonResponse": [
@@ -4734,6 +4746,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "shouldReflectWebPayment", 'key': "shouldReflectWebPayment", 'key_kind': "string"},
         {'name': "receivableUnprocessedSerialCodeCampaignIds", 'key': "receivableUnprocessedSerialCodeCampaignIds", 'key_kind': "string"},
         {'name': "displayableOfflineEventIds", 'key': "displayableOfflineEventIds", 'key_kind': "string"},
+        {'name': "userCustomMusicScorePublishedBanInfos", 'key': "userCustomMusicScorePublishedBanInfos", 'key_kind': "string"},
     ],
     "Sekai_UserConvertedGachaCeilItem": [
         {'name': "gachaCeilItemId", 'key': "gachaCeilItemId", 'key_kind': "string"},
@@ -4818,6 +4831,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "boostCount", 'key': "boostCount", 'key_kind': "string"},
         {'name': "isAuto", 'key': "isAuto", 'key_kind': "string"},
         {'name': "musicCategoryName", 'key': "musicCategoryName", 'key_kind': "string"},
+        {'name': "customMusicScoreId", 'key': "customMusicScoreId", 'key_kind': "string"},
     ],
     "Sekai_UserLive": [
         {'name': "updatedResources", 'key': "updatedResources", 'key_kind': "string"},
@@ -4886,6 +4900,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "userLivePoint", 'key': "userLivePoint", 'key_kind': "string"},
         {'name': "isEventMaintenance", 'key': "isEventMaintenance", 'key_kind': "string"},
         {'name': "isInBreakTime", 'key': "isInBreakTime", 'key_kind': "string"},
+        {'name': "customMusicScoreLiveResult", 'key': "customMusicScoreLiveResult", 'key_kind': "string"},
     ],
     "Sekai_DeckCardUpdateExpResult": [
         {'name': "index", 'key': "index", 'key_kind': "string"},
@@ -4988,6 +5003,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "selectedMusicId4", 'key': "selectedMusicId4", 'key_kind': "string"},
         {'name': "selectedMusicId5", 'key': "selectedMusicId5", 'key_kind': "string"},
         {'name': "privateRoomSettings", 'key': "privateRoomSettings", 'key_kind': "string"},
+        {'name': "customMusicScoreId", 'key': "customMusicScoreId", 'key_kind': "string"},
     ],
     "Sekai_MultiLiveResponse": [
         {'name': "updatedResources", 'key': "updatedResources", 'key_kind': "string"},
@@ -5005,6 +5021,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "boostCount", 'key': "boostCount", 'key_kind': "string"},
         {'name': "musicCategoryName", 'key': "musicCategoryName", 'key_kind': "string"},
         {'name': "privateRoomSettings", 'key': "privateRoomSettings", 'key_kind': "string"},
+        {'name': "customMusicScoreId", 'key': "customMusicScoreId", 'key_kind': "string"},
     ],
     "Sekai_UserPrivateRoomSettings": [
         {'name': "liveRuleType", 'key': "liveRuleType", 'key_kind': "string"},
@@ -5079,6 +5096,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "userLivePoint", 'key': "userLivePoint", 'key_kind': "string"},
         {'name': "isEventMaintenance", 'key': "isEventMaintenance", 'key_kind': "string"},
         {'name': "isInBreakTime", 'key': "isInBreakTime", 'key_kind': "string"},
+        {'name': "customMusicScoreLiveResult", 'key': "customMusicScoreLiveResult", 'key_kind': "string"},
     ],
     "Sekai_UserMultiLiveClearScoreResponse": [
         {'name': "userId", 'key': "userId", 'key_kind': "string"},
@@ -5968,6 +5986,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "LastSelectedLiveBoostDialogTabIndex", 'key': "LastSelectedLiveBoostDialogTabIndex", 'key_kind': "string"},
         {'name': "MusicShopSortFilterData", 'key': "MusicShopSortFilterData", 'key_kind': "string"},
         {'name': "AnotherMusicShopSortFilterData", 'key': "AnotherMusicShopSortFilterData", 'key_kind': "string"},
+        {'name': "MusicScoreMakerMusicSelectSortFilterData", 'key': "MusicScoreMakerMusicSelectSortFilterData", 'key_kind': "string"},
         {'name': "StampMissionPanelCheckStatusDictionary", 'key': "StampMissionPanelCheckStatusDictionary", 'key_kind': "string"},
         {'name': "mysekaiInventorySortFilterConfigs", 'key': "MysekaiInventorySortFilterConfigs", 'key_kind': "string"},
         {'name': "MysekaiFixtureFilteredData", 'key': "MysekaiFixtureFilteredData", 'key_kind': "string"},
@@ -6250,12 +6269,14 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "CustomRoomIsDisplayPlayerInfo", 'key': "CustomRoomIsDisplayPlayerInfo", 'key_kind': "string"},
         {'name': "CustomRoomSelectedDifficulties", 'key': "CustomRoomSelectedDifficulties", 'key_kind': "string"},
         {'name': "CustomRoomSelectedMusicType", 'key': "CustomRoomSelectedMusicType", 'key_kind': "string"},
+        {'name': "ScoreSelectType", 'key': "ScoreSelectType", 'key_kind': "string"},
     ],
     "Sekai_MusicSettingDataList": [
         {'name': "MusicSettings", 'key': "MusicSettings", 'key_kind': "string"},
     ],
     "Sekai_MusicSettingData": [
         {'name': "VocalId", 'key': "VocalId", 'key_kind': "string"},
+        {'name': "CustomMusicScoreIds", 'key': "CustomMusicScoreIds", 'key_kind': "string"},
     ],
     "Sekai_CardSelectGachaFilterData": [
         {'name': "FilterUnit", 'key': "FilterUnit", 'key_kind': "string"},
@@ -6295,6 +6316,14 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "SortType", 'key': "SortType", 'key_kind': "string"},
         {'name': "MusicDifficulty", 'key': "MusicDifficulty", 'key_kind': "string"},
     ],
+    "Sekai_MusicPlayHistory_MusicPlayHistoryData": [
+        {'name': "Entries", 'key': "Entries", 'key_kind': "string"},
+    ],
+    "Sekai_MusicPlayHistory_MusicPlayHistoryEntry": [
+        {'name': "MusicId", 'key': "MusicId", 'key_kind': "string"},
+        {'name': "Difficulty", 'key': "Difficulty", 'key_kind': "string"},
+        {'name': "PlayedAtUnixTime", 'key': "PlayedAtUnixTime", 'key_kind': "string"},
+    ],
     "Sekai_ImageCache_ImageCache": [
         {'name': "ImageData", 'key': "ImageData", 'key_kind': "string"},
     ],
@@ -6331,6 +6360,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "FriendRequestStatus", 'key': "FriendRequestStatus", 'key_kind': "string"},
         {'name': "MemberCharacterRank", 'key': "MemberCharacterRank", 'key_kind': "string"},
         {'name': "PlayerFrameId", 'key': "PlayerFrameId", 'key_kind': "string"},
+        {'name': "CustomScoreId", 'key': "CustomScoreId", 'key_kind': "string"},
     ],
     "Sekai_Multiplay_MultiLivePartyInfo": [
         {'name': "masterMultiLobbyId", 'key': "masterMultiLobbyId", 'key_kind': "string"},
@@ -6450,6 +6480,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "Index", 'key': "Index", 'key_kind': "string"},
         {'name': "Info", 'key': "Info", 'key_kind': "string"},
         {'name': "Difficulty", 'key': "Difficulty", 'key_kind': "string"},
+        {'name': "CustomScoreId", 'key': "CustomScoreId", 'key_kind': "string"},
     ],
     "Sekai_MultiLive_PartyRoomMeta": [
         {'name': "UniqueTeamId", 'key': "UniqueTeamId", 'key_kind': "string"},
@@ -6538,6 +6569,7 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "musicSelectionType", 'key': "MusicSelectionType", 'key_kind': "string"},
         {'name': "musicDifficultyTypes", 'key': "MusicDifficultyTypes", 'key_kind': "string"},
         {'name': "isDisplayPlayerInfo", 'key': "IsDisplayPlayerInfo", 'key_kind': "string"},
+        {'name': "scoreSelectType", 'key': "ScoreSelectType", 'key_kind': "string"},
     ],
     "Sekai_MultiLive_DebugGetRoomInfoRequest": [
         {'name': "RoomID", 'key': "RoomID", 'key_kind': "string"},
@@ -7450,6 +7482,23 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "hairCostume3dId", 'key': "hairCostume3dId", 'key_kind': "string"},
         {'name': "unit", 'key': "unit", 'key_kind': "string"},
     ],
+    "Sekai_ApiData_MasterCustomMusicScoreOfficialCreator": [
+        {'name': "id", 'key': "id", 'key_kind': "string"},
+        {'name': "scoreId", 'key': "scoreId", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreatorProfileId", 'key': "customMusicScoreOfficialCreatorProfileId", 'key_kind': "string"},
+        {'name': "musicId", 'key': "musicId", 'key_kind': "string"},
+        {'name': "musicDifficultyType", 'key': "musicDifficultyType", 'key_kind': "string"},
+        {'name': "playLevel", 'key': "playLevel", 'key_kind': "string"},
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "description", 'key': "description", 'key_kind': "string"},
+        {'name': "tagId1", 'key': "tagId1", 'key_kind': "string"},
+        {'name': "tagId2", 'key': "tagId2", 'key_kind': "string"},
+        {'name': "tagId3", 'key': "tagId3", 'key_kind': "string"},
+        {'name': "isDerivativeAllowed", 'key': "isDerivativeAllowed", 'key_kind': "string"},
+        {'name': "previewStartTimeSec", 'key': "previewStartTimeSec", 'key_kind': "string"},
+        {'name': "publishedStartAt", 'key': "publishedStartAt", 'key_kind': "string"},
+        {'name': "publishedEndAt", 'key': "publishedEndAt", 'key_kind': "string"},
+    ],
     "Sekai_ApiData_MasterCustomProfileCollectionResourceUnit": [
         {'name': "id", 'key': "id", 'key_kind': "string"},
         {'name': "customProfileCollectionResourceId", 'key': "customProfileCollectionResourceId", 'key_kind': "string"},
@@ -8189,6 +8238,27 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "updatedResources", 'key': "updatedResources", 'key_kind': "string"},
         {'name': "userBillingShopExclusiveItems", 'key': "userBillingShopExclusiveItems", 'key_kind': "string"},
     ],
+    "Sekai_ApiData_UserCustomMusicScorePublishedResponse": [
+        {'name': "userCustomMusicScoreInfoJson", 'key': "userCustomMusicScoreInfoJson", 'key_kind': "string"},
+        {'name': "userCustomMusicScoreId", 'key': "userCustomMusicScoreId", 'key_kind': "string"},
+        {'name': "userId", 'key': "userId", 'key_kind': "string"},
+        {'name': "userName", 'key': "userName", 'key_kind': "string"},
+        {'name': "musicId", 'key': "musicId", 'key_kind': "string"},
+        {'name': "customMusicScoreTags", 'key': "customMusicScoreTags", 'key_kind': "string"},
+        {'name': "musicDifficultyType", 'key': "musicDifficultyType", 'key_kind': "string"},
+        {'name': "playLevel", 'key': "playLevel", 'key_kind': "string"},
+        {'name': "description", 'key': "description", 'key_kind': "string"},
+        {'name': "isDerivativeAllowed", 'key': "isDerivativeAllowed", 'key_kind': "string"},
+        {'name': "previewStartTimeSec", 'key': "previewStartTimeSec", 'key_kind': "string"},
+        {'name': "publishedAt", 'key': "publishedAt", 'key_kind': "string"},
+        {'name': "reviewCount", 'key': "reviewCount", 'key_kind': "string"},
+        {'name': "playCount", 'key': "playCount", 'key_kind': "string"},
+        {'name': "fullComboRate", 'key': "fullComboRate", 'key_kind': "string"},
+        {'name': "customMusicScoreSearchSortValue", 'key': "customMusicScoreSearchSortValue", 'key_kind': "string"},
+        {'name': "playResult", 'key': "playResult", 'key_kind': "string"},
+        {'name': "isReviewed", 'key': "isReviewed", 'key_kind': "string"},
+        {'name': "isReviewAllowed", 'key': "isReviewAllowed", 'key_kind': "string"},
+    ],
     "Sekai_ApiData_UserPlayerFrame": [
         {'name': "playerFrameId", 'key': "playerFrameId", 'key_kind': "string"},
         {'name': "playerFrameAttachStatus", 'key': "playerFrameAttachStatus", 'key_kind': "string"},
@@ -8229,11 +8299,51 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "member24", 'key': "member24", 'key_kind': "string"},
         {'name': "member25", 'key': "member25", 'key_kind': "string"},
     ],
+    "Sekai_ApiData_CustomMusicScoreBookmarkListResponse": [
+        {'name': "userCustomMusicScoreBookmarkList", 'key': "userCustomMusicScoreBookmarkList", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreatorBookmarkList", 'key': "customMusicScoreOfficialCreatorBookmarkList", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_CustomMusicScoreLiveResultResponse": [
+        {'name': "userCustomMusicScoreLiveResult", 'key': "userCustomMusicScoreLiveResult", 'key_kind': "string"},
+        {'name': "officialMusicScoreLiveResult", 'key': "officialMusicScoreLiveResult", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse": [
+        {'name': "customMusicScoreOfficialCreatorPublished", 'key': "customMusicScoreOfficialCreatorPublished", 'key_kind': "string"},
+        {'name': "bookmarkedAt", 'key': "bookmarkedAt", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse": [
+        {'name': "customMusicScoreId", 'key': "customMusicScoreId", 'key_kind': "string"},
+        {'name': "reviewCount", 'key': "reviewCount", 'key_kind': "string"},
+        {'name': "playCount", 'key': "playCount", 'key_kind': "string"},
+        {'name': "fullComboRate", 'key': "fullComboRate", 'key_kind': "string"},
+        {'name': "customMusicScoreSearchSortValue", 'key': "customMusicScoreSearchSortValue", 'key_kind': "string"},
+        {'name': "playResult", 'key': "playResult", 'key_kind': "string"},
+        {'name': "isReviewed", 'key': "isReviewed", 'key_kind': "string"},
+        {'name': "isReviewAllowed", 'key': "isReviewAllowed", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_CustomMusicScorePublishedSearchListResponse": [
+        {'name': "userCustomMusicScorePublishedList", 'key': "userCustomMusicScorePublishedList", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreatorPublishedList", 'key': "customMusicScoreOfficialCreatorPublishedList", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_CustomMusicScorePublishedSearchResponse": [
+        {'name': "userCustomMusicScoreInfoJson", 'key': "userCustomMusicScoreInfoJson", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreatorPublishedResponseJson", 'key': "customMusicScoreOfficialCreatorPublishedResponseJson", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_CustomMusicScorePublishedTabListResponse": [
+        {'name': "userCustomMusicScorePublishedList", 'key': "userCustomMusicScorePublishedList", 'key_kind': "string"},
+        {'name': "customMusicScoreOfficialCreatorPublishedList", 'key': "customMusicScoreOfficialCreatorPublishedList", 'key_kind': "string"},
+    ],
     "Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest": [
         {'name': "deliveryPoint", 'key': "deliveryPoint", 'key_kind': "string"},
     ],
     "Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest": [
         {'name': "count", 'key': "count", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest": [
+        {'name': "createCount", 'key': "createCount", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest": [
+        {'name': "createCount", 'key': "createCount", 'key_kind': "string"},
     ],
     "Sekai_ApiData_DebugUserCustomProfileObtainAllRequest": [
         {'name': "quantity", 'key': "quantity", 'key_kind': "string"},
@@ -8359,6 +8469,10 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "useCount", 'key': "useCount", 'key_kind': "string"},
         {'name': "durability", 'key': "durability", 'key_kind': "string"},
     ],
+    "Sekai_ApiData_OfficialMusicScoreLiveResultResponse": [
+        {'name': "customMusicScoreId", 'key': "customMusicScoreId", 'key_kind': "string"},
+        {'name': "isReviewed", 'key': "isReviewed", 'key_kind': "string"},
+    ],
     "Sekai_ApiData_UserAdReward": [
         {'name': "id", 'key': "id", 'key_kind': "string"},
         {'name': "lastPlayStartAt", 'key': "lastPlayStartAt", 'key_kind': "string"},
@@ -8405,6 +8519,90 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "updatedResources", 'key': "updatedResources", 'key_kind': "string"},
         {'name': "obtainedDeliveryTotalRewards", 'key': "obtainedDeliveryTotalRewards", 'key_kind': "string"},
     ],
+    "Sekai_ApiData_UserCustomMusicScoreDraft": [
+        {'name': "userCustomMusicScoreInfo", 'key': "userCustomMusicScoreInfo", 'key_kind': "string"},
+        {'name': "slotNo", 'key': "slotNo", 'key_kind': "string"},
+        {'name': "memo", 'key': "memo", 'key_kind': "string"},
+        {'name': "baseMusicDifficultyId", 'key': "baseMusicDifficultyId", 'key_kind': "string"},
+        {'name': "lastSavedAt", 'key': "lastSavedAt", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest": [
+        {'name': "baseMusicScoreId", 'key': "baseMusicScoreId", 'key_kind': "string"},
+        {'name': "musicId", 'key': "musicId", 'key_kind': "string"},
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "userCustomMusicScoreJsonGzipBase64", 'key': "userCustomMusicScoreJsonGzipBase64", 'key_kind': "string"},
+        {'name': "memo", 'key': "memo", 'key_kind': "string"},
+        {'name': "baseMusicDifficultyId", 'key': "baseMusicDifficultyId", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScoreDraftEditRequest": [
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "memo", 'key': "memo", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScoreDraftListResponse": [
+        {'name': "userCustomMusicScoreDrafts", 'key': "userCustomMusicScoreDrafts", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest": [
+        {'name': "baseMusicScoreId", 'key': "baseMusicScoreId", 'key_kind': "string"},
+        {'name': "musicId", 'key': "musicId", 'key_kind': "string"},
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "userCustomMusicScoreJsonGzipBase64", 'key': "userCustomMusicScoreJsonGzipBase64", 'key_kind': "string"},
+        {'name': "memo", 'key': "memo", 'key_kind': "string"},
+        {'name': "baseMusicDifficultyId", 'key': "baseMusicDifficultyId", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScoreInfo": [
+        {'name': "baseMusicScoreId", 'key': "baseMusicScoreId", 'key_kind': "string"},
+        {'name': "musicId", 'key': "musicId", 'key_kind': "string"},
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "userCustomMusicScorePath", 'key': "userCustomMusicScorePath", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScoreLiveResultResponse": [
+        {'name': "userId", 'key': "userId", 'key_kind': "string"},
+        {'name': "userName", 'key': "userName", 'key_kind': "string"},
+        {'name': "customMusicScoreId", 'key': "customMusicScoreId", 'key_kind': "string"},
+        {'name': "musicId", 'key': "musicId", 'key_kind': "string"},
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "musicDifficultyType", 'key': "musicDifficultyType", 'key_kind': "string"},
+        {'name': "playLevel", 'key': "playLevel", 'key_kind': "string"},
+        {'name': "isReviewed", 'key': "isReviewed", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScoreMiniDisplay": [
+        {'name': "userCustomMusicScoreId", 'key': "userCustomMusicScoreId", 'key_kind': "string"},
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "authorId", 'key': "authorId", 'key_kind': "string"},
+        {'name': "authorName", 'key': "authorName", 'key_kind': "string"},
+        {'name': "playLevel", 'key': "playLevel", 'key_kind': "string"},
+        {'name': "musicDifficulty", 'key': "musicDifficulty", 'key_kind': "string"},
+        {'name': "userCustomMusicScorePath", 'key': "userCustomMusicScorePath", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScorePublishedBanInfo": [
+        {'name': "userCustomMusicScoreId", 'key': "userCustomMusicScoreId", 'key_kind': "string"},
+        {'name': "message", 'key': "message", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse": [
+        {'name': "userCustomMusicScorePublished", 'key': "userCustomMusicScorePublished", 'key_kind': "string"},
+        {'name': "bookmarkedAt", 'key': "bookmarkedAt", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse": [
+        {'name': "userCustomMusicScorePublishedList", 'key': "userCustomMusicScorePublishedList", 'key_kind': "string"},
+        {'name': "userCustomMusicScoreAuthorProfile", 'key': "userCustomMusicScoreAuthorProfile", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScorePublishedListResponse": [
+        {'name': "userCustomMusicScorePublishedList", 'key': "userCustomMusicScorePublishedList", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserCustomMusicScorePublishRequest": [
+        {'name': "musicId", 'key': "musicId", 'key_kind': "string"},
+        {'name': "customMusicScoreTagIds", 'key': "customMusicScoreTagIds", 'key_kind': "string"},
+        {'name': "musicDifficultyType", 'key': "musicDifficultyType", 'key_kind': "string"},
+        {'name': "playLevel", 'key': "playLevel", 'key_kind': "string"},
+        {'name': "title", 'key': "title", 'key_kind': "string"},
+        {'name': "description", 'key': "description", 'key_kind': "string"},
+        {'name': "userCustomMusicScoreJsonGzipBase64", 'key': "userCustomMusicScoreJsonGzipBase64", 'key_kind': "string"},
+        {'name': "userCustomMusicScorePreviewJsonGzipBase64", 'key': "userCustomMusicScorePreviewJsonGzipBase64", 'key_kind': "string"},
+        {'name': "baseMusicScoreId", 'key': "baseMusicScoreId", 'key_kind': "string"},
+        {'name': "isDerivativeAllowed", 'key': "isDerivativeAllowed", 'key_kind': "string"},
+        {'name': "previewStartTimeSec", 'key': "previewStartTimeSec", 'key_kind': "string"},
+        {'name': "totalNoteCount", 'key': "totalNoteCount", 'key_kind': "string"},
+    ],
     "Sekai_ApiData_UserEventRankingRewardConditionResponse": [
         {'name': "rewardCondition", 'key': "rewardCondition", 'key_kind': "string"},
     ],
@@ -8432,6 +8630,14 @@ schemas: Dict[str, List[FieldInfo]] = {
     ],
     "Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse": [
         {'name': "updatedResources", 'key': "updatedResources", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse": [
+        {'name': "userMultiLivePlayableCustomMusicScores", 'key': "userMultiLivePlayableCustomMusicScores", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse": [
+        {'name': "userId", 'key': "userId", 'key_kind': "string"},
+        {'name': "userCustomMusicScores", 'key': "userCustomMusicScores", 'key_kind': "string"},
+        {'name': "officialCustomMusicScoreIds", 'key': "officialCustomMusicScoreIds", 'key_kind': "string"},
     ],
     "Sekai_ApiData_UserMysekaiBlueprint": [
         {'name': "mysekaiBlueprintId", 'key': "mysekaiBlueprintId", 'key_kind': "string"},
@@ -9090,6 +9296,22 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "id", 'key': "id", 'key_kind': "string"},
         {'name': "assetbundleName", 'key': "assetbundleName", 'key_kind': "string"},
     ],
+    "Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel": [
+        {'name': "id", 'key': "id", 'key_kind': "string"},
+        {'name': "musicDifficultyType", 'key': "musicDifficultyType", 'key_kind': "string"},
+        {'name': "minPlayLevel", 'key': "minPlayLevel", 'key_kind': "string"},
+        {'name': "maxPlayLevel", 'key': "maxPlayLevel", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile": [
+        {'name': "id", 'key': "id", 'key_kind': "string"},
+        {'name': "name", 'key': "name", 'key_kind': "string"},
+    ],
+    "Sekai_ApiData_MasterCustomMusicScoreTag": [
+        {'name': "id", 'key': "id", 'key_kind': "string"},
+        {'name': "seq", 'key': "seq", 'key_kind': "string"},
+        {'name': "name", 'key': "name", 'key_kind': "string"},
+        {'name': "isOfficialCreatorOnly", 'key': "isOfficialCreatorOnly", 'key_kind': "string"},
+    ],
     "Sekai_ApiData_MasterCustomProfileGachaShop": [
         {'name': "id", 'key': "id", 'key_kind': "string"},
         {'name': "seq", 'key': "seq", 'key_kind': "string"},
@@ -9723,6 +9945,70 @@ schemas: Dict[str, List[FieldInfo]] = {
         {'name': "mysekaiOwnerUserSubmittedAt", 'key': "mysekaiOwnerUserSubmittedAt", 'key_kind': "string"},
         {'name': "mysekaiSiteId", 'key': "mysekaiSiteId", 'key_kind': "string"},
         {'name': "mysekaiBlueprintId", 'key': "mysekaiBlueprintId", 'key_kind': "string"},
+    ],
+    "Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData": [
+        {'name': "Id", 'key': 0, 'key_kind': "int"},
+        {'name': "CopiedNoteList", 'key': 1, 'key_kind': "int"},
+        {'name': "CopiedEventDataList", 'key': 2, 'key_kind': "int"},
+        {'name': "CreatedAt", 'key': 3, 'key_kind': "int"},
+    ],
+    "Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData": [
+        {'name': "Caches", 'key': 0, 'key_kind': "int"},
+    ],
+    "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData": [
+        {'name': "id", 'key': 0, 'key_kind': "int"},
+        {'name': "eventType", 'key': 1, 'key_kind': "int"},
+        {'name': "ticks", 'key': 2, 'key_kind': "int"},
+        {'name': "changeValue", 'key': 3, 'key_kind': "int"},
+    ],
+    "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData": [
+        {'name': "ZoomTimelineStep", 'key': 0, 'key_kind': "int"},
+        {'name': "ZoomTimelineScaleMax", 'key': 1, 'key_kind': "int"},
+        {'name': "ZoomTimelineScaleMin", 'key': 2, 'key_kind': "int"},
+        {'name': "UndoStackLimit", 'key': 3, 'key_kind': "int"},
+        {'name': "AutoSaveEnabled", 'key': 4, 'key_kind': "int"},
+        {'name': "AutoSaveInterval", 'key': 5, 'key_kind': "int"},
+        {'name': "ShowFocusTicksRate", 'key': 6, 'key_kind': "int"},
+        {'name': "TicksPerScrollStep", 'key': 7, 'key_kind': "int"},
+        {'name': "EnableSwipeScroll", 'key': 8, 'key_kind': "int"},
+        {'name': "PlayMusicSEEnabled", 'key': 9, 'key_kind': "int"},
+        {'name': "SetStartMusicTimeMsEnabled", 'key': 10, 'key_kind': "int"},
+        {'name': "PlayStartEffectEnabled", 'key': 11, 'key_kind': "int"},
+        {'name': "TestPlayStartOffsetMs", 'key': 12, 'key_kind': "int"},
+        {'name': "ShowBarLines", 'key': 13, 'key_kind': "int"},
+        {'name': "ShowBeatLines", 'key': 14, 'key_kind': "int"},
+        {'name': "ShowQuantizeLines", 'key': 15, 'key_kind': "int"},
+        {'name': "SelectedLayoutPatternIndex", 'key': 16, 'key_kind': "int"},
+        {'name': "SelectedLayoutPatternIndexPortrait", 'key': 26, 'key_kind': "int"},
+        {'name': "SelectedLayoutPatternIndexLandscape", 'key': 27, 'key_kind': "int"},
+        {'name': "ScoreDisplayScaleHorizontal", 'key': 17, 'key_kind': "int"},
+        {'name': "ScoreDisplayScaleVertical", 'key': 18, 'key_kind': "int"},
+        {'name': "ToolWindowChildScale", 'key': 19, 'key_kind': "int"},
+        {'name': "NoteEdgeWidth", 'key': 24, 'key_kind': "int"},
+        {'name': "EnableInvalidPlacementCheck", 'key': 25, 'key_kind': "int"},
+        {'name': "AreaSelectPartialOverlap", 'key': 28, 'key_kind': "int"},
+        {'name': "NoteYScaleStartThreshold", 'key': 29, 'key_kind': "int"},
+        {'name': "NoteYScaleEndThreshold", 'key': 30, 'key_kind': "int"},
+        {'name': "NoteYScaleMin", 'key': 31, 'key_kind': "int"},
+        {'name': "DrawSmallerTickToBack", 'key': 32, 'key_kind': "int"},
+        {'name': "MaxClipboardCacheCount", 'key': 33, 'key_kind': "int"},
+        {'name': "AutoPlayEnabled", 'key': 34, 'key_kind': "int"},
+        {'name': "TestPlayLiveModeTypeRaw", 'key': 35, 'key_kind': "int"},
+    ],
+    "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase": [
+        {'name': "id", 'key': 0, 'key_kind': "int"},
+        {'name': "ticks", 'key': 1, 'key_kind': "int"},
+        {'name': "laneStart", 'key': 2, 'key_kind': "int"},
+        {'name': "laneEnd", 'key': 3, 'key_kind': "int"},
+        {'name': "category", 'key': 4, 'key_kind': "int"},
+        {'name': "type", 'key': 5, 'key_kind': "int"},
+        {'name': "speedRatio", 'key': 6, 'key_kind': "int"},
+        {'name': "noteLineType", 'key': 7, 'key_kind': "int"},
+        {'name': "noteBaseType", 'key': 8, 'key_kind': "int"},
+        {'name': "previousConnectionId", 'key': 9, 'key_kind': "int"},
+        {'name': "nextConnectionId", 'key': 10, 'key_kind': "int"},
+        {'name': "direction", 'key': 11, 'key_kind': "int"},
+        {'name': "isSkip", 'key': 12, 'key_kind': "int"},
     ],
     "Sekai_SuperVirtualLive_RoomUserHonorInfo": [
         {'name': "Type", 'key': 0, 'key_kind': "int"},
@@ -22647,6 +22933,8 @@ class Sekai_MasterMusic:
     musicCollaborationId: Optional[int] = None
     isNewlyWrittenMusic: Optional[bool] = None
     isFullLength: Optional[bool] = None
+    secForMusicScoreMaker: Optional[int] = None
+    isAvailableForMusicScoreMaker: Optional[bool] = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -22694,6 +22982,10 @@ class Sekai_MasterMusic:
             out["isNewlyWrittenMusic"] = self.isNewlyWrittenMusic
         if self.isFullLength is not None:
             out["isFullLength"] = self.isFullLength
+        if self.secForMusicScoreMaker is not None:
+            out["secForMusicScoreMaker"] = self.secForMusicScoreMaker
+        if self.isAvailableForMusicScoreMaker is not None:
+            out["isAvailableForMusicScoreMaker"] = self.isAvailableForMusicScoreMaker
         return out
 
     def encode(self) -> bytes:
@@ -22744,6 +23036,10 @@ class Sekai_MasterMusic:
             self.isNewlyWrittenMusic = _get_key(value, "isNewlyWrittenMusic")
         if _has_key(value, "isFullLength"):
             self.isFullLength = _get_key(value, "isFullLength")
+        if _has_key(value, "secForMusicScoreMaker"):
+            self.secForMusicScoreMaker = _get_key(value, "secForMusicScoreMaker")
+        if _has_key(value, "isAvailableForMusicScoreMaker"):
+            self.isAvailableForMusicScoreMaker = _get_key(value, "isAvailableForMusicScoreMaker")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_MasterMusic':
@@ -24174,6 +24470,10 @@ class Sekai_SuiteMaster:
     virtualLiveGroups: Any = None
     virtualLiveTransitionItems: Any = None
     collaborationModes: Any = None
+    customMusicScoreTags: Any = None
+    customMusicScoreDifficultyPlayLevels: Any = None
+    customMusicScoreOfficialCreatorProfiles: Any = None
+    customMusicScoreOfficialCreators: Any = None
     mysekaiSites: Any = None
     mysekaiSiteLevels: Any = None
     mysekaiSiteGroups: Any = None
@@ -24822,6 +25122,14 @@ class Sekai_SuiteMaster:
             out["virtualLiveTransitionItems"] = self.virtualLiveTransitionItems
         if self.collaborationModes is not None:
             out["collaborationModes"] = self.collaborationModes
+        if self.customMusicScoreTags is not None:
+            out["customMusicScoreTags"] = self.customMusicScoreTags
+        if self.customMusicScoreDifficultyPlayLevels is not None:
+            out["customMusicScoreDifficultyPlayLevels"] = self.customMusicScoreDifficultyPlayLevels
+        if self.customMusicScoreOfficialCreatorProfiles is not None:
+            out["customMusicScoreOfficialCreatorProfiles"] = self.customMusicScoreOfficialCreatorProfiles
+        if self.customMusicScoreOfficialCreators is not None:
+            out["customMusicScoreOfficialCreators"] = self.customMusicScoreOfficialCreators
         if self.mysekaiSites is not None:
             out["mysekaiSites"] = self.mysekaiSites
         if self.mysekaiSiteLevels is not None:
@@ -25600,6 +25908,14 @@ class Sekai_SuiteMaster:
             self.virtualLiveTransitionItems = _get_key(value, "virtualLiveTransitionItems")
         if _has_key(value, "collaborationModes"):
             self.collaborationModes = _get_key(value, "collaborationModes")
+        if _has_key(value, "customMusicScoreTags"):
+            self.customMusicScoreTags = _get_key(value, "customMusicScoreTags")
+        if _has_key(value, "customMusicScoreDifficultyPlayLevels"):
+            self.customMusicScoreDifficultyPlayLevels = _get_key(value, "customMusicScoreDifficultyPlayLevels")
+        if _has_key(value, "customMusicScoreOfficialCreatorProfiles"):
+            self.customMusicScoreOfficialCreatorProfiles = _get_key(value, "customMusicScoreOfficialCreatorProfiles")
+        if _has_key(value, "customMusicScoreOfficialCreators"):
+            self.customMusicScoreOfficialCreators = _get_key(value, "customMusicScoreOfficialCreators")
         if _has_key(value, "mysekaiSites"):
             self.mysekaiSites = _get_key(value, "mysekaiSites")
         if _has_key(value, "mysekaiSiteLevels"):
@@ -26110,6 +26426,10 @@ class Sekai_CachedMaserDataAll:
     virtualLiveGroups: Any = None
     virtualLiveTransitionItems: Any = None
     collaborationModes: Any = None
+    customMusicScoreTags: Any = None
+    customMusicScoreDifficultyPlayLevels: Any = None
+    customMusicScoreOfficialCreatorProfiles: Any = None
+    customMusicScoreOfficialCreators: Any = None
     mysekaiSystemFixtures: Any = None
     mysekaiSystemFixtureTypeIcons: Any = None
     mysekaiFixtures: Any = None
@@ -26736,6 +27056,14 @@ class Sekai_CachedMaserDataAll:
             out["virtualLiveTransitionItems"] = self.virtualLiveTransitionItems
         if self.collaborationModes is not None:
             out["collaborationModes"] = self.collaborationModes
+        if self.customMusicScoreTags is not None:
+            out["customMusicScoreTags"] = self.customMusicScoreTags
+        if self.customMusicScoreDifficultyPlayLevels is not None:
+            out["customMusicScoreDifficultyPlayLevels"] = self.customMusicScoreDifficultyPlayLevels
+        if self.customMusicScoreOfficialCreatorProfiles is not None:
+            out["customMusicScoreOfficialCreatorProfiles"] = self.customMusicScoreOfficialCreatorProfiles
+        if self.customMusicScoreOfficialCreators is not None:
+            out["customMusicScoreOfficialCreators"] = self.customMusicScoreOfficialCreators
         if self.mysekaiSystemFixtures is not None:
             out["mysekaiSystemFixtures"] = self.mysekaiSystemFixtures
         if self.mysekaiSystemFixtureTypeIcons is not None:
@@ -27492,6 +27820,14 @@ class Sekai_CachedMaserDataAll:
             self.virtualLiveTransitionItems = _get_key(value, "virtualLiveTransitionItems")
         if _has_key(value, "collaborationModes"):
             self.collaborationModes = _get_key(value, "collaborationModes")
+        if _has_key(value, "customMusicScoreTags"):
+            self.customMusicScoreTags = _get_key(value, "customMusicScoreTags")
+        if _has_key(value, "customMusicScoreDifficultyPlayLevels"):
+            self.customMusicScoreDifficultyPlayLevels = _get_key(value, "customMusicScoreDifficultyPlayLevels")
+        if _has_key(value, "customMusicScoreOfficialCreatorProfiles"):
+            self.customMusicScoreOfficialCreatorProfiles = _get_key(value, "customMusicScoreOfficialCreatorProfiles")
+        if _has_key(value, "customMusicScoreOfficialCreators"):
+            self.customMusicScoreOfficialCreators = _get_key(value, "customMusicScoreOfficialCreators")
         if _has_key(value, "mysekaiSystemFixtures"):
             self.mysekaiSystemFixtures = _get_key(value, "mysekaiSystemFixtures")
         if _has_key(value, "mysekaiSystemFixtureTypeIcons"):
@@ -30555,6 +30891,8 @@ class Sekai_SuiteUser:
     userBirthdayParties: Any = None
     userMysekaiSystemFixtureActions: Any = None
     userVirtualLiveTransitionItems: Any = None
+    userCustomMusicScorePublisheds: Any = None
+    userCustomMusicScoreBookmarks: Any = None
     userRateChoiceGachaWishes: Any = None
 
     def to_msgpack_map(self) -> MsgpackMap:
@@ -30925,6 +31263,10 @@ class Sekai_SuiteUser:
             out["userMysekaiSystemFixtureActions"] = self.userMysekaiSystemFixtureActions
         if self.userVirtualLiveTransitionItems is not None:
             out["userVirtualLiveTransitionItems"] = self.userVirtualLiveTransitionItems
+        if self.userCustomMusicScorePublisheds is not None:
+            out["userCustomMusicScorePublisheds"] = self.userCustomMusicScorePublisheds
+        if self.userCustomMusicScoreBookmarks is not None:
+            out["userCustomMusicScoreBookmarks"] = self.userCustomMusicScoreBookmarks
         if self.userRateChoiceGachaWishes is not None:
             out["userRateChoiceGachaWishes"] = self.userRateChoiceGachaWishes
         return out
@@ -31299,6 +31641,10 @@ class Sekai_SuiteUser:
             self.userMysekaiSystemFixtureActions = _get_key(value, "userMysekaiSystemFixtureActions")
         if _has_key(value, "userVirtualLiveTransitionItems"):
             self.userVirtualLiveTransitionItems = _get_key(value, "userVirtualLiveTransitionItems")
+        if _has_key(value, "userCustomMusicScorePublisheds"):
+            self.userCustomMusicScorePublisheds = _get_key(value, "userCustomMusicScorePublisheds")
+        if _has_key(value, "userCustomMusicScoreBookmarks"):
+            self.userCustomMusicScoreBookmarks = _get_key(value, "userCustomMusicScoreBookmarks")
         if _has_key(value, "userRateChoiceGachaWishes"):
             self.userRateChoiceGachaWishes = _get_key(value, "userRateChoiceGachaWishes")
         return self
@@ -37005,6 +37351,7 @@ class Sekai_UserHomeRefreshResponse:
     shouldReflectWebPayment: Optional[bool] = None
     receivableUnprocessedSerialCodeCampaignIds: Any = None
     displayableOfflineEventIds: Any = None
+    userCustomMusicScorePublishedBanInfos: Any = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -37032,6 +37379,8 @@ class Sekai_UserHomeRefreshResponse:
             out["receivableUnprocessedSerialCodeCampaignIds"] = self.receivableUnprocessedSerialCodeCampaignIds
         if self.displayableOfflineEventIds is not None:
             out["displayableOfflineEventIds"] = self.displayableOfflineEventIds
+        if self.userCustomMusicScorePublishedBanInfos is not None:
+            out["userCustomMusicScorePublishedBanInfos"] = self.userCustomMusicScorePublishedBanInfos
         return out
 
     def encode(self) -> bytes:
@@ -37062,6 +37411,8 @@ class Sekai_UserHomeRefreshResponse:
             self.receivableUnprocessedSerialCodeCampaignIds = _get_key(value, "receivableUnprocessedSerialCodeCampaignIds")
         if _has_key(value, "displayableOfflineEventIds"):
             self.displayableOfflineEventIds = _get_key(value, "displayableOfflineEventIds")
+        if _has_key(value, "userCustomMusicScorePublishedBanInfos"):
+            self.userCustomMusicScorePublishedBanInfos = _get_key(value, "userCustomMusicScorePublishedBanInfos")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_UserHomeRefreshResponse':
@@ -37557,6 +37908,7 @@ class Sekai_UserLiveRequest:
     boostCount: Optional[int] = None
     isAuto: Optional[bool] = None
     musicCategoryName: Optional[str] = None
+    customMusicScoreId: Optional[str] = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -37574,6 +37926,8 @@ class Sekai_UserLiveRequest:
             out["isAuto"] = self.isAuto
         if self.musicCategoryName is not None:
             out["musicCategoryName"] = self.musicCategoryName
+        if self.customMusicScoreId is not None:
+            out["customMusicScoreId"] = self.customMusicScoreId
         return out
 
     def encode(self) -> bytes:
@@ -37594,6 +37948,8 @@ class Sekai_UserLiveRequest:
             self.isAuto = _get_key(value, "isAuto")
         if _has_key(value, "musicCategoryName"):
             self.musicCategoryName = _get_key(value, "musicCategoryName")
+        if _has_key(value, "customMusicScoreId"):
+            self.customMusicScoreId = _get_key(value, "customMusicScoreId")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_UserLiveRequest':
@@ -37843,6 +38199,7 @@ class Sekai_UserLiveClearResponse:
     userLivePoint: Any = None
     isEventMaintenance: Optional[bool] = None
     isInBreakTime: Optional[bool] = None
+    customMusicScoreLiveResult: Any = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -37908,6 +38265,8 @@ class Sekai_UserLiveClearResponse:
             out["isEventMaintenance"] = self.isEventMaintenance
         if self.isInBreakTime is not None:
             out["isInBreakTime"] = self.isInBreakTime
+        if self.customMusicScoreLiveResult is not None:
+            out["customMusicScoreLiveResult"] = self.customMusicScoreLiveResult
         return out
 
     def encode(self) -> bytes:
@@ -37976,6 +38335,8 @@ class Sekai_UserLiveClearResponse:
             self.isEventMaintenance = _get_key(value, "isEventMaintenance")
         if _has_key(value, "isInBreakTime"):
             self.isInBreakTime = _get_key(value, "isInBreakTime")
+        if _has_key(value, "customMusicScoreLiveResult"):
+            self.customMusicScoreLiveResult = _get_key(value, "customMusicScoreLiveResult")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_UserLiveClearResponse':
@@ -38509,6 +38870,7 @@ class Sekai_MultiLiveRequest:
     selectedMusicId4: Optional[int] = None
     selectedMusicId5: Optional[int] = None
     privateRoomSettings: Any = None
+    customMusicScoreId: Optional[str] = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -38552,6 +38914,8 @@ class Sekai_MultiLiveRequest:
             out["selectedMusicId5"] = self.selectedMusicId5
         if self.privateRoomSettings is not None:
             out["privateRoomSettings"] = self.privateRoomSettings
+        if self.customMusicScoreId is not None:
+            out["customMusicScoreId"] = self.customMusicScoreId
         return out
 
     def encode(self) -> bytes:
@@ -38598,6 +38962,8 @@ class Sekai_MultiLiveRequest:
             self.selectedMusicId5 = _get_key(value, "selectedMusicId5")
         if _has_key(value, "privateRoomSettings"):
             self.privateRoomSettings = _get_key(value, "privateRoomSettings")
+        if _has_key(value, "customMusicScoreId"):
+            self.customMusicScoreId = _get_key(value, "customMusicScoreId")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_MultiLiveRequest':
@@ -38648,6 +39014,7 @@ class Sekai_UserMultiLiveRequest:
     boostCount: Optional[int] = None
     musicCategoryName: Optional[str] = None
     privateRoomSettings: Any = None
+    customMusicScoreId: Optional[str] = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -38671,6 +39038,8 @@ class Sekai_UserMultiLiveRequest:
             out["musicCategoryName"] = self.musicCategoryName
         if self.privateRoomSettings is not None:
             out["privateRoomSettings"] = self.privateRoomSettings
+        if self.customMusicScoreId is not None:
+            out["customMusicScoreId"] = self.customMusicScoreId
         return out
 
     def encode(self) -> bytes:
@@ -38697,6 +39066,8 @@ class Sekai_UserMultiLiveRequest:
             self.musicCategoryName = _get_key(value, "musicCategoryName")
         if _has_key(value, "privateRoomSettings"):
             self.privateRoomSettings = _get_key(value, "privateRoomSettings")
+        if _has_key(value, "customMusicScoreId"):
+            self.customMusicScoreId = _get_key(value, "customMusicScoreId")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_UserMultiLiveRequest':
@@ -38961,6 +39332,7 @@ class Sekai_UserMultiLiveClearResponse:
     userLivePoint: Any = None
     isEventMaintenance: Optional[bool] = None
     isInBreakTime: Optional[bool] = None
+    customMusicScoreLiveResult: Any = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -39030,6 +39402,8 @@ class Sekai_UserMultiLiveClearResponse:
             out["isEventMaintenance"] = self.isEventMaintenance
         if self.isInBreakTime is not None:
             out["isInBreakTime"] = self.isInBreakTime
+        if self.customMusicScoreLiveResult is not None:
+            out["customMusicScoreLiveResult"] = self.customMusicScoreLiveResult
         return out
 
     def encode(self) -> bytes:
@@ -39102,6 +39476,8 @@ class Sekai_UserMultiLiveClearResponse:
             self.isEventMaintenance = _get_key(value, "isEventMaintenance")
         if _has_key(value, "isInBreakTime"):
             self.isInBreakTime = _get_key(value, "isInBreakTime")
+        if _has_key(value, "customMusicScoreLiveResult"):
+            self.customMusicScoreLiveResult = _get_key(value, "customMusicScoreLiveResult")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_UserMultiLiveClearResponse':
@@ -44224,6 +44600,7 @@ class Sekai_ApplicationLocalSettings:
     LastSelectedLiveBoostDialogTabIndex: Optional[int] = None
     MusicShopSortFilterData: Any = None
     AnotherMusicShopSortFilterData: Any = None
+    MusicScoreMakerMusicSelectSortFilterData: Any = None
     StampMissionPanelCheckStatusDictionary: Any = None
     mysekaiInventorySortFilterConfigs: Any = None
     MysekaiFixtureFilteredData: Any = None
@@ -44409,6 +44786,8 @@ class Sekai_ApplicationLocalSettings:
             out["MusicShopSortFilterData"] = self.MusicShopSortFilterData
         if self.AnotherMusicShopSortFilterData is not None:
             out["AnotherMusicShopSortFilterData"] = self.AnotherMusicShopSortFilterData
+        if self.MusicScoreMakerMusicSelectSortFilterData is not None:
+            out["MusicScoreMakerMusicSelectSortFilterData"] = self.MusicScoreMakerMusicSelectSortFilterData
         if self.StampMissionPanelCheckStatusDictionary is not None:
             out["StampMissionPanelCheckStatusDictionary"] = self.StampMissionPanelCheckStatusDictionary
         if self.mysekaiInventorySortFilterConfigs is not None:
@@ -44611,6 +44990,8 @@ class Sekai_ApplicationLocalSettings:
             self.MusicShopSortFilterData = _get_key(value, "MusicShopSortFilterData")
         if _has_key(value, "AnotherMusicShopSortFilterData"):
             self.AnotherMusicShopSortFilterData = _get_key(value, "AnotherMusicShopSortFilterData")
+        if _has_key(value, "MusicScoreMakerMusicSelectSortFilterData"):
+            self.MusicScoreMakerMusicSelectSortFilterData = _get_key(value, "MusicScoreMakerMusicSelectSortFilterData")
         if _has_key(value, "StampMissionPanelCheckStatusDictionary"):
             self.StampMissionPanelCheckStatusDictionary = _get_key(value, "StampMissionPanelCheckStatusDictionary")
         if _has_key(value, "MysekaiInventorySortFilterConfigs"):
@@ -46168,6 +46549,7 @@ class Sekai_LiveSettingData:
     CustomRoomIsDisplayPlayerInfo: Optional[bool] = None
     CustomRoomSelectedDifficulties: Any = None
     CustomRoomSelectedMusicType: Optional[int] = None
+    ScoreSelectType: Optional[int] = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -46233,6 +46615,8 @@ class Sekai_LiveSettingData:
             out["CustomRoomSelectedDifficulties"] = self.CustomRoomSelectedDifficulties
         if self.CustomRoomSelectedMusicType is not None:
             out["CustomRoomSelectedMusicType"] = self.CustomRoomSelectedMusicType
+        if self.ScoreSelectType is not None:
+            out["ScoreSelectType"] = self.ScoreSelectType
         return out
 
     def encode(self) -> bytes:
@@ -46301,6 +46685,8 @@ class Sekai_LiveSettingData:
             self.CustomRoomSelectedDifficulties = _get_key(value, "CustomRoomSelectedDifficulties")
         if _has_key(value, "CustomRoomSelectedMusicType"):
             self.CustomRoomSelectedMusicType = _get_key(value, "CustomRoomSelectedMusicType")
+        if _has_key(value, "ScoreSelectType"):
+            self.ScoreSelectType = _get_key(value, "ScoreSelectType")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_LiveSettingData':
@@ -46332,11 +46718,14 @@ class Sekai_MusicSettingDataList:
 class Sekai_MusicSettingData:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicSettingData"]
     VocalId: Optional[int] = None
+    CustomMusicScoreIds: Any = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
         if self.VocalId is not None:
             out["VocalId"] = self.VocalId
+        if self.CustomMusicScoreIds is not None:
+            out["CustomMusicScoreIds"] = self.CustomMusicScoreIds
         return out
 
     def encode(self) -> bytes:
@@ -46345,6 +46734,8 @@ class Sekai_MusicSettingData:
     def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicSettingData':
         if _has_key(value, "VocalId"):
             self.VocalId = _get_key(value, "VocalId")
+        if _has_key(value, "CustomMusicScoreIds"):
+            self.CustomMusicScoreIds = _get_key(value, "CustomMusicScoreIds")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_MusicSettingData':
@@ -46583,6 +46974,60 @@ class Sekai_MusicShop_SortData:
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
+class Sekai_MusicPlayHistory_MusicPlayHistoryData:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicPlayHistory_MusicPlayHistoryData"]
+    Entries: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.Entries is not None:
+            out["Entries"] = self.Entries
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicPlayHistory_MusicPlayHistoryData':
+        if _has_key(value, "Entries"):
+            self.Entries = _get_key(value, "Entries")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_MusicPlayHistory_MusicPlayHistoryData':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_MusicPlayHistory_MusicPlayHistoryEntry:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicPlayHistory_MusicPlayHistoryEntry"]
+    MusicId: Optional[int] = None
+    Difficulty: Any = None
+    PlayedAtUnixTime: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.MusicId is not None:
+            out["MusicId"] = self.MusicId
+        if self.Difficulty is not None:
+            out["Difficulty"] = self.Difficulty
+        if self.PlayedAtUnixTime is not None:
+            out["PlayedAtUnixTime"] = self.PlayedAtUnixTime
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicPlayHistory_MusicPlayHistoryEntry':
+        if _has_key(value, "MusicId"):
+            self.MusicId = _get_key(value, "MusicId")
+        if _has_key(value, "Difficulty"):
+            self.Difficulty = _get_key(value, "Difficulty")
+        if _has_key(value, "PlayedAtUnixTime"):
+            self.PlayedAtUnixTime = _get_key(value, "PlayedAtUnixTime")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_MusicPlayHistory_MusicPlayHistoryEntry':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
 class Sekai_ImageCache_ImageCache:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ImageCache_ImageCache"]
     ImageData: Any = None
@@ -46681,6 +47126,7 @@ class Sekai_Multiplay_MultiLivePartyMember:
     FriendRequestStatus: Any = None
     MemberCharacterRank: Any = None
     PlayerFrameId: Optional[int] = None
+    CustomScoreId: Optional[str] = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -46734,6 +47180,8 @@ class Sekai_Multiplay_MultiLivePartyMember:
             out["MemberCharacterRank"] = self.MemberCharacterRank
         if self.PlayerFrameId is not None:
             out["PlayerFrameId"] = self.PlayerFrameId
+        if self.CustomScoreId is not None:
+            out["CustomScoreId"] = self.CustomScoreId
         return out
 
     def encode(self) -> bytes:
@@ -46790,6 +47238,8 @@ class Sekai_Multiplay_MultiLivePartyMember:
             self.MemberCharacterRank = _get_key(value, "MemberCharacterRank")
         if _has_key(value, "PlayerFrameId"):
             self.PlayerFrameId = _get_key(value, "PlayerFrameId")
+        if _has_key(value, "CustomScoreId"):
+            self.CustomScoreId = _get_key(value, "CustomScoreId")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_Multiplay_MultiLivePartyMember':
@@ -47489,6 +47939,7 @@ class Sekai_MultiLive_PlayerInfo:
     Index: Optional[int] = None
     Info: Any = None
     Difficulty: Optional[str] = None
+    CustomScoreId: Optional[str] = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -47502,6 +47953,8 @@ class Sekai_MultiLive_PlayerInfo:
             out["Info"] = self.Info
         if self.Difficulty is not None:
             out["Difficulty"] = self.Difficulty
+        if self.CustomScoreId is not None:
+            out["CustomScoreId"] = self.CustomScoreId
         return out
 
     def encode(self) -> bytes:
@@ -47518,6 +47971,8 @@ class Sekai_MultiLive_PlayerInfo:
             self.Info = _get_key(value, "Info")
         if _has_key(value, "Difficulty"):
             self.Difficulty = _get_key(value, "Difficulty")
+        if _has_key(value, "CustomScoreId"):
+            self.CustomScoreId = _get_key(value, "CustomScoreId")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_MultiLive_PlayerInfo':
@@ -48038,6 +48493,7 @@ class Sekai_MultiLive_CustomRoomSettingData:
     musicSelectionType: Any = None
     musicDifficultyTypes: Any = None
     isDisplayPlayerInfo: Optional[bool] = None
+    scoreSelectType: Any = None
 
     def to_msgpack_map(self) -> MsgpackMap:
         out: MsgpackMap = {}
@@ -48049,6 +48505,8 @@ class Sekai_MultiLive_CustomRoomSettingData:
             out["MusicDifficultyTypes"] = self.musicDifficultyTypes
         if self.isDisplayPlayerInfo is not None:
             out["IsDisplayPlayerInfo"] = self.isDisplayPlayerInfo
+        if self.scoreSelectType is not None:
+            out["ScoreSelectType"] = self.scoreSelectType
         return out
 
     def encode(self) -> bytes:
@@ -48063,6 +48521,8 @@ class Sekai_MultiLive_CustomRoomSettingData:
             self.musicDifficultyTypes = _get_key(value, "MusicDifficultyTypes")
         if _has_key(value, "IsDisplayPlayerInfo"):
             self.isDisplayPlayerInfo = _get_key(value, "IsDisplayPlayerInfo")
+        if _has_key(value, "ScoreSelectType"):
+            self.scoreSelectType = _get_key(value, "ScoreSelectType")
         return self
 
     def decode(self, data: bytes) -> 'Sekai_MultiLive_CustomRoomSettingData':
@@ -53641,6 +54101,98 @@ class Sekai_ApiData_MasterCostume3dModelNotAvailablePattern:
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
+class Sekai_ApiData_MasterCustomMusicScoreOfficialCreator:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_MasterCustomMusicScoreOfficialCreator"]
+    id: Optional[int] = None
+    scoreId: Optional[str] = None
+    customMusicScoreOfficialCreatorProfileId: Optional[int] = None
+    musicId: Optional[int] = None
+    musicDifficultyType: Optional[str] = None
+    playLevel: Optional[int] = None
+    title: Optional[str] = None
+    description: Optional[str] = None
+    tagId1: Optional[int] = None
+    tagId2: Optional[int] = None
+    tagId3: Optional[int] = None
+    isDerivativeAllowed: Optional[bool] = None
+    previewStartTimeSec: Optional[float] = None
+    publishedStartAt: Optional[int] = None
+    publishedEndAt: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.id is not None:
+            out["id"] = self.id
+        if self.scoreId is not None:
+            out["scoreId"] = self.scoreId
+        if self.customMusicScoreOfficialCreatorProfileId is not None:
+            out["customMusicScoreOfficialCreatorProfileId"] = self.customMusicScoreOfficialCreatorProfileId
+        if self.musicId is not None:
+            out["musicId"] = self.musicId
+        if self.musicDifficultyType is not None:
+            out["musicDifficultyType"] = self.musicDifficultyType
+        if self.playLevel is not None:
+            out["playLevel"] = self.playLevel
+        if self.title is not None:
+            out["title"] = self.title
+        if self.description is not None:
+            out["description"] = self.description
+        if self.tagId1 is not None:
+            out["tagId1"] = self.tagId1
+        if self.tagId2 is not None:
+            out["tagId2"] = self.tagId2
+        if self.tagId3 is not None:
+            out["tagId3"] = self.tagId3
+        if self.isDerivativeAllowed is not None:
+            out["isDerivativeAllowed"] = self.isDerivativeAllowed
+        if self.previewStartTimeSec is not None:
+            out["previewStartTimeSec"] = self.previewStartTimeSec
+        if self.publishedStartAt is not None:
+            out["publishedStartAt"] = self.publishedStartAt
+        if self.publishedEndAt is not None:
+            out["publishedEndAt"] = self.publishedEndAt
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_MasterCustomMusicScoreOfficialCreator':
+        if _has_key(value, "id"):
+            self.id = _get_key(value, "id")
+        if _has_key(value, "scoreId"):
+            self.scoreId = _get_key(value, "scoreId")
+        if _has_key(value, "customMusicScoreOfficialCreatorProfileId"):
+            self.customMusicScoreOfficialCreatorProfileId = _get_key(value, "customMusicScoreOfficialCreatorProfileId")
+        if _has_key(value, "musicId"):
+            self.musicId = _get_key(value, "musicId")
+        if _has_key(value, "musicDifficultyType"):
+            self.musicDifficultyType = _get_key(value, "musicDifficultyType")
+        if _has_key(value, "playLevel"):
+            self.playLevel = _get_key(value, "playLevel")
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "description"):
+            self.description = _get_key(value, "description")
+        if _has_key(value, "tagId1"):
+            self.tagId1 = _get_key(value, "tagId1")
+        if _has_key(value, "tagId2"):
+            self.tagId2 = _get_key(value, "tagId2")
+        if _has_key(value, "tagId3"):
+            self.tagId3 = _get_key(value, "tagId3")
+        if _has_key(value, "isDerivativeAllowed"):
+            self.isDerivativeAllowed = _get_key(value, "isDerivativeAllowed")
+        if _has_key(value, "previewStartTimeSec"):
+            self.previewStartTimeSec = _get_key(value, "previewStartTimeSec")
+        if _has_key(value, "publishedStartAt"):
+            self.publishedStartAt = _get_key(value, "publishedStartAt")
+        if _has_key(value, "publishedEndAt"):
+            self.publishedEndAt = _get_key(value, "publishedEndAt")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_MasterCustomMusicScoreOfficialCreator':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
 class Sekai_ApiData_MasterCustomProfileCollectionResourceUnit:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_MasterCustomProfileCollectionResourceUnit"]
     id: Optional[int] = None
@@ -58029,6 +58581,118 @@ class Sekai_ApiData_UserBillingShopItemExchangeResponse:
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
+class Sekai_ApiData_UserCustomMusicScorePublishedResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScorePublishedResponse"]
+    userCustomMusicScoreInfoJson: Any = None
+    userCustomMusicScoreId: Optional[str] = None
+    userId: Optional[int] = None
+    userName: Optional[str] = None
+    musicId: Optional[int] = None
+    customMusicScoreTags: Any = None
+    musicDifficultyType: Optional[str] = None
+    playLevel: Optional[int] = None
+    description: Optional[str] = None
+    isDerivativeAllowed: Optional[bool] = None
+    previewStartTimeSec: Optional[float] = None
+    publishedAt: Optional[int] = None
+    reviewCount: Optional[int] = None
+    playCount: Optional[int] = None
+    fullComboRate: Optional[float] = None
+    customMusicScoreSearchSortValue: Optional[float] = None
+    playResult: Optional[str] = None
+    isReviewed: Optional[bool] = None
+    isReviewAllowed: Optional[bool] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreInfoJson is not None:
+            out["userCustomMusicScoreInfoJson"] = self.userCustomMusicScoreInfoJson
+        if self.userCustomMusicScoreId is not None:
+            out["userCustomMusicScoreId"] = self.userCustomMusicScoreId
+        if self.userId is not None:
+            out["userId"] = self.userId
+        if self.userName is not None:
+            out["userName"] = self.userName
+        if self.musicId is not None:
+            out["musicId"] = self.musicId
+        if self.customMusicScoreTags is not None:
+            out["customMusicScoreTags"] = self.customMusicScoreTags
+        if self.musicDifficultyType is not None:
+            out["musicDifficultyType"] = self.musicDifficultyType
+        if self.playLevel is not None:
+            out["playLevel"] = self.playLevel
+        if self.description is not None:
+            out["description"] = self.description
+        if self.isDerivativeAllowed is not None:
+            out["isDerivativeAllowed"] = self.isDerivativeAllowed
+        if self.previewStartTimeSec is not None:
+            out["previewStartTimeSec"] = self.previewStartTimeSec
+        if self.publishedAt is not None:
+            out["publishedAt"] = self.publishedAt
+        if self.reviewCount is not None:
+            out["reviewCount"] = self.reviewCount
+        if self.playCount is not None:
+            out["playCount"] = self.playCount
+        if self.fullComboRate is not None:
+            out["fullComboRate"] = self.fullComboRate
+        if self.customMusicScoreSearchSortValue is not None:
+            out["customMusicScoreSearchSortValue"] = self.customMusicScoreSearchSortValue
+        if self.playResult is not None:
+            out["playResult"] = self.playResult
+        if self.isReviewed is not None:
+            out["isReviewed"] = self.isReviewed
+        if self.isReviewAllowed is not None:
+            out["isReviewAllowed"] = self.isReviewAllowed
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScorePublishedResponse':
+        if _has_key(value, "userCustomMusicScoreInfoJson"):
+            self.userCustomMusicScoreInfoJson = _get_key(value, "userCustomMusicScoreInfoJson")
+        if _has_key(value, "userCustomMusicScoreId"):
+            self.userCustomMusicScoreId = _get_key(value, "userCustomMusicScoreId")
+        if _has_key(value, "userId"):
+            self.userId = _get_key(value, "userId")
+        if _has_key(value, "userName"):
+            self.userName = _get_key(value, "userName")
+        if _has_key(value, "musicId"):
+            self.musicId = _get_key(value, "musicId")
+        if _has_key(value, "customMusicScoreTags"):
+            self.customMusicScoreTags = _get_key(value, "customMusicScoreTags")
+        if _has_key(value, "musicDifficultyType"):
+            self.musicDifficultyType = _get_key(value, "musicDifficultyType")
+        if _has_key(value, "playLevel"):
+            self.playLevel = _get_key(value, "playLevel")
+        if _has_key(value, "description"):
+            self.description = _get_key(value, "description")
+        if _has_key(value, "isDerivativeAllowed"):
+            self.isDerivativeAllowed = _get_key(value, "isDerivativeAllowed")
+        if _has_key(value, "previewStartTimeSec"):
+            self.previewStartTimeSec = _get_key(value, "previewStartTimeSec")
+        if _has_key(value, "publishedAt"):
+            self.publishedAt = _get_key(value, "publishedAt")
+        if _has_key(value, "reviewCount"):
+            self.reviewCount = _get_key(value, "reviewCount")
+        if _has_key(value, "playCount"):
+            self.playCount = _get_key(value, "playCount")
+        if _has_key(value, "fullComboRate"):
+            self.fullComboRate = _get_key(value, "fullComboRate")
+        if _has_key(value, "customMusicScoreSearchSortValue"):
+            self.customMusicScoreSearchSortValue = _get_key(value, "customMusicScoreSearchSortValue")
+        if _has_key(value, "playResult"):
+            self.playResult = _get_key(value, "playResult")
+        if _has_key(value, "isReviewed"):
+            self.isReviewed = _get_key(value, "isReviewed")
+        if _has_key(value, "isReviewAllowed"):
+            self.isReviewAllowed = _get_key(value, "isReviewAllowed")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScorePublishedResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
 class Sekai_ApiData_UserPlayerFrame:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserPlayerFrame"]
     playerFrameId: Optional[int] = None
@@ -58250,6 +58914,225 @@ class Sekai_ApiData_UserWorldBloomSupportDeck:
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
+class Sekai_ApiData_CustomMusicScoreBookmarkListResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_CustomMusicScoreBookmarkListResponse"]
+    userCustomMusicScoreBookmarkList: Any = None
+    customMusicScoreOfficialCreatorBookmarkList: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreBookmarkList is not None:
+            out["userCustomMusicScoreBookmarkList"] = self.userCustomMusicScoreBookmarkList
+        if self.customMusicScoreOfficialCreatorBookmarkList is not None:
+            out["customMusicScoreOfficialCreatorBookmarkList"] = self.customMusicScoreOfficialCreatorBookmarkList
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_CustomMusicScoreBookmarkListResponse':
+        if _has_key(value, "userCustomMusicScoreBookmarkList"):
+            self.userCustomMusicScoreBookmarkList = _get_key(value, "userCustomMusicScoreBookmarkList")
+        if _has_key(value, "customMusicScoreOfficialCreatorBookmarkList"):
+            self.customMusicScoreOfficialCreatorBookmarkList = _get_key(value, "customMusicScoreOfficialCreatorBookmarkList")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_CustomMusicScoreBookmarkListResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_CustomMusicScoreLiveResultResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_CustomMusicScoreLiveResultResponse"]
+    userCustomMusicScoreLiveResult: Any = None
+    officialMusicScoreLiveResult: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreLiveResult is not None:
+            out["userCustomMusicScoreLiveResult"] = self.userCustomMusicScoreLiveResult
+        if self.officialMusicScoreLiveResult is not None:
+            out["officialMusicScoreLiveResult"] = self.officialMusicScoreLiveResult
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_CustomMusicScoreLiveResultResponse':
+        if _has_key(value, "userCustomMusicScoreLiveResult"):
+            self.userCustomMusicScoreLiveResult = _get_key(value, "userCustomMusicScoreLiveResult")
+        if _has_key(value, "officialMusicScoreLiveResult"):
+            self.officialMusicScoreLiveResult = _get_key(value, "officialMusicScoreLiveResult")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_CustomMusicScoreLiveResultResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse"]
+    customMusicScoreOfficialCreatorPublished: Any = None
+    bookmarkedAt: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.customMusicScoreOfficialCreatorPublished is not None:
+            out["customMusicScoreOfficialCreatorPublished"] = self.customMusicScoreOfficialCreatorPublished
+        if self.bookmarkedAt is not None:
+            out["bookmarkedAt"] = self.bookmarkedAt
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse':
+        if _has_key(value, "customMusicScoreOfficialCreatorPublished"):
+            self.customMusicScoreOfficialCreatorPublished = _get_key(value, "customMusicScoreOfficialCreatorPublished")
+        if _has_key(value, "bookmarkedAt"):
+            self.bookmarkedAt = _get_key(value, "bookmarkedAt")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse"]
+    customMusicScoreId: Optional[str] = None
+    reviewCount: Optional[int] = None
+    playCount: Optional[int] = None
+    fullComboRate: Optional[float] = None
+    customMusicScoreSearchSortValue: Optional[float] = None
+    playResult: Optional[str] = None
+    isReviewed: Optional[bool] = None
+    isReviewAllowed: Optional[bool] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.customMusicScoreId is not None:
+            out["customMusicScoreId"] = self.customMusicScoreId
+        if self.reviewCount is not None:
+            out["reviewCount"] = self.reviewCount
+        if self.playCount is not None:
+            out["playCount"] = self.playCount
+        if self.fullComboRate is not None:
+            out["fullComboRate"] = self.fullComboRate
+        if self.customMusicScoreSearchSortValue is not None:
+            out["customMusicScoreSearchSortValue"] = self.customMusicScoreSearchSortValue
+        if self.playResult is not None:
+            out["playResult"] = self.playResult
+        if self.isReviewed is not None:
+            out["isReviewed"] = self.isReviewed
+        if self.isReviewAllowed is not None:
+            out["isReviewAllowed"] = self.isReviewAllowed
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse':
+        if _has_key(value, "customMusicScoreId"):
+            self.customMusicScoreId = _get_key(value, "customMusicScoreId")
+        if _has_key(value, "reviewCount"):
+            self.reviewCount = _get_key(value, "reviewCount")
+        if _has_key(value, "playCount"):
+            self.playCount = _get_key(value, "playCount")
+        if _has_key(value, "fullComboRate"):
+            self.fullComboRate = _get_key(value, "fullComboRate")
+        if _has_key(value, "customMusicScoreSearchSortValue"):
+            self.customMusicScoreSearchSortValue = _get_key(value, "customMusicScoreSearchSortValue")
+        if _has_key(value, "playResult"):
+            self.playResult = _get_key(value, "playResult")
+        if _has_key(value, "isReviewed"):
+            self.isReviewed = _get_key(value, "isReviewed")
+        if _has_key(value, "isReviewAllowed"):
+            self.isReviewAllowed = _get_key(value, "isReviewAllowed")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_CustomMusicScorePublishedSearchListResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_CustomMusicScorePublishedSearchListResponse"]
+    userCustomMusicScorePublishedList: Any = None
+    customMusicScoreOfficialCreatorPublishedList: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScorePublishedList is not None:
+            out["userCustomMusicScorePublishedList"] = self.userCustomMusicScorePublishedList
+        if self.customMusicScoreOfficialCreatorPublishedList is not None:
+            out["customMusicScoreOfficialCreatorPublishedList"] = self.customMusicScoreOfficialCreatorPublishedList
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_CustomMusicScorePublishedSearchListResponse':
+        if _has_key(value, "userCustomMusicScorePublishedList"):
+            self.userCustomMusicScorePublishedList = _get_key(value, "userCustomMusicScorePublishedList")
+        if _has_key(value, "customMusicScoreOfficialCreatorPublishedList"):
+            self.customMusicScoreOfficialCreatorPublishedList = _get_key(value, "customMusicScoreOfficialCreatorPublishedList")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_CustomMusicScorePublishedSearchListResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_CustomMusicScorePublishedSearchResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_CustomMusicScorePublishedSearchResponse"]
+    userCustomMusicScoreInfoJson: Any = None
+    customMusicScoreOfficialCreatorPublishedResponseJson: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreInfoJson is not None:
+            out["userCustomMusicScoreInfoJson"] = self.userCustomMusicScoreInfoJson
+        if self.customMusicScoreOfficialCreatorPublishedResponseJson is not None:
+            out["customMusicScoreOfficialCreatorPublishedResponseJson"] = self.customMusicScoreOfficialCreatorPublishedResponseJson
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_CustomMusicScorePublishedSearchResponse':
+        if _has_key(value, "userCustomMusicScoreInfoJson"):
+            self.userCustomMusicScoreInfoJson = _get_key(value, "userCustomMusicScoreInfoJson")
+        if _has_key(value, "customMusicScoreOfficialCreatorPublishedResponseJson"):
+            self.customMusicScoreOfficialCreatorPublishedResponseJson = _get_key(value, "customMusicScoreOfficialCreatorPublishedResponseJson")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_CustomMusicScorePublishedSearchResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_CustomMusicScorePublishedTabListResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_CustomMusicScorePublishedTabListResponse"]
+    userCustomMusicScorePublishedList: Any = None
+    customMusicScoreOfficialCreatorPublishedList: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScorePublishedList is not None:
+            out["userCustomMusicScorePublishedList"] = self.userCustomMusicScorePublishedList
+        if self.customMusicScoreOfficialCreatorPublishedList is not None:
+            out["customMusicScoreOfficialCreatorPublishedList"] = self.customMusicScoreOfficialCreatorPublishedList
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_CustomMusicScorePublishedTabListResponse':
+        if _has_key(value, "userCustomMusicScorePublishedList"):
+            self.userCustomMusicScorePublishedList = _get_key(value, "userCustomMusicScorePublishedList")
+        if _has_key(value, "customMusicScoreOfficialCreatorPublishedList"):
+            self.customMusicScoreOfficialCreatorPublishedList = _get_key(value, "customMusicScoreOfficialCreatorPublishedList")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_CustomMusicScorePublishedTabListResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
 class Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest"]
     deliveryPoint: Optional[int] = None
@@ -58291,6 +59174,50 @@ class Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest:
         return self
 
     def decode(self, data: bytes) -> 'Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest"]
+    createCount: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.createCount is not None:
+            out["createCount"] = self.createCount
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest':
+        if _has_key(value, "createCount"):
+            self.createCount = _get_key(value, "createCount")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest"]
+    createCount: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.createCount is not None:
+            out["createCount"] = self.createCount
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest':
+        if _has_key(value, "createCount"):
+            self.createCount = _get_key(value, "createCount")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest':
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
@@ -59110,6 +60037,33 @@ class Sekai_ApiData_MysekaiToolUsed:
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
+class Sekai_ApiData_OfficialMusicScoreLiveResultResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_OfficialMusicScoreLiveResultResponse"]
+    customMusicScoreId: Optional[str] = None
+    isReviewed: Optional[bool] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.customMusicScoreId is not None:
+            out["customMusicScoreId"] = self.customMusicScoreId
+        if self.isReviewed is not None:
+            out["isReviewed"] = self.isReviewed
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_OfficialMusicScoreLiveResultResponse':
+        if _has_key(value, "customMusicScoreId"):
+            self.customMusicScoreId = _get_key(value, "customMusicScoreId")
+        if _has_key(value, "isReviewed"):
+            self.isReviewed = _get_key(value, "isReviewed")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_OfficialMusicScoreLiveResultResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
 class Sekai_ApiData_UserAdReward:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserAdReward"]
     id: Optional[int] = None
@@ -59417,6 +60371,517 @@ class Sekai_ApiData_UserBirthdayPartyGatherResponse:
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
+class Sekai_ApiData_UserCustomMusicScoreDraft:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreDraft"]
+    userCustomMusicScoreInfo: Any = None
+    slotNo: Optional[int] = None
+    memo: Optional[str] = None
+    baseMusicDifficultyId: Optional[int] = None
+    lastSavedAt: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreInfo is not None:
+            out["userCustomMusicScoreInfo"] = self.userCustomMusicScoreInfo
+        if self.slotNo is not None:
+            out["slotNo"] = self.slotNo
+        if self.memo is not None:
+            out["memo"] = self.memo
+        if self.baseMusicDifficultyId is not None:
+            out["baseMusicDifficultyId"] = self.baseMusicDifficultyId
+        if self.lastSavedAt is not None:
+            out["lastSavedAt"] = self.lastSavedAt
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreDraft':
+        if _has_key(value, "userCustomMusicScoreInfo"):
+            self.userCustomMusicScoreInfo = _get_key(value, "userCustomMusicScoreInfo")
+        if _has_key(value, "slotNo"):
+            self.slotNo = _get_key(value, "slotNo")
+        if _has_key(value, "memo"):
+            self.memo = _get_key(value, "memo")
+        if _has_key(value, "baseMusicDifficultyId"):
+            self.baseMusicDifficultyId = _get_key(value, "baseMusicDifficultyId")
+        if _has_key(value, "lastSavedAt"):
+            self.lastSavedAt = _get_key(value, "lastSavedAt")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreDraft':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest"]
+    baseMusicScoreId: Optional[str] = None
+    musicId: Optional[int] = None
+    title: Optional[str] = None
+    userCustomMusicScoreJsonGzipBase64: Optional[str] = None
+    memo: Optional[str] = None
+    baseMusicDifficultyId: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.baseMusicScoreId is not None:
+            out["baseMusicScoreId"] = self.baseMusicScoreId
+        if self.musicId is not None:
+            out["musicId"] = self.musicId
+        if self.title is not None:
+            out["title"] = self.title
+        if self.userCustomMusicScoreJsonGzipBase64 is not None:
+            out["userCustomMusicScoreJsonGzipBase64"] = self.userCustomMusicScoreJsonGzipBase64
+        if self.memo is not None:
+            out["memo"] = self.memo
+        if self.baseMusicDifficultyId is not None:
+            out["baseMusicDifficultyId"] = self.baseMusicDifficultyId
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest':
+        if _has_key(value, "baseMusicScoreId"):
+            self.baseMusicScoreId = _get_key(value, "baseMusicScoreId")
+        if _has_key(value, "musicId"):
+            self.musicId = _get_key(value, "musicId")
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "userCustomMusicScoreJsonGzipBase64"):
+            self.userCustomMusicScoreJsonGzipBase64 = _get_key(value, "userCustomMusicScoreJsonGzipBase64")
+        if _has_key(value, "memo"):
+            self.memo = _get_key(value, "memo")
+        if _has_key(value, "baseMusicDifficultyId"):
+            self.baseMusicDifficultyId = _get_key(value, "baseMusicDifficultyId")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScoreDraftEditRequest:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreDraftEditRequest"]
+    title: Optional[str] = None
+    memo: Optional[str] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.title is not None:
+            out["title"] = self.title
+        if self.memo is not None:
+            out["memo"] = self.memo
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreDraftEditRequest':
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "memo"):
+            self.memo = _get_key(value, "memo")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreDraftEditRequest':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScoreDraftListResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreDraftListResponse"]
+    userCustomMusicScoreDrafts: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreDrafts is not None:
+            out["userCustomMusicScoreDrafts"] = self.userCustomMusicScoreDrafts
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreDraftListResponse':
+        if _has_key(value, "userCustomMusicScoreDrafts"):
+            self.userCustomMusicScoreDrafts = _get_key(value, "userCustomMusicScoreDrafts")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreDraftListResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest"]
+    baseMusicScoreId: Optional[str] = None
+    musicId: Optional[int] = None
+    title: Optional[str] = None
+    userCustomMusicScoreJsonGzipBase64: Optional[str] = None
+    memo: Optional[str] = None
+    baseMusicDifficultyId: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.baseMusicScoreId is not None:
+            out["baseMusicScoreId"] = self.baseMusicScoreId
+        if self.musicId is not None:
+            out["musicId"] = self.musicId
+        if self.title is not None:
+            out["title"] = self.title
+        if self.userCustomMusicScoreJsonGzipBase64 is not None:
+            out["userCustomMusicScoreJsonGzipBase64"] = self.userCustomMusicScoreJsonGzipBase64
+        if self.memo is not None:
+            out["memo"] = self.memo
+        if self.baseMusicDifficultyId is not None:
+            out["baseMusicDifficultyId"] = self.baseMusicDifficultyId
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest':
+        if _has_key(value, "baseMusicScoreId"):
+            self.baseMusicScoreId = _get_key(value, "baseMusicScoreId")
+        if _has_key(value, "musicId"):
+            self.musicId = _get_key(value, "musicId")
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "userCustomMusicScoreJsonGzipBase64"):
+            self.userCustomMusicScoreJsonGzipBase64 = _get_key(value, "userCustomMusicScoreJsonGzipBase64")
+        if _has_key(value, "memo"):
+            self.memo = _get_key(value, "memo")
+        if _has_key(value, "baseMusicDifficultyId"):
+            self.baseMusicDifficultyId = _get_key(value, "baseMusicDifficultyId")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScoreInfo:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreInfo"]
+    baseMusicScoreId: Optional[str] = None
+    musicId: Optional[int] = None
+    title: Optional[str] = None
+    userCustomMusicScorePath: Optional[str] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.baseMusicScoreId is not None:
+            out["baseMusicScoreId"] = self.baseMusicScoreId
+        if self.musicId is not None:
+            out["musicId"] = self.musicId
+        if self.title is not None:
+            out["title"] = self.title
+        if self.userCustomMusicScorePath is not None:
+            out["userCustomMusicScorePath"] = self.userCustomMusicScorePath
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreInfo':
+        if _has_key(value, "baseMusicScoreId"):
+            self.baseMusicScoreId = _get_key(value, "baseMusicScoreId")
+        if _has_key(value, "musicId"):
+            self.musicId = _get_key(value, "musicId")
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "userCustomMusicScorePath"):
+            self.userCustomMusicScorePath = _get_key(value, "userCustomMusicScorePath")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreInfo':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScoreLiveResultResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreLiveResultResponse"]
+    userId: Optional[int] = None
+    userName: Optional[str] = None
+    customMusicScoreId: Optional[str] = None
+    musicId: Optional[int] = None
+    title: Optional[str] = None
+    musicDifficultyType: Optional[str] = None
+    playLevel: Optional[int] = None
+    isReviewed: Optional[bool] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userId is not None:
+            out["userId"] = self.userId
+        if self.userName is not None:
+            out["userName"] = self.userName
+        if self.customMusicScoreId is not None:
+            out["customMusicScoreId"] = self.customMusicScoreId
+        if self.musicId is not None:
+            out["musicId"] = self.musicId
+        if self.title is not None:
+            out["title"] = self.title
+        if self.musicDifficultyType is not None:
+            out["musicDifficultyType"] = self.musicDifficultyType
+        if self.playLevel is not None:
+            out["playLevel"] = self.playLevel
+        if self.isReviewed is not None:
+            out["isReviewed"] = self.isReviewed
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreLiveResultResponse':
+        if _has_key(value, "userId"):
+            self.userId = _get_key(value, "userId")
+        if _has_key(value, "userName"):
+            self.userName = _get_key(value, "userName")
+        if _has_key(value, "customMusicScoreId"):
+            self.customMusicScoreId = _get_key(value, "customMusicScoreId")
+        if _has_key(value, "musicId"):
+            self.musicId = _get_key(value, "musicId")
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "musicDifficultyType"):
+            self.musicDifficultyType = _get_key(value, "musicDifficultyType")
+        if _has_key(value, "playLevel"):
+            self.playLevel = _get_key(value, "playLevel")
+        if _has_key(value, "isReviewed"):
+            self.isReviewed = _get_key(value, "isReviewed")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreLiveResultResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScoreMiniDisplay:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScoreMiniDisplay"]
+    userCustomMusicScoreId: Optional[str] = None
+    title: Optional[str] = None
+    authorId: Optional[int] = None
+    authorName: Optional[str] = None
+    playLevel: Optional[int] = None
+    musicDifficulty: Optional[str] = None
+    userCustomMusicScorePath: Optional[str] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreId is not None:
+            out["userCustomMusicScoreId"] = self.userCustomMusicScoreId
+        if self.title is not None:
+            out["title"] = self.title
+        if self.authorId is not None:
+            out["authorId"] = self.authorId
+        if self.authorName is not None:
+            out["authorName"] = self.authorName
+        if self.playLevel is not None:
+            out["playLevel"] = self.playLevel
+        if self.musicDifficulty is not None:
+            out["musicDifficulty"] = self.musicDifficulty
+        if self.userCustomMusicScorePath is not None:
+            out["userCustomMusicScorePath"] = self.userCustomMusicScorePath
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScoreMiniDisplay':
+        if _has_key(value, "userCustomMusicScoreId"):
+            self.userCustomMusicScoreId = _get_key(value, "userCustomMusicScoreId")
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "authorId"):
+            self.authorId = _get_key(value, "authorId")
+        if _has_key(value, "authorName"):
+            self.authorName = _get_key(value, "authorName")
+        if _has_key(value, "playLevel"):
+            self.playLevel = _get_key(value, "playLevel")
+        if _has_key(value, "musicDifficulty"):
+            self.musicDifficulty = _get_key(value, "musicDifficulty")
+        if _has_key(value, "userCustomMusicScorePath"):
+            self.userCustomMusicScorePath = _get_key(value, "userCustomMusicScorePath")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScoreMiniDisplay':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScorePublishedBanInfo:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScorePublishedBanInfo"]
+    userCustomMusicScoreId: Optional[str] = None
+    message: Optional[str] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScoreId is not None:
+            out["userCustomMusicScoreId"] = self.userCustomMusicScoreId
+        if self.message is not None:
+            out["message"] = self.message
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScorePublishedBanInfo':
+        if _has_key(value, "userCustomMusicScoreId"):
+            self.userCustomMusicScoreId = _get_key(value, "userCustomMusicScoreId")
+        if _has_key(value, "message"):
+            self.message = _get_key(value, "message")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScorePublishedBanInfo':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse"]
+    userCustomMusicScorePublished: Any = None
+    bookmarkedAt: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScorePublished is not None:
+            out["userCustomMusicScorePublished"] = self.userCustomMusicScorePublished
+        if self.bookmarkedAt is not None:
+            out["bookmarkedAt"] = self.bookmarkedAt
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse':
+        if _has_key(value, "userCustomMusicScorePublished"):
+            self.userCustomMusicScorePublished = _get_key(value, "userCustomMusicScorePublished")
+        if _has_key(value, "bookmarkedAt"):
+            self.bookmarkedAt = _get_key(value, "bookmarkedAt")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse"]
+    userCustomMusicScorePublishedList: Any = None
+    userCustomMusicScoreAuthorProfile: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScorePublishedList is not None:
+            out["userCustomMusicScorePublishedList"] = self.userCustomMusicScorePublishedList
+        if self.userCustomMusicScoreAuthorProfile is not None:
+            out["userCustomMusicScoreAuthorProfile"] = self.userCustomMusicScoreAuthorProfile
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse':
+        if _has_key(value, "userCustomMusicScorePublishedList"):
+            self.userCustomMusicScorePublishedList = _get_key(value, "userCustomMusicScorePublishedList")
+        if _has_key(value, "userCustomMusicScoreAuthorProfile"):
+            self.userCustomMusicScoreAuthorProfile = _get_key(value, "userCustomMusicScoreAuthorProfile")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScorePublishedListResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScorePublishedListResponse"]
+    userCustomMusicScorePublishedList: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userCustomMusicScorePublishedList is not None:
+            out["userCustomMusicScorePublishedList"] = self.userCustomMusicScorePublishedList
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScorePublishedListResponse':
+        if _has_key(value, "userCustomMusicScorePublishedList"):
+            self.userCustomMusicScorePublishedList = _get_key(value, "userCustomMusicScorePublishedList")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScorePublishedListResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserCustomMusicScorePublishRequest:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserCustomMusicScorePublishRequest"]
+    musicId: Optional[int] = None
+    customMusicScoreTagIds: Any = None
+    musicDifficultyType: Optional[str] = None
+    playLevel: Optional[int] = None
+    title: Optional[str] = None
+    description: Optional[str] = None
+    userCustomMusicScoreJsonGzipBase64: Optional[str] = None
+    userCustomMusicScorePreviewJsonGzipBase64: Optional[str] = None
+    baseMusicScoreId: Optional[str] = None
+    isDerivativeAllowed: Optional[bool] = None
+    previewStartTimeSec: Optional[float] = None
+    totalNoteCount: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.musicId is not None:
+            out["musicId"] = self.musicId
+        if self.customMusicScoreTagIds is not None:
+            out["customMusicScoreTagIds"] = self.customMusicScoreTagIds
+        if self.musicDifficultyType is not None:
+            out["musicDifficultyType"] = self.musicDifficultyType
+        if self.playLevel is not None:
+            out["playLevel"] = self.playLevel
+        if self.title is not None:
+            out["title"] = self.title
+        if self.description is not None:
+            out["description"] = self.description
+        if self.userCustomMusicScoreJsonGzipBase64 is not None:
+            out["userCustomMusicScoreJsonGzipBase64"] = self.userCustomMusicScoreJsonGzipBase64
+        if self.userCustomMusicScorePreviewJsonGzipBase64 is not None:
+            out["userCustomMusicScorePreviewJsonGzipBase64"] = self.userCustomMusicScorePreviewJsonGzipBase64
+        if self.baseMusicScoreId is not None:
+            out["baseMusicScoreId"] = self.baseMusicScoreId
+        if self.isDerivativeAllowed is not None:
+            out["isDerivativeAllowed"] = self.isDerivativeAllowed
+        if self.previewStartTimeSec is not None:
+            out["previewStartTimeSec"] = self.previewStartTimeSec
+        if self.totalNoteCount is not None:
+            out["totalNoteCount"] = self.totalNoteCount
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserCustomMusicScorePublishRequest':
+        if _has_key(value, "musicId"):
+            self.musicId = _get_key(value, "musicId")
+        if _has_key(value, "customMusicScoreTagIds"):
+            self.customMusicScoreTagIds = _get_key(value, "customMusicScoreTagIds")
+        if _has_key(value, "musicDifficultyType"):
+            self.musicDifficultyType = _get_key(value, "musicDifficultyType")
+        if _has_key(value, "playLevel"):
+            self.playLevel = _get_key(value, "playLevel")
+        if _has_key(value, "title"):
+            self.title = _get_key(value, "title")
+        if _has_key(value, "description"):
+            self.description = _get_key(value, "description")
+        if _has_key(value, "userCustomMusicScoreJsonGzipBase64"):
+            self.userCustomMusicScoreJsonGzipBase64 = _get_key(value, "userCustomMusicScoreJsonGzipBase64")
+        if _has_key(value, "userCustomMusicScorePreviewJsonGzipBase64"):
+            self.userCustomMusicScorePreviewJsonGzipBase64 = _get_key(value, "userCustomMusicScorePreviewJsonGzipBase64")
+        if _has_key(value, "baseMusicScoreId"):
+            self.baseMusicScoreId = _get_key(value, "baseMusicScoreId")
+        if _has_key(value, "isDerivativeAllowed"):
+            self.isDerivativeAllowed = _get_key(value, "isDerivativeAllowed")
+        if _has_key(value, "previewStartTimeSec"):
+            self.previewStartTimeSec = _get_key(value, "previewStartTimeSec")
+        if _has_key(value, "totalNoteCount"):
+            self.totalNoteCount = _get_key(value, "totalNoteCount")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserCustomMusicScorePublishRequest':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
 class Sekai_ApiData_UserEventRankingRewardConditionResponse:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserEventRankingRewardConditionResponse"]
     rewardCondition: Any = None
@@ -59610,6 +61075,60 @@ class Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse:
         return self
 
     def decode(self, data: bytes) -> 'Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse"]
+    userMultiLivePlayableCustomMusicScores: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userMultiLivePlayableCustomMusicScores is not None:
+            out["userMultiLivePlayableCustomMusicScores"] = self.userMultiLivePlayableCustomMusicScores
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse':
+        if _has_key(value, "userMultiLivePlayableCustomMusicScores"):
+            self.userMultiLivePlayableCustomMusicScores = _get_key(value, "userMultiLivePlayableCustomMusicScores")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse"]
+    userId: Optional[int] = None
+    userCustomMusicScores: Any = None
+    officialCustomMusicScoreIds: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.userId is not None:
+            out["userId"] = self.userId
+        if self.userCustomMusicScores is not None:
+            out["userCustomMusicScores"] = self.userCustomMusicScores
+        if self.officialCustomMusicScoreIds is not None:
+            out["officialCustomMusicScoreIds"] = self.officialCustomMusicScoreIds
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse':
+        if _has_key(value, "userId"):
+            self.userId = _get_key(value, "userId")
+        if _has_key(value, "userCustomMusicScores"):
+            self.userCustomMusicScores = _get_key(value, "userCustomMusicScores")
+        if _has_key(value, "officialCustomMusicScoreIds"):
+            self.officialCustomMusicScoreIds = _get_key(value, "officialCustomMusicScoreIds")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse':
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
@@ -63780,6 +65299,107 @@ class Sekai_ApiData_MasterCollaborationMode:
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass
+class Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel"]
+    id: Optional[int] = None
+    musicDifficultyType: Optional[str] = None
+    minPlayLevel: Optional[int] = None
+    maxPlayLevel: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.id is not None:
+            out["id"] = self.id
+        if self.musicDifficultyType is not None:
+            out["musicDifficultyType"] = self.musicDifficultyType
+        if self.minPlayLevel is not None:
+            out["minPlayLevel"] = self.minPlayLevel
+        if self.maxPlayLevel is not None:
+            out["maxPlayLevel"] = self.maxPlayLevel
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel':
+        if _has_key(value, "id"):
+            self.id = _get_key(value, "id")
+        if _has_key(value, "musicDifficultyType"):
+            self.musicDifficultyType = _get_key(value, "musicDifficultyType")
+        if _has_key(value, "minPlayLevel"):
+            self.minPlayLevel = _get_key(value, "minPlayLevel")
+        if _has_key(value, "maxPlayLevel"):
+            self.maxPlayLevel = _get_key(value, "maxPlayLevel")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile"]
+    id: Optional[int] = None
+    name: Optional[str] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.id is not None:
+            out["id"] = self.id
+        if self.name is not None:
+            out["name"] = self.name
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile':
+        if _has_key(value, "id"):
+            self.id = _get_key(value, "id")
+        if _has_key(value, "name"):
+            self.name = _get_key(value, "name")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_ApiData_MasterCustomMusicScoreTag:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_MasterCustomMusicScoreTag"]
+    id: Optional[int] = None
+    seq: Optional[int] = None
+    name: Optional[str] = None
+    isOfficialCreatorOnly: Optional[bool] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.id is not None:
+            out["id"] = self.id
+        if self.seq is not None:
+            out["seq"] = self.seq
+        if self.name is not None:
+            out["name"] = self.name
+        if self.isOfficialCreatorOnly is not None:
+            out["isOfficialCreatorOnly"] = self.isOfficialCreatorOnly
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_ApiData_MasterCustomMusicScoreTag':
+        if _has_key(value, "id"):
+            self.id = _get_key(value, "id")
+        if _has_key(value, "seq"):
+            self.seq = _get_key(value, "seq")
+        if _has_key(value, "name"):
+            self.name = _get_key(value, "name")
+        if _has_key(value, "isOfficialCreatorOnly"):
+            self.isOfficialCreatorOnly = _get_key(value, "isOfficialCreatorOnly")
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_ApiData_MasterCustomMusicScoreTag':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
 class Sekai_ApiData_MasterCustomProfileGachaShop:
     __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_ApiData_MasterCustomProfileGachaShop"]
     id: Optional[int] = None
@@ -67703,6 +69323,361 @@ class Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest:
         return self
 
     def decode(self, data: bytes) -> 'Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData"]
+    Id: Optional[str] = None
+    CopiedNoteList: Any = None
+    CopiedEventDataList: Any = None
+    CreatedAt: Optional[str] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.Id is not None:
+            out[0] = self.Id
+        if self.CopiedNoteList is not None:
+            out[1] = self.CopiedNoteList
+        if self.CopiedEventDataList is not None:
+            out[2] = self.CopiedEventDataList
+        if self.CreatedAt is not None:
+            out[3] = self.CreatedAt
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData':
+        if _has_key(value, 0):
+            self.Id = _get_key(value, 0)
+        if _has_key(value, 1):
+            self.CopiedNoteList = _get_key(value, 1)
+        if _has_key(value, 2):
+            self.CopiedEventDataList = _get_key(value, 2)
+        if _has_key(value, 3):
+            self.CreatedAt = _get_key(value, 3)
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData"]
+    Caches: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.Caches is not None:
+            out[0] = self.Caches
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData':
+        if _has_key(value, 0):
+            self.Caches = _get_key(value, 0)
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData"]
+    id: Optional[int] = None
+    eventType: Any = None
+    ticks: Optional[int] = None
+    changeValue: Any = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.id is not None:
+            out[0] = self.id
+        if self.eventType is not None:
+            out[1] = self.eventType
+        if self.ticks is not None:
+            out[2] = self.ticks
+        if self.changeValue is not None:
+            out[3] = self.changeValue
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData':
+        if _has_key(value, 0):
+            self.id = _get_key(value, 0)
+        if _has_key(value, 1):
+            self.eventType = _get_key(value, 1)
+        if _has_key(value, 2):
+            self.ticks = _get_key(value, 2)
+        if _has_key(value, 3):
+            self.changeValue = _get_key(value, 3)
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData"]
+    ZoomTimelineStep: Optional[float] = None
+    ZoomTimelineScaleMax: Optional[float] = None
+    ZoomTimelineScaleMin: Optional[float] = None
+    UndoStackLimit: Optional[int] = None
+    AutoSaveEnabled: Optional[bool] = None
+    AutoSaveInterval: Optional[int] = None
+    ShowFocusTicksRate: Optional[float] = None
+    TicksPerScrollStep: Optional[float] = None
+    EnableSwipeScroll: Optional[bool] = None
+    PlayMusicSEEnabled: Optional[bool] = None
+    SetStartMusicTimeMsEnabled: Optional[bool] = None
+    PlayStartEffectEnabled: Optional[bool] = None
+    TestPlayStartOffsetMs: Optional[int] = None
+    ShowBarLines: Optional[bool] = None
+    ShowBeatLines: Optional[bool] = None
+    ShowQuantizeLines: Optional[bool] = None
+    SelectedLayoutPatternIndex: Optional[int] = None
+    SelectedLayoutPatternIndexPortrait: Optional[int] = None
+    SelectedLayoutPatternIndexLandscape: Optional[int] = None
+    ScoreDisplayScaleHorizontal: Optional[float] = None
+    ScoreDisplayScaleVertical: Optional[float] = None
+    ToolWindowChildScale: Optional[float] = None
+    NoteEdgeWidth: Optional[float] = None
+    EnableInvalidPlacementCheck: Optional[bool] = None
+    AreaSelectPartialOverlap: Optional[bool] = None
+    NoteYScaleStartThreshold: Optional[float] = None
+    NoteYScaleEndThreshold: Optional[float] = None
+    NoteYScaleMin: Optional[float] = None
+    DrawSmallerTickToBack: Optional[bool] = None
+    MaxClipboardCacheCount: Optional[int] = None
+    AutoPlayEnabled: Optional[bool] = None
+    TestPlayLiveModeTypeRaw: Optional[int] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.ZoomTimelineStep is not None:
+            out[0] = self.ZoomTimelineStep
+        if self.ZoomTimelineScaleMax is not None:
+            out[1] = self.ZoomTimelineScaleMax
+        if self.ZoomTimelineScaleMin is not None:
+            out[2] = self.ZoomTimelineScaleMin
+        if self.UndoStackLimit is not None:
+            out[3] = self.UndoStackLimit
+        if self.AutoSaveEnabled is not None:
+            out[4] = self.AutoSaveEnabled
+        if self.AutoSaveInterval is not None:
+            out[5] = self.AutoSaveInterval
+        if self.ShowFocusTicksRate is not None:
+            out[6] = self.ShowFocusTicksRate
+        if self.TicksPerScrollStep is not None:
+            out[7] = self.TicksPerScrollStep
+        if self.EnableSwipeScroll is not None:
+            out[8] = self.EnableSwipeScroll
+        if self.PlayMusicSEEnabled is not None:
+            out[9] = self.PlayMusicSEEnabled
+        if self.SetStartMusicTimeMsEnabled is not None:
+            out[10] = self.SetStartMusicTimeMsEnabled
+        if self.PlayStartEffectEnabled is not None:
+            out[11] = self.PlayStartEffectEnabled
+        if self.TestPlayStartOffsetMs is not None:
+            out[12] = self.TestPlayStartOffsetMs
+        if self.ShowBarLines is not None:
+            out[13] = self.ShowBarLines
+        if self.ShowBeatLines is not None:
+            out[14] = self.ShowBeatLines
+        if self.ShowQuantizeLines is not None:
+            out[15] = self.ShowQuantizeLines
+        if self.SelectedLayoutPatternIndex is not None:
+            out[16] = self.SelectedLayoutPatternIndex
+        if self.SelectedLayoutPatternIndexPortrait is not None:
+            out[26] = self.SelectedLayoutPatternIndexPortrait
+        if self.SelectedLayoutPatternIndexLandscape is not None:
+            out[27] = self.SelectedLayoutPatternIndexLandscape
+        if self.ScoreDisplayScaleHorizontal is not None:
+            out[17] = self.ScoreDisplayScaleHorizontal
+        if self.ScoreDisplayScaleVertical is not None:
+            out[18] = self.ScoreDisplayScaleVertical
+        if self.ToolWindowChildScale is not None:
+            out[19] = self.ToolWindowChildScale
+        if self.NoteEdgeWidth is not None:
+            out[24] = self.NoteEdgeWidth
+        if self.EnableInvalidPlacementCheck is not None:
+            out[25] = self.EnableInvalidPlacementCheck
+        if self.AreaSelectPartialOverlap is not None:
+            out[28] = self.AreaSelectPartialOverlap
+        if self.NoteYScaleStartThreshold is not None:
+            out[29] = self.NoteYScaleStartThreshold
+        if self.NoteYScaleEndThreshold is not None:
+            out[30] = self.NoteYScaleEndThreshold
+        if self.NoteYScaleMin is not None:
+            out[31] = self.NoteYScaleMin
+        if self.DrawSmallerTickToBack is not None:
+            out[32] = self.DrawSmallerTickToBack
+        if self.MaxClipboardCacheCount is not None:
+            out[33] = self.MaxClipboardCacheCount
+        if self.AutoPlayEnabled is not None:
+            out[34] = self.AutoPlayEnabled
+        if self.TestPlayLiveModeTypeRaw is not None:
+            out[35] = self.TestPlayLiveModeTypeRaw
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData':
+        if _has_key(value, 0):
+            self.ZoomTimelineStep = _get_key(value, 0)
+        if _has_key(value, 1):
+            self.ZoomTimelineScaleMax = _get_key(value, 1)
+        if _has_key(value, 2):
+            self.ZoomTimelineScaleMin = _get_key(value, 2)
+        if _has_key(value, 3):
+            self.UndoStackLimit = _get_key(value, 3)
+        if _has_key(value, 4):
+            self.AutoSaveEnabled = _get_key(value, 4)
+        if _has_key(value, 5):
+            self.AutoSaveInterval = _get_key(value, 5)
+        if _has_key(value, 6):
+            self.ShowFocusTicksRate = _get_key(value, 6)
+        if _has_key(value, 7):
+            self.TicksPerScrollStep = _get_key(value, 7)
+        if _has_key(value, 8):
+            self.EnableSwipeScroll = _get_key(value, 8)
+        if _has_key(value, 9):
+            self.PlayMusicSEEnabled = _get_key(value, 9)
+        if _has_key(value, 10):
+            self.SetStartMusicTimeMsEnabled = _get_key(value, 10)
+        if _has_key(value, 11):
+            self.PlayStartEffectEnabled = _get_key(value, 11)
+        if _has_key(value, 12):
+            self.TestPlayStartOffsetMs = _get_key(value, 12)
+        if _has_key(value, 13):
+            self.ShowBarLines = _get_key(value, 13)
+        if _has_key(value, 14):
+            self.ShowBeatLines = _get_key(value, 14)
+        if _has_key(value, 15):
+            self.ShowQuantizeLines = _get_key(value, 15)
+        if _has_key(value, 16):
+            self.SelectedLayoutPatternIndex = _get_key(value, 16)
+        if _has_key(value, 26):
+            self.SelectedLayoutPatternIndexPortrait = _get_key(value, 26)
+        if _has_key(value, 27):
+            self.SelectedLayoutPatternIndexLandscape = _get_key(value, 27)
+        if _has_key(value, 17):
+            self.ScoreDisplayScaleHorizontal = _get_key(value, 17)
+        if _has_key(value, 18):
+            self.ScoreDisplayScaleVertical = _get_key(value, 18)
+        if _has_key(value, 19):
+            self.ToolWindowChildScale = _get_key(value, 19)
+        if _has_key(value, 24):
+            self.NoteEdgeWidth = _get_key(value, 24)
+        if _has_key(value, 25):
+            self.EnableInvalidPlacementCheck = _get_key(value, 25)
+        if _has_key(value, 28):
+            self.AreaSelectPartialOverlap = _get_key(value, 28)
+        if _has_key(value, 29):
+            self.NoteYScaleStartThreshold = _get_key(value, 29)
+        if _has_key(value, 30):
+            self.NoteYScaleEndThreshold = _get_key(value, 30)
+        if _has_key(value, 31):
+            self.NoteYScaleMin = _get_key(value, 31)
+        if _has_key(value, 32):
+            self.DrawSmallerTickToBack = _get_key(value, 32)
+        if _has_key(value, 33):
+            self.MaxClipboardCacheCount = _get_key(value, 33)
+        if _has_key(value, 34):
+            self.AutoPlayEnabled = _get_key(value, 34)
+        if _has_key(value, 35):
+            self.TestPlayLiveModeTypeRaw = _get_key(value, 35)
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData':
+        return self.from_msgpack_map(_unpack_map(data))
+
+@dataclass
+class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase:
+    __schema__: ClassVar[List[FieldInfo]] = schemas["Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase"]
+    id: Optional[int] = None
+    ticks: Optional[int] = None
+    laneStart: Optional[int] = None
+    laneEnd: Optional[int] = None
+    category: Any = None
+    type: Any = None
+    speedRatio: Optional[float] = None
+    noteLineType: Any = None
+    noteBaseType: Any = None
+    previousConnectionId: Optional[int] = None
+    nextConnectionId: Optional[int] = None
+    direction: Any = None
+    isSkip: Optional[bool] = None
+
+    def to_msgpack_map(self) -> MsgpackMap:
+        out: MsgpackMap = {}
+        if self.id is not None:
+            out[0] = self.id
+        if self.ticks is not None:
+            out[1] = self.ticks
+        if self.laneStart is not None:
+            out[2] = self.laneStart
+        if self.laneEnd is not None:
+            out[3] = self.laneEnd
+        if self.category is not None:
+            out[4] = self.category
+        if self.type is not None:
+            out[5] = self.type
+        if self.speedRatio is not None:
+            out[6] = self.speedRatio
+        if self.noteLineType is not None:
+            out[7] = self.noteLineType
+        if self.noteBaseType is not None:
+            out[8] = self.noteBaseType
+        if self.previousConnectionId is not None:
+            out[9] = self.previousConnectionId
+        if self.nextConnectionId is not None:
+            out[10] = self.nextConnectionId
+        if self.direction is not None:
+            out[11] = self.direction
+        if self.isSkip is not None:
+            out[12] = self.isSkip
+        return out
+
+    def encode(self) -> bytes:
+        return _pack_map(self.to_msgpack_map())
+
+    def from_msgpack_map(self, value: Mapping[Any, Any]) -> 'Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase':
+        if _has_key(value, 0):
+            self.id = _get_key(value, 0)
+        if _has_key(value, 1):
+            self.ticks = _get_key(value, 1)
+        if _has_key(value, 2):
+            self.laneStart = _get_key(value, 2)
+        if _has_key(value, 3):
+            self.laneEnd = _get_key(value, 3)
+        if _has_key(value, 4):
+            self.category = _get_key(value, 4)
+        if _has_key(value, 5):
+            self.type = _get_key(value, 5)
+        if _has_key(value, 6):
+            self.speedRatio = _get_key(value, 6)
+        if _has_key(value, 7):
+            self.noteLineType = _get_key(value, 7)
+        if _has_key(value, 8):
+            self.noteBaseType = _get_key(value, 8)
+        if _has_key(value, 9):
+            self.previousConnectionId = _get_key(value, 9)
+        if _has_key(value, 10):
+            self.nextConnectionId = _get_key(value, 10)
+        if _has_key(value, 11):
+            self.direction = _get_key(value, 11)
+        if _has_key(value, 12):
+            self.isSkip = _get_key(value, 12)
+        return self
+
+    def decode(self, data: bytes) -> 'Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase':
         return self.from_msgpack_map(_unpack_map(data))
 
 @dataclass

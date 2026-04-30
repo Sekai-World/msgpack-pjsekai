@@ -17,6 +17,7 @@ int Sekai_MultiLive_CustomRoomSettingData_pack(msgpack_packer *pk, const Sekai_M
     if (value->has_musicSelectionType) count++;
     if (value->has_musicDifficultyTypes) count++;
     if (value->has_isDisplayPlayerInfo) count++;
+    if (value->has_scoreSelectType) count++;
     msgpack_pack_map(pk, count);
     if (value->has_scoreCalculateType) {
         msgpack_pack_str(pk, 18);
@@ -38,6 +39,11 @@ int Sekai_MultiLive_CustomRoomSettingData_pack(msgpack_packer *pk, const Sekai_M
         msgpack_pack_str_body(pk, "IsDisplayPlayerInfo", 19);
         if (value->isDisplayPlayerInfo) msgpack_pack_true(pk); else msgpack_pack_false(pk);
     }
+    if (value->has_scoreSelectType) {
+        msgpack_pack_str(pk, 15);
+        msgpack_pack_str_body(pk, "ScoreSelectType", 15);
+        msgpack_pack_object(pk, value->scoreSelectType);
+    }
     return 0;
 }
 
@@ -58,6 +64,9 @@ int Sekai_MultiLive_CustomRoomSettingData_unpack(const msgpack_object *obj, Seka
         }
         else if (mpj_key_eq_str(key, "IsDisplayPlayerInfo")) {
             if (val->type == MSGPACK_OBJECT_BOOLEAN) { out->isDisplayPlayerInfo = val->via.boolean; out->has_isDisplayPlayerInfo = true; }
+        }
+        else if (mpj_key_eq_str(key, "ScoreSelectType")) {
+            out->scoreSelectType = *val; out->has_scoreSelectType = true;
         }
     }
     return 0;

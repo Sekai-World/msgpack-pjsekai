@@ -46,6 +46,7 @@ int Sekai_UserMultiLiveClearResponse_pack(msgpack_packer *pk, const Sekai_UserMu
     if (value->has_userLivePoint) count++;
     if (value->has_isEventMaintenance) count++;
     if (value->has_isInBreakTime) count++;
+    if (value->has_customMusicScoreLiveResult) count++;
     msgpack_pack_map(pk, count);
     if (value->has_updatedResources) {
         msgpack_pack_str(pk, 16);
@@ -212,6 +213,11 @@ int Sekai_UserMultiLiveClearResponse_pack(msgpack_packer *pk, const Sekai_UserMu
         msgpack_pack_str_body(pk, "isInBreakTime", 13);
         if (value->isInBreakTime) msgpack_pack_true(pk); else msgpack_pack_false(pk);
     }
+    if (value->has_customMusicScoreLiveResult) {
+        msgpack_pack_str(pk, 26);
+        msgpack_pack_str_body(pk, "customMusicScoreLiveResult", 26);
+        msgpack_pack_object(pk, value->customMusicScoreLiveResult);
+    }
     return 0;
 }
 
@@ -328,6 +334,9 @@ int Sekai_UserMultiLiveClearResponse_unpack(const msgpack_object *obj, Sekai_Use
         }
         else if (mpj_key_eq_str(key, "isInBreakTime")) {
             if (val->type == MSGPACK_OBJECT_BOOLEAN) { out->isInBreakTime = val->via.boolean; out->has_isInBreakTime = true; }
+        }
+        else if (mpj_key_eq_str(key, "customMusicScoreLiveResult")) {
+            out->customMusicScoreLiveResult = *val; out->has_customMusicScoreLiveResult = true;
         }
     }
     return 0;

@@ -79,6 +79,8 @@ typedef struct Sekai_LiveSettingData {
     msgpack_object CustomRoomSelectedDifficulties;
     bool has_CustomRoomSelectedMusicType;
     int32_t CustomRoomSelectedMusicType;
+    bool has_ScoreSelectType;
+    int32_t ScoreSelectType;
 } Sekai_LiveSettingData;
 
 int Sekai_LiveSettingData_pack(msgpack_packer *pk, const Sekai_LiveSettingData *value);

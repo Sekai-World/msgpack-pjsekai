@@ -14,11 +14,17 @@ int Sekai_MusicSettingData_pack(msgpack_packer *pk, const Sekai_MusicSettingData
     if (!pk || !value) return -1;
     uint32_t count = 0;
     if (value->has_VocalId) count++;
+    if (value->has_CustomMusicScoreIds) count++;
     msgpack_pack_map(pk, count);
     if (value->has_VocalId) {
         msgpack_pack_str(pk, 7);
         msgpack_pack_str_body(pk, "VocalId", 7);
         msgpack_pack_int64(pk, value->VocalId);
+    }
+    if (value->has_CustomMusicScoreIds) {
+        msgpack_pack_str(pk, 19);
+        msgpack_pack_str_body(pk, "CustomMusicScoreIds", 19);
+        msgpack_pack_object(pk, value->CustomMusicScoreIds);
     }
     return 0;
 }
@@ -32,6 +38,9 @@ int Sekai_MusicSettingData_unpack(const msgpack_object *obj, Sekai_MusicSettingD
         if (mpj_key_eq_str(key, "VocalId")) {
             if (val->type == MSGPACK_OBJECT_POSITIVE_INTEGER) { out->VocalId = (int32_t)val->via.u64; out->has_VocalId = true; }
             else if (val->type == MSGPACK_OBJECT_NEGATIVE_INTEGER) { out->VocalId = (int32_t)val->via.i64; out->has_VocalId = true; }
+        }
+        else if (mpj_key_eq_str(key, "CustomMusicScoreIds")) {
+            out->CustomMusicScoreIds = *val; out->has_CustomMusicScoreIds = true;
         }
     }
     return 0;

@@ -97,6 +97,7 @@ int Sekai_ApplicationLocalSettings_pack(msgpack_packer *pk, const Sekai_Applicat
     if (value->has_LastSelectedLiveBoostDialogTabIndex) count++;
     if (value->has_MusicShopSortFilterData) count++;
     if (value->has_AnotherMusicShopSortFilterData) count++;
+    if (value->has_MusicScoreMakerMusicSelectSortFilterData) count++;
     if (value->has_StampMissionPanelCheckStatusDictionary) count++;
     if (value->has_mysekaiInventorySortFilterConfigs) count++;
     if (value->has_MysekaiFixtureFilteredData) count++;
@@ -532,6 +533,11 @@ int Sekai_ApplicationLocalSettings_pack(msgpack_packer *pk, const Sekai_Applicat
         msgpack_pack_str_body(pk, "AnotherMusicShopSortFilterData", 30);
         msgpack_pack_object(pk, value->AnotherMusicShopSortFilterData);
     }
+    if (value->has_MusicScoreMakerMusicSelectSortFilterData) {
+        msgpack_pack_str(pk, 40);
+        msgpack_pack_str_body(pk, "MusicScoreMakerMusicSelectSortFilterData", 40);
+        msgpack_pack_object(pk, value->MusicScoreMakerMusicSelectSortFilterData);
+    }
     if (value->has_StampMissionPanelCheckStatusDictionary) {
         msgpack_pack_str(pk, 38);
         msgpack_pack_str_body(pk, "StampMissionPanelCheckStatusDictionary", 38);
@@ -879,6 +885,9 @@ int Sekai_ApplicationLocalSettings_unpack(const msgpack_object *obj, Sekai_Appli
         }
         else if (mpj_key_eq_str(key, "AnotherMusicShopSortFilterData")) {
             out->AnotherMusicShopSortFilterData = *val; out->has_AnotherMusicShopSortFilterData = true;
+        }
+        else if (mpj_key_eq_str(key, "MusicScoreMakerMusicSelectSortFilterData")) {
+            out->MusicScoreMakerMusicSelectSortFilterData = *val; out->has_MusicScoreMakerMusicSelectSortFilterData = true;
         }
         else if (mpj_key_eq_str(key, "StampMissionPanelCheckStatusDictionary")) {
             out->StampMissionPanelCheckStatusDictionary = *val; out->has_StampMissionPanelCheckStatusDictionary = true;

@@ -513,6 +513,14 @@ typedef struct Sekai_CachedMaserDataAll {
     msgpack_object virtualLiveTransitionItems;
     bool has_collaborationModes;
     msgpack_object collaborationModes;
+    bool has_customMusicScoreTags;
+    msgpack_object customMusicScoreTags;
+    bool has_customMusicScoreDifficultyPlayLevels;
+    msgpack_object customMusicScoreDifficultyPlayLevels;
+    bool has_customMusicScoreOfficialCreatorProfiles;
+    msgpack_object customMusicScoreOfficialCreatorProfiles;
+    bool has_customMusicScoreOfficialCreators;
+    msgpack_object customMusicScoreOfficialCreators;
     bool has_mysekaiSystemFixtures;
     msgpack_object mysekaiSystemFixtures;
     bool has_mysekaiSystemFixtureTypeIcons;

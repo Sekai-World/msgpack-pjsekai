@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.sekai-world</groupId>
   <artifactId>msgpack-pjsekai-java</artifactId>
-  <version>6.4.1</version>
+  <version>6.5.0</version>
   <packaging>jar</packaging>
   <name>msgpack-pjsekai Java object wrapper</name>
   <description>Static object-based MessagePack models generated from dump.cs.</description>

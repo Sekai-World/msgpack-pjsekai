@@ -813,6 +813,8 @@ MPJ_DEFINE_ADAPTERS(Sekai_MusicShop_FilteredData)
 MPJ_DEFINE_ADAPTERS(Sekai_MusicShop_VocalTypeFilteredData)
 MPJ_DEFINE_ADAPTERS(Sekai_MusicShop_MusicShopSortFilterData)
 MPJ_DEFINE_ADAPTERS(Sekai_MusicShop_SortData)
+MPJ_DEFINE_ADAPTERS(Sekai_MusicPlayHistory_MusicPlayHistoryData)
+MPJ_DEFINE_ADAPTERS(Sekai_MusicPlayHistory_MusicPlayHistoryEntry)
 MPJ_DEFINE_ADAPTERS(Sekai_ImageCache_ImageCache)
 MPJ_DEFINE_ADAPTERS(Sekai_ImageCache_ImageCacheMetaInfos)
 MPJ_DEFINE_ADAPTERS(Sekai_ImageCache_ImageCacheMeta)
@@ -996,6 +998,7 @@ MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCostume2d)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCostume2dGroup)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCostume3dModelDefaultHair)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCostume3dModelNotAvailablePattern)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCustomMusicScoreOfficialCreator)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCustomProfileCollectionResourceUnit)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterLimitedTimeMusic)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterMaterialExchange)
@@ -1095,11 +1098,21 @@ MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiStaminaRecoveryConsumeResource)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiTreasureBox)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiVisitSetting)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserBillingShopItemExchangeResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScorePublishedResponse)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserPlayerFrame)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserWorldBloom)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserWorldBloomSupportDeck)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_CustomMusicScoreBookmarkListResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_CustomMusicScoreLiveResultResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_CustomMusicScorePublishedSearchListResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_CustomMusicScorePublishedSearchResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_CustomMusicScorePublishedTabListResponse)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserCustomProfileObtainAllRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest)
@@ -1128,6 +1141,7 @@ MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MysekaiSiteHarvestFixtureTarget)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MysekaiSiteHarvestResourceDrop)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MysekaiStaminaUsed)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MysekaiToolUsed)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_OfficialMusicScoreLiveResultResponse)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserAdReward)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserAdRewardPostRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserAdRewardPutRequest)
@@ -1139,6 +1153,19 @@ MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserBirthdayPartyDeliveryResponse)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserBirthdayPartyGatherRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserBirthdayPartyGatherRequestContent)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserBirthdayPartyGatherResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreDraft)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreDraftEditRequest)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreDraftListResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreInfo)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreLiveResultResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScoreMiniDisplay)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScorePublishedBanInfo)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScorePublishedListResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserCustomMusicScorePublishRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserEventRankingRewardConditionResponse)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserGachaSelectCharacter)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserGachaSelectCharacterRequest)
@@ -1147,6 +1174,8 @@ MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserHonorForMysekai)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserLiveCharacterArchiveVoice)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiBlueprint)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiCanvas)
@@ -1273,6 +1302,9 @@ MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCharacterArchiveMysekaiCharacterTalkGrou
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCharacterArchiveVoice)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCharacterArchiveVoiceTag)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCollaborationMode)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile)
+MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCustomMusicScoreTag)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCustomProfileGachaShop)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterEventCardBonusLimit)
@@ -1381,6 +1413,11 @@ MPJ_DEFINE_ADAPTERS(Sekai_ApiData_MasterWorldBloomSupportDeckUnitEventLimitedBon
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest)
 MPJ_DEFINE_ADAPTERS(Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest)
+MPJ_DEFINE_ADAPTERS(Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData)
+MPJ_DEFINE_ADAPTERS(Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData)
+MPJ_DEFINE_ADAPTERS(Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData)
+MPJ_DEFINE_ADAPTERS(Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData)
+MPJ_DEFINE_ADAPTERS(Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase)
 MPJ_DEFINE_ADAPTERS(Sekai_SuperVirtualLive_RoomUserHonorInfo)
 MPJ_DEFINE_ADAPTERS(Sekai_SuperVirtualLive_RoomUserBasicInfo)
 MPJ_DEFINE_ADAPTERS(Sekai_SuperVirtualLive_LobbyChatData)
@@ -3867,6 +3904,8 @@ static const mpj_field_entry Sekai_MasterMusic_fields[] = {
     { "musicCollaborationId", "int32_t", MPJ_KEY_STRING, "musicCollaborationId", 0 },
     { "isNewlyWrittenMusic", "bool", MPJ_KEY_STRING, "isNewlyWrittenMusic", 0 },
     { "isFullLength", "bool", MPJ_KEY_STRING, "isFullLength", 0 },
+    { "secForMusicScoreMaker", "int32_t", MPJ_KEY_STRING, "secForMusicScoreMaker", 0 },
+    { "isAvailableForMusicScoreMaker", "bool", MPJ_KEY_STRING, "isAvailableForMusicScoreMaker", 0 },
 };
 
 static const mpj_field_entry Sekai_MasterMusicAchievement_fields[] = {
@@ -4352,6 +4391,10 @@ static const mpj_field_entry Sekai_SuiteMaster_fields[] = {
     { "virtualLiveGroups", "msgpack_object", MPJ_KEY_STRING, "virtualLiveGroups", 0 },
     { "virtualLiveTransitionItems", "msgpack_object", MPJ_KEY_STRING, "virtualLiveTransitionItems", 0 },
     { "collaborationModes", "msgpack_object", MPJ_KEY_STRING, "collaborationModes", 0 },
+    { "customMusicScoreTags", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreTags", 0 },
+    { "customMusicScoreDifficultyPlayLevels", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreDifficultyPlayLevels", 0 },
+    { "customMusicScoreOfficialCreatorProfiles", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorProfiles", 0 },
+    { "customMusicScoreOfficialCreators", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreators", 0 },
     { "mysekaiSites", "msgpack_object", MPJ_KEY_STRING, "mysekaiSites", 0 },
     { "mysekaiSiteLevels", "msgpack_object", MPJ_KEY_STRING, "mysekaiSiteLevels", 0 },
     { "mysekaiSiteGroups", "msgpack_object", MPJ_KEY_STRING, "mysekaiSiteGroups", 0 },
@@ -4730,6 +4773,10 @@ static const mpj_field_entry Sekai_CachedMaserDataAll_fields[] = {
     { "virtualLiveGroups", "msgpack_object", MPJ_KEY_STRING, "virtualLiveGroups", 0 },
     { "virtualLiveTransitionItems", "msgpack_object", MPJ_KEY_STRING, "virtualLiveTransitionItems", 0 },
     { "collaborationModes", "msgpack_object", MPJ_KEY_STRING, "collaborationModes", 0 },
+    { "customMusicScoreTags", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreTags", 0 },
+    { "customMusicScoreDifficultyPlayLevels", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreDifficultyPlayLevels", 0 },
+    { "customMusicScoreOfficialCreatorProfiles", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorProfiles", 0 },
+    { "customMusicScoreOfficialCreators", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreators", 0 },
     { "mysekaiSystemFixtures", "msgpack_object", MPJ_KEY_STRING, "mysekaiSystemFixtures", 0 },
     { "mysekaiSystemFixtureTypeIcons", "msgpack_object", MPJ_KEY_STRING, "mysekaiSystemFixtureTypeIcons", 0 },
     { "mysekaiFixtures", "msgpack_object", MPJ_KEY_STRING, "mysekaiFixtures", 0 },
@@ -5533,6 +5580,8 @@ static const mpj_field_entry Sekai_SuiteUser_fields[] = {
     { "userBirthdayParties", "msgpack_object", MPJ_KEY_STRING, "userBirthdayParties", 0 },
     { "userMysekaiSystemFixtureActions", "msgpack_object", MPJ_KEY_STRING, "userMysekaiSystemFixtureActions", 0 },
     { "userVirtualLiveTransitionItems", "msgpack_object", MPJ_KEY_STRING, "userVirtualLiveTransitionItems", 0 },
+    { "userCustomMusicScorePublisheds", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScorePublisheds", 0 },
+    { "userCustomMusicScoreBookmarks", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreBookmarks", 0 },
     { "userRateChoiceGachaWishes", "msgpack_object", MPJ_KEY_STRING, "userRateChoiceGachaWishes", 0 },
 };
 
@@ -6617,6 +6666,7 @@ static const mpj_field_entry Sekai_UserHomeRefreshResponse_fields[] = {
     { "shouldReflectWebPayment", "bool", MPJ_KEY_STRING, "shouldReflectWebPayment", 0 },
     { "receivableUnprocessedSerialCodeCampaignIds", "msgpack_object", MPJ_KEY_STRING, "receivableUnprocessedSerialCodeCampaignIds", 0 },
     { "displayableOfflineEventIds", "msgpack_object", MPJ_KEY_STRING, "displayableOfflineEventIds", 0 },
+    { "userCustomMusicScorePublishedBanInfos", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScorePublishedBanInfos", 0 },
 };
 
 static const mpj_field_entry Sekai_UserConvertedGachaCeilItem_fields[] = {
@@ -6717,6 +6767,7 @@ static const mpj_field_entry Sekai_UserLiveRequest_fields[] = {
     { "boostCount", "int32_t", MPJ_KEY_STRING, "boostCount", 0 },
     { "isAuto", "bool", MPJ_KEY_STRING, "isAuto", 0 },
     { "musicCategoryName", "char *", MPJ_KEY_STRING, "musicCategoryName", 0 },
+    { "customMusicScoreId", "char *", MPJ_KEY_STRING, "customMusicScoreId", 0 },
 };
 
 static const mpj_field_entry Sekai_UserLive_fields[] = {
@@ -6791,6 +6842,7 @@ static const mpj_field_entry Sekai_UserLiveClearResponse_fields[] = {
     { "userLivePoint", "msgpack_object", MPJ_KEY_STRING, "userLivePoint", 0 },
     { "isEventMaintenance", "bool", MPJ_KEY_STRING, "isEventMaintenance", 0 },
     { "isInBreakTime", "bool", MPJ_KEY_STRING, "isInBreakTime", 0 },
+    { "customMusicScoreLiveResult", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreLiveResult", 0 },
 };
 
 static const mpj_field_entry Sekai_DeckCardUpdateExpResult_fields[] = {
@@ -6909,6 +6961,7 @@ static const mpj_field_entry Sekai_MultiLiveRequest_fields[] = {
     { "selectedMusicId4", "int32_t", MPJ_KEY_STRING, "selectedMusicId4", 0 },
     { "selectedMusicId5", "int32_t", MPJ_KEY_STRING, "selectedMusicId5", 0 },
     { "privateRoomSettings", "msgpack_object", MPJ_KEY_STRING, "privateRoomSettings", 0 },
+    { "customMusicScoreId", "char *", MPJ_KEY_STRING, "customMusicScoreId", 0 },
 };
 
 static const mpj_field_entry Sekai_MultiLiveResponse_fields[] = {
@@ -6928,6 +6981,7 @@ static const mpj_field_entry Sekai_UserMultiLiveRequest_fields[] = {
     { "boostCount", "int32_t", MPJ_KEY_STRING, "boostCount", 0 },
     { "musicCategoryName", "char *", MPJ_KEY_STRING, "musicCategoryName", 0 },
     { "privateRoomSettings", "msgpack_object", MPJ_KEY_STRING, "privateRoomSettings", 0 },
+    { "customMusicScoreId", "char *", MPJ_KEY_STRING, "customMusicScoreId", 0 },
 };
 
 static const mpj_field_entry Sekai_UserPrivateRoomSettings_fields[] = {
@@ -7007,6 +7061,7 @@ static const mpj_field_entry Sekai_UserMultiLiveClearResponse_fields[] = {
     { "userLivePoint", "msgpack_object", MPJ_KEY_STRING, "userLivePoint", 0 },
     { "isEventMaintenance", "bool", MPJ_KEY_STRING, "isEventMaintenance", 0 },
     { "isInBreakTime", "bool", MPJ_KEY_STRING, "isInBreakTime", 0 },
+    { "customMusicScoreLiveResult", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreLiveResult", 0 },
 };
 
 static const mpj_field_entry Sekai_UserMultiLiveClearScoreResponse_fields[] = {
@@ -8042,6 +8097,7 @@ static const mpj_field_entry Sekai_ApplicationLocalSettings_fields[] = {
     { "LastSelectedLiveBoostDialogTabIndex", "int32_t", MPJ_KEY_STRING, "LastSelectedLiveBoostDialogTabIndex", 0 },
     { "MusicShopSortFilterData", "msgpack_object", MPJ_KEY_STRING, "MusicShopSortFilterData", 0 },
     { "AnotherMusicShopSortFilterData", "msgpack_object", MPJ_KEY_STRING, "AnotherMusicShopSortFilterData", 0 },
+    { "MusicScoreMakerMusicSelectSortFilterData", "msgpack_object", MPJ_KEY_STRING, "MusicScoreMakerMusicSelectSortFilterData", 0 },
     { "StampMissionPanelCheckStatusDictionary", "msgpack_object", MPJ_KEY_STRING, "StampMissionPanelCheckStatusDictionary", 0 },
     { "mysekaiInventorySortFilterConfigs", "msgpack_object", MPJ_KEY_STRING, "MysekaiInventorySortFilterConfigs", 0 },
     { "MysekaiFixtureFilteredData", "msgpack_object", MPJ_KEY_STRING, "MysekaiFixtureFilteredData", 0 },
@@ -8370,6 +8426,7 @@ static const mpj_field_entry Sekai_LiveSettingData_fields[] = {
     { "CustomRoomIsDisplayPlayerInfo", "bool", MPJ_KEY_STRING, "CustomRoomIsDisplayPlayerInfo", 0 },
     { "CustomRoomSelectedDifficulties", "msgpack_object", MPJ_KEY_STRING, "CustomRoomSelectedDifficulties", 0 },
     { "CustomRoomSelectedMusicType", "int32_t", MPJ_KEY_STRING, "CustomRoomSelectedMusicType", 0 },
+    { "ScoreSelectType", "int32_t", MPJ_KEY_STRING, "ScoreSelectType", 0 },
 };
 
 static const mpj_field_entry Sekai_MusicSettingDataList_fields[] = {
@@ -8378,6 +8435,7 @@ static const mpj_field_entry Sekai_MusicSettingDataList_fields[] = {
 
 static const mpj_field_entry Sekai_MusicSettingData_fields[] = {
     { "VocalId", "int32_t", MPJ_KEY_STRING, "VocalId", 0 },
+    { "CustomMusicScoreIds", "msgpack_object", MPJ_KEY_STRING, "CustomMusicScoreIds", 0 },
 };
 
 static const mpj_field_entry Sekai_CardSelectGachaFilterData_fields[] = {
@@ -8424,6 +8482,16 @@ static const mpj_field_entry Sekai_MusicShop_SortData_fields[] = {
     { "MusicDifficulty", "msgpack_object", MPJ_KEY_STRING, "MusicDifficulty", 0 },
 };
 
+static const mpj_field_entry Sekai_MusicPlayHistory_MusicPlayHistoryData_fields[] = {
+    { "Entries", "msgpack_object", MPJ_KEY_STRING, "Entries", 0 },
+};
+
+static const mpj_field_entry Sekai_MusicPlayHistory_MusicPlayHistoryEntry_fields[] = {
+    { "MusicId", "int32_t", MPJ_KEY_STRING, "MusicId", 0 },
+    { "Difficulty", "msgpack_object", MPJ_KEY_STRING, "Difficulty", 0 },
+    { "PlayedAtUnixTime", "int64_t", MPJ_KEY_STRING, "PlayedAtUnixTime", 0 },
+};
+
 static const mpj_field_entry Sekai_ImageCache_ImageCache_fields[] = {
     { "ImageData", "msgpack_object", MPJ_KEY_STRING, "ImageData", 0 },
 };
@@ -8463,6 +8531,7 @@ static const mpj_field_entry Sekai_Multiplay_MultiLivePartyMember_fields[] = {
     { "FriendRequestStatus", "msgpack_object", MPJ_KEY_STRING, "FriendRequestStatus", 0 },
     { "MemberCharacterRank", "msgpack_object", MPJ_KEY_STRING, "MemberCharacterRank", 0 },
     { "PlayerFrameId", "int32_t", MPJ_KEY_STRING, "PlayerFrameId", 0 },
+    { "CustomScoreId", "char *", MPJ_KEY_STRING, "CustomScoreId", 0 },
 };
 
 static const mpj_field_entry Sekai_Multiplay_MultiLivePartyInfo_fields[] = {
@@ -8601,6 +8670,7 @@ static const mpj_field_entry Sekai_MultiLive_PlayerInfo_fields[] = {
     { "Index", "int32_t", MPJ_KEY_STRING, "Index", 0 },
     { "Info", "msgpack_object", MPJ_KEY_STRING, "Info", 0 },
     { "Difficulty", "char *", MPJ_KEY_STRING, "Difficulty", 0 },
+    { "CustomScoreId", "char *", MPJ_KEY_STRING, "CustomScoreId", 0 },
 };
 
 static const mpj_field_entry Sekai_MultiLive_PartyRoomMeta_fields[] = {
@@ -8704,6 +8774,7 @@ static const mpj_field_entry Sekai_MultiLive_CustomRoomSettingData_fields[] = {
     { "musicSelectionType", "msgpack_object", MPJ_KEY_STRING, "MusicSelectionType", 0 },
     { "musicDifficultyTypes", "msgpack_object", MPJ_KEY_STRING, "MusicDifficultyTypes", 0 },
     { "isDisplayPlayerInfo", "bool", MPJ_KEY_STRING, "IsDisplayPlayerInfo", 0 },
+    { "scoreSelectType", "msgpack_object", MPJ_KEY_STRING, "ScoreSelectType", 0 },
 };
 
 static const mpj_field_entry Sekai_MultiLive_DebugGetRoomInfoRequest_fields[] = {
@@ -9756,6 +9827,24 @@ static const mpj_field_entry Sekai_ApiData_MasterCostume3dModelNotAvailablePatte
     { "unit", "char *", MPJ_KEY_STRING, "unit", 0 },
 };
 
+static const mpj_field_entry Sekai_ApiData_MasterCustomMusicScoreOfficialCreator_fields[] = {
+    { "id", "int32_t", MPJ_KEY_STRING, "id", 0 },
+    { "scoreId", "char *", MPJ_KEY_STRING, "scoreId", 0 },
+    { "customMusicScoreOfficialCreatorProfileId", "int32_t", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorProfileId", 0 },
+    { "musicId", "int32_t", MPJ_KEY_STRING, "musicId", 0 },
+    { "musicDifficultyType", "char *", MPJ_KEY_STRING, "musicDifficultyType", 0 },
+    { "playLevel", "int32_t", MPJ_KEY_STRING, "playLevel", 0 },
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "description", "char *", MPJ_KEY_STRING, "description", 0 },
+    { "tagId1", "int32_t", MPJ_KEY_STRING, "tagId1", 0 },
+    { "tagId2", "int32_t", MPJ_KEY_STRING, "tagId2", 0 },
+    { "tagId3", "int32_t", MPJ_KEY_STRING, "tagId3", 0 },
+    { "isDerivativeAllowed", "bool", MPJ_KEY_STRING, "isDerivativeAllowed", 0 },
+    { "previewStartTimeSec", "float", MPJ_KEY_STRING, "previewStartTimeSec", 0 },
+    { "publishedStartAt", "int64_t", MPJ_KEY_STRING, "publishedStartAt", 0 },
+    { "publishedEndAt", "int64_t", MPJ_KEY_STRING, "publishedEndAt", 0 },
+};
+
 static const mpj_field_entry Sekai_ApiData_MasterCustomProfileCollectionResourceUnit_fields[] = {
     { "id", "int32_t", MPJ_KEY_STRING, "id", 0 },
     { "customProfileCollectionResourceId", "int32_t", MPJ_KEY_STRING, "customProfileCollectionResourceId", 0 },
@@ -10594,6 +10683,28 @@ static const mpj_field_entry Sekai_ApiData_UserBillingShopItemExchangeResponse_f
     { "userBillingShopExclusiveItems", "msgpack_object", MPJ_KEY_STRING, "userBillingShopExclusiveItems", 0 },
 };
 
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScorePublishedResponse_fields[] = {
+    { "userCustomMusicScoreInfoJson", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreInfoJson", 0 },
+    { "userCustomMusicScoreId", "char *", MPJ_KEY_STRING, "userCustomMusicScoreId", 0 },
+    { "userId", "int64_t", MPJ_KEY_STRING, "userId", 0 },
+    { "userName", "char *", MPJ_KEY_STRING, "userName", 0 },
+    { "musicId", "int32_t", MPJ_KEY_STRING, "musicId", 0 },
+    { "customMusicScoreTags", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreTags", 0 },
+    { "musicDifficultyType", "char *", MPJ_KEY_STRING, "musicDifficultyType", 0 },
+    { "playLevel", "int32_t", MPJ_KEY_STRING, "playLevel", 0 },
+    { "description", "char *", MPJ_KEY_STRING, "description", 0 },
+    { "isDerivativeAllowed", "bool", MPJ_KEY_STRING, "isDerivativeAllowed", 0 },
+    { "previewStartTimeSec", "float", MPJ_KEY_STRING, "previewStartTimeSec", 0 },
+    { "publishedAt", "int64_t", MPJ_KEY_STRING, "publishedAt", 0 },
+    { "reviewCount", "int32_t", MPJ_KEY_STRING, "reviewCount", 0 },
+    { "playCount", "int32_t", MPJ_KEY_STRING, "playCount", 0 },
+    { "fullComboRate", "float", MPJ_KEY_STRING, "fullComboRate", 0 },
+    { "customMusicScoreSearchSortValue", "float", MPJ_KEY_STRING, "customMusicScoreSearchSortValue", 0 },
+    { "playResult", "char *", MPJ_KEY_STRING, "playResult", 0 },
+    { "isReviewed", "bool", MPJ_KEY_STRING, "isReviewed", 0 },
+    { "isReviewAllowed", "bool", MPJ_KEY_STRING, "isReviewAllowed", 0 },
+};
+
 static const mpj_field_entry Sekai_ApiData_UserPlayerFrame_fields[] = {
     { "playerFrameId", "int32_t", MPJ_KEY_STRING, "playerFrameId", 0 },
     { "playerFrameAttachStatus", "char *", MPJ_KEY_STRING, "playerFrameAttachStatus", 0 },
@@ -10637,12 +10748,61 @@ static const mpj_field_entry Sekai_ApiData_UserWorldBloomSupportDeck_fields[] = 
     { "member25", "int32_t", MPJ_KEY_STRING, "member25", 0 },
 };
 
+static const mpj_field_entry Sekai_ApiData_CustomMusicScoreBookmarkListResponse_fields[] = {
+    { "userCustomMusicScoreBookmarkList", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreBookmarkList", 0 },
+    { "customMusicScoreOfficialCreatorBookmarkList", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorBookmarkList", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_CustomMusicScoreLiveResultResponse_fields[] = {
+    { "userCustomMusicScoreLiveResult", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreLiveResult", 0 },
+    { "officialMusicScoreLiveResult", "msgpack_object", MPJ_KEY_STRING, "officialMusicScoreLiveResult", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse_fields[] = {
+    { "customMusicScoreOfficialCreatorPublished", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorPublished", 0 },
+    { "bookmarkedAt", "int64_t", MPJ_KEY_STRING, "bookmarkedAt", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse_fields[] = {
+    { "customMusicScoreId", "char *", MPJ_KEY_STRING, "customMusicScoreId", 0 },
+    { "reviewCount", "int32_t", MPJ_KEY_STRING, "reviewCount", 0 },
+    { "playCount", "int32_t", MPJ_KEY_STRING, "playCount", 0 },
+    { "fullComboRate", "float", MPJ_KEY_STRING, "fullComboRate", 0 },
+    { "customMusicScoreSearchSortValue", "float", MPJ_KEY_STRING, "customMusicScoreSearchSortValue", 0 },
+    { "playResult", "char *", MPJ_KEY_STRING, "playResult", 0 },
+    { "isReviewed", "bool", MPJ_KEY_STRING, "isReviewed", 0 },
+    { "isReviewAllowed", "bool", MPJ_KEY_STRING, "isReviewAllowed", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_CustomMusicScorePublishedSearchListResponse_fields[] = {
+    { "userCustomMusicScorePublishedList", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScorePublishedList", 0 },
+    { "customMusicScoreOfficialCreatorPublishedList", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorPublishedList", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_CustomMusicScorePublishedSearchResponse_fields[] = {
+    { "userCustomMusicScoreInfoJson", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreInfoJson", 0 },
+    { "customMusicScoreOfficialCreatorPublishedResponseJson", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorPublishedResponseJson", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_CustomMusicScorePublishedTabListResponse_fields[] = {
+    { "userCustomMusicScorePublishedList", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScorePublishedList", 0 },
+    { "customMusicScoreOfficialCreatorPublishedList", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreOfficialCreatorPublishedList", 0 },
+};
+
 static const mpj_field_entry Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest_fields[] = {
     { "deliveryPoint", "int32_t", MPJ_KEY_STRING, "deliveryPoint", 0 },
 };
 
 static const mpj_field_entry Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest_fields[] = {
     { "count", "int32_t", MPJ_KEY_STRING, "count", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest_fields[] = {
+    { "createCount", "int32_t", MPJ_KEY_STRING, "createCount", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest_fields[] = {
+    { "createCount", "int32_t", MPJ_KEY_STRING, "createCount", 0 },
 };
 
 static const mpj_field_entry Sekai_ApiData_DebugUserCustomProfileObtainAllRequest_fields[] = {
@@ -10797,6 +10957,11 @@ static const mpj_field_entry Sekai_ApiData_MysekaiToolUsed_fields[] = {
     { "durability", "int32_t", MPJ_KEY_STRING, "durability", 0 },
 };
 
+static const mpj_field_entry Sekai_ApiData_OfficialMusicScoreLiveResultResponse_fields[] = {
+    { "customMusicScoreId", "char *", MPJ_KEY_STRING, "customMusicScoreId", 0 },
+    { "isReviewed", "bool", MPJ_KEY_STRING, "isReviewed", 0 },
+};
+
 static const mpj_field_entry Sekai_ApiData_UserAdReward_fields[] = {
     { "id", "int32_t", MPJ_KEY_STRING, "id", 0 },
     { "lastPlayStartAt", "int64_t", MPJ_KEY_STRING, "lastPlayStartAt", 0 },
@@ -10854,6 +11019,103 @@ static const mpj_field_entry Sekai_ApiData_UserBirthdayPartyGatherResponse_field
     { "obtainedDeliveryTotalRewards", "msgpack_object", MPJ_KEY_STRING, "obtainedDeliveryTotalRewards", 0 },
 };
 
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreDraft_fields[] = {
+    { "userCustomMusicScoreInfo", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreInfo", 0 },
+    { "slotNo", "int32_t", MPJ_KEY_STRING, "slotNo", 0 },
+    { "memo", "char *", MPJ_KEY_STRING, "memo", 0 },
+    { "baseMusicDifficultyId", "int32_t", MPJ_KEY_STRING, "baseMusicDifficultyId", 0 },
+    { "lastSavedAt", "int64_t", MPJ_KEY_STRING, "lastSavedAt", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest_fields[] = {
+    { "baseMusicScoreId", "char *", MPJ_KEY_STRING, "baseMusicScoreId", 0 },
+    { "musicId", "int32_t", MPJ_KEY_STRING, "musicId", 0 },
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "userCustomMusicScoreJsonGzipBase64", "char *", MPJ_KEY_STRING, "userCustomMusicScoreJsonGzipBase64", 0 },
+    { "memo", "char *", MPJ_KEY_STRING, "memo", 0 },
+    { "baseMusicDifficultyId", "int32_t", MPJ_KEY_STRING, "baseMusicDifficultyId", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreDraftEditRequest_fields[] = {
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "memo", "char *", MPJ_KEY_STRING, "memo", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreDraftListResponse_fields[] = {
+    { "userCustomMusicScoreDrafts", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreDrafts", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest_fields[] = {
+    { "baseMusicScoreId", "char *", MPJ_KEY_STRING, "baseMusicScoreId", 0 },
+    { "musicId", "int32_t", MPJ_KEY_STRING, "musicId", 0 },
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "userCustomMusicScoreJsonGzipBase64", "char *", MPJ_KEY_STRING, "userCustomMusicScoreJsonGzipBase64", 0 },
+    { "memo", "char *", MPJ_KEY_STRING, "memo", 0 },
+    { "baseMusicDifficultyId", "int32_t", MPJ_KEY_STRING, "baseMusicDifficultyId", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreInfo_fields[] = {
+    { "baseMusicScoreId", "char *", MPJ_KEY_STRING, "baseMusicScoreId", 0 },
+    { "musicId", "int32_t", MPJ_KEY_STRING, "musicId", 0 },
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "userCustomMusicScorePath", "char *", MPJ_KEY_STRING, "userCustomMusicScorePath", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreLiveResultResponse_fields[] = {
+    { "userId", "int64_t", MPJ_KEY_STRING, "userId", 0 },
+    { "userName", "char *", MPJ_KEY_STRING, "userName", 0 },
+    { "customMusicScoreId", "char *", MPJ_KEY_STRING, "customMusicScoreId", 0 },
+    { "musicId", "int32_t", MPJ_KEY_STRING, "musicId", 0 },
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "musicDifficultyType", "char *", MPJ_KEY_STRING, "musicDifficultyType", 0 },
+    { "playLevel", "int32_t", MPJ_KEY_STRING, "playLevel", 0 },
+    { "isReviewed", "bool", MPJ_KEY_STRING, "isReviewed", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScoreMiniDisplay_fields[] = {
+    { "userCustomMusicScoreId", "char *", MPJ_KEY_STRING, "userCustomMusicScoreId", 0 },
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "authorId", "int64_t", MPJ_KEY_STRING, "authorId", 0 },
+    { "authorName", "char *", MPJ_KEY_STRING, "authorName", 0 },
+    { "playLevel", "int32_t", MPJ_KEY_STRING, "playLevel", 0 },
+    { "musicDifficulty", "char *", MPJ_KEY_STRING, "musicDifficulty", 0 },
+    { "userCustomMusicScorePath", "char *", MPJ_KEY_STRING, "userCustomMusicScorePath", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScorePublishedBanInfo_fields[] = {
+    { "userCustomMusicScoreId", "char *", MPJ_KEY_STRING, "userCustomMusicScoreId", 0 },
+    { "message", "char *", MPJ_KEY_STRING, "message", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse_fields[] = {
+    { "userCustomMusicScorePublished", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScorePublished", 0 },
+    { "bookmarkedAt", "int64_t", MPJ_KEY_STRING, "bookmarkedAt", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse_fields[] = {
+    { "userCustomMusicScorePublishedList", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScorePublishedList", 0 },
+    { "userCustomMusicScoreAuthorProfile", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScoreAuthorProfile", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScorePublishedListResponse_fields[] = {
+    { "userCustomMusicScorePublishedList", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScorePublishedList", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserCustomMusicScorePublishRequest_fields[] = {
+    { "musicId", "int32_t", MPJ_KEY_STRING, "musicId", 0 },
+    { "customMusicScoreTagIds", "msgpack_object", MPJ_KEY_STRING, "customMusicScoreTagIds", 0 },
+    { "musicDifficultyType", "char *", MPJ_KEY_STRING, "musicDifficultyType", 0 },
+    { "playLevel", "int32_t", MPJ_KEY_STRING, "playLevel", 0 },
+    { "title", "char *", MPJ_KEY_STRING, "title", 0 },
+    { "description", "char *", MPJ_KEY_STRING, "description", 0 },
+    { "userCustomMusicScoreJsonGzipBase64", "char *", MPJ_KEY_STRING, "userCustomMusicScoreJsonGzipBase64", 0 },
+    { "userCustomMusicScorePreviewJsonGzipBase64", "char *", MPJ_KEY_STRING, "userCustomMusicScorePreviewJsonGzipBase64", 0 },
+    { "baseMusicScoreId", "char *", MPJ_KEY_STRING, "baseMusicScoreId", 0 },
+    { "isDerivativeAllowed", "bool", MPJ_KEY_STRING, "isDerivativeAllowed", 0 },
+    { "previewStartTimeSec", "float", MPJ_KEY_STRING, "previewStartTimeSec", 0 },
+    { "totalNoteCount", "int32_t", MPJ_KEY_STRING, "totalNoteCount", 0 },
+};
+
 static const mpj_field_entry Sekai_ApiData_UserEventRankingRewardConditionResponse_fields[] = {
     { "rewardCondition", "msgpack_object", MPJ_KEY_STRING, "rewardCondition", 0 },
 };
@@ -10888,6 +11150,16 @@ static const mpj_field_entry Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResu
 
 static const mpj_field_entry Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse_fields[] = {
     { "updatedResources", "msgpack_object", MPJ_KEY_STRING, "updatedResources", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse_fields[] = {
+    { "userMultiLivePlayableCustomMusicScores", "msgpack_object", MPJ_KEY_STRING, "userMultiLivePlayableCustomMusicScores", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse_fields[] = {
+    { "userId", "int64_t", MPJ_KEY_STRING, "userId", 0 },
+    { "userCustomMusicScores", "msgpack_object", MPJ_KEY_STRING, "userCustomMusicScores", 0 },
+    { "officialCustomMusicScoreIds", "msgpack_object", MPJ_KEY_STRING, "officialCustomMusicScoreIds", 0 },
 };
 
 static const mpj_field_entry Sekai_ApiData_UserMysekaiBlueprint_fields[] = {
@@ -11673,6 +11945,25 @@ static const mpj_field_entry Sekai_ApiData_MasterCollaborationMode_fields[] = {
     { "assetbundleName", "char *", MPJ_KEY_STRING, "assetbundleName", 0 },
 };
 
+static const mpj_field_entry Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel_fields[] = {
+    { "id", "int32_t", MPJ_KEY_STRING, "id", 0 },
+    { "musicDifficultyType", "char *", MPJ_KEY_STRING, "musicDifficultyType", 0 },
+    { "minPlayLevel", "int32_t", MPJ_KEY_STRING, "minPlayLevel", 0 },
+    { "maxPlayLevel", "int32_t", MPJ_KEY_STRING, "maxPlayLevel", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile_fields[] = {
+    { "id", "int32_t", MPJ_KEY_STRING, "id", 0 },
+    { "name", "char *", MPJ_KEY_STRING, "name", 0 },
+};
+
+static const mpj_field_entry Sekai_ApiData_MasterCustomMusicScoreTag_fields[] = {
+    { "id", "int32_t", MPJ_KEY_STRING, "id", 0 },
+    { "seq", "int32_t", MPJ_KEY_STRING, "seq", 0 },
+    { "name", "char *", MPJ_KEY_STRING, "name", 0 },
+    { "isOfficialCreatorOnly", "bool", MPJ_KEY_STRING, "isOfficialCreatorOnly", 0 },
+};
+
 static const mpj_field_entry Sekai_ApiData_MasterCustomProfileGachaShop_fields[] = {
     { "id", "int32_t", MPJ_KEY_STRING, "id", 0 },
     { "seq", "int32_t", MPJ_KEY_STRING, "seq", 0 },
@@ -12413,6 +12704,75 @@ static const mpj_field_entry Sekai_ApiData_UserMysekaiHousingCompetitionSketchRe
     { "mysekaiOwnerUserSubmittedAt", "msgpack_object", MPJ_KEY_STRING, "mysekaiOwnerUserSubmittedAt", 0 },
     { "mysekaiSiteId", "int32_t", MPJ_KEY_STRING, "mysekaiSiteId", 0 },
     { "mysekaiBlueprintId", "int32_t", MPJ_KEY_STRING, "mysekaiBlueprintId", 0 },
+};
+
+static const mpj_field_entry Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData_fields[] = {
+    { "Id", "char *", MPJ_KEY_INT, NULL, 0 },
+    { "CopiedNoteList", "msgpack_object", MPJ_KEY_INT, NULL, 1 },
+    { "CopiedEventDataList", "msgpack_object", MPJ_KEY_INT, NULL, 2 },
+    { "CreatedAt", "char *", MPJ_KEY_INT, NULL, 3 },
+};
+
+static const mpj_field_entry Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData_fields[] = {
+    { "Caches", "msgpack_object", MPJ_KEY_INT, NULL, 0 },
+};
+
+static const mpj_field_entry Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData_fields[] = {
+    { "id", "int32_t", MPJ_KEY_INT, NULL, 0 },
+    { "eventType", "msgpack_object", MPJ_KEY_INT, NULL, 1 },
+    { "ticks", "int64_t", MPJ_KEY_INT, NULL, 2 },
+    { "changeValue", "msgpack_object", MPJ_KEY_INT, NULL, 3 },
+};
+
+static const mpj_field_entry Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData_fields[] = {
+    { "ZoomTimelineStep", "float", MPJ_KEY_INT, NULL, 0 },
+    { "ZoomTimelineScaleMax", "float", MPJ_KEY_INT, NULL, 1 },
+    { "ZoomTimelineScaleMin", "float", MPJ_KEY_INT, NULL, 2 },
+    { "UndoStackLimit", "int32_t", MPJ_KEY_INT, NULL, 3 },
+    { "AutoSaveEnabled", "bool", MPJ_KEY_INT, NULL, 4 },
+    { "AutoSaveInterval", "int32_t", MPJ_KEY_INT, NULL, 5 },
+    { "ShowFocusTicksRate", "float", MPJ_KEY_INT, NULL, 6 },
+    { "TicksPerScrollStep", "float", MPJ_KEY_INT, NULL, 7 },
+    { "EnableSwipeScroll", "bool", MPJ_KEY_INT, NULL, 8 },
+    { "PlayMusicSEEnabled", "bool", MPJ_KEY_INT, NULL, 9 },
+    { "SetStartMusicTimeMsEnabled", "bool", MPJ_KEY_INT, NULL, 10 },
+    { "PlayStartEffectEnabled", "bool", MPJ_KEY_INT, NULL, 11 },
+    { "TestPlayStartOffsetMs", "int32_t", MPJ_KEY_INT, NULL, 12 },
+    { "ShowBarLines", "bool", MPJ_KEY_INT, NULL, 13 },
+    { "ShowBeatLines", "bool", MPJ_KEY_INT, NULL, 14 },
+    { "ShowQuantizeLines", "bool", MPJ_KEY_INT, NULL, 15 },
+    { "SelectedLayoutPatternIndex", "int32_t", MPJ_KEY_INT, NULL, 16 },
+    { "SelectedLayoutPatternIndexPortrait", "int32_t", MPJ_KEY_INT, NULL, 26 },
+    { "SelectedLayoutPatternIndexLandscape", "int32_t", MPJ_KEY_INT, NULL, 27 },
+    { "ScoreDisplayScaleHorizontal", "float", MPJ_KEY_INT, NULL, 17 },
+    { "ScoreDisplayScaleVertical", "float", MPJ_KEY_INT, NULL, 18 },
+    { "ToolWindowChildScale", "float", MPJ_KEY_INT, NULL, 19 },
+    { "NoteEdgeWidth", "float", MPJ_KEY_INT, NULL, 24 },
+    { "EnableInvalidPlacementCheck", "bool", MPJ_KEY_INT, NULL, 25 },
+    { "AreaSelectPartialOverlap", "bool", MPJ_KEY_INT, NULL, 28 },
+    { "NoteYScaleStartThreshold", "float", MPJ_KEY_INT, NULL, 29 },
+    { "NoteYScaleEndThreshold", "float", MPJ_KEY_INT, NULL, 30 },
+    { "NoteYScaleMin", "float", MPJ_KEY_INT, NULL, 31 },
+    { "DrawSmallerTickToBack", "bool", MPJ_KEY_INT, NULL, 32 },
+    { "MaxClipboardCacheCount", "int32_t", MPJ_KEY_INT, NULL, 33 },
+    { "AutoPlayEnabled", "bool", MPJ_KEY_INT, NULL, 34 },
+    { "TestPlayLiveModeTypeRaw", "int32_t", MPJ_KEY_INT, NULL, 35 },
+};
+
+static const mpj_field_entry Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase_fields[] = {
+    { "id", "int32_t", MPJ_KEY_INT, NULL, 0 },
+    { "ticks", "int64_t", MPJ_KEY_INT, NULL, 1 },
+    { "laneStart", "int32_t", MPJ_KEY_INT, NULL, 2 },
+    { "laneEnd", "int32_t", MPJ_KEY_INT, NULL, 3 },
+    { "category", "msgpack_object", MPJ_KEY_INT, NULL, 4 },
+    { "type", "msgpack_object", MPJ_KEY_INT, NULL, 5 },
+    { "speedRatio", "float", MPJ_KEY_INT, NULL, 6 },
+    { "noteLineType", "msgpack_object", MPJ_KEY_INT, NULL, 7 },
+    { "noteBaseType", "msgpack_object", MPJ_KEY_INT, NULL, 8 },
+    { "previousConnectionId", "int32_t", MPJ_KEY_INT, NULL, 9 },
+    { "nextConnectionId", "int32_t", MPJ_KEY_INT, NULL, 10 },
+    { "direction", "msgpack_object", MPJ_KEY_INT, NULL, 11 },
+    { "isSkip", "bool", MPJ_KEY_INT, NULL, 12 },
 };
 
 static const mpj_field_entry Sekai_SuperVirtualLive_RoomUserHonorInfo_fields[] = {
@@ -13795,7 +14155,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_MasterVirtualShopItemFirstPurchaseBonus", sizeof(Sekai_MasterVirtualShopItemFirstPurchaseBonus), Sekai_MasterVirtualShopItemFirstPurchaseBonus_free_dyn, Sekai_MasterVirtualShopItemFirstPurchaseBonus_pack_dyn, Sekai_MasterVirtualShopItemFirstPurchaseBonus_unpack_dyn, Sekai_MasterVirtualShopItemFirstPurchaseBonus_fields, 3 },
     { "Sekai_MasterWording", sizeof(Sekai_MasterWording), Sekai_MasterWording_free_dyn, Sekai_MasterWording_pack_dyn, Sekai_MasterWording_unpack_dyn, Sekai_MasterWording_fields, 2 },
     { "Sekai_ModuleMaintenanceResponse", sizeof(Sekai_ModuleMaintenanceResponse), Sekai_ModuleMaintenanceResponse_free_dyn, Sekai_ModuleMaintenanceResponse_pack_dyn, Sekai_ModuleMaintenanceResponse_unpack_dyn, Sekai_ModuleMaintenanceResponse_fields, 2 },
-    { "Sekai_MasterMusic", sizeof(Sekai_MasterMusic), Sekai_MasterMusic_free_dyn, Sekai_MasterMusic_pack_dyn, Sekai_MasterMusic_unpack_dyn, Sekai_MasterMusic_fields, 22 },
+    { "Sekai_MasterMusic", sizeof(Sekai_MasterMusic), Sekai_MasterMusic_free_dyn, Sekai_MasterMusic_pack_dyn, Sekai_MasterMusic_unpack_dyn, Sekai_MasterMusic_fields, 24 },
     { "Sekai_MasterMusicAchievement", sizeof(Sekai_MasterMusicAchievement), Sekai_MasterMusicAchievement_free_dyn, Sekai_MasterMusicAchievement_pack_dyn, Sekai_MasterMusicAchievement_unpack_dyn, Sekai_MasterMusicAchievement_fields, 5 },
     { "Sekai_MasterMusicAll", sizeof(Sekai_MasterMusicAll), Sekai_MasterMusicAll_free_dyn, Sekai_MasterMusicAll_pack_dyn, Sekai_MasterMusicAll_unpack_dyn, Sekai_MasterMusicAll_fields, 8 },
     { "Sekai_MasterMusicArtist", sizeof(Sekai_MasterMusicArtist), Sekai_MasterMusicArtist_free_dyn, Sekai_MasterMusicArtist_pack_dyn, Sekai_MasterMusicArtist_unpack_dyn, Sekai_MasterMusicArtist_fields, 3 },
@@ -13820,8 +14180,8 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_MasterPanelMissionSheet", sizeof(Sekai_MasterPanelMissionSheet), Sekai_MasterPanelMissionSheet_free_dyn, Sekai_MasterPanelMissionSheet_pack_dyn, Sekai_MasterPanelMissionSheet_unpack_dyn, Sekai_MasterPanelMissionSheet_fields, 7 },
     { "Sekai_MasterPanelMission", sizeof(Sekai_MasterPanelMission), Sekai_MasterPanelMission_free_dyn, Sekai_MasterPanelMission_pack_dyn, Sekai_MasterPanelMission_unpack_dyn, Sekai_MasterPanelMission_fields, 9 },
     { "Sekai_MasterPanelMissionReward", sizeof(Sekai_MasterPanelMissionReward), Sekai_MasterPanelMissionReward_free_dyn, Sekai_MasterPanelMissionReward_pack_dyn, Sekai_MasterPanelMissionReward_unpack_dyn, Sekai_MasterPanelMissionReward_fields, 5 },
-    { "Sekai_SuiteMaster", sizeof(Sekai_SuiteMaster), Sekai_SuiteMaster_free_dyn, Sekai_SuiteMaster_pack_dyn, Sekai_SuiteMaster_unpack_dyn, Sekai_SuiteMaster_fields, 386 },
-    { "Sekai_CachedMaserDataAll", sizeof(Sekai_CachedMaserDataAll), Sekai_CachedMaserDataAll_free_dyn, Sekai_CachedMaserDataAll_pack_dyn, Sekai_CachedMaserDataAll_unpack_dyn, Sekai_CachedMaserDataAll_fields, 375 },
+    { "Sekai_SuiteMaster", sizeof(Sekai_SuiteMaster), Sekai_SuiteMaster_free_dyn, Sekai_SuiteMaster_pack_dyn, Sekai_SuiteMaster_unpack_dyn, Sekai_SuiteMaster_fields, 390 },
+    { "Sekai_CachedMaserDataAll", sizeof(Sekai_CachedMaserDataAll), Sekai_CachedMaserDataAll_free_dyn, Sekai_CachedMaserDataAll_pack_dyn, Sekai_CachedMaserDataAll_unpack_dyn, Sekai_CachedMaserDataAll_fields, 379 },
     { "Sekai_MasterLimitedTitleScreen", sizeof(Sekai_MasterLimitedTitleScreen), Sekai_MasterLimitedTitleScreen_free_dyn, Sekai_MasterLimitedTitleScreen_pack_dyn, Sekai_MasterLimitedTitleScreen_unpack_dyn, Sekai_MasterLimitedTitleScreen_fields, 10 },
     { "Sekai_UserBondList", sizeof(Sekai_UserBondList), Sekai_UserBondList_free_dyn, Sekai_UserBondList_pack_dyn, Sekai_UserBondList_unpack_dyn, Sekai_UserBondList_fields, 1 },
     { "Sekai_UserBonds", sizeof(Sekai_UserBonds), Sekai_UserBonds_free_dyn, Sekai_UserBonds_pack_dyn, Sekai_UserBonds_unpack_dyn, Sekai_UserBonds_fields, 3 },
@@ -13906,7 +14266,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_AnotherUserConfig", sizeof(Sekai_AnotherUserConfig), Sekai_AnotherUserConfig_free_dyn, Sekai_AnotherUserConfig_pack_dyn, Sekai_AnotherUserConfig_unpack_dyn, Sekai_AnotherUserConfig_fields, 1 },
     { "Sekai_AnotherUserMultiLiveTopScoreCount", sizeof(Sekai_AnotherUserMultiLiveTopScoreCount), Sekai_AnotherUserMultiLiveTopScoreCount_free_dyn, Sekai_AnotherUserMultiLiveTopScoreCount_pack_dyn, Sekai_AnotherUserMultiLiveTopScoreCount_unpack_dyn, Sekai_AnotherUserMultiLiveTopScoreCount_fields, 2 },
     { "Sekai_AnotherTotalPower", sizeof(Sekai_AnotherTotalPower), Sekai_AnotherTotalPower_free_dyn, Sekai_AnotherTotalPower_pack_dyn, Sekai_AnotherTotalPower_unpack_dyn, Sekai_AnotherTotalPower_fields, 8 },
-    { "Sekai_SuiteUser", sizeof(Sekai_SuiteUser), Sekai_SuiteUser_free_dyn, Sekai_SuiteUser_pack_dyn, Sekai_SuiteUser_unpack_dyn, Sekai_SuiteUser_fields, 184 },
+    { "Sekai_SuiteUser", sizeof(Sekai_SuiteUser), Sekai_SuiteUser_free_dyn, Sekai_SuiteUser_pack_dyn, Sekai_SuiteUser_unpack_dyn, Sekai_SuiteUser_fields, 186 },
     { "Sekai_SuiteUserCommonResponse", sizeof(Sekai_SuiteUserCommonResponse), Sekai_SuiteUserCommonResponse_free_dyn, Sekai_SuiteUserCommonResponse_pack_dyn, Sekai_SuiteUserCommonResponse_unpack_dyn, Sekai_SuiteUserCommonResponse_fields, 1 },
     { "Sekai_UserBanInfo", sizeof(Sekai_UserBanInfo), Sekai_UserBanInfo_free_dyn, Sekai_UserBanInfo_pack_dyn, Sekai_UserBanInfo_unpack_dyn, Sekai_UserBanInfo_fields, 2 },
     { "Sekai_SystemResponse", sizeof(Sekai_SystemResponse), Sekai_SystemResponse_free_dyn, Sekai_SystemResponse_pack_dyn, Sekai_SystemResponse_unpack_dyn, Sekai_SystemResponse_fields, 4 },
@@ -14079,7 +14439,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_UserGiftGachaWish", sizeof(Sekai_UserGiftGachaWish), Sekai_UserGiftGachaWish_free_dyn, Sekai_UserGiftGachaWish_pack_dyn, Sekai_UserGiftGachaWish_unpack_dyn, Sekai_UserGiftGachaWish_fields, 5 },
     { "Sekai_UserGiftGachaWishRequest", sizeof(Sekai_UserGiftGachaWishRequest), Sekai_UserGiftGachaWishRequest_free_dyn, Sekai_UserGiftGachaWishRequest_pack_dyn, Sekai_UserGiftGachaWishRequest_unpack_dyn, Sekai_UserGiftGachaWishRequest_fields, 2 },
     { "Sekai_UserHomeRefreshRequest", sizeof(Sekai_UserHomeRefreshRequest), Sekai_UserHomeRefreshRequest_free_dyn, Sekai_UserHomeRefreshRequest_pack_dyn, Sekai_UserHomeRefreshRequest_unpack_dyn, Sekai_UserHomeRefreshRequest_fields, 1 },
-    { "Sekai_UserHomeRefreshResponse", sizeof(Sekai_UserHomeRefreshResponse), Sekai_UserHomeRefreshResponse_free_dyn, Sekai_UserHomeRefreshResponse_pack_dyn, Sekai_UserHomeRefreshResponse_unpack_dyn, Sekai_UserHomeRefreshResponse_fields, 12 },
+    { "Sekai_UserHomeRefreshResponse", sizeof(Sekai_UserHomeRefreshResponse), Sekai_UserHomeRefreshResponse_free_dyn, Sekai_UserHomeRefreshResponse_pack_dyn, Sekai_UserHomeRefreshResponse_unpack_dyn, Sekai_UserHomeRefreshResponse_fields, 13 },
     { "Sekai_UserConvertedGachaCeilItem", sizeof(Sekai_UserConvertedGachaCeilItem), Sekai_UserConvertedGachaCeilItem_free_dyn, Sekai_UserConvertedGachaCeilItem_pack_dyn, Sekai_UserConvertedGachaCeilItem_unpack_dyn, Sekai_UserConvertedGachaCeilItem_fields, 4 },
     { "Sekai_UserHomeBanner", sizeof(Sekai_UserHomeBanner), Sekai_UserHomeBanner_free_dyn, Sekai_UserHomeBanner_pack_dyn, Sekai_UserHomeBanner_unpack_dyn, Sekai_UserHomeBanner_fields, 12 },
     { "Sekai_UserReceivedEventMissionReward", sizeof(Sekai_UserReceivedEventMissionReward), Sekai_UserReceivedEventMissionReward_free_dyn, Sekai_UserReceivedEventMissionReward_pack_dyn, Sekai_UserReceivedEventMissionReward_unpack_dyn, Sekai_UserReceivedEventMissionReward_fields, 2 },
@@ -14095,13 +14455,13 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_PlatformInheritResponse", sizeof(Sekai_PlatformInheritResponse), Sekai_PlatformInheritResponse_free_dyn, Sekai_PlatformInheritResponse_pack_dyn, Sekai_PlatformInheritResponse_unpack_dyn, Sekai_PlatformInheritResponse_fields, 4 },
     { "Sekai_UserPlatformInherit", sizeof(Sekai_UserPlatformInherit), Sekai_UserPlatformInherit_free_dyn, Sekai_UserPlatformInherit_pack_dyn, Sekai_UserPlatformInherit_unpack_dyn, Sekai_UserPlatformInherit_fields, 1 },
     { "Sekai_UserInherit", sizeof(Sekai_UserInherit), Sekai_UserInherit_free_dyn, Sekai_UserInherit_pack_dyn, Sekai_UserInherit_unpack_dyn, Sekai_UserInherit_fields, 1 },
-    { "Sekai_UserLiveRequest", sizeof(Sekai_UserLiveRequest), Sekai_UserLiveRequest_free_dyn, Sekai_UserLiveRequest_pack_dyn, Sekai_UserLiveRequest_unpack_dyn, Sekai_UserLiveRequest_fields, 7 },
+    { "Sekai_UserLiveRequest", sizeof(Sekai_UserLiveRequest), Sekai_UserLiveRequest_free_dyn, Sekai_UserLiveRequest_pack_dyn, Sekai_UserLiveRequest_unpack_dyn, Sekai_UserLiveRequest_fields, 8 },
     { "Sekai_UserLive", sizeof(Sekai_UserLive), Sekai_UserLive_free_dyn, Sekai_UserLive_pack_dyn, Sekai_UserLive_unpack_dyn, Sekai_UserLive_fields, 5 },
     { "Sekai_UpdatedResources", sizeof(Sekai_UpdatedResources), Sekai_UpdatedResources_free_dyn, Sekai_UpdatedResources_pack_dyn, Sekai_UpdatedResources_unpack_dyn, Sekai_UpdatedResources_fields, 1 },
     { "Sekai_IngameLotterySkill", sizeof(Sekai_IngameLotterySkill), Sekai_IngameLotterySkill_free_dyn, Sekai_IngameLotterySkill_pack_dyn, Sekai_IngameLotterySkill_unpack_dyn, Sekai_IngameLotterySkill_fields, 4 },
     { "Sekai_IngameComboCutin", sizeof(Sekai_IngameComboCutin), Sekai_IngameComboCutin_free_dyn, Sekai_IngameComboCutin_pack_dyn, Sekai_IngameComboCutin_unpack_dyn, Sekai_IngameComboCutin_fields, 3 },
     { "Sekai_UserLiveClearRequest", sizeof(Sekai_UserLiveClearRequest), Sekai_UserLiveClearRequest_free_dyn, Sekai_UserLiveClearRequest_pack_dyn, Sekai_UserLiveClearRequest_unpack_dyn, Sekai_UserLiveClearRequest_fields, 12 },
-    { "Sekai_UserLiveClearResponse", sizeof(Sekai_UserLiveClearResponse), Sekai_UserLiveClearResponse_free_dyn, Sekai_UserLiveClearResponse_pack_dyn, Sekai_UserLiveClearResponse_unpack_dyn, Sekai_UserLiveClearResponse_fields, 31 },
+    { "Sekai_UserLiveClearResponse", sizeof(Sekai_UserLiveClearResponse), Sekai_UserLiveClearResponse_free_dyn, Sekai_UserLiveClearResponse_pack_dyn, Sekai_UserLiveClearResponse_unpack_dyn, Sekai_UserLiveClearResponse_fields, 32 },
     { "Sekai_DeckCardUpdateExpResult", sizeof(Sekai_DeckCardUpdateExpResult), Sekai_DeckCardUpdateExpResult_free_dyn, Sekai_DeckCardUpdateExpResult_pack_dyn, Sekai_DeckCardUpdateExpResult_unpack_dyn, Sekai_DeckCardUpdateExpResult_fields, 2 },
     { "Sekai_UnitUpdateExpResult", sizeof(Sekai_UnitUpdateExpResult), Sekai_UnitUpdateExpResult_free_dyn, Sekai_UnitUpdateExpResult_pack_dyn, Sekai_UnitUpdateExpResult_unpack_dyn, Sekai_UnitUpdateExpResult_fields, 2 },
     { "Sekai_UserBondsUpdateExpResult", sizeof(Sekai_UserBondsUpdateExpResult), Sekai_UserBondsUpdateExpResult_free_dyn, Sekai_UserBondsUpdateExpResult_pack_dyn, Sekai_UserBondsUpdateExpResult_unpack_dyn, Sekai_UserBondsUpdateExpResult_fields, 3 },
@@ -14117,14 +14477,14 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_UserMissionReceiveRequest", sizeof(Sekai_UserMissionReceiveRequest), Sekai_UserMissionReceiveRequest_free_dyn, Sekai_UserMissionReceiveRequest_pack_dyn, Sekai_UserMissionReceiveRequest_unpack_dyn, Sekai_UserMissionReceiveRequest_fields, 3 },
     { "Sekai_UserMissionReceiveResponse", sizeof(Sekai_UserMissionReceiveResponse), Sekai_UserMissionReceiveResponse_free_dyn, Sekai_UserMissionReceiveResponse_pack_dyn, Sekai_UserMissionReceiveResponse_unpack_dyn, Sekai_UserMissionReceiveResponse_fields, 2 },
     { "Sekai_UserMissionStatus", sizeof(Sekai_UserMissionStatus), Sekai_UserMissionStatus_free_dyn, Sekai_UserMissionStatus_pack_dyn, Sekai_UserMissionStatus_unpack_dyn, Sekai_UserMissionStatus_fields, 4 },
-    { "Sekai_MultiLiveRequest", sizeof(Sekai_MultiLiveRequest), Sekai_MultiLiveRequest_free_dyn, Sekai_MultiLiveRequest_pack_dyn, Sekai_MultiLiveRequest_unpack_dyn, Sekai_MultiLiveRequest_fields, 20 },
+    { "Sekai_MultiLiveRequest", sizeof(Sekai_MultiLiveRequest), Sekai_MultiLiveRequest_free_dyn, Sekai_MultiLiveRequest_pack_dyn, Sekai_MultiLiveRequest_unpack_dyn, Sekai_MultiLiveRequest_fields, 21 },
     { "Sekai_MultiLiveResponse", sizeof(Sekai_MultiLiveResponse), Sekai_MultiLiveResponse_free_dyn, Sekai_MultiLiveResponse_pack_dyn, Sekai_MultiLiveResponse_unpack_dyn, Sekai_MultiLiveResponse_fields, 3 },
-    { "Sekai_UserMultiLiveRequest", sizeof(Sekai_UserMultiLiveRequest), Sekai_UserMultiLiveRequest_free_dyn, Sekai_UserMultiLiveRequest_pack_dyn, Sekai_UserMultiLiveRequest_unpack_dyn, Sekai_UserMultiLiveRequest_fields, 10 },
+    { "Sekai_UserMultiLiveRequest", sizeof(Sekai_UserMultiLiveRequest), Sekai_UserMultiLiveRequest_free_dyn, Sekai_UserMultiLiveRequest_pack_dyn, Sekai_UserMultiLiveRequest_unpack_dyn, Sekai_UserMultiLiveRequest_fields, 11 },
     { "Sekai_UserPrivateRoomSettings", sizeof(Sekai_UserPrivateRoomSettings), Sekai_UserPrivateRoomSettings_free_dyn, Sekai_UserPrivateRoomSettings_pack_dyn, Sekai_UserPrivateRoomSettings_unpack_dyn, Sekai_UserPrivateRoomSettings_fields, 6 },
     { "Sekai_UserMultiLiveResponse", sizeof(Sekai_UserMultiLiveResponse), Sekai_UserMultiLiveResponse_free_dyn, Sekai_UserMultiLiveResponse_pack_dyn, Sekai_UserMultiLiveResponse_unpack_dyn, Sekai_UserMultiLiveResponse_fields, 2 },
     { "Sekai_UserMultiLiveClearRequest", sizeof(Sekai_UserMultiLiveClearRequest), Sekai_UserMultiLiveClearRequest_free_dyn, Sekai_UserMultiLiveClearRequest_pack_dyn, Sekai_UserMultiLiveClearRequest_unpack_dyn, Sekai_UserMultiLiveClearRequest_fields, 12 },
     { "Sekai_UserMultiLiveClearScoreRequest", sizeof(Sekai_UserMultiLiveClearScoreRequest), Sekai_UserMultiLiveClearScoreRequest_free_dyn, Sekai_UserMultiLiveClearScoreRequest_pack_dyn, Sekai_UserMultiLiveClearScoreRequest_unpack_dyn, Sekai_UserMultiLiveClearScoreRequest_fields, 11 },
-    { "Sekai_UserMultiLiveClearResponse", sizeof(Sekai_UserMultiLiveClearResponse), Sekai_UserMultiLiveClearResponse_free_dyn, Sekai_UserMultiLiveClearResponse_pack_dyn, Sekai_UserMultiLiveClearResponse_unpack_dyn, Sekai_UserMultiLiveClearResponse_fields, 33 },
+    { "Sekai_UserMultiLiveClearResponse", sizeof(Sekai_UserMultiLiveClearResponse), Sekai_UserMultiLiveClearResponse_free_dyn, Sekai_UserMultiLiveClearResponse_pack_dyn, Sekai_UserMultiLiveClearResponse_unpack_dyn, Sekai_UserMultiLiveClearResponse_fields, 34 },
     { "Sekai_UserMultiLiveClearScoreResponse", sizeof(Sekai_UserMultiLiveClearScoreResponse), Sekai_UserMultiLiveClearScoreResponse_free_dyn, Sekai_UserMultiLiveClearScoreResponse_pack_dyn, Sekai_UserMultiLiveClearScoreResponse_unpack_dyn, Sekai_UserMultiLiveClearScoreResponse_fields, 15 },
     { "Sekai_UserMultiIngameCutins", sizeof(Sekai_UserMultiIngameCutins), Sekai_UserMultiIngameCutins_free_dyn, Sekai_UserMultiIngameCutins_pack_dyn, Sekai_UserMultiIngameCutins_unpack_dyn, Sekai_UserMultiIngameCutins_fields, 5 },
     { "Sekai_MultiIngameCutin", sizeof(Sekai_MultiIngameCutin), Sekai_MultiIngameCutin_free_dyn, Sekai_MultiIngameCutin_pack_dyn, Sekai_MultiIngameCutin_unpack_dyn, Sekai_MultiIngameCutin_fields, 6 },
@@ -14270,7 +14630,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_PublishedFilteredData", sizeof(Sekai_PublishedFilteredData), Sekai_PublishedFilteredData_free_dyn, Sekai_PublishedFilteredData_pack_dyn, Sekai_PublishedFilteredData_unpack_dyn, Sekai_PublishedFilteredData_fields, 2 },
     { "Sekai_AccountDeviceIdData", sizeof(Sekai_AccountDeviceIdData), Sekai_AccountDeviceIdData_free_dyn, Sekai_AccountDeviceIdData_pack_dyn, Sekai_AccountDeviceIdData_unpack_dyn, Sekai_AccountDeviceIdData_fields, 1 },
     { "Sekai_ACLocalCacheData", sizeof(Sekai_ACLocalCacheData), Sekai_ACLocalCacheData_free_dyn, Sekai_ACLocalCacheData_pack_dyn, Sekai_ACLocalCacheData_unpack_dyn, Sekai_ACLocalCacheData_fields, 1 },
-    { "Sekai_ApplicationLocalSettings", sizeof(Sekai_ApplicationLocalSettings), Sekai_ApplicationLocalSettings_free_dyn, Sekai_ApplicationLocalSettings_pack_dyn, Sekai_ApplicationLocalSettings_unpack_dyn, Sekai_ApplicationLocalSettings_fields, 98 },
+    { "Sekai_ApplicationLocalSettings", sizeof(Sekai_ApplicationLocalSettings), Sekai_ApplicationLocalSettings_free_dyn, Sekai_ApplicationLocalSettings_pack_dyn, Sekai_ApplicationLocalSettings_unpack_dyn, Sekai_ApplicationLocalSettings_fields, 99 },
     { "Sekai_VolumeSettingData", sizeof(Sekai_VolumeSettingData), Sekai_VolumeSettingData_free_dyn, Sekai_VolumeSettingData_pack_dyn, Sekai_VolumeSettingData_unpack_dyn, Sekai_VolumeSettingData_fields, 3 },
     { "Sekai_ApplicationLocalVersionData", sizeof(Sekai_ApplicationLocalVersionData), Sekai_ApplicationLocalVersionData_free_dyn, Sekai_ApplicationLocalVersionData_pack_dyn, Sekai_ApplicationLocalVersionData_unpack_dyn, Sekai_ApplicationLocalVersionData_fields, 4 },
     { "Sekai_BirthdayPartyReadInformationCacheData", sizeof(Sekai_BirthdayPartyReadInformationCacheData), Sekai_BirthdayPartyReadInformationCacheData_free_dyn, Sekai_BirthdayPartyReadInformationCacheData_pack_dyn, Sekai_BirthdayPartyReadInformationCacheData_unpack_dyn, Sekai_BirthdayPartyReadInformationCacheData_fields, 1 },
@@ -14316,19 +14676,21 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_MVOnlyDeckCharacterLocalData", sizeof(Sekai_MVOnlyDeckCharacterLocalData), Sekai_MVOnlyDeckCharacterLocalData_free_dyn, Sekai_MVOnlyDeckCharacterLocalData_pack_dyn, Sekai_MVOnlyDeckCharacterLocalData_unpack_dyn, Sekai_MVOnlyDeckCharacterLocalData_fields, 4 },
     { "Sekai_MVOnlyDeckCostumeLocalData", sizeof(Sekai_MVOnlyDeckCostumeLocalData), Sekai_MVOnlyDeckCostumeLocalData_free_dyn, Sekai_MVOnlyDeckCostumeLocalData_pack_dyn, Sekai_MVOnlyDeckCostumeLocalData_unpack_dyn, Sekai_MVOnlyDeckCostumeLocalData_fields, 5 },
     { "Sekai_MVOnlyDeckFixCostumeLocalData", sizeof(Sekai_MVOnlyDeckFixCostumeLocalData), Sekai_MVOnlyDeckFixCostumeLocalData_free_dyn, Sekai_MVOnlyDeckFixCostumeLocalData_pack_dyn, Sekai_MVOnlyDeckFixCostumeLocalData_unpack_dyn, Sekai_MVOnlyDeckFixCostumeLocalData_fields, 2 },
-    { "Sekai_LiveSettingData", sizeof(Sekai_LiveSettingData), Sekai_LiveSettingData_free_dyn, Sekai_LiveSettingData_pack_dyn, Sekai_LiveSettingData_unpack_dyn, Sekai_LiveSettingData_fields, 31 },
+    { "Sekai_LiveSettingData", sizeof(Sekai_LiveSettingData), Sekai_LiveSettingData_free_dyn, Sekai_LiveSettingData_pack_dyn, Sekai_LiveSettingData_unpack_dyn, Sekai_LiveSettingData_fields, 32 },
     { "Sekai_MusicSettingDataList", sizeof(Sekai_MusicSettingDataList), Sekai_MusicSettingDataList_free_dyn, Sekai_MusicSettingDataList_pack_dyn, Sekai_MusicSettingDataList_unpack_dyn, Sekai_MusicSettingDataList_fields, 1 },
-    { "Sekai_MusicSettingData", sizeof(Sekai_MusicSettingData), Sekai_MusicSettingData_free_dyn, Sekai_MusicSettingData_pack_dyn, Sekai_MusicSettingData_unpack_dyn, Sekai_MusicSettingData_fields, 1 },
+    { "Sekai_MusicSettingData", sizeof(Sekai_MusicSettingData), Sekai_MusicSettingData_free_dyn, Sekai_MusicSettingData_pack_dyn, Sekai_MusicSettingData_unpack_dyn, Sekai_MusicSettingData_fields, 2 },
     { "Sekai_CardSelectGachaFilterData", sizeof(Sekai_CardSelectGachaFilterData), Sekai_CardSelectGachaFilterData_free_dyn, Sekai_CardSelectGachaFilterData_pack_dyn, Sekai_CardSelectGachaFilterData_unpack_dyn, Sekai_CardSelectGachaFilterData_fields, 7 },
     { "CharaTicketItemFilterDialog_SettingData", sizeof(CharaTicketItemFilterDialog_SettingData), CharaTicketItemFilterDialog_SettingData_free_dyn, CharaTicketItemFilterDialog_SettingData_pack_dyn, CharaTicketItemFilterDialog_SettingData_unpack_dyn, CharaTicketItemFilterDialog_SettingData_fields, 6 },
     { "Sekai_MusicShop_FilteredData", sizeof(Sekai_MusicShop_FilteredData), Sekai_MusicShop_FilteredData_free_dyn, Sekai_MusicShop_FilteredData_pack_dyn, Sekai_MusicShop_FilteredData_unpack_dyn, Sekai_MusicShop_FilteredData_fields, 5 },
     { "Sekai_MusicShop_VocalTypeFilteredData", sizeof(Sekai_MusicShop_VocalTypeFilteredData), Sekai_MusicShop_VocalTypeFilteredData_free_dyn, Sekai_MusicShop_VocalTypeFilteredData_pack_dyn, Sekai_MusicShop_VocalTypeFilteredData_unpack_dyn, Sekai_MusicShop_VocalTypeFilteredData_fields, 3 },
     { "Sekai_MusicShop_MusicShopSortFilterData", sizeof(Sekai_MusicShop_MusicShopSortFilterData), Sekai_MusicShop_MusicShopSortFilterData_free_dyn, Sekai_MusicShop_MusicShopSortFilterData_pack_dyn, Sekai_MusicShop_MusicShopSortFilterData_unpack_dyn, Sekai_MusicShop_MusicShopSortFilterData_fields, 2 },
     { "Sekai_MusicShop_SortData", sizeof(Sekai_MusicShop_SortData), Sekai_MusicShop_SortData_free_dyn, Sekai_MusicShop_SortData_pack_dyn, Sekai_MusicShop_SortData_unpack_dyn, Sekai_MusicShop_SortData_fields, 3 },
+    { "Sekai_MusicPlayHistory_MusicPlayHistoryData", sizeof(Sekai_MusicPlayHistory_MusicPlayHistoryData), Sekai_MusicPlayHistory_MusicPlayHistoryData_free_dyn, Sekai_MusicPlayHistory_MusicPlayHistoryData_pack_dyn, Sekai_MusicPlayHistory_MusicPlayHistoryData_unpack_dyn, Sekai_MusicPlayHistory_MusicPlayHistoryData_fields, 1 },
+    { "Sekai_MusicPlayHistory_MusicPlayHistoryEntry", sizeof(Sekai_MusicPlayHistory_MusicPlayHistoryEntry), Sekai_MusicPlayHistory_MusicPlayHistoryEntry_free_dyn, Sekai_MusicPlayHistory_MusicPlayHistoryEntry_pack_dyn, Sekai_MusicPlayHistory_MusicPlayHistoryEntry_unpack_dyn, Sekai_MusicPlayHistory_MusicPlayHistoryEntry_fields, 3 },
     { "Sekai_ImageCache_ImageCache", sizeof(Sekai_ImageCache_ImageCache), Sekai_ImageCache_ImageCache_free_dyn, Sekai_ImageCache_ImageCache_pack_dyn, Sekai_ImageCache_ImageCache_unpack_dyn, Sekai_ImageCache_ImageCache_fields, 1 },
     { "Sekai_ImageCache_ImageCacheMetaInfos", sizeof(Sekai_ImageCache_ImageCacheMetaInfos), Sekai_ImageCache_ImageCacheMetaInfos_free_dyn, Sekai_ImageCache_ImageCacheMetaInfos_pack_dyn, Sekai_ImageCache_ImageCacheMetaInfos_unpack_dyn, Sekai_ImageCache_ImageCacheMetaInfos_fields, 1 },
     { "Sekai_ImageCache_ImageCacheMeta", sizeof(Sekai_ImageCache_ImageCacheMeta), Sekai_ImageCache_ImageCacheMeta_free_dyn, Sekai_ImageCache_ImageCacheMeta_pack_dyn, Sekai_ImageCache_ImageCacheMeta_unpack_dyn, Sekai_ImageCache_ImageCacheMeta_fields, 2 },
-    { "Sekai_Multiplay_MultiLivePartyMember", sizeof(Sekai_Multiplay_MultiLivePartyMember), Sekai_Multiplay_MultiLivePartyMember_free_dyn, Sekai_Multiplay_MultiLivePartyMember_pack_dyn, Sekai_Multiplay_MultiLivePartyMember_unpack_dyn, Sekai_Multiplay_MultiLivePartyMember_fields, 25 },
+    { "Sekai_Multiplay_MultiLivePartyMember", sizeof(Sekai_Multiplay_MultiLivePartyMember), Sekai_Multiplay_MultiLivePartyMember_free_dyn, Sekai_Multiplay_MultiLivePartyMember_pack_dyn, Sekai_Multiplay_MultiLivePartyMember_unpack_dyn, Sekai_Multiplay_MultiLivePartyMember_fields, 26 },
     { "Sekai_Multiplay_MultiLivePartyInfo", sizeof(Sekai_Multiplay_MultiLivePartyInfo), Sekai_Multiplay_MultiLivePartyInfo_free_dyn, Sekai_Multiplay_MultiLivePartyInfo_pack_dyn, Sekai_Multiplay_MultiLivePartyInfo_unpack_dyn, Sekai_Multiplay_MultiLivePartyInfo_fields, 2 },
     { "Sekai_Multiplay_MultiLiveRoomResult", sizeof(Sekai_Multiplay_MultiLiveRoomResult), Sekai_Multiplay_MultiLiveRoomResult_free_dyn, Sekai_Multiplay_MultiLiveRoomResult_pack_dyn, Sekai_Multiplay_MultiLiveRoomResult_unpack_dyn, Sekai_Multiplay_MultiLiveRoomResult_fields, 1 },
     { "Sekai_Multiplay_MultiLiveTemporaryCachePartyInfo", sizeof(Sekai_Multiplay_MultiLiveTemporaryCachePartyInfo), Sekai_Multiplay_MultiLiveTemporaryCachePartyInfo_free_dyn, Sekai_Multiplay_MultiLiveTemporaryCachePartyInfo_pack_dyn, Sekai_Multiplay_MultiLiveTemporaryCachePartyInfo_unpack_dyn, Sekai_Multiplay_MultiLiveTemporaryCachePartyInfo_fields, 3 },
@@ -14347,7 +14709,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_MultiLive_RoomUserHonorInfo", sizeof(Sekai_MultiLive_RoomUserHonorInfo), Sekai_MultiLive_RoomUserHonorInfo_free_dyn, Sekai_MultiLive_RoomUserHonorInfo_pack_dyn, Sekai_MultiLive_RoomUserHonorInfo_unpack_dyn, Sekai_MultiLive_RoomUserHonorInfo_fields, 6 },
     { "Sekai_MultiLive_RoomUserBasicInfo", sizeof(Sekai_MultiLive_RoomUserBasicInfo), Sekai_MultiLive_RoomUserBasicInfo_free_dyn, Sekai_MultiLive_RoomUserBasicInfo_pack_dyn, Sekai_MultiLive_RoomUserBasicInfo_unpack_dyn, Sekai_MultiLive_RoomUserBasicInfo_fields, 19 },
     { "Sekai_MultiLive_LoadingProgressPayload", sizeof(Sekai_MultiLive_LoadingProgressPayload), Sekai_MultiLive_LoadingProgressPayload_free_dyn, Sekai_MultiLive_LoadingProgressPayload_pack_dyn, Sekai_MultiLive_LoadingProgressPayload_unpack_dyn, Sekai_MultiLive_LoadingProgressPayload_fields, 1 },
-    { "Sekai_MultiLive_PlayerInfo", sizeof(Sekai_MultiLive_PlayerInfo), Sekai_MultiLive_PlayerInfo_free_dyn, Sekai_MultiLive_PlayerInfo_pack_dyn, Sekai_MultiLive_PlayerInfo_unpack_dyn, Sekai_MultiLive_PlayerInfo_fields, 5 },
+    { "Sekai_MultiLive_PlayerInfo", sizeof(Sekai_MultiLive_PlayerInfo), Sekai_MultiLive_PlayerInfo_free_dyn, Sekai_MultiLive_PlayerInfo_pack_dyn, Sekai_MultiLive_PlayerInfo_unpack_dyn, Sekai_MultiLive_PlayerInfo_fields, 6 },
     { "Sekai_MultiLive_PartyRoomMeta", sizeof(Sekai_MultiLive_PartyRoomMeta), Sekai_MultiLive_PartyRoomMeta_free_dyn, Sekai_MultiLive_PartyRoomMeta_pack_dyn, Sekai_MultiLive_PartyRoomMeta_unpack_dyn, Sekai_MultiLive_PartyRoomMeta_fields, 3 },
     { "Sekai_MultiLive_MemberCharacterRank", sizeof(Sekai_MultiLive_MemberCharacterRank), Sekai_MultiLive_MemberCharacterRank_free_dyn, Sekai_MultiLive_MemberCharacterRank_pack_dyn, Sekai_MultiLive_MemberCharacterRank_unpack_dyn, Sekai_MultiLive_MemberCharacterRank_fields, 2 },
     { "Sekai_MultiLive_PartyRoomMetaList", sizeof(Sekai_MultiLive_PartyRoomMetaList), Sekai_MultiLive_PartyRoomMetaList_free_dyn, Sekai_MultiLive_PartyRoomMetaList_pack_dyn, Sekai_MultiLive_PartyRoomMetaList_unpack_dyn, Sekai_MultiLive_PartyRoomMetaList_fields, 1 },
@@ -14362,7 +14724,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_MultiLive_MultiLiveUnLockJoinData", sizeof(Sekai_MultiLive_MultiLiveUnLockJoinData), Sekai_MultiLive_MultiLiveUnLockJoinData_free_dyn, Sekai_MultiLive_MultiLiveUnLockJoinData_pack_dyn, Sekai_MultiLive_MultiLiveUnLockJoinData_unpack_dyn, Sekai_MultiLive_MultiLiveUnLockJoinData_fields, 6 },
     { "Sekai_MultiLive_MultiLiveDirectJoinData", sizeof(Sekai_MultiLive_MultiLiveDirectJoinData), Sekai_MultiLive_MultiLiveDirectJoinData_free_dyn, Sekai_MultiLive_MultiLiveDirectJoinData_pack_dyn, Sekai_MultiLive_MultiLiveDirectJoinData_unpack_dyn, Sekai_MultiLive_MultiLiveDirectJoinData_fields, 3 },
     { "Sekai_MultiLive_MultiLiveRoomSyncData", sizeof(Sekai_MultiLive_MultiLiveRoomSyncData), Sekai_MultiLive_MultiLiveRoomSyncData_free_dyn, Sekai_MultiLive_MultiLiveRoomSyncData_pack_dyn, Sekai_MultiLive_MultiLiveRoomSyncData_unpack_dyn, Sekai_MultiLive_MultiLiveRoomSyncData_fields, 9 },
-    { "Sekai_MultiLive_CustomRoomSettingData", sizeof(Sekai_MultiLive_CustomRoomSettingData), Sekai_MultiLive_CustomRoomSettingData_free_dyn, Sekai_MultiLive_CustomRoomSettingData_pack_dyn, Sekai_MultiLive_CustomRoomSettingData_unpack_dyn, Sekai_MultiLive_CustomRoomSettingData_fields, 4 },
+    { "Sekai_MultiLive_CustomRoomSettingData", sizeof(Sekai_MultiLive_CustomRoomSettingData), Sekai_MultiLive_CustomRoomSettingData_free_dyn, Sekai_MultiLive_CustomRoomSettingData_pack_dyn, Sekai_MultiLive_CustomRoomSettingData_unpack_dyn, Sekai_MultiLive_CustomRoomSettingData_fields, 5 },
     { "Sekai_MultiLive_DebugGetRoomInfoRequest", sizeof(Sekai_MultiLive_DebugGetRoomInfoRequest), Sekai_MultiLive_DebugGetRoomInfoRequest_free_dyn, Sekai_MultiLive_DebugGetRoomInfoRequest_pack_dyn, Sekai_MultiLive_DebugGetRoomInfoRequest_unpack_dyn, Sekai_MultiLive_DebugGetRoomInfoRequest_fields, 1 },
     { "Sekai_MultiLive_DebugGetRoomInfoResponse", sizeof(Sekai_MultiLive_DebugGetRoomInfoResponse), Sekai_MultiLive_DebugGetRoomInfoResponse_free_dyn, Sekai_MultiLive_DebugGetRoomInfoResponse_pack_dyn, Sekai_MultiLive_DebugGetRoomInfoResponse_unpack_dyn, Sekai_MultiLive_DebugGetRoomInfoResponse_fields, 6 },
     { "Sekai_CharacterArchive_CharacterMissionAddProgressToExRequest", sizeof(Sekai_CharacterArchive_CharacterMissionAddProgressToExRequest), Sekai_CharacterArchive_CharacterMissionAddProgressToExRequest_free_dyn, Sekai_CharacterArchive_CharacterMissionAddProgressToExRequest_pack_dyn, Sekai_CharacterArchive_CharacterMissionAddProgressToExRequest_unpack_dyn, Sekai_CharacterArchive_CharacterMissionAddProgressToExRequest_fields, 2 },
@@ -14508,6 +14870,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_ApiData_MasterCostume2dGroup", sizeof(Sekai_ApiData_MasterCostume2dGroup), Sekai_ApiData_MasterCostume2dGroup_free_dyn, Sekai_ApiData_MasterCostume2dGroup_pack_dyn, Sekai_ApiData_MasterCostume2dGroup_unpack_dyn, Sekai_ApiData_MasterCostume2dGroup_fields, 2 },
     { "Sekai_ApiData_MasterCostume3dModelDefaultHair", sizeof(Sekai_ApiData_MasterCostume3dModelDefaultHair), Sekai_ApiData_MasterCostume3dModelDefaultHair_free_dyn, Sekai_ApiData_MasterCostume3dModelDefaultHair_pack_dyn, Sekai_ApiData_MasterCostume3dModelDefaultHair_unpack_dyn, Sekai_ApiData_MasterCostume3dModelDefaultHair_fields, 4 },
     { "Sekai_ApiData_MasterCostume3dModelNotAvailablePattern", sizeof(Sekai_ApiData_MasterCostume3dModelNotAvailablePattern), Sekai_ApiData_MasterCostume3dModelNotAvailablePattern_free_dyn, Sekai_ApiData_MasterCostume3dModelNotAvailablePattern_pack_dyn, Sekai_ApiData_MasterCostume3dModelNotAvailablePattern_unpack_dyn, Sekai_ApiData_MasterCostume3dModelNotAvailablePattern_fields, 4 },
+    { "Sekai_ApiData_MasterCustomMusicScoreOfficialCreator", sizeof(Sekai_ApiData_MasterCustomMusicScoreOfficialCreator), Sekai_ApiData_MasterCustomMusicScoreOfficialCreator_free_dyn, Sekai_ApiData_MasterCustomMusicScoreOfficialCreator_pack_dyn, Sekai_ApiData_MasterCustomMusicScoreOfficialCreator_unpack_dyn, Sekai_ApiData_MasterCustomMusicScoreOfficialCreator_fields, 15 },
     { "Sekai_ApiData_MasterCustomProfileCollectionResourceUnit", sizeof(Sekai_ApiData_MasterCustomProfileCollectionResourceUnit), Sekai_ApiData_MasterCustomProfileCollectionResourceUnit_free_dyn, Sekai_ApiData_MasterCustomProfileCollectionResourceUnit_pack_dyn, Sekai_ApiData_MasterCustomProfileCollectionResourceUnit_unpack_dyn, Sekai_ApiData_MasterCustomProfileCollectionResourceUnit_fields, 3 },
     { "Sekai_ApiData_MasterLimitedTimeMusic", sizeof(Sekai_ApiData_MasterLimitedTimeMusic), Sekai_ApiData_MasterLimitedTimeMusic_free_dyn, Sekai_ApiData_MasterLimitedTimeMusic_pack_dyn, Sekai_ApiData_MasterLimitedTimeMusic_unpack_dyn, Sekai_ApiData_MasterLimitedTimeMusic_fields, 5 },
     { "Sekai_ApiData_MasterMaterialExchange", sizeof(Sekai_ApiData_MasterMaterialExchange), Sekai_ApiData_MasterMaterialExchange_free_dyn, Sekai_ApiData_MasterMaterialExchange_pack_dyn, Sekai_ApiData_MasterMaterialExchange_unpack_dyn, Sekai_ApiData_MasterMaterialExchange_fields, 13 },
@@ -14607,11 +14970,21 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_ApiData_UserMysekaiTreasureBox", sizeof(Sekai_ApiData_UserMysekaiTreasureBox), Sekai_ApiData_UserMysekaiTreasureBox_free_dyn, Sekai_ApiData_UserMysekaiTreasureBox_pack_dyn, Sekai_ApiData_UserMysekaiTreasureBox_unpack_dyn, Sekai_ApiData_UserMysekaiTreasureBox_fields, 7 },
     { "Sekai_ApiData_UserMysekaiVisitSetting", sizeof(Sekai_ApiData_UserMysekaiVisitSetting), Sekai_ApiData_UserMysekaiVisitSetting_free_dyn, Sekai_ApiData_UserMysekaiVisitSetting_pack_dyn, Sekai_ApiData_UserMysekaiVisitSetting_unpack_dyn, Sekai_ApiData_UserMysekaiVisitSetting_fields, 1 },
     { "Sekai_ApiData_UserBillingShopItemExchangeResponse", sizeof(Sekai_ApiData_UserBillingShopItemExchangeResponse), Sekai_ApiData_UserBillingShopItemExchangeResponse_free_dyn, Sekai_ApiData_UserBillingShopItemExchangeResponse_pack_dyn, Sekai_ApiData_UserBillingShopItemExchangeResponse_unpack_dyn, Sekai_ApiData_UserBillingShopItemExchangeResponse_fields, 2 },
+    { "Sekai_ApiData_UserCustomMusicScorePublishedResponse", sizeof(Sekai_ApiData_UserCustomMusicScorePublishedResponse), Sekai_ApiData_UserCustomMusicScorePublishedResponse_free_dyn, Sekai_ApiData_UserCustomMusicScorePublishedResponse_pack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedResponse_unpack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedResponse_fields, 19 },
     { "Sekai_ApiData_UserPlayerFrame", sizeof(Sekai_ApiData_UserPlayerFrame), Sekai_ApiData_UserPlayerFrame_free_dyn, Sekai_ApiData_UserPlayerFrame_pack_dyn, Sekai_ApiData_UserPlayerFrame_unpack_dyn, Sekai_ApiData_UserPlayerFrame_fields, 2 },
     { "Sekai_ApiData_UserWorldBloom", sizeof(Sekai_ApiData_UserWorldBloom), Sekai_ApiData_UserWorldBloom_free_dyn, Sekai_ApiData_UserWorldBloom_pack_dyn, Sekai_ApiData_UserWorldBloom_unpack_dyn, Sekai_ApiData_UserWorldBloom_fields, 5 },
     { "Sekai_ApiData_UserWorldBloomSupportDeck", sizeof(Sekai_ApiData_UserWorldBloomSupportDeck), Sekai_ApiData_UserWorldBloomSupportDeck_free_dyn, Sekai_ApiData_UserWorldBloomSupportDeck_pack_dyn, Sekai_ApiData_UserWorldBloomSupportDeck_unpack_dyn, Sekai_ApiData_UserWorldBloomSupportDeck_fields, 27 },
+    { "Sekai_ApiData_CustomMusicScoreBookmarkListResponse", sizeof(Sekai_ApiData_CustomMusicScoreBookmarkListResponse), Sekai_ApiData_CustomMusicScoreBookmarkListResponse_free_dyn, Sekai_ApiData_CustomMusicScoreBookmarkListResponse_pack_dyn, Sekai_ApiData_CustomMusicScoreBookmarkListResponse_unpack_dyn, Sekai_ApiData_CustomMusicScoreBookmarkListResponse_fields, 2 },
+    { "Sekai_ApiData_CustomMusicScoreLiveResultResponse", sizeof(Sekai_ApiData_CustomMusicScoreLiveResultResponse), Sekai_ApiData_CustomMusicScoreLiveResultResponse_free_dyn, Sekai_ApiData_CustomMusicScoreLiveResultResponse_pack_dyn, Sekai_ApiData_CustomMusicScoreLiveResultResponse_unpack_dyn, Sekai_ApiData_CustomMusicScoreLiveResultResponse_fields, 2 },
+    { "Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse", sizeof(Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse), Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse_free_dyn, Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse_pack_dyn, Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse_unpack_dyn, Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse_fields, 2 },
+    { "Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse", sizeof(Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse), Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse_free_dyn, Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse_pack_dyn, Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse_unpack_dyn, Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse_fields, 8 },
+    { "Sekai_ApiData_CustomMusicScorePublishedSearchListResponse", sizeof(Sekai_ApiData_CustomMusicScorePublishedSearchListResponse), Sekai_ApiData_CustomMusicScorePublishedSearchListResponse_free_dyn, Sekai_ApiData_CustomMusicScorePublishedSearchListResponse_pack_dyn, Sekai_ApiData_CustomMusicScorePublishedSearchListResponse_unpack_dyn, Sekai_ApiData_CustomMusicScorePublishedSearchListResponse_fields, 2 },
+    { "Sekai_ApiData_CustomMusicScorePublishedSearchResponse", sizeof(Sekai_ApiData_CustomMusicScorePublishedSearchResponse), Sekai_ApiData_CustomMusicScorePublishedSearchResponse_free_dyn, Sekai_ApiData_CustomMusicScorePublishedSearchResponse_pack_dyn, Sekai_ApiData_CustomMusicScorePublishedSearchResponse_unpack_dyn, Sekai_ApiData_CustomMusicScorePublishedSearchResponse_fields, 2 },
+    { "Sekai_ApiData_CustomMusicScorePublishedTabListResponse", sizeof(Sekai_ApiData_CustomMusicScorePublishedTabListResponse), Sekai_ApiData_CustomMusicScorePublishedTabListResponse_free_dyn, Sekai_ApiData_CustomMusicScorePublishedTabListResponse_pack_dyn, Sekai_ApiData_CustomMusicScorePublishedTabListResponse_unpack_dyn, Sekai_ApiData_CustomMusicScorePublishedTabListResponse_fields, 2 },
     { "Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest", sizeof(Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest), Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest_free_dyn, Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest_pack_dyn, Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest_unpack_dyn, Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest_fields, 1 },
     { "Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest", sizeof(Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest), Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest_free_dyn, Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest_pack_dyn, Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest_unpack_dyn, Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest_fields, 1 },
+    { "Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest", sizeof(Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest), Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest_free_dyn, Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest_pack_dyn, Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest_unpack_dyn, Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest_fields, 1 },
+    { "Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest", sizeof(Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest), Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest_free_dyn, Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest_pack_dyn, Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest_unpack_dyn, Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest_fields, 1 },
     { "Sekai_ApiData_DebugUserCustomProfileObtainAllRequest", sizeof(Sekai_ApiData_DebugUserCustomProfileObtainAllRequest), Sekai_ApiData_DebugUserCustomProfileObtainAllRequest_free_dyn, Sekai_ApiData_DebugUserCustomProfileObtainAllRequest_pack_dyn, Sekai_ApiData_DebugUserCustomProfileObtainAllRequest_unpack_dyn, Sekai_ApiData_DebugUserCustomProfileObtainAllRequest_fields, 1 },
     { "Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest", sizeof(Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest), Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest_free_dyn, Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest_pack_dyn, Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest_unpack_dyn, Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest_fields, 3 },
     { "Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest", sizeof(Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest), Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest_free_dyn, Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest_pack_dyn, Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest_unpack_dyn, Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest_fields, 1 },
@@ -14640,6 +15013,7 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_ApiData_MysekaiSiteHarvestResourceDrop", sizeof(Sekai_ApiData_MysekaiSiteHarvestResourceDrop), Sekai_ApiData_MysekaiSiteHarvestResourceDrop_free_dyn, Sekai_ApiData_MysekaiSiteHarvestResourceDrop_pack_dyn, Sekai_ApiData_MysekaiSiteHarvestResourceDrop_unpack_dyn, Sekai_ApiData_MysekaiSiteHarvestResourceDrop_fields, 7 },
     { "Sekai_ApiData_MysekaiStaminaUsed", sizeof(Sekai_ApiData_MysekaiStaminaUsed), Sekai_ApiData_MysekaiStaminaUsed_free_dyn, Sekai_ApiData_MysekaiStaminaUsed_pack_dyn, Sekai_ApiData_MysekaiStaminaUsed_unpack_dyn, Sekai_ApiData_MysekaiStaminaUsed_fields, 2 },
     { "Sekai_ApiData_MysekaiToolUsed", sizeof(Sekai_ApiData_MysekaiToolUsed), Sekai_ApiData_MysekaiToolUsed_free_dyn, Sekai_ApiData_MysekaiToolUsed_pack_dyn, Sekai_ApiData_MysekaiToolUsed_unpack_dyn, Sekai_ApiData_MysekaiToolUsed_fields, 3 },
+    { "Sekai_ApiData_OfficialMusicScoreLiveResultResponse", sizeof(Sekai_ApiData_OfficialMusicScoreLiveResultResponse), Sekai_ApiData_OfficialMusicScoreLiveResultResponse_free_dyn, Sekai_ApiData_OfficialMusicScoreLiveResultResponse_pack_dyn, Sekai_ApiData_OfficialMusicScoreLiveResultResponse_unpack_dyn, Sekai_ApiData_OfficialMusicScoreLiveResultResponse_fields, 2 },
     { "Sekai_ApiData_UserAdReward", sizeof(Sekai_ApiData_UserAdReward), Sekai_ApiData_UserAdReward_free_dyn, Sekai_ApiData_UserAdReward_pack_dyn, Sekai_ApiData_UserAdReward_unpack_dyn, Sekai_ApiData_UserAdReward_fields, 4 },
     { "Sekai_ApiData_UserAdRewardPostRequest", sizeof(Sekai_ApiData_UserAdRewardPostRequest), Sekai_ApiData_UserAdRewardPostRequest_free_dyn, Sekai_ApiData_UserAdRewardPostRequest_pack_dyn, Sekai_ApiData_UserAdRewardPostRequest_unpack_dyn, Sekai_ApiData_UserAdRewardPostRequest_fields, 1 },
     { "Sekai_ApiData_UserAdRewardPutRequest", sizeof(Sekai_ApiData_UserAdRewardPutRequest), Sekai_ApiData_UserAdRewardPutRequest_free_dyn, Sekai_ApiData_UserAdRewardPutRequest_pack_dyn, Sekai_ApiData_UserAdRewardPutRequest_unpack_dyn, Sekai_ApiData_UserAdRewardPutRequest_fields, 1 },
@@ -14651,6 +15025,19 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_ApiData_UserBirthdayPartyGatherRequest", sizeof(Sekai_ApiData_UserBirthdayPartyGatherRequest), Sekai_ApiData_UserBirthdayPartyGatherRequest_free_dyn, Sekai_ApiData_UserBirthdayPartyGatherRequest_pack_dyn, Sekai_ApiData_UserBirthdayPartyGatherRequest_unpack_dyn, Sekai_ApiData_UserBirthdayPartyGatherRequest_fields, 1 },
     { "Sekai_ApiData_UserBirthdayPartyGatherRequestContent", sizeof(Sekai_ApiData_UserBirthdayPartyGatherRequestContent), Sekai_ApiData_UserBirthdayPartyGatherRequestContent_free_dyn, Sekai_ApiData_UserBirthdayPartyGatherRequestContent_pack_dyn, Sekai_ApiData_UserBirthdayPartyGatherRequestContent_unpack_dyn, Sekai_ApiData_UserBirthdayPartyGatherRequestContent_fields, 2 },
     { "Sekai_ApiData_UserBirthdayPartyGatherResponse", sizeof(Sekai_ApiData_UserBirthdayPartyGatherResponse), Sekai_ApiData_UserBirthdayPartyGatherResponse_free_dyn, Sekai_ApiData_UserBirthdayPartyGatherResponse_pack_dyn, Sekai_ApiData_UserBirthdayPartyGatherResponse_unpack_dyn, Sekai_ApiData_UserBirthdayPartyGatherResponse_fields, 2 },
+    { "Sekai_ApiData_UserCustomMusicScoreDraft", sizeof(Sekai_ApiData_UserCustomMusicScoreDraft), Sekai_ApiData_UserCustomMusicScoreDraft_free_dyn, Sekai_ApiData_UserCustomMusicScoreDraft_pack_dyn, Sekai_ApiData_UserCustomMusicScoreDraft_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreDraft_fields, 5 },
+    { "Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest", sizeof(Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest), Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest_free_dyn, Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest_pack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest_fields, 6 },
+    { "Sekai_ApiData_UserCustomMusicScoreDraftEditRequest", sizeof(Sekai_ApiData_UserCustomMusicScoreDraftEditRequest), Sekai_ApiData_UserCustomMusicScoreDraftEditRequest_free_dyn, Sekai_ApiData_UserCustomMusicScoreDraftEditRequest_pack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftEditRequest_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftEditRequest_fields, 2 },
+    { "Sekai_ApiData_UserCustomMusicScoreDraftListResponse", sizeof(Sekai_ApiData_UserCustomMusicScoreDraftListResponse), Sekai_ApiData_UserCustomMusicScoreDraftListResponse_free_dyn, Sekai_ApiData_UserCustomMusicScoreDraftListResponse_pack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftListResponse_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftListResponse_fields, 1 },
+    { "Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest", sizeof(Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest), Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest_free_dyn, Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest_pack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest_fields, 6 },
+    { "Sekai_ApiData_UserCustomMusicScoreInfo", sizeof(Sekai_ApiData_UserCustomMusicScoreInfo), Sekai_ApiData_UserCustomMusicScoreInfo_free_dyn, Sekai_ApiData_UserCustomMusicScoreInfo_pack_dyn, Sekai_ApiData_UserCustomMusicScoreInfo_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreInfo_fields, 4 },
+    { "Sekai_ApiData_UserCustomMusicScoreLiveResultResponse", sizeof(Sekai_ApiData_UserCustomMusicScoreLiveResultResponse), Sekai_ApiData_UserCustomMusicScoreLiveResultResponse_free_dyn, Sekai_ApiData_UserCustomMusicScoreLiveResultResponse_pack_dyn, Sekai_ApiData_UserCustomMusicScoreLiveResultResponse_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreLiveResultResponse_fields, 8 },
+    { "Sekai_ApiData_UserCustomMusicScoreMiniDisplay", sizeof(Sekai_ApiData_UserCustomMusicScoreMiniDisplay), Sekai_ApiData_UserCustomMusicScoreMiniDisplay_free_dyn, Sekai_ApiData_UserCustomMusicScoreMiniDisplay_pack_dyn, Sekai_ApiData_UserCustomMusicScoreMiniDisplay_unpack_dyn, Sekai_ApiData_UserCustomMusicScoreMiniDisplay_fields, 7 },
+    { "Sekai_ApiData_UserCustomMusicScorePublishedBanInfo", sizeof(Sekai_ApiData_UserCustomMusicScorePublishedBanInfo), Sekai_ApiData_UserCustomMusicScorePublishedBanInfo_free_dyn, Sekai_ApiData_UserCustomMusicScorePublishedBanInfo_pack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedBanInfo_unpack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedBanInfo_fields, 2 },
+    { "Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse", sizeof(Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse), Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse_free_dyn, Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse_pack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse_unpack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse_fields, 2 },
+    { "Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse", sizeof(Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse), Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse_free_dyn, Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse_pack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse_unpack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse_fields, 2 },
+    { "Sekai_ApiData_UserCustomMusicScorePublishedListResponse", sizeof(Sekai_ApiData_UserCustomMusicScorePublishedListResponse), Sekai_ApiData_UserCustomMusicScorePublishedListResponse_free_dyn, Sekai_ApiData_UserCustomMusicScorePublishedListResponse_pack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedListResponse_unpack_dyn, Sekai_ApiData_UserCustomMusicScorePublishedListResponse_fields, 1 },
+    { "Sekai_ApiData_UserCustomMusicScorePublishRequest", sizeof(Sekai_ApiData_UserCustomMusicScorePublishRequest), Sekai_ApiData_UserCustomMusicScorePublishRequest_free_dyn, Sekai_ApiData_UserCustomMusicScorePublishRequest_pack_dyn, Sekai_ApiData_UserCustomMusicScorePublishRequest_unpack_dyn, Sekai_ApiData_UserCustomMusicScorePublishRequest_fields, 12 },
     { "Sekai_ApiData_UserEventRankingRewardConditionResponse", sizeof(Sekai_ApiData_UserEventRankingRewardConditionResponse), Sekai_ApiData_UserEventRankingRewardConditionResponse_free_dyn, Sekai_ApiData_UserEventRankingRewardConditionResponse_pack_dyn, Sekai_ApiData_UserEventRankingRewardConditionResponse_unpack_dyn, Sekai_ApiData_UserEventRankingRewardConditionResponse_fields, 1 },
     { "Sekai_ApiData_UserGachaSelectCharacter", sizeof(Sekai_ApiData_UserGachaSelectCharacter), Sekai_ApiData_UserGachaSelectCharacter_free_dyn, Sekai_ApiData_UserGachaSelectCharacter_pack_dyn, Sekai_ApiData_UserGachaSelectCharacter_unpack_dyn, Sekai_ApiData_UserGachaSelectCharacter_fields, 2 },
     { "Sekai_ApiData_UserGachaSelectCharacterRequest", sizeof(Sekai_ApiData_UserGachaSelectCharacterRequest), Sekai_ApiData_UserGachaSelectCharacterRequest_free_dyn, Sekai_ApiData_UserGachaSelectCharacterRequest_pack_dyn, Sekai_ApiData_UserGachaSelectCharacterRequest_unpack_dyn, Sekai_ApiData_UserGachaSelectCharacterRequest_fields, 1 },
@@ -14659,6 +15046,8 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_ApiData_UserLiveCharacterArchiveVoice", sizeof(Sekai_ApiData_UserLiveCharacterArchiveVoice), Sekai_ApiData_UserLiveCharacterArchiveVoice_free_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoice_pack_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoice_unpack_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoice_fields, 1 },
     { "Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest", sizeof(Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest), Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest_free_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest_pack_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest_unpack_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest_fields, 3 },
     { "Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse", sizeof(Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse), Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse_free_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse_pack_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse_unpack_dyn, Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse_fields, 1 },
+    { "Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse", sizeof(Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse), Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse_free_dyn, Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse_pack_dyn, Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse_unpack_dyn, Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse_fields, 1 },
+    { "Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse", sizeof(Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse), Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse_free_dyn, Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse_pack_dyn, Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse_unpack_dyn, Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse_fields, 3 },
     { "Sekai_ApiData_UserMysekaiBlueprint", sizeof(Sekai_ApiData_UserMysekaiBlueprint), Sekai_ApiData_UserMysekaiBlueprint_free_dyn, Sekai_ApiData_UserMysekaiBlueprint_pack_dyn, Sekai_ApiData_UserMysekaiBlueprint_unpack_dyn, Sekai_ApiData_UserMysekaiBlueprint_fields, 2 },
     { "Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse", sizeof(Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse), Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse_free_dyn, Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse_pack_dyn, Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse_unpack_dyn, Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse_fields, 2 },
     { "Sekai_ApiData_UserMysekaiCanvas", sizeof(Sekai_ApiData_UserMysekaiCanvas), Sekai_ApiData_UserMysekaiCanvas_free_dyn, Sekai_ApiData_UserMysekaiCanvas_pack_dyn, Sekai_ApiData_UserMysekaiCanvas_unpack_dyn, Sekai_ApiData_UserMysekaiCanvas_fields, 5 },
@@ -14785,6 +15174,9 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_ApiData_MasterCharacterArchiveVoice", sizeof(Sekai_ApiData_MasterCharacterArchiveVoice), Sekai_ApiData_MasterCharacterArchiveVoice_free_dyn, Sekai_ApiData_MasterCharacterArchiveVoice_pack_dyn, Sekai_ApiData_MasterCharacterArchiveVoice_unpack_dyn, Sekai_ApiData_MasterCharacterArchiveVoice_fields, 12 },
     { "Sekai_ApiData_MasterCharacterArchiveVoiceTag", sizeof(Sekai_ApiData_MasterCharacterArchiveVoiceTag), Sekai_ApiData_MasterCharacterArchiveVoiceTag_free_dyn, Sekai_ApiData_MasterCharacterArchiveVoiceTag_pack_dyn, Sekai_ApiData_MasterCharacterArchiveVoiceTag_unpack_dyn, Sekai_ApiData_MasterCharacterArchiveVoiceTag_fields, 4 },
     { "Sekai_ApiData_MasterCollaborationMode", sizeof(Sekai_ApiData_MasterCollaborationMode), Sekai_ApiData_MasterCollaborationMode_free_dyn, Sekai_ApiData_MasterCollaborationMode_pack_dyn, Sekai_ApiData_MasterCollaborationMode_unpack_dyn, Sekai_ApiData_MasterCollaborationMode_fields, 2 },
+    { "Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel", sizeof(Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel), Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel_free_dyn, Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel_pack_dyn, Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel_unpack_dyn, Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel_fields, 4 },
+    { "Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile", sizeof(Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile), Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile_free_dyn, Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile_pack_dyn, Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile_unpack_dyn, Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile_fields, 2 },
+    { "Sekai_ApiData_MasterCustomMusicScoreTag", sizeof(Sekai_ApiData_MasterCustomMusicScoreTag), Sekai_ApiData_MasterCustomMusicScoreTag_free_dyn, Sekai_ApiData_MasterCustomMusicScoreTag_pack_dyn, Sekai_ApiData_MasterCustomMusicScoreTag_unpack_dyn, Sekai_ApiData_MasterCustomMusicScoreTag_fields, 4 },
     { "Sekai_ApiData_MasterCustomProfileGachaShop", sizeof(Sekai_ApiData_MasterCustomProfileGachaShop), Sekai_ApiData_MasterCustomProfileGachaShop_free_dyn, Sekai_ApiData_MasterCustomProfileGachaShop_pack_dyn, Sekai_ApiData_MasterCustomProfileGachaShop_unpack_dyn, Sekai_ApiData_MasterCustomProfileGachaShop_fields, 7 },
     { "Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter", sizeof(Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter), Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter_free_dyn, Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter_pack_dyn, Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter_unpack_dyn, Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter_fields, 3 },
     { "Sekai_ApiData_MasterEventCardBonusLimit", sizeof(Sekai_ApiData_MasterEventCardBonusLimit), Sekai_ApiData_MasterEventCardBonusLimit_free_dyn, Sekai_ApiData_MasterEventCardBonusLimit_pack_dyn, Sekai_ApiData_MasterEventCardBonusLimit_unpack_dyn, Sekai_ApiData_MasterEventCardBonusLimit_fields, 3 },
@@ -14893,6 +15285,11 @@ static const mpj_type_entry mpj_types[] = {
     { "Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest", sizeof(Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest), Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest_free_dyn, Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest_pack_dyn, Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest_unpack_dyn, Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest_fields, 2 },
     { "Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest", sizeof(Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest), Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest_free_dyn, Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest_pack_dyn, Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest_unpack_dyn, Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest_fields, 2 },
     { "Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest", sizeof(Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest), Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest_free_dyn, Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest_pack_dyn, Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest_unpack_dyn, Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest_fields, 4 },
+    { "Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData", sizeof(Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData), Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData_free_dyn, Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData_pack_dyn, Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData_unpack_dyn, Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData_fields, 4 },
+    { "Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData", sizeof(Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData), Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData_free_dyn, Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData_pack_dyn, Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData_unpack_dyn, Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData_fields, 1 },
+    { "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData", sizeof(Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData), Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData_free_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData_pack_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData_unpack_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData_fields, 4 },
+    { "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData", sizeof(Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData), Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData_free_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData_pack_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData_unpack_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData_fields, 32 },
+    { "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase", sizeof(Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase), Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase_free_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase_pack_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase_unpack_dyn, Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase_fields, 13 },
     { "Sekai_SuperVirtualLive_RoomUserHonorInfo", sizeof(Sekai_SuperVirtualLive_RoomUserHonorInfo), Sekai_SuperVirtualLive_RoomUserHonorInfo_free_dyn, Sekai_SuperVirtualLive_RoomUserHonorInfo_pack_dyn, Sekai_SuperVirtualLive_RoomUserHonorInfo_unpack_dyn, Sekai_SuperVirtualLive_RoomUserHonorInfo_fields, 6 },
     { "Sekai_SuperVirtualLive_RoomUserBasicInfo", sizeof(Sekai_SuperVirtualLive_RoomUserBasicInfo), Sekai_SuperVirtualLive_RoomUserBasicInfo_free_dyn, Sekai_SuperVirtualLive_RoomUserBasicInfo_pack_dyn, Sekai_SuperVirtualLive_RoomUserBasicInfo_unpack_dyn, Sekai_SuperVirtualLive_RoomUserBasicInfo_fields, 8 },
     { "Sekai_SuperVirtualLive_LobbyChatData", sizeof(Sekai_SuperVirtualLive_LobbyChatData), Sekai_SuperVirtualLive_LobbyChatData_free_dyn, Sekai_SuperVirtualLive_LobbyChatData_pack_dyn, Sekai_SuperVirtualLive_LobbyChatData_unpack_dyn, Sekai_SuperVirtualLive_LobbyChatData_fields, 3 },

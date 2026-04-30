@@ -535,6 +535,14 @@ typedef struct Sekai_SuiteMaster {
     msgpack_object virtualLiveTransitionItems;
     bool has_collaborationModes;
     msgpack_object collaborationModes;
+    bool has_customMusicScoreTags;
+    msgpack_object customMusicScoreTags;
+    bool has_customMusicScoreDifficultyPlayLevels;
+    msgpack_object customMusicScoreDifficultyPlayLevels;
+    bool has_customMusicScoreOfficialCreatorProfiles;
+    msgpack_object customMusicScoreOfficialCreatorProfiles;
+    bool has_customMusicScoreOfficialCreators;
+    msgpack_object customMusicScoreOfficialCreators;
     bool has_mysekaiSites;
     msgpack_object mysekaiSites;
     bool has_mysekaiSiteLevels;

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "msgpack-pjsekai"
-version = "6.4.1"
+version = "6.5.0"
 description = "Static object-based MessagePack models generated from dump.cs"
 readme = "README.md"
 requires-python = ">=3.8"

@@ -19,6 +19,8 @@ extern "C" {
 typedef struct Sekai_MusicSettingData {
     bool has_VocalId;
     int32_t VocalId;
+    bool has_CustomMusicScoreIds;
+    msgpack_object CustomMusicScoreIds;
 } Sekai_MusicSettingData;
 
 int Sekai_MusicSettingData_pack(msgpack_packer *pk, const Sekai_MusicSettingData *value);

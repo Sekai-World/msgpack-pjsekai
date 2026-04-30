@@ -18,6 +18,7 @@ int Sekai_MultiLive_PlayerInfo_pack(msgpack_packer *pk, const Sekai_MultiLive_Pl
     if (value->has_Index) count++;
     if (value->has_Info) count++;
     if (value->has_Difficulty) count++;
+    if (value->has_CustomScoreId) count++;
     msgpack_pack_map(pk, count);
     if (value->has_UserId) {
         msgpack_pack_str(pk, 6);
@@ -43,6 +44,11 @@ int Sekai_MultiLive_PlayerInfo_pack(msgpack_packer *pk, const Sekai_MultiLive_Pl
         msgpack_pack_str(pk, 10);
         msgpack_pack_str_body(pk, "Difficulty", 10);
         if (value->Difficulty) { size_t len = strlen(value->Difficulty); msgpack_pack_str(pk, len); msgpack_pack_str_body(pk, value->Difficulty, len); } else { msgpack_pack_nil(pk); }
+    }
+    if (value->has_CustomScoreId) {
+        msgpack_pack_str(pk, 13);
+        msgpack_pack_str_body(pk, "CustomScoreId", 13);
+        if (value->CustomScoreId) { size_t len = strlen(value->CustomScoreId); msgpack_pack_str(pk, len); msgpack_pack_str_body(pk, value->CustomScoreId, len); } else { msgpack_pack_nil(pk); }
     }
     return 0;
 }
@@ -72,6 +78,10 @@ int Sekai_MultiLive_PlayerInfo_unpack(const msgpack_object *obj, Sekai_MultiLive
             if (val->type == MSGPACK_OBJECT_NIL) { out->Difficulty = NULL; out->has_Difficulty = true; }
             else if (val->type == MSGPACK_OBJECT_STR) { out->Difficulty = mpj_copy_msgpack_str(val); out->has_Difficulty = (out->Difficulty != NULL); }
         }
+        else if (mpj_key_eq_str(key, "CustomScoreId")) {
+            if (val->type == MSGPACK_OBJECT_NIL) { out->CustomScoreId = NULL; out->has_CustomScoreId = true; }
+            else if (val->type == MSGPACK_OBJECT_STR) { out->CustomScoreId = mpj_copy_msgpack_str(val); out->has_CustomScoreId = (out->CustomScoreId != NULL); }
+        }
     }
     return 0;
 }
@@ -87,4 +97,7 @@ void Sekai_MultiLive_PlayerInfo_free(Sekai_MultiLive_PlayerInfo *value) {
     free(value->Difficulty);
     value->Difficulty = NULL;
     value->has_Difficulty = false;
+    free(value->CustomScoreId);
+    value->CustomScoreId = NULL;
+    value->has_CustomScoreId = false;
 }

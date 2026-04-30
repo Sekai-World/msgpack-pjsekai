@@ -27,6 +27,8 @@ typedef struct Sekai_MultiLive_PlayerInfo {
     msgpack_object Info;
     bool has_Difficulty;
     char * Difficulty;
+    bool has_CustomScoreId;
+    char * CustomScoreId;
 } Sekai_MultiLive_PlayerInfo;
 
 int Sekai_MultiLive_PlayerInfo_pack(msgpack_packer *pk, const Sekai_MultiLive_PlayerInfo *value);

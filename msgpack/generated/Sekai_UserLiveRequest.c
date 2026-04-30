@@ -20,6 +20,7 @@ int Sekai_UserLiveRequest_pack(msgpack_packer *pk, const Sekai_UserLiveRequest *
     if (value->has_boostCount) count++;
     if (value->has_isAuto) count++;
     if (value->has_musicCategoryName) count++;
+    if (value->has_customMusicScoreId) count++;
     msgpack_pack_map(pk, count);
     if (value->has_musicId) {
         msgpack_pack_str(pk, 7);
@@ -55,6 +56,11 @@ int Sekai_UserLiveRequest_pack(msgpack_packer *pk, const Sekai_UserLiveRequest *
         msgpack_pack_str(pk, 17);
         msgpack_pack_str_body(pk, "musicCategoryName", 17);
         if (value->musicCategoryName) { size_t len = strlen(value->musicCategoryName); msgpack_pack_str(pk, len); msgpack_pack_str_body(pk, value->musicCategoryName, len); } else { msgpack_pack_nil(pk); }
+    }
+    if (value->has_customMusicScoreId) {
+        msgpack_pack_str(pk, 18);
+        msgpack_pack_str_body(pk, "customMusicScoreId", 18);
+        if (value->customMusicScoreId) { size_t len = strlen(value->customMusicScoreId); msgpack_pack_str(pk, len); msgpack_pack_str_body(pk, value->customMusicScoreId, len); } else { msgpack_pack_nil(pk); }
     }
     return 0;
 }
@@ -92,6 +98,10 @@ int Sekai_UserLiveRequest_unpack(const msgpack_object *obj, Sekai_UserLiveReques
             if (val->type == MSGPACK_OBJECT_NIL) { out->musicCategoryName = NULL; out->has_musicCategoryName = true; }
             else if (val->type == MSGPACK_OBJECT_STR) { out->musicCategoryName = mpj_copy_msgpack_str(val); out->has_musicCategoryName = (out->musicCategoryName != NULL); }
         }
+        else if (mpj_key_eq_str(key, "customMusicScoreId")) {
+            if (val->type == MSGPACK_OBJECT_NIL) { out->customMusicScoreId = NULL; out->has_customMusicScoreId = true; }
+            else if (val->type == MSGPACK_OBJECT_STR) { out->customMusicScoreId = mpj_copy_msgpack_str(val); out->has_customMusicScoreId = (out->customMusicScoreId != NULL); }
+        }
     }
     return 0;
 }
@@ -101,4 +111,7 @@ void Sekai_UserLiveRequest_free(Sekai_UserLiveRequest *value) {
     free(value->musicCategoryName);
     value->musicCategoryName = NULL;
     value->has_musicCategoryName = false;
+    free(value->customMusicScoreId);
+    value->customMusicScoreId = NULL;
+    value->has_customMusicScoreId = false;
 }

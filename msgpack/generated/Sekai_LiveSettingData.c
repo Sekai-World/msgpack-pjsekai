@@ -44,6 +44,7 @@ int Sekai_LiveSettingData_pack(msgpack_packer *pk, const Sekai_LiveSettingData *
     if (value->has_CustomRoomIsDisplayPlayerInfo) count++;
     if (value->has_CustomRoomSelectedDifficulties) count++;
     if (value->has_CustomRoomSelectedMusicType) count++;
+    if (value->has_ScoreSelectType) count++;
     msgpack_pack_map(pk, count);
     if (value->has_NoteSpeed) {
         msgpack_pack_str(pk, 9);
@@ -200,6 +201,11 @@ int Sekai_LiveSettingData_pack(msgpack_packer *pk, const Sekai_LiveSettingData *
         msgpack_pack_str_body(pk, "CustomRoomSelectedMusicType", 27);
         msgpack_pack_int64(pk, value->CustomRoomSelectedMusicType);
     }
+    if (value->has_ScoreSelectType) {
+        msgpack_pack_str(pk, 15);
+        msgpack_pack_str_body(pk, "ScoreSelectType", 15);
+        msgpack_pack_int64(pk, value->ScoreSelectType);
+    }
     return 0;
 }
 
@@ -307,6 +313,10 @@ int Sekai_LiveSettingData_unpack(const msgpack_object *obj, Sekai_LiveSettingDat
         else if (mpj_key_eq_str(key, "CustomRoomSelectedMusicType")) {
             if (val->type == MSGPACK_OBJECT_POSITIVE_INTEGER) { out->CustomRoomSelectedMusicType = (int32_t)val->via.u64; out->has_CustomRoomSelectedMusicType = true; }
             else if (val->type == MSGPACK_OBJECT_NEGATIVE_INTEGER) { out->CustomRoomSelectedMusicType = (int32_t)val->via.i64; out->has_CustomRoomSelectedMusicType = true; }
+        }
+        else if (mpj_key_eq_str(key, "ScoreSelectType")) {
+            if (val->type == MSGPACK_OBJECT_POSITIVE_INTEGER) { out->ScoreSelectType = (int32_t)val->via.u64; out->has_ScoreSelectType = true; }
+            else if (val->type == MSGPACK_OBJECT_NEGATIVE_INTEGER) { out->ScoreSelectType = (int32_t)val->via.i64; out->has_ScoreSelectType = true; }
         }
     }
     return 0;

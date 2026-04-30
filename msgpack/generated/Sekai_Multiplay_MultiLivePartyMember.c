@@ -38,6 +38,7 @@ int Sekai_Multiplay_MultiLivePartyMember_pack(msgpack_packer *pk, const Sekai_Mu
     if (value->has_FriendRequestStatus) count++;
     if (value->has_MemberCharacterRank) count++;
     if (value->has_PlayerFrameId) count++;
+    if (value->has_CustomScoreId) count++;
     msgpack_pack_map(pk, count);
     if (value->has_Index) {
         msgpack_pack_str(pk, 5);
@@ -164,6 +165,11 @@ int Sekai_Multiplay_MultiLivePartyMember_pack(msgpack_packer *pk, const Sekai_Mu
         msgpack_pack_str_body(pk, "PlayerFrameId", 13);
         msgpack_pack_int64(pk, value->PlayerFrameId);
     }
+    if (value->has_CustomScoreId) {
+        msgpack_pack_str(pk, 13);
+        msgpack_pack_str_body(pk, "CustomScoreId", 13);
+        if (value->CustomScoreId) { size_t len = strlen(value->CustomScoreId); msgpack_pack_str(pk, len); msgpack_pack_str_body(pk, value->CustomScoreId, len); } else { msgpack_pack_nil(pk); }
+    }
     return 0;
 }
 
@@ -263,6 +269,10 @@ int Sekai_Multiplay_MultiLivePartyMember_unpack(const msgpack_object *obj, Sekai
             if (val->type == MSGPACK_OBJECT_POSITIVE_INTEGER) { out->PlayerFrameId = (int32_t)val->via.u64; out->has_PlayerFrameId = true; }
             else if (val->type == MSGPACK_OBJECT_NEGATIVE_INTEGER) { out->PlayerFrameId = (int32_t)val->via.i64; out->has_PlayerFrameId = true; }
         }
+        else if (mpj_key_eq_str(key, "CustomScoreId")) {
+            if (val->type == MSGPACK_OBJECT_NIL) { out->CustomScoreId = NULL; out->has_CustomScoreId = true; }
+            else if (val->type == MSGPACK_OBJECT_STR) { out->CustomScoreId = mpj_copy_msgpack_str(val); out->has_CustomScoreId = (out->CustomScoreId != NULL); }
+        }
     }
     return 0;
 }
@@ -281,4 +291,7 @@ void Sekai_Multiplay_MultiLivePartyMember_free(Sekai_Multiplay_MultiLivePartyMem
     free(value->Difficulty);
     value->Difficulty = NULL;
     value->has_Difficulty = false;
+    free(value->CustomScoreId);
+    value->CustomScoreId = NULL;
+    value->has_CustomScoreId = false;
 }

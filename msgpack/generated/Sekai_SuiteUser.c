@@ -196,6 +196,8 @@ int Sekai_SuiteUser_pack(msgpack_packer *pk, const Sekai_SuiteUser *value) {
     if (value->has_userBirthdayParties) count++;
     if (value->has_userMysekaiSystemFixtureActions) count++;
     if (value->has_userVirtualLiveTransitionItems) count++;
+    if (value->has_userCustomMusicScorePublisheds) count++;
+    if (value->has_userCustomMusicScoreBookmarks) count++;
     if (value->has_userRateChoiceGachaWishes) count++;
     msgpack_pack_map(pk, count);
     if (value->has_userRegistration) {
@@ -1113,6 +1115,16 @@ int Sekai_SuiteUser_pack(msgpack_packer *pk, const Sekai_SuiteUser *value) {
         msgpack_pack_str_body(pk, "userVirtualLiveTransitionItems", 30);
         msgpack_pack_object(pk, value->userVirtualLiveTransitionItems);
     }
+    if (value->has_userCustomMusicScorePublisheds) {
+        msgpack_pack_str(pk, 30);
+        msgpack_pack_str_body(pk, "userCustomMusicScorePublisheds", 30);
+        msgpack_pack_object(pk, value->userCustomMusicScorePublisheds);
+    }
+    if (value->has_userCustomMusicScoreBookmarks) {
+        msgpack_pack_str(pk, 29);
+        msgpack_pack_str_body(pk, "userCustomMusicScoreBookmarks", 29);
+        msgpack_pack_object(pk, value->userCustomMusicScoreBookmarks);
+    }
     if (value->has_userRateChoiceGachaWishes) {
         msgpack_pack_str(pk, 25);
         msgpack_pack_str_body(pk, "userRateChoiceGachaWishes", 25);
@@ -1676,6 +1688,12 @@ int Sekai_SuiteUser_unpack(const msgpack_object *obj, Sekai_SuiteUser *out) {
         }
         else if (mpj_key_eq_str(key, "userVirtualLiveTransitionItems")) {
             out->userVirtualLiveTransitionItems = *val; out->has_userVirtualLiveTransitionItems = true;
+        }
+        else if (mpj_key_eq_str(key, "userCustomMusicScorePublisheds")) {
+            out->userCustomMusicScorePublisheds = *val; out->has_userCustomMusicScorePublisheds = true;
+        }
+        else if (mpj_key_eq_str(key, "userCustomMusicScoreBookmarks")) {
+            out->userCustomMusicScoreBookmarks = *val; out->has_userCustomMusicScoreBookmarks = true;
         }
         else if (mpj_key_eq_str(key, "userRateChoiceGachaWishes")) {
             out->userRateChoiceGachaWishes = *val; out->has_userRateChoiceGachaWishes = true;

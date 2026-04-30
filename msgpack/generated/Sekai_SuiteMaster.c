@@ -272,6 +272,10 @@ int Sekai_SuiteMaster_pack(msgpack_packer *pk, const Sekai_SuiteMaster *value) {
     if (value->has_virtualLiveGroups) count++;
     if (value->has_virtualLiveTransitionItems) count++;
     if (value->has_collaborationModes) count++;
+    if (value->has_customMusicScoreTags) count++;
+    if (value->has_customMusicScoreDifficultyPlayLevels) count++;
+    if (value->has_customMusicScoreOfficialCreatorProfiles) count++;
+    if (value->has_customMusicScoreOfficialCreators) count++;
     if (value->has_mysekaiSites) count++;
     if (value->has_mysekaiSiteLevels) count++;
     if (value->has_mysekaiSiteGroups) count++;
@@ -1695,6 +1699,26 @@ int Sekai_SuiteMaster_pack(msgpack_packer *pk, const Sekai_SuiteMaster *value) {
         msgpack_pack_str_body(pk, "collaborationModes", 18);
         msgpack_pack_object(pk, value->collaborationModes);
     }
+    if (value->has_customMusicScoreTags) {
+        msgpack_pack_str(pk, 20);
+        msgpack_pack_str_body(pk, "customMusicScoreTags", 20);
+        msgpack_pack_object(pk, value->customMusicScoreTags);
+    }
+    if (value->has_customMusicScoreDifficultyPlayLevels) {
+        msgpack_pack_str(pk, 36);
+        msgpack_pack_str_body(pk, "customMusicScoreDifficultyPlayLevels", 36);
+        msgpack_pack_object(pk, value->customMusicScoreDifficultyPlayLevels);
+    }
+    if (value->has_customMusicScoreOfficialCreatorProfiles) {
+        msgpack_pack_str(pk, 39);
+        msgpack_pack_str_body(pk, "customMusicScoreOfficialCreatorProfiles", 39);
+        msgpack_pack_object(pk, value->customMusicScoreOfficialCreatorProfiles);
+    }
+    if (value->has_customMusicScoreOfficialCreators) {
+        msgpack_pack_str(pk, 32);
+        msgpack_pack_str_body(pk, "customMusicScoreOfficialCreators", 32);
+        msgpack_pack_object(pk, value->customMusicScoreOfficialCreators);
+    }
     if (value->has_mysekaiSites) {
         msgpack_pack_str(pk, 12);
         msgpack_pack_str_body(pk, "mysekaiSites", 12);
@@ -3115,6 +3139,18 @@ int Sekai_SuiteMaster_unpack(const msgpack_object *obj, Sekai_SuiteMaster *out) 
         }
         else if (mpj_key_eq_str(key, "collaborationModes")) {
             out->collaborationModes = *val; out->has_collaborationModes = true;
+        }
+        else if (mpj_key_eq_str(key, "customMusicScoreTags")) {
+            out->customMusicScoreTags = *val; out->has_customMusicScoreTags = true;
+        }
+        else if (mpj_key_eq_str(key, "customMusicScoreDifficultyPlayLevels")) {
+            out->customMusicScoreDifficultyPlayLevels = *val; out->has_customMusicScoreDifficultyPlayLevels = true;
+        }
+        else if (mpj_key_eq_str(key, "customMusicScoreOfficialCreatorProfiles")) {
+            out->customMusicScoreOfficialCreatorProfiles = *val; out->has_customMusicScoreOfficialCreatorProfiles = true;
+        }
+        else if (mpj_key_eq_str(key, "customMusicScoreOfficialCreators")) {
+            out->customMusicScoreOfficialCreators = *val; out->has_customMusicScoreOfficialCreators = true;
         }
         else if (mpj_key_eq_str(key, "mysekaiSites")) {
             out->mysekaiSites = *val; out->has_mysekaiSites = true;

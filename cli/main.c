@@ -10,7 +10,7 @@
 #define INITIAL_CAP 16
 #define GENERATOR_VERSION "0.4.0"
 /* Package-manager release version for wrappers generated from the current dump.cs. */
-#define PACKAGE_VERSION "6.4.1"
+#define PACKAGE_VERSION "6.5.0"
 #define JS_PACKAGE_NAME "msgpack-pjsekai"
 #define PYTHON_PACKAGE_NAME "msgpack-pjsekai"
 #define GO_MODULE_PATH "github.com/Sekai-World/msgpack-pjsekai/msgpack/wrappers/go"
@@ -778,20 +778,9 @@ static void generate_bridge_source(FILE *f, const Model *m) {
 }
 
 static void generate_js_wrapper(FILE *f, const Model *m) {
-    fprintf(f, "let wasmModule = null;\n");
-    fprintf(f, "const textEncoder = new TextEncoder();\n");
-    fprintf(f, "const textDecoder = new TextDecoder();\n\n");
+    fprintf(f, "let wasmModule = null;\n\n");
     fprintf(f, "export function useMsgpackPjsekaiWasm(Module) {\n  wasmModule = Module;\n  return Module;\n}\n\n");
     fprintf(f, "function requireWasm() {\n  if (!wasmModule) throw new Error('call useMsgpackPjsekaiWasm(Module) before encode/decode');\n  return wasmModule;\n}\n\n");
-    fprintf(f, "function copyBytes(Module, ptr, size) {\n  if (!ptr || size === 0) return new Uint8Array();\n  return Module.HEAPU8.slice(ptr, ptr + size);\n}\n\n");
-    fprintf(f, "function nativeBytes(Module, name, bytes) {\n  const p = bytes.length ? Module._malloc(bytes.length) : 0;\n  if (bytes.length) Module.HEAPU8.set(bytes, p);\n  try {\n    return Module.ccall(name, 'number', ['number', 'number'], [p, bytes.length]);\n  } finally {\n    if (p) Module._free(p);\n  }\n}\n\n");
-    fprintf(f, "function valueFromJs(value) {\n  const Module = requireWasm();\n  if (value === null || value === undefined) return Module.ccall('mpj_value_new_nil', 'number', [], []);\n  if (typeof value === 'boolean') return Module.ccall('mpj_value_new_bool', 'number', ['number'], [value ? 1 : 0]);\n  if (typeof value === 'number') return Module.ccall('mpj_value_new_number', 'number', ['number'], [value]);\n  if (typeof value === 'bigint') return Module.ccall(value >= 0n ? 'mpj_value_new_uint' : 'mpj_value_new_int', 'number', ['number'], [Number(value)]);\n  if (typeof value === 'string') return nativeBytes(Module, 'mpj_value_new_string', textEncoder.encode(value));\n  if (value instanceof Uint8Array) return nativeBytes(Module, 'mpj_value_new_binary', value);\n  if (value instanceof ArrayBuffer) return nativeBytes(Module, 'mpj_value_new_binary', new Uint8Array(value));\n  if (Array.isArray(value)) {\n    const out = Module.ccall('mpj_value_new_array', 'number', ['number'], [value.length]);\n    value.forEach((item, index) => Module.ccall('mpj_value_array_set', 'number', ['number', 'number', 'number'], [out, index, valueFromJs(item)]));\n    return out;\n  }\n  const entries = value instanceof Map ? Array.from(value.entries()) : Object.entries(value);\n  const out = Module.ccall('mpj_value_new_map', 'number', ['number'], [entries.length]);\n  entries.forEach(([key, item], index) => Module.ccall('mpj_value_map_set', 'number', ['number', 'number', 'number', 'number'], [out, index, valueFromJs(key), valueFromJs(item)]));\n  return out;\n}\n\n");
-    fprintf(f, "function jsFromValue(ptr) {\n  const Module = requireWasm();\n  if (!ptr) return null;\n  const kind = Module.ccall('mpj_value_kind', 'number', ['number'], [ptr]);\n  if (kind === 0) return null;\n  if (kind === 1) return !!Module.ccall('mpj_value_bool', 'number', ['number'], [ptr]);\n  if (kind === 2 || kind === 3 || kind === 4) return Module.ccall('mpj_value_number', 'number', ['number'], [ptr]);\n  if (kind === 5 || kind === 6) {\n    const data = Module.ccall('mpj_value_data', 'number', ['number'], [ptr]);\n    const size = Module.ccall('mpj_value_size', 'number', ['number'], [ptr]);\n    const bytes = copyBytes(Module, data, size);\n    return kind === 5 ? textDecoder.decode(bytes) : bytes;\n  }\n  if (kind === 7) {\n    const size = Module.ccall('mpj_value_size', 'number', ['number'], [ptr]);\n    return Array.from({ length: size }, (_, i) => jsFromValue(Module.ccall('mpj_value_array_get', 'number', ['number', 'number'], [ptr, i])));\n  }\n  if (kind === 8) {\n    const size = Module.ccall('mpj_value_size', 'number', ['number'], [ptr]);\n    const out = new Map();\n    for (let i = 0; i < size; i++) {\n      const key = jsFromValue(Module.ccall('mpj_value_map_key', 'number', ['number', 'number'], [ptr, i]));\n      const value = jsFromValue(Module.ccall('mpj_value_map_value', 'number', ['number', 'number'], [ptr, i]));\n      out.set(key, value);\n    }\n    return out;\n  }\n  return null;\n}\n\n");
-    fprintf(f, "function packNative(value) {\n  const Module = requireWasm();\n  const ptr = valueFromJs(value);\n  try {\n    const buffer = Module.ccall('mpj_value_pack_bytes', 'number', ['number'], [ptr]);\n    if (!buffer) throw new Error('MessagePack encode failed');\n    try {\n      const data = Module.ccall('mpj_buffer_data', 'number', ['number'], [buffer]);\n      const size = Module.ccall('mpj_buffer_size', 'number', ['number'], [buffer]);\n      return copyBytes(Module, data, size);\n    } finally {\n      Module.ccall('mpj_buffer_delete', null, ['number'], [buffer]);\n    }\n  } finally {\n    Module.ccall('mpj_value_free', null, ['number'], [ptr]);\n  }\n}\n\n");
-    fprintf(f, "function unpackNative(bytes) {\n  const Module = requireWasm();\n  const input = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);\n  const p = input.length ? Module._malloc(input.length) : 0;\n  if (input.length) Module.HEAPU8.set(input, p);\n  const ptr = Module.ccall('mpj_value_unpack_bytes', 'number', ['number', 'number'], [p, input.length]);\n  if (p) Module._free(p);\n  if (!ptr) throw new Error('MessagePack decode failed');\n  try {\n    return jsFromValue(ptr);\n  } finally {\n    Module.ccall('mpj_value_free', null, ['number'], [ptr]);\n  }\n}\n\n");
-    fprintf(f, "function isObject(value) {\n  return value !== null && (typeof value === 'object' || typeof value === 'function');\n}\n\n");
-    fprintf(f, "function hasKey(value, key) {\n  if (!isObject(value)) return false;\n  if (value instanceof Map) return value.has(key);\n  return Object.prototype.hasOwnProperty.call(value, key) || Object.prototype.hasOwnProperty.call(value, String(key));\n}\n\n");
-    fprintf(f, "function getKey(value, key) {\n  if (value instanceof Map) return value.get(key);\n  if (Object.prototype.hasOwnProperty.call(value, key)) return value[key];\n  return value[String(key)];\n}\n\n");
     fprintf(f, "export const schemas = {\n");
     for (size_t i = 0; i < m->class_count; ++i) {
         const Class *c = &m->classes[i];
@@ -832,17 +821,13 @@ static void generate_js_wrapper(FILE *f, const Model *m) {
             fprintf(f, ", this.%s);\n", mem->c_name);
         }
         fprintf(f, "    return out;\n  }\n\n");
-        fprintf(f, "  encode() {\n    return packNative(this.toMsgpackMap());\n  }\n\n");
-        fprintf(f, "  decode(bytes) {\n    const raw = unpackNative(bytes);\n");
+        fprintf(f, "  encode() {\n    const out = requireWasm().%s_encode(this);\n    if (!(out instanceof Uint8Array)) throw new Error('MessagePack encode failed');\n    return out;\n  }\n\n", c->c_name);
+        fprintf(f, "  decode(bytes) {\n    const input = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);\n    const raw = requireWasm().%s_decode(input);\n", c->c_name);
         for (size_t j = 0; j < c->member_count; ++j) {
             const Member *mem = &c->members[j];
-            fprintf(f, "    if (hasKey(raw, ");
-            if (mem->key_kind == KEY_STRING) fprint_json_string(f, mem->key_string);
-            else fprintf(f, "%ld", mem->key_int);
-            fprintf(f, ")) this.%s = getKey(raw, ", mem->c_name);
-            if (mem->key_kind == KEY_STRING) fprint_json_string(f, mem->key_string);
-            else fprintf(f, "%ld", mem->key_int);
-            fprintf(f, ");\n");
+            fprintf(f, "    if (Object.prototype.hasOwnProperty.call(raw, ");
+            fprint_json_string(f, mem->c_name);
+            fprintf(f, ")) this.%s = raw.%s;\n", mem->c_name, mem->c_name);
         }
         fprintf(f, "    return this;\n  }\n}\n\n");
         free(name);
@@ -909,7 +894,7 @@ static void generate_js_readme(FILE *f) {
 
 static void generate_js_types(FILE *f, const Model *m) {
     fprintf(f, "export type MsgpackBuffer = Uint8Array;\n");
-    fprintf(f, "export type MsgpackPjsekaiWasmModule = {\n  HEAPU8: Uint8Array;\n  _malloc(size: number): number;\n  _free(ptr: number): void;\n  ccall(name: string, returnType: string | null, argTypes: string[], args: unknown[]): unknown;\n};\n\n");
+    fprintf(f, "export type MsgpackPjsekaiWasmModule = {\n  [typeName: string]: unknown;\n};\n\n");
     fprintf(f, "export declare function useMsgpackPjsekaiWasm(Module: MsgpackPjsekaiWasmModule): MsgpackPjsekaiWasmModule;\n\n");
     fprintf(f, "export interface FieldInfo {\n  name: string;\n  key: string | number;\n  keyKind: 'string' | 'int';\n}\n\n");
     fprintf(f, "export declare const schemas: {\n");
@@ -994,37 +979,9 @@ static void generate_js_wasm_build_script(FILE *f) {
     fputs("  /^[[:space:]]*($|#|\\*)/ { next }\n", f);
     fputs("  { print root \"/\" $0 }\n", f);
     fputs("' \"$ROOT/msgpack-pjsekai.files\")\n\n", f);
-    fputs("EXPORTED_FUNCTIONS='[\n", f);
-    fputs("\"_malloc\",\n", f);
-    fputs("\"_free\",\n", f);
-    fputs("\"_mpj_buffer_data\",\n", f);
-    fputs("\"_mpj_buffer_delete\",\n", f);
-    fputs("\"_mpj_buffer_size\",\n", f);
-    fputs("\"_mpj_value_array_get\",\n", f);
-    fputs("\"_mpj_value_array_set\",\n", f);
-    fputs("\"_mpj_value_bool\",\n", f);
-    fputs("\"_mpj_value_data\",\n", f);
-    fputs("\"_mpj_value_free\",\n", f);
-    fputs("\"_mpj_value_kind\",\n", f);
-    fputs("\"_mpj_value_map_key\",\n", f);
-    fputs("\"_mpj_value_map_set\",\n", f);
-    fputs("\"_mpj_value_map_value\",\n", f);
-    fputs("\"_mpj_value_new_array\",\n", f);
-    fputs("\"_mpj_value_new_binary\",\n", f);
-    fputs("\"_mpj_value_new_bool\",\n", f);
-    fputs("\"_mpj_value_new_int\",\n", f);
-    fputs("\"_mpj_value_new_map\",\n", f);
-    fputs("\"_mpj_value_new_nil\",\n", f);
-    fputs("\"_mpj_value_new_number\",\n", f);
-    fputs("\"_mpj_value_new_string\",\n", f);
-    fputs("\"_mpj_value_new_uint\",\n", f);
-    fputs("\"_mpj_value_number\",\n", f);
-    fputs("\"_mpj_value_pack_bytes\",\n", f);
-    fputs("\"_mpj_value_size\",\n", f);
-    fputs("\"_mpj_value_unpack_bytes\"\n", f);
-    fputs("]'\n\n", f);
     fputs("emcc \\\n", f);
     fputs("  $SOURCES \\\n", f);
+    fputs("  \"$SCRIPT_DIR/msgpack-pjsekai-wasm-bridge.cpp\" \\\n", f);
     fputs("  \"$ROOT/deps/src/objectc.c\" \\\n", f);
     fputs("  \"$ROOT/deps/src/unpack.c\" \\\n", f);
     fputs("  \"$ROOT/deps/src/version.c\" \\\n", f);
@@ -1034,14 +991,12 @@ static void generate_js_wasm_build_script(FILE *f) {
     fputs("  -I\"$ROOT/generated\" \\\n", f);
     fputs("  -I\"$TMP_DIR/include\" \\\n", f);
     fputs("  -I\"$ROOT/deps/include\" \\\n", f);
-    fputs("  -O3 \\\n", f);
+    fputs("  -O1 \\\n", f);
+    fputs("  --bind \\\n", f);
     fputs("  -sMODULARIZE=1 \\\n", f);
     fputs("  -sEXPORT_ES6=1 \\\n", f);
     fputs("  -sENVIRONMENT=web,node \\\n", f);
     fputs("  -sALLOW_MEMORY_GROWTH=1 \\\n", f);
-    fputs("  -sEXPORT_ALL=1 \\\n", f);
-    fputs("  -sEXPORTED_RUNTIME_METHODS='[\"ccall\"]' \\\n", f);
-    fputs("  -sEXPORTED_FUNCTIONS=\"$EXPORTED_FUNCTIONS\" \\\n", f);
     fputs("  -o \"$OUT_JS\"\n", f);
 }
 

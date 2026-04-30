@@ -6,10 +6,7 @@
 
 export type MsgpackBuffer = Uint8Array;
 export type MsgpackPjsekaiWasmModule = {
-  HEAPU8: Uint8Array;
-  _malloc(size: number): number;
-  _free(ptr: number): void;
-  ccall(name: string, returnType: string | null, argTypes: string[], args: unknown[]): unknown;
+  [typeName: string]: unknown;
 };
 
 export declare function useMsgpackPjsekaiWasm(Module: MsgpackPjsekaiWasmModule): MsgpackPjsekaiWasmModule;
@@ -797,6 +794,8 @@ export declare const schemas: {
   Sekai_MusicShop_VocalTypeFilteredData: readonly FieldInfo[];
   Sekai_MusicShop_MusicShopSortFilterData: readonly FieldInfo[];
   Sekai_MusicShop_SortData: readonly FieldInfo[];
+  Sekai_MusicPlayHistory_MusicPlayHistoryData: readonly FieldInfo[];
+  Sekai_MusicPlayHistory_MusicPlayHistoryEntry: readonly FieldInfo[];
   Sekai_ImageCache_ImageCache: readonly FieldInfo[];
   Sekai_ImageCache_ImageCacheMetaInfos: readonly FieldInfo[];
   Sekai_ImageCache_ImageCacheMeta: readonly FieldInfo[];
@@ -980,6 +979,7 @@ export declare const schemas: {
   Sekai_ApiData_MasterCostume2dGroup: readonly FieldInfo[];
   Sekai_ApiData_MasterCostume3dModelDefaultHair: readonly FieldInfo[];
   Sekai_ApiData_MasterCostume3dModelNotAvailablePattern: readonly FieldInfo[];
+  Sekai_ApiData_MasterCustomMusicScoreOfficialCreator: readonly FieldInfo[];
   Sekai_ApiData_MasterCustomProfileCollectionResourceUnit: readonly FieldInfo[];
   Sekai_ApiData_MasterLimitedTimeMusic: readonly FieldInfo[];
   Sekai_ApiData_MasterMaterialExchange: readonly FieldInfo[];
@@ -1079,11 +1079,21 @@ export declare const schemas: {
   Sekai_ApiData_UserMysekaiTreasureBox: readonly FieldInfo[];
   Sekai_ApiData_UserMysekaiVisitSetting: readonly FieldInfo[];
   Sekai_ApiData_UserBillingShopItemExchangeResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScorePublishedResponse: readonly FieldInfo[];
   Sekai_ApiData_UserPlayerFrame: readonly FieldInfo[];
   Sekai_ApiData_UserWorldBloom: readonly FieldInfo[];
   Sekai_ApiData_UserWorldBloomSupportDeck: readonly FieldInfo[];
+  Sekai_ApiData_CustomMusicScoreBookmarkListResponse: readonly FieldInfo[];
+  Sekai_ApiData_CustomMusicScoreLiveResultResponse: readonly FieldInfo[];
+  Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse: readonly FieldInfo[];
+  Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse: readonly FieldInfo[];
+  Sekai_ApiData_CustomMusicScorePublishedSearchListResponse: readonly FieldInfo[];
+  Sekai_ApiData_CustomMusicScorePublishedSearchResponse: readonly FieldInfo[];
+  Sekai_ApiData_CustomMusicScorePublishedTabListResponse: readonly FieldInfo[];
   Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest: readonly FieldInfo[];
   Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest: readonly FieldInfo[];
+  Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest: readonly FieldInfo[];
+  Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest: readonly FieldInfo[];
   Sekai_ApiData_DebugUserCustomProfileObtainAllRequest: readonly FieldInfo[];
   Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest: readonly FieldInfo[];
   Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest: readonly FieldInfo[];
@@ -1112,6 +1122,7 @@ export declare const schemas: {
   Sekai_ApiData_MysekaiSiteHarvestResourceDrop: readonly FieldInfo[];
   Sekai_ApiData_MysekaiStaminaUsed: readonly FieldInfo[];
   Sekai_ApiData_MysekaiToolUsed: readonly FieldInfo[];
+  Sekai_ApiData_OfficialMusicScoreLiveResultResponse: readonly FieldInfo[];
   Sekai_ApiData_UserAdReward: readonly FieldInfo[];
   Sekai_ApiData_UserAdRewardPostRequest: readonly FieldInfo[];
   Sekai_ApiData_UserAdRewardPutRequest: readonly FieldInfo[];
@@ -1123,6 +1134,19 @@ export declare const schemas: {
   Sekai_ApiData_UserBirthdayPartyGatherRequest: readonly FieldInfo[];
   Sekai_ApiData_UserBirthdayPartyGatherRequestContent: readonly FieldInfo[];
   Sekai_ApiData_UserBirthdayPartyGatherResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreDraft: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreDraftEditRequest: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreDraftListResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreInfo: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreLiveResultResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScoreMiniDisplay: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScorePublishedBanInfo: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScorePublishedListResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserCustomMusicScorePublishRequest: readonly FieldInfo[];
   Sekai_ApiData_UserEventRankingRewardConditionResponse: readonly FieldInfo[];
   Sekai_ApiData_UserGachaSelectCharacter: readonly FieldInfo[];
   Sekai_ApiData_UserGachaSelectCharacterRequest: readonly FieldInfo[];
@@ -1131,6 +1155,8 @@ export declare const schemas: {
   Sekai_ApiData_UserLiveCharacterArchiveVoice: readonly FieldInfo[];
   Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest: readonly FieldInfo[];
   Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse: readonly FieldInfo[];
+  Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse: readonly FieldInfo[];
   Sekai_ApiData_UserMysekaiBlueprint: readonly FieldInfo[];
   Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse: readonly FieldInfo[];
   Sekai_ApiData_UserMysekaiCanvas: readonly FieldInfo[];
@@ -1257,6 +1283,9 @@ export declare const schemas: {
   Sekai_ApiData_MasterCharacterArchiveVoice: readonly FieldInfo[];
   Sekai_ApiData_MasterCharacterArchiveVoiceTag: readonly FieldInfo[];
   Sekai_ApiData_MasterCollaborationMode: readonly FieldInfo[];
+  Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel: readonly FieldInfo[];
+  Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile: readonly FieldInfo[];
+  Sekai_ApiData_MasterCustomMusicScoreTag: readonly FieldInfo[];
   Sekai_ApiData_MasterCustomProfileGachaShop: readonly FieldInfo[];
   Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter: readonly FieldInfo[];
   Sekai_ApiData_MasterEventCardBonusLimit: readonly FieldInfo[];
@@ -1365,6 +1394,11 @@ export declare const schemas: {
   Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest: readonly FieldInfo[];
   Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest: readonly FieldInfo[];
   Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest: readonly FieldInfo[];
+  Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData: readonly FieldInfo[];
+  Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData: readonly FieldInfo[];
+  Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData: readonly FieldInfo[];
+  Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData: readonly FieldInfo[];
+  Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase: readonly FieldInfo[];
   Sekai_SuperVirtualLive_RoomUserHonorInfo: readonly FieldInfo[];
   Sekai_SuperVirtualLive_RoomUserBasicInfo: readonly FieldInfo[];
   Sekai_SuperVirtualLive_LobbyChatData: readonly FieldInfo[];
@@ -2318,6 +2352,8 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_MusicShop_VocalTypeFilteredData"
   | "Sekai_MusicShop_MusicShopSortFilterData"
   | "Sekai_MusicShop_SortData"
+  | "Sekai_MusicPlayHistory_MusicPlayHistoryData"
+  | "Sekai_MusicPlayHistory_MusicPlayHistoryEntry"
   | "Sekai_ImageCache_ImageCache"
   | "Sekai_ImageCache_ImageCacheMetaInfos"
   | "Sekai_ImageCache_ImageCacheMeta"
@@ -2501,6 +2537,7 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_ApiData_MasterCostume2dGroup"
   | "Sekai_ApiData_MasterCostume3dModelDefaultHair"
   | "Sekai_ApiData_MasterCostume3dModelNotAvailablePattern"
+  | "Sekai_ApiData_MasterCustomMusicScoreOfficialCreator"
   | "Sekai_ApiData_MasterCustomProfileCollectionResourceUnit"
   | "Sekai_ApiData_MasterLimitedTimeMusic"
   | "Sekai_ApiData_MasterMaterialExchange"
@@ -2600,11 +2637,21 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_ApiData_UserMysekaiTreasureBox"
   | "Sekai_ApiData_UserMysekaiVisitSetting"
   | "Sekai_ApiData_UserBillingShopItemExchangeResponse"
+  | "Sekai_ApiData_UserCustomMusicScorePublishedResponse"
   | "Sekai_ApiData_UserPlayerFrame"
   | "Sekai_ApiData_UserWorldBloom"
   | "Sekai_ApiData_UserWorldBloomSupportDeck"
+  | "Sekai_ApiData_CustomMusicScoreBookmarkListResponse"
+  | "Sekai_ApiData_CustomMusicScoreLiveResultResponse"
+  | "Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse"
+  | "Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse"
+  | "Sekai_ApiData_CustomMusicScorePublishedSearchListResponse"
+  | "Sekai_ApiData_CustomMusicScorePublishedSearchResponse"
+  | "Sekai_ApiData_CustomMusicScorePublishedTabListResponse"
   | "Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest"
   | "Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest"
+  | "Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest"
+  | "Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest"
   | "Sekai_ApiData_DebugUserCustomProfileObtainAllRequest"
   | "Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest"
   | "Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest"
@@ -2633,6 +2680,7 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_ApiData_MysekaiSiteHarvestResourceDrop"
   | "Sekai_ApiData_MysekaiStaminaUsed"
   | "Sekai_ApiData_MysekaiToolUsed"
+  | "Sekai_ApiData_OfficialMusicScoreLiveResultResponse"
   | "Sekai_ApiData_UserAdReward"
   | "Sekai_ApiData_UserAdRewardPostRequest"
   | "Sekai_ApiData_UserAdRewardPutRequest"
@@ -2644,6 +2692,19 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_ApiData_UserBirthdayPartyGatherRequest"
   | "Sekai_ApiData_UserBirthdayPartyGatherRequestContent"
   | "Sekai_ApiData_UserBirthdayPartyGatherResponse"
+  | "Sekai_ApiData_UserCustomMusicScoreDraft"
+  | "Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest"
+  | "Sekai_ApiData_UserCustomMusicScoreDraftEditRequest"
+  | "Sekai_ApiData_UserCustomMusicScoreDraftListResponse"
+  | "Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest"
+  | "Sekai_ApiData_UserCustomMusicScoreInfo"
+  | "Sekai_ApiData_UserCustomMusicScoreLiveResultResponse"
+  | "Sekai_ApiData_UserCustomMusicScoreMiniDisplay"
+  | "Sekai_ApiData_UserCustomMusicScorePublishedBanInfo"
+  | "Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse"
+  | "Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse"
+  | "Sekai_ApiData_UserCustomMusicScorePublishedListResponse"
+  | "Sekai_ApiData_UserCustomMusicScorePublishRequest"
   | "Sekai_ApiData_UserEventRankingRewardConditionResponse"
   | "Sekai_ApiData_UserGachaSelectCharacter"
   | "Sekai_ApiData_UserGachaSelectCharacterRequest"
@@ -2652,6 +2713,8 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_ApiData_UserLiveCharacterArchiveVoice"
   | "Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest"
   | "Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse"
+  | "Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse"
+  | "Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse"
   | "Sekai_ApiData_UserMysekaiBlueprint"
   | "Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse"
   | "Sekai_ApiData_UserMysekaiCanvas"
@@ -2778,6 +2841,9 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_ApiData_MasterCharacterArchiveVoice"
   | "Sekai_ApiData_MasterCharacterArchiveVoiceTag"
   | "Sekai_ApiData_MasterCollaborationMode"
+  | "Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel"
+  | "Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile"
+  | "Sekai_ApiData_MasterCustomMusicScoreTag"
   | "Sekai_ApiData_MasterCustomProfileGachaShop"
   | "Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter"
   | "Sekai_ApiData_MasterEventCardBonusLimit"
@@ -2886,6 +2952,11 @@ export type MsgpackPjsekaiTypeName =
   | "Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest"
   | "Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest"
   | "Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest"
+  | "Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData"
+  | "Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData"
+  | "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData"
+  | "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData"
+  | "Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase"
   | "Sekai_SuperVirtualLive_RoomUserHonorInfo"
   | "Sekai_SuperVirtualLive_RoomUserBasicInfo"
   | "Sekai_SuperVirtualLive_LobbyChatData"
@@ -8894,6 +8965,8 @@ export interface Sekai_MasterMusicInit {
   "musicCollaborationId"?: number;
   "isNewlyWrittenMusic"?: boolean;
   "isFullLength"?: boolean;
+  "secForMusicScoreMaker"?: number;
+  "isAvailableForMusicScoreMaker"?: boolean;
 }
 
 export declare class Sekai_MasterMusic {
@@ -8920,6 +8993,8 @@ export declare class Sekai_MasterMusic {
   "musicCollaborationId"?: number;
   "isNewlyWrittenMusic"?: boolean;
   "isFullLength"?: boolean;
+  "secForMusicScoreMaker"?: number;
+  "isAvailableForMusicScoreMaker"?: boolean;
   constructor(init?: Sekai_MasterMusicInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -9752,6 +9827,10 @@ export interface Sekai_SuiteMasterInit {
   "virtualLiveGroups"?: unknown;
   "virtualLiveTransitionItems"?: unknown;
   "collaborationModes"?: unknown;
+  "customMusicScoreTags"?: unknown;
+  "customMusicScoreDifficultyPlayLevels"?: unknown;
+  "customMusicScoreOfficialCreatorProfiles"?: unknown;
+  "customMusicScoreOfficialCreators"?: unknown;
   "mysekaiSites"?: unknown;
   "mysekaiSiteLevels"?: unknown;
   "mysekaiSiteGroups"?: unknown;
@@ -10142,6 +10221,10 @@ export declare class Sekai_SuiteMaster {
   "virtualLiveGroups"?: unknown;
   "virtualLiveTransitionItems"?: unknown;
   "collaborationModes"?: unknown;
+  "customMusicScoreTags"?: unknown;
+  "customMusicScoreDifficultyPlayLevels"?: unknown;
+  "customMusicScoreOfficialCreatorProfiles"?: unknown;
+  "customMusicScoreOfficialCreators"?: unknown;
   "mysekaiSites"?: unknown;
   "mysekaiSiteLevels"?: unknown;
   "mysekaiSiteGroups"?: unknown;
@@ -10524,6 +10607,10 @@ export interface Sekai_CachedMaserDataAllInit {
   "virtualLiveGroups"?: unknown;
   "virtualLiveTransitionItems"?: unknown;
   "collaborationModes"?: unknown;
+  "customMusicScoreTags"?: unknown;
+  "customMusicScoreDifficultyPlayLevels"?: unknown;
+  "customMusicScoreOfficialCreatorProfiles"?: unknown;
+  "customMusicScoreOfficialCreators"?: unknown;
   "mysekaiSystemFixtures"?: unknown;
   "mysekaiSystemFixtureTypeIcons"?: unknown;
   "mysekaiFixtures"?: unknown;
@@ -10903,6 +10990,10 @@ export declare class Sekai_CachedMaserDataAll {
   "virtualLiveGroups"?: unknown;
   "virtualLiveTransitionItems"?: unknown;
   "collaborationModes"?: unknown;
+  "customMusicScoreTags"?: unknown;
+  "customMusicScoreDifficultyPlayLevels"?: unknown;
+  "customMusicScoreOfficialCreatorProfiles"?: unknown;
+  "customMusicScoreOfficialCreators"?: unknown;
   "mysekaiSystemFixtures"?: unknown;
   "mysekaiSystemFixtureTypeIcons"?: unknown;
   "mysekaiFixtures"?: unknown;
@@ -12620,6 +12711,8 @@ export interface Sekai_SuiteUserInit {
   "userBirthdayParties"?: unknown;
   "userMysekaiSystemFixtureActions"?: unknown;
   "userVirtualLiveTransitionItems"?: unknown;
+  "userCustomMusicScorePublisheds"?: unknown;
+  "userCustomMusicScoreBookmarks"?: unknown;
   "userRateChoiceGachaWishes"?: unknown;
 }
 
@@ -12808,6 +12901,8 @@ export declare class Sekai_SuiteUser {
   "userBirthdayParties"?: unknown;
   "userMysekaiSystemFixtureActions"?: unknown;
   "userVirtualLiveTransitionItems"?: unknown;
+  "userCustomMusicScorePublisheds"?: unknown;
+  "userCustomMusicScoreBookmarks"?: unknown;
   "userRateChoiceGachaWishes"?: unknown;
   constructor(init?: Sekai_SuiteUserInit);
   toMsgpackMap(): Map<string | number, unknown>;
@@ -15824,6 +15919,7 @@ export interface Sekai_UserHomeRefreshResponseInit {
   "shouldReflectWebPayment"?: boolean;
   "receivableUnprocessedSerialCodeCampaignIds"?: unknown;
   "displayableOfflineEventIds"?: unknown;
+  "userCustomMusicScorePublishedBanInfos"?: unknown;
 }
 
 export declare class Sekai_UserHomeRefreshResponse {
@@ -15840,6 +15936,7 @@ export declare class Sekai_UserHomeRefreshResponse {
   "shouldReflectWebPayment"?: boolean;
   "receivableUnprocessedSerialCodeCampaignIds"?: unknown;
   "displayableOfflineEventIds"?: unknown;
+  "userCustomMusicScorePublishedBanInfos"?: unknown;
   constructor(init?: Sekai_UserHomeRefreshResponseInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -16109,6 +16206,7 @@ export interface Sekai_UserLiveRequestInit {
   "boostCount"?: number;
   "isAuto"?: boolean;
   "musicCategoryName"?: string | null;
+  "customMusicScoreId"?: string | null;
 }
 
 export declare class Sekai_UserLiveRequest {
@@ -16120,6 +16218,7 @@ export declare class Sekai_UserLiveRequest {
   "boostCount"?: number;
   "isAuto"?: boolean;
   "musicCategoryName"?: string | null;
+  "customMusicScoreId"?: string | null;
   constructor(init?: Sekai_UserLiveRequestInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -16263,6 +16362,7 @@ export interface Sekai_UserLiveClearResponseInit {
   "userLivePoint"?: unknown;
   "isEventMaintenance"?: boolean;
   "isInBreakTime"?: boolean;
+  "customMusicScoreLiveResult"?: unknown;
 }
 
 export declare class Sekai_UserLiveClearResponse {
@@ -16298,6 +16398,7 @@ export declare class Sekai_UserLiveClearResponse {
   "userLivePoint"?: unknown;
   "isEventMaintenance"?: boolean;
   "isInBreakTime"?: boolean;
+  "customMusicScoreLiveResult"?: unknown;
   constructor(init?: Sekai_UserLiveClearResponseInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -16590,6 +16691,7 @@ export interface Sekai_MultiLiveRequestInit {
   "selectedMusicId4"?: number;
   "selectedMusicId5"?: number;
   "privateRoomSettings"?: unknown;
+  "customMusicScoreId"?: string | null;
 }
 
 export declare class Sekai_MultiLiveRequest {
@@ -16614,6 +16716,7 @@ export declare class Sekai_MultiLiveRequest {
   "selectedMusicId4"?: number;
   "selectedMusicId5"?: number;
   "privateRoomSettings"?: unknown;
+  "customMusicScoreId"?: string | null;
   constructor(init?: Sekai_MultiLiveRequestInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -16648,6 +16751,7 @@ export interface Sekai_UserMultiLiveRequestInit {
   "boostCount"?: number;
   "musicCategoryName"?: string | null;
   "privateRoomSettings"?: unknown;
+  "customMusicScoreId"?: string | null;
 }
 
 export declare class Sekai_UserMultiLiveRequest {
@@ -16662,6 +16766,7 @@ export declare class Sekai_UserMultiLiveRequest {
   "boostCount"?: number;
   "musicCategoryName"?: string | null;
   "privateRoomSettings"?: unknown;
+  "customMusicScoreId"?: string | null;
   constructor(init?: Sekai_UserMultiLiveRequestInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -16808,6 +16913,7 @@ export interface Sekai_UserMultiLiveClearResponseInit {
   "userLivePoint"?: unknown;
   "isEventMaintenance"?: boolean;
   "isInBreakTime"?: boolean;
+  "customMusicScoreLiveResult"?: unknown;
 }
 
 export declare class Sekai_UserMultiLiveClearResponse {
@@ -16845,6 +16951,7 @@ export declare class Sekai_UserMultiLiveClearResponse {
   "userLivePoint"?: unknown;
   "isEventMaintenance"?: boolean;
   "isInBreakTime"?: boolean;
+  "customMusicScoreLiveResult"?: unknown;
   constructor(init?: Sekai_UserMultiLiveClearResponseInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -19557,6 +19664,7 @@ export interface Sekai_ApplicationLocalSettingsInit {
   "LastSelectedLiveBoostDialogTabIndex"?: number;
   "MusicShopSortFilterData"?: unknown;
   "AnotherMusicShopSortFilterData"?: unknown;
+  "MusicScoreMakerMusicSelectSortFilterData"?: unknown;
   "StampMissionPanelCheckStatusDictionary"?: unknown;
   "mysekaiInventorySortFilterConfigs"?: unknown;
   "MysekaiFixtureFilteredData"?: unknown;
@@ -19659,6 +19767,7 @@ export declare class Sekai_ApplicationLocalSettings {
   "LastSelectedLiveBoostDialogTabIndex"?: number;
   "MusicShopSortFilterData"?: unknown;
   "AnotherMusicShopSortFilterData"?: unknown;
+  "MusicScoreMakerMusicSelectSortFilterData"?: unknown;
   "StampMissionPanelCheckStatusDictionary"?: unknown;
   "mysekaiInventorySortFilterConfigs"?: unknown;
   "MysekaiFixtureFilteredData"?: unknown;
@@ -20496,6 +20605,7 @@ export interface Sekai_LiveSettingDataInit {
   "CustomRoomIsDisplayPlayerInfo"?: boolean;
   "CustomRoomSelectedDifficulties"?: unknown;
   "CustomRoomSelectedMusicType"?: number;
+  "ScoreSelectType"?: number;
 }
 
 export declare class Sekai_LiveSettingData {
@@ -20531,6 +20641,7 @@ export declare class Sekai_LiveSettingData {
   "CustomRoomIsDisplayPlayerInfo"?: boolean;
   "CustomRoomSelectedDifficulties"?: unknown;
   "CustomRoomSelectedMusicType"?: number;
+  "ScoreSelectType"?: number;
   constructor(init?: Sekai_LiveSettingDataInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -20552,11 +20663,13 @@ export declare class Sekai_MusicSettingDataList {
 
 export interface Sekai_MusicSettingDataInit {
   "VocalId"?: number;
+  "CustomMusicScoreIds"?: unknown;
 }
 
 export declare class Sekai_MusicSettingData {
   static schema: readonly FieldInfo[];
   "VocalId"?: number;
+  "CustomMusicScoreIds"?: unknown;
   constructor(init?: Sekai_MusicSettingDataInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -20681,6 +20794,36 @@ export declare class Sekai_MusicShop_SortData {
   decode(bytes: ArrayLike<number>): this;
 }
 
+export interface Sekai_MusicPlayHistory_MusicPlayHistoryDataInit {
+  "Entries"?: unknown;
+}
+
+export declare class Sekai_MusicPlayHistory_MusicPlayHistoryData {
+  static schema: readonly FieldInfo[];
+  "Entries"?: unknown;
+  constructor(init?: Sekai_MusicPlayHistory_MusicPlayHistoryDataInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_MusicPlayHistory_MusicPlayHistoryEntryInit {
+  "MusicId"?: number;
+  "Difficulty"?: unknown;
+  "PlayedAtUnixTime"?: number;
+}
+
+export declare class Sekai_MusicPlayHistory_MusicPlayHistoryEntry {
+  static schema: readonly FieldInfo[];
+  "MusicId"?: number;
+  "Difficulty"?: unknown;
+  "PlayedAtUnixTime"?: number;
+  constructor(init?: Sekai_MusicPlayHistory_MusicPlayHistoryEntryInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
 export interface Sekai_ImageCache_ImageCacheInit {
   "ImageData"?: unknown;
 }
@@ -20748,6 +20891,7 @@ export interface Sekai_Multiplay_MultiLivePartyMemberInit {
   "FriendRequestStatus"?: unknown;
   "MemberCharacterRank"?: unknown;
   "PlayerFrameId"?: number;
+  "CustomScoreId"?: string | null;
 }
 
 export declare class Sekai_Multiplay_MultiLivePartyMember {
@@ -20777,6 +20921,7 @@ export declare class Sekai_Multiplay_MultiLivePartyMember {
   "FriendRequestStatus"?: unknown;
   "MemberCharacterRank"?: unknown;
   "PlayerFrameId"?: number;
+  "CustomScoreId"?: string | null;
   constructor(init?: Sekai_Multiplay_MultiLivePartyMemberInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -21139,6 +21284,7 @@ export interface Sekai_MultiLive_PlayerInfoInit {
   "Index"?: number;
   "Info"?: unknown;
   "Difficulty"?: string | null;
+  "CustomScoreId"?: string | null;
 }
 
 export declare class Sekai_MultiLive_PlayerInfo {
@@ -21148,6 +21294,7 @@ export declare class Sekai_MultiLive_PlayerInfo {
   "Index"?: number;
   "Info"?: unknown;
   "Difficulty"?: string | null;
+  "CustomScoreId"?: string | null;
   constructor(init?: Sekai_MultiLive_PlayerInfoInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -21421,6 +21568,7 @@ export interface Sekai_MultiLive_CustomRoomSettingDataInit {
   "musicSelectionType"?: unknown;
   "musicDifficultyTypes"?: unknown;
   "isDisplayPlayerInfo"?: boolean;
+  "scoreSelectType"?: unknown;
 }
 
 export declare class Sekai_MultiLive_CustomRoomSettingData {
@@ -21429,6 +21577,7 @@ export declare class Sekai_MultiLive_CustomRoomSettingData {
   "musicSelectionType"?: unknown;
   "musicDifficultyTypes"?: unknown;
   "isDisplayPlayerInfo"?: boolean;
+  "scoreSelectType"?: unknown;
   constructor(init?: Sekai_MultiLive_CustomRoomSettingDataInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
@@ -24272,6 +24421,47 @@ export declare class Sekai_ApiData_MasterCostume3dModelNotAvailablePattern {
   decode(bytes: ArrayLike<number>): this;
 }
 
+export interface Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorInit {
+  "id"?: number;
+  "scoreId"?: string | null;
+  "customMusicScoreOfficialCreatorProfileId"?: number;
+  "musicId"?: number;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "title"?: string | null;
+  "description"?: string | null;
+  "tagId1"?: number;
+  "tagId2"?: number;
+  "tagId3"?: number;
+  "isDerivativeAllowed"?: boolean;
+  "previewStartTimeSec"?: number;
+  "publishedStartAt"?: number;
+  "publishedEndAt"?: number;
+}
+
+export declare class Sekai_ApiData_MasterCustomMusicScoreOfficialCreator {
+  static schema: readonly FieldInfo[];
+  "id"?: number;
+  "scoreId"?: string | null;
+  "customMusicScoreOfficialCreatorProfileId"?: number;
+  "musicId"?: number;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "title"?: string | null;
+  "description"?: string | null;
+  "tagId1"?: number;
+  "tagId2"?: number;
+  "tagId3"?: number;
+  "isDerivativeAllowed"?: boolean;
+  "previewStartTimeSec"?: number;
+  "publishedStartAt"?: number;
+  "publishedEndAt"?: number;
+  constructor(init?: Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
 export interface Sekai_ApiData_MasterCustomProfileCollectionResourceUnitInit {
   "id"?: number;
   "customProfileCollectionResourceId"?: number;
@@ -26443,6 +26633,55 @@ export declare class Sekai_ApiData_UserBillingShopItemExchangeResponse {
   decode(bytes: ArrayLike<number>): this;
 }
 
+export interface Sekai_ApiData_UserCustomMusicScorePublishedResponseInit {
+  "userCustomMusicScoreInfoJson"?: unknown;
+  "userCustomMusicScoreId"?: string | null;
+  "userId"?: number;
+  "userName"?: string | null;
+  "musicId"?: number;
+  "customMusicScoreTags"?: unknown;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "description"?: string | null;
+  "isDerivativeAllowed"?: boolean;
+  "previewStartTimeSec"?: number;
+  "publishedAt"?: number;
+  "reviewCount"?: number;
+  "playCount"?: number;
+  "fullComboRate"?: number;
+  "customMusicScoreSearchSortValue"?: number;
+  "playResult"?: string | null;
+  "isReviewed"?: boolean;
+  "isReviewAllowed"?: boolean;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScorePublishedResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreInfoJson"?: unknown;
+  "userCustomMusicScoreId"?: string | null;
+  "userId"?: number;
+  "userName"?: string | null;
+  "musicId"?: number;
+  "customMusicScoreTags"?: unknown;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "description"?: string | null;
+  "isDerivativeAllowed"?: boolean;
+  "previewStartTimeSec"?: number;
+  "publishedAt"?: number;
+  "reviewCount"?: number;
+  "playCount"?: number;
+  "fullComboRate"?: number;
+  "customMusicScoreSearchSortValue"?: number;
+  "playResult"?: string | null;
+  "isReviewed"?: boolean;
+  "isReviewAllowed"?: boolean;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScorePublishedResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
 export interface Sekai_ApiData_UserPlayerFrameInit {
   "playerFrameId"?: number;
   "playerFrameAttachStatus"?: string | null;
@@ -26544,6 +26783,123 @@ export declare class Sekai_ApiData_UserWorldBloomSupportDeck {
   decode(bytes: ArrayLike<number>): this;
 }
 
+export interface Sekai_ApiData_CustomMusicScoreBookmarkListResponseInit {
+  "userCustomMusicScoreBookmarkList"?: unknown;
+  "customMusicScoreOfficialCreatorBookmarkList"?: unknown;
+}
+
+export declare class Sekai_ApiData_CustomMusicScoreBookmarkListResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreBookmarkList"?: unknown;
+  "customMusicScoreOfficialCreatorBookmarkList"?: unknown;
+  constructor(init?: Sekai_ApiData_CustomMusicScoreBookmarkListResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_CustomMusicScoreLiveResultResponseInit {
+  "userCustomMusicScoreLiveResult"?: unknown;
+  "officialMusicScoreLiveResult"?: unknown;
+}
+
+export declare class Sekai_ApiData_CustomMusicScoreLiveResultResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreLiveResult"?: unknown;
+  "officialMusicScoreLiveResult"?: unknown;
+  constructor(init?: Sekai_ApiData_CustomMusicScoreLiveResultResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponseInit {
+  "customMusicScoreOfficialCreatorPublished"?: unknown;
+  "bookmarkedAt"?: number;
+}
+
+export declare class Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse {
+  static schema: readonly FieldInfo[];
+  "customMusicScoreOfficialCreatorPublished"?: unknown;
+  "bookmarkedAt"?: number;
+  constructor(init?: Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponseInit {
+  "customMusicScoreId"?: string | null;
+  "reviewCount"?: number;
+  "playCount"?: number;
+  "fullComboRate"?: number;
+  "customMusicScoreSearchSortValue"?: number;
+  "playResult"?: string | null;
+  "isReviewed"?: boolean;
+  "isReviewAllowed"?: boolean;
+}
+
+export declare class Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse {
+  static schema: readonly FieldInfo[];
+  "customMusicScoreId"?: string | null;
+  "reviewCount"?: number;
+  "playCount"?: number;
+  "fullComboRate"?: number;
+  "customMusicScoreSearchSortValue"?: number;
+  "playResult"?: string | null;
+  "isReviewed"?: boolean;
+  "isReviewAllowed"?: boolean;
+  constructor(init?: Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_CustomMusicScorePublishedSearchListResponseInit {
+  "userCustomMusicScorePublishedList"?: unknown;
+  "customMusicScoreOfficialCreatorPublishedList"?: unknown;
+}
+
+export declare class Sekai_ApiData_CustomMusicScorePublishedSearchListResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScorePublishedList"?: unknown;
+  "customMusicScoreOfficialCreatorPublishedList"?: unknown;
+  constructor(init?: Sekai_ApiData_CustomMusicScorePublishedSearchListResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_CustomMusicScorePublishedSearchResponseInit {
+  "userCustomMusicScoreInfoJson"?: unknown;
+  "customMusicScoreOfficialCreatorPublishedResponseJson"?: unknown;
+}
+
+export declare class Sekai_ApiData_CustomMusicScorePublishedSearchResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreInfoJson"?: unknown;
+  "customMusicScoreOfficialCreatorPublishedResponseJson"?: unknown;
+  constructor(init?: Sekai_ApiData_CustomMusicScorePublishedSearchResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_CustomMusicScorePublishedTabListResponseInit {
+  "userCustomMusicScorePublishedList"?: unknown;
+  "customMusicScoreOfficialCreatorPublishedList"?: unknown;
+}
+
+export declare class Sekai_ApiData_CustomMusicScorePublishedTabListResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScorePublishedList"?: unknown;
+  "customMusicScoreOfficialCreatorPublishedList"?: unknown;
+  constructor(init?: Sekai_ApiData_CustomMusicScorePublishedTabListResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
 export interface Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequestInit {
   "deliveryPoint"?: number;
 }
@@ -26565,6 +26921,32 @@ export declare class Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCount
   static schema: readonly FieldInfo[];
   "count"?: number;
   constructor(init?: Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequestInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequestInit {
+  "createCount"?: number;
+}
+
+export declare class Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest {
+  static schema: readonly FieldInfo[];
+  "createCount"?: number;
+  constructor(init?: Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequestInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequestInit {
+  "createCount"?: number;
+}
+
+export declare class Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest {
+  static schema: readonly FieldInfo[];
+  "createCount"?: number;
+  constructor(init?: Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequestInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
   decode(bytes: ArrayLike<number>): this;
@@ -27014,6 +27396,21 @@ export declare class Sekai_ApiData_MysekaiToolUsed {
   decode(bytes: ArrayLike<number>): this;
 }
 
+export interface Sekai_ApiData_OfficialMusicScoreLiveResultResponseInit {
+  "customMusicScoreId"?: string | null;
+  "isReviewed"?: boolean;
+}
+
+export declare class Sekai_ApiData_OfficialMusicScoreLiveResultResponse {
+  static schema: readonly FieldInfo[];
+  "customMusicScoreId"?: string | null;
+  "isReviewed"?: boolean;
+  constructor(init?: Sekai_ApiData_OfficialMusicScoreLiveResultResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
 export interface Sekai_ApiData_UserAdRewardInit {
   "id"?: number;
   "lastPlayStartAt"?: number;
@@ -27183,6 +27580,265 @@ export declare class Sekai_ApiData_UserBirthdayPartyGatherResponse {
   decode(bytes: ArrayLike<number>): this;
 }
 
+export interface Sekai_ApiData_UserCustomMusicScoreDraftInit {
+  "userCustomMusicScoreInfo"?: unknown;
+  "slotNo"?: number;
+  "memo"?: string | null;
+  "baseMusicDifficultyId"?: number;
+  "lastSavedAt"?: number;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreDraft {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreInfo"?: unknown;
+  "slotNo"?: number;
+  "memo"?: string | null;
+  "baseMusicDifficultyId"?: number;
+  "lastSavedAt"?: number;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreDraftInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScoreDraftCreateRequestInit {
+  "baseMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "userCustomMusicScoreJsonGzipBase64"?: string | null;
+  "memo"?: string | null;
+  "baseMusicDifficultyId"?: number;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest {
+  static schema: readonly FieldInfo[];
+  "baseMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "userCustomMusicScoreJsonGzipBase64"?: string | null;
+  "memo"?: string | null;
+  "baseMusicDifficultyId"?: number;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreDraftCreateRequestInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScoreDraftEditRequestInit {
+  "title"?: string | null;
+  "memo"?: string | null;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreDraftEditRequest {
+  static schema: readonly FieldInfo[];
+  "title"?: string | null;
+  "memo"?: string | null;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreDraftEditRequestInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScoreDraftListResponseInit {
+  "userCustomMusicScoreDrafts"?: unknown;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreDraftListResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreDrafts"?: unknown;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreDraftListResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequestInit {
+  "baseMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "userCustomMusicScoreJsonGzipBase64"?: string | null;
+  "memo"?: string | null;
+  "baseMusicDifficultyId"?: number;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest {
+  static schema: readonly FieldInfo[];
+  "baseMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "userCustomMusicScoreJsonGzipBase64"?: string | null;
+  "memo"?: string | null;
+  "baseMusicDifficultyId"?: number;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequestInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScoreInfoInit {
+  "baseMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "userCustomMusicScorePath"?: string | null;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreInfo {
+  static schema: readonly FieldInfo[];
+  "baseMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "userCustomMusicScorePath"?: string | null;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreInfoInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScoreLiveResultResponseInit {
+  "userId"?: number;
+  "userName"?: string | null;
+  "customMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "isReviewed"?: boolean;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreLiveResultResponse {
+  static schema: readonly FieldInfo[];
+  "userId"?: number;
+  "userName"?: string | null;
+  "customMusicScoreId"?: string | null;
+  "musicId"?: number;
+  "title"?: string | null;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "isReviewed"?: boolean;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreLiveResultResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScoreMiniDisplayInit {
+  "userCustomMusicScoreId"?: string | null;
+  "title"?: string | null;
+  "authorId"?: number;
+  "authorName"?: string | null;
+  "playLevel"?: number;
+  "musicDifficulty"?: string | null;
+  "userCustomMusicScorePath"?: string | null;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScoreMiniDisplay {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreId"?: string | null;
+  "title"?: string | null;
+  "authorId"?: number;
+  "authorName"?: string | null;
+  "playLevel"?: number;
+  "musicDifficulty"?: string | null;
+  "userCustomMusicScorePath"?: string | null;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScoreMiniDisplayInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScorePublishedBanInfoInit {
+  "userCustomMusicScoreId"?: string | null;
+  "message"?: string | null;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScorePublishedBanInfo {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScoreId"?: string | null;
+  "message"?: string | null;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScorePublishedBanInfoInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponseInit {
+  "userCustomMusicScorePublished"?: unknown;
+  "bookmarkedAt"?: number;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScorePublished"?: unknown;
+  "bookmarkedAt"?: number;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponseInit {
+  "userCustomMusicScorePublishedList"?: unknown;
+  "userCustomMusicScoreAuthorProfile"?: unknown;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScorePublishedList"?: unknown;
+  "userCustomMusicScoreAuthorProfile"?: unknown;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScorePublishedListResponseInit {
+  "userCustomMusicScorePublishedList"?: unknown;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScorePublishedListResponse {
+  static schema: readonly FieldInfo[];
+  "userCustomMusicScorePublishedList"?: unknown;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScorePublishedListResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserCustomMusicScorePublishRequestInit {
+  "musicId"?: number;
+  "customMusicScoreTagIds"?: unknown;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "title"?: string | null;
+  "description"?: string | null;
+  "userCustomMusicScoreJsonGzipBase64"?: string | null;
+  "userCustomMusicScorePreviewJsonGzipBase64"?: string | null;
+  "baseMusicScoreId"?: string | null;
+  "isDerivativeAllowed"?: boolean;
+  "previewStartTimeSec"?: number;
+  "totalNoteCount"?: number;
+}
+
+export declare class Sekai_ApiData_UserCustomMusicScorePublishRequest {
+  static schema: readonly FieldInfo[];
+  "musicId"?: number;
+  "customMusicScoreTagIds"?: unknown;
+  "musicDifficultyType"?: string | null;
+  "playLevel"?: number;
+  "title"?: string | null;
+  "description"?: string | null;
+  "userCustomMusicScoreJsonGzipBase64"?: string | null;
+  "userCustomMusicScorePreviewJsonGzipBase64"?: string | null;
+  "baseMusicScoreId"?: string | null;
+  "isDerivativeAllowed"?: boolean;
+  "previewStartTimeSec"?: number;
+  "totalNoteCount"?: number;
+  constructor(init?: Sekai_ApiData_UserCustomMusicScorePublishRequestInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
 export interface Sekai_ApiData_UserEventRankingRewardConditionResponseInit {
   "rewardCondition"?: unknown;
 }
@@ -27290,6 +27946,36 @@ export declare class Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRespon
   static schema: readonly FieldInfo[];
   "updatedResources"?: unknown;
   constructor(init?: Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponseInit {
+  "userMultiLivePlayableCustomMusicScores"?: unknown;
+}
+
+export declare class Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse {
+  static schema: readonly FieldInfo[];
+  "userMultiLivePlayableCustomMusicScores"?: unknown;
+  constructor(init?: Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponseInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponseInit {
+  "userId"?: number;
+  "userCustomMusicScores"?: unknown;
+  "officialCustomMusicScoreIds"?: unknown;
+}
+
+export declare class Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse {
+  static schema: readonly FieldInfo[];
+  "userId"?: number;
+  "userCustomMusicScores"?: unknown;
+  "officialCustomMusicScoreIds"?: unknown;
+  constructor(init?: Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponseInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
   decode(bytes: ArrayLike<number>): this;
@@ -29491,6 +30177,59 @@ export declare class Sekai_ApiData_MasterCollaborationMode {
   decode(bytes: ArrayLike<number>): this;
 }
 
+export interface Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevelInit {
+  "id"?: number;
+  "musicDifficultyType"?: string | null;
+  "minPlayLevel"?: number;
+  "maxPlayLevel"?: number;
+}
+
+export declare class Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel {
+  static schema: readonly FieldInfo[];
+  "id"?: number;
+  "musicDifficultyType"?: string | null;
+  "minPlayLevel"?: number;
+  "maxPlayLevel"?: number;
+  constructor(init?: Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevelInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfileInit {
+  "id"?: number;
+  "name"?: string | null;
+}
+
+export declare class Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile {
+  static schema: readonly FieldInfo[];
+  "id"?: number;
+  "name"?: string | null;
+  constructor(init?: Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfileInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_ApiData_MasterCustomMusicScoreTagInit {
+  "id"?: number;
+  "seq"?: number;
+  "name"?: string | null;
+  "isOfficialCreatorOnly"?: boolean;
+}
+
+export declare class Sekai_ApiData_MasterCustomMusicScoreTag {
+  static schema: readonly FieldInfo[];
+  "id"?: number;
+  "seq"?: number;
+  "name"?: string | null;
+  "isOfficialCreatorOnly"?: boolean;
+  constructor(init?: Sekai_ApiData_MasterCustomMusicScoreTagInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
 export interface Sekai_ApiData_MasterCustomProfileGachaShopInit {
   "id"?: number;
   "seq"?: number;
@@ -31510,6 +32249,169 @@ export declare class Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest {
   "mysekaiSiteId"?: number;
   "mysekaiBlueprintId"?: number;
   constructor(init?: Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequestInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheDataInit {
+  "Id"?: string | null;
+  "CopiedNoteList"?: unknown;
+  "CopiedEventDataList"?: unknown;
+  "CreatedAt"?: string | null;
+}
+
+export declare class Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData {
+  static schema: readonly FieldInfo[];
+  "Id"?: string | null;
+  "CopiedNoteList"?: unknown;
+  "CopiedEventDataList"?: unknown;
+  "CreatedAt"?: string | null;
+  constructor(init?: Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheDataInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListDataInit {
+  "Caches"?: unknown;
+}
+
+export declare class Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData {
+  static schema: readonly FieldInfo[];
+  "Caches"?: unknown;
+  constructor(init?: Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListDataInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventDataInit {
+  "id"?: number;
+  "eventType"?: unknown;
+  "ticks"?: number;
+  "changeValue"?: unknown;
+}
+
+export declare class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData {
+  static schema: readonly FieldInfo[];
+  "id"?: number;
+  "eventType"?: unknown;
+  "ticks"?: number;
+  "changeValue"?: unknown;
+  constructor(init?: Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventDataInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingDataInit {
+  "ZoomTimelineStep"?: number;
+  "ZoomTimelineScaleMax"?: number;
+  "ZoomTimelineScaleMin"?: number;
+  "UndoStackLimit"?: number;
+  "AutoSaveEnabled"?: boolean;
+  "AutoSaveInterval"?: number;
+  "ShowFocusTicksRate"?: number;
+  "TicksPerScrollStep"?: number;
+  "EnableSwipeScroll"?: boolean;
+  "PlayMusicSEEnabled"?: boolean;
+  "SetStartMusicTimeMsEnabled"?: boolean;
+  "PlayStartEffectEnabled"?: boolean;
+  "TestPlayStartOffsetMs"?: number;
+  "ShowBarLines"?: boolean;
+  "ShowBeatLines"?: boolean;
+  "ShowQuantizeLines"?: boolean;
+  "SelectedLayoutPatternIndex"?: number;
+  "SelectedLayoutPatternIndexPortrait"?: number;
+  "SelectedLayoutPatternIndexLandscape"?: number;
+  "ScoreDisplayScaleHorizontal"?: number;
+  "ScoreDisplayScaleVertical"?: number;
+  "ToolWindowChildScale"?: number;
+  "NoteEdgeWidth"?: number;
+  "EnableInvalidPlacementCheck"?: boolean;
+  "AreaSelectPartialOverlap"?: boolean;
+  "NoteYScaleStartThreshold"?: number;
+  "NoteYScaleEndThreshold"?: number;
+  "NoteYScaleMin"?: number;
+  "DrawSmallerTickToBack"?: boolean;
+  "MaxClipboardCacheCount"?: number;
+  "AutoPlayEnabled"?: boolean;
+  "TestPlayLiveModeTypeRaw"?: number;
+}
+
+export declare class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData {
+  static schema: readonly FieldInfo[];
+  "ZoomTimelineStep"?: number;
+  "ZoomTimelineScaleMax"?: number;
+  "ZoomTimelineScaleMin"?: number;
+  "UndoStackLimit"?: number;
+  "AutoSaveEnabled"?: boolean;
+  "AutoSaveInterval"?: number;
+  "ShowFocusTicksRate"?: number;
+  "TicksPerScrollStep"?: number;
+  "EnableSwipeScroll"?: boolean;
+  "PlayMusicSEEnabled"?: boolean;
+  "SetStartMusicTimeMsEnabled"?: boolean;
+  "PlayStartEffectEnabled"?: boolean;
+  "TestPlayStartOffsetMs"?: number;
+  "ShowBarLines"?: boolean;
+  "ShowBeatLines"?: boolean;
+  "ShowQuantizeLines"?: boolean;
+  "SelectedLayoutPatternIndex"?: number;
+  "SelectedLayoutPatternIndexPortrait"?: number;
+  "SelectedLayoutPatternIndexLandscape"?: number;
+  "ScoreDisplayScaleHorizontal"?: number;
+  "ScoreDisplayScaleVertical"?: number;
+  "ToolWindowChildScale"?: number;
+  "NoteEdgeWidth"?: number;
+  "EnableInvalidPlacementCheck"?: boolean;
+  "AreaSelectPartialOverlap"?: boolean;
+  "NoteYScaleStartThreshold"?: number;
+  "NoteYScaleEndThreshold"?: number;
+  "NoteYScaleMin"?: number;
+  "DrawSmallerTickToBack"?: boolean;
+  "MaxClipboardCacheCount"?: number;
+  "AutoPlayEnabled"?: boolean;
+  "TestPlayLiveModeTypeRaw"?: number;
+  constructor(init?: Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingDataInit);
+  toMsgpackMap(): Map<string | number, unknown>;
+  encode(): MsgpackBuffer;
+  decode(bytes: ArrayLike<number>): this;
+}
+
+export interface Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBaseInit {
+  "id"?: number;
+  "ticks"?: number;
+  "laneStart"?: number;
+  "laneEnd"?: number;
+  "category"?: unknown;
+  "type"?: unknown;
+  "speedRatio"?: number;
+  "noteLineType"?: unknown;
+  "noteBaseType"?: unknown;
+  "previousConnectionId"?: number;
+  "nextConnectionId"?: number;
+  "direction"?: unknown;
+  "isSkip"?: boolean;
+}
+
+export declare class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase {
+  static schema: readonly FieldInfo[];
+  "id"?: number;
+  "ticks"?: number;
+  "laneStart"?: number;
+  "laneEnd"?: number;
+  "category"?: unknown;
+  "type"?: unknown;
+  "speedRatio"?: number;
+  "noteLineType"?: unknown;
+  "noteBaseType"?: unknown;
+  "previousConnectionId"?: number;
+  "nextConnectionId"?: number;
+  "direction"?: unknown;
+  "isSkip"?: boolean;
+  constructor(init?: Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBaseInit);
   toMsgpackMap(): Map<string | number, unknown>;
   encode(): MsgpackBuffer;
   decode(bytes: ArrayLike<number>): this;

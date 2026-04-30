@@ -25,6 +25,7 @@ int Sekai_UserHomeRefreshResponse_pack(msgpack_packer *pk, const Sekai_UserHomeR
     if (value->has_shouldReflectWebPayment) count++;
     if (value->has_receivableUnprocessedSerialCodeCampaignIds) count++;
     if (value->has_displayableOfflineEventIds) count++;
+    if (value->has_userCustomMusicScorePublishedBanInfos) count++;
     msgpack_pack_map(pk, count);
     if (value->has_updatedResources) {
         msgpack_pack_str(pk, 16);
@@ -86,6 +87,11 @@ int Sekai_UserHomeRefreshResponse_pack(msgpack_packer *pk, const Sekai_UserHomeR
         msgpack_pack_str_body(pk, "displayableOfflineEventIds", 26);
         msgpack_pack_object(pk, value->displayableOfflineEventIds);
     }
+    if (value->has_userCustomMusicScorePublishedBanInfos) {
+        msgpack_pack_str(pk, 37);
+        msgpack_pack_str_body(pk, "userCustomMusicScorePublishedBanInfos", 37);
+        msgpack_pack_object(pk, value->userCustomMusicScorePublishedBanInfos);
+    }
     return 0;
 }
 
@@ -131,6 +137,9 @@ int Sekai_UserHomeRefreshResponse_unpack(const msgpack_object *obj, Sekai_UserHo
         }
         else if (mpj_key_eq_str(key, "displayableOfflineEventIds")) {
             out->displayableOfflineEventIds = *val; out->has_displayableOfflineEventIds = true;
+        }
+        else if (mpj_key_eq_str(key, "userCustomMusicScorePublishedBanInfos")) {
+            out->userCustomMusicScorePublishedBanInfos = *val; out->has_userCustomMusicScorePublishedBanInfos = true;
         }
     }
     return 0;

@@ -127,7 +127,7 @@ python3 -m pip install .
 ### Go modules
 
 ```sh
-go get github.com/Sekai-World/msgpack-pjsekai/msgpack/wrappers/go@v6.4.1
+go get github.com/Sekai-World/msgpack-pjsekai/msgpack/wrappers/go@v6.5.0
 ```
 
 ```go
@@ -153,14 +153,14 @@ Maven:
 <dependency>
   <groupId>io.github.sekai-world</groupId>
   <artifactId>msgpack-pjsekai-java</artifactId>
-  <version>6.4.1</version>
+  <version>6.5.0</version>
 </dependency>
 ```
 
 Gradle:
 
 ```gradle
-implementation("io.github.sekai-world:msgpack-pjsekai-java:6.4.1")
+implementation("io.github.sekai-world:msgpack-pjsekai-java:6.5.0")
 ```
 
 ```java

@@ -819,6 +819,8 @@ public final class MsgpackPjsekai {
         register("Sekai_MusicShop_VocalTypeFilteredData", Sekai_MusicShop_VocalTypeFilteredData.SCHEMA);
         register("Sekai_MusicShop_MusicShopSortFilterData", Sekai_MusicShop_MusicShopSortFilterData.SCHEMA);
         register("Sekai_MusicShop_SortData", Sekai_MusicShop_SortData.SCHEMA);
+        register("Sekai_MusicPlayHistory_MusicPlayHistoryData", Sekai_MusicPlayHistory_MusicPlayHistoryData.SCHEMA);
+        register("Sekai_MusicPlayHistory_MusicPlayHistoryEntry", Sekai_MusicPlayHistory_MusicPlayHistoryEntry.SCHEMA);
         register("Sekai_ImageCache_ImageCache", Sekai_ImageCache_ImageCache.SCHEMA);
         register("Sekai_ImageCache_ImageCacheMetaInfos", Sekai_ImageCache_ImageCacheMetaInfos.SCHEMA);
         register("Sekai_ImageCache_ImageCacheMeta", Sekai_ImageCache_ImageCacheMeta.SCHEMA);
@@ -1002,6 +1004,7 @@ public final class MsgpackPjsekai {
         register("Sekai_ApiData_MasterCostume2dGroup", Sekai_ApiData_MasterCostume2dGroup.SCHEMA);
         register("Sekai_ApiData_MasterCostume3dModelDefaultHair", Sekai_ApiData_MasterCostume3dModelDefaultHair.SCHEMA);
         register("Sekai_ApiData_MasterCostume3dModelNotAvailablePattern", Sekai_ApiData_MasterCostume3dModelNotAvailablePattern.SCHEMA);
+        register("Sekai_ApiData_MasterCustomMusicScoreOfficialCreator", Sekai_ApiData_MasterCustomMusicScoreOfficialCreator.SCHEMA);
         register("Sekai_ApiData_MasterCustomProfileCollectionResourceUnit", Sekai_ApiData_MasterCustomProfileCollectionResourceUnit.SCHEMA);
         register("Sekai_ApiData_MasterLimitedTimeMusic", Sekai_ApiData_MasterLimitedTimeMusic.SCHEMA);
         register("Sekai_ApiData_MasterMaterialExchange", Sekai_ApiData_MasterMaterialExchange.SCHEMA);
@@ -1101,11 +1104,21 @@ public final class MsgpackPjsekai {
         register("Sekai_ApiData_UserMysekaiTreasureBox", Sekai_ApiData_UserMysekaiTreasureBox.SCHEMA);
         register("Sekai_ApiData_UserMysekaiVisitSetting", Sekai_ApiData_UserMysekaiVisitSetting.SCHEMA);
         register("Sekai_ApiData_UserBillingShopItemExchangeResponse", Sekai_ApiData_UserBillingShopItemExchangeResponse.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScorePublishedResponse", Sekai_ApiData_UserCustomMusicScorePublishedResponse.SCHEMA);
         register("Sekai_ApiData_UserPlayerFrame", Sekai_ApiData_UserPlayerFrame.SCHEMA);
         register("Sekai_ApiData_UserWorldBloom", Sekai_ApiData_UserWorldBloom.SCHEMA);
         register("Sekai_ApiData_UserWorldBloomSupportDeck", Sekai_ApiData_UserWorldBloomSupportDeck.SCHEMA);
+        register("Sekai_ApiData_CustomMusicScoreBookmarkListResponse", Sekai_ApiData_CustomMusicScoreBookmarkListResponse.SCHEMA);
+        register("Sekai_ApiData_CustomMusicScoreLiveResultResponse", Sekai_ApiData_CustomMusicScoreLiveResultResponse.SCHEMA);
+        register("Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse", Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse.SCHEMA);
+        register("Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse", Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse.SCHEMA);
+        register("Sekai_ApiData_CustomMusicScorePublishedSearchListResponse", Sekai_ApiData_CustomMusicScorePublishedSearchListResponse.SCHEMA);
+        register("Sekai_ApiData_CustomMusicScorePublishedSearchResponse", Sekai_ApiData_CustomMusicScorePublishedSearchResponse.SCHEMA);
+        register("Sekai_ApiData_CustomMusicScorePublishedTabListResponse", Sekai_ApiData_CustomMusicScorePublishedTabListResponse.SCHEMA);
         register("Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest", Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest.SCHEMA);
         register("Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest", Sekai_ApiData_DebugUserBirthdayPartySetMysekaiMaterialCountRequest.SCHEMA);
+        register("Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest", Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest.SCHEMA);
+        register("Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest", Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest.SCHEMA);
         register("Sekai_ApiData_DebugUserCustomProfileObtainAllRequest", Sekai_ApiData_DebugUserCustomProfileObtainAllRequest.SCHEMA);
         register("Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest", Sekai_ApiData_DebugUserLiveCharacterArchiveVoiceRequest.SCHEMA);
         register("Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest", Sekai_ApiData_DebugUserMysekaiEnsureAndInvokeSpecificCharacterVisitRequest.SCHEMA);
@@ -1134,6 +1147,7 @@ public final class MsgpackPjsekai {
         register("Sekai_ApiData_MysekaiSiteHarvestResourceDrop", Sekai_ApiData_MysekaiSiteHarvestResourceDrop.SCHEMA);
         register("Sekai_ApiData_MysekaiStaminaUsed", Sekai_ApiData_MysekaiStaminaUsed.SCHEMA);
         register("Sekai_ApiData_MysekaiToolUsed", Sekai_ApiData_MysekaiToolUsed.SCHEMA);
+        register("Sekai_ApiData_OfficialMusicScoreLiveResultResponse", Sekai_ApiData_OfficialMusicScoreLiveResultResponse.SCHEMA);
         register("Sekai_ApiData_UserAdReward", Sekai_ApiData_UserAdReward.SCHEMA);
         register("Sekai_ApiData_UserAdRewardPostRequest", Sekai_ApiData_UserAdRewardPostRequest.SCHEMA);
         register("Sekai_ApiData_UserAdRewardPutRequest", Sekai_ApiData_UserAdRewardPutRequest.SCHEMA);
@@ -1145,6 +1159,19 @@ public final class MsgpackPjsekai {
         register("Sekai_ApiData_UserBirthdayPartyGatherRequest", Sekai_ApiData_UserBirthdayPartyGatherRequest.SCHEMA);
         register("Sekai_ApiData_UserBirthdayPartyGatherRequestContent", Sekai_ApiData_UserBirthdayPartyGatherRequestContent.SCHEMA);
         register("Sekai_ApiData_UserBirthdayPartyGatherResponse", Sekai_ApiData_UserBirthdayPartyGatherResponse.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreDraft", Sekai_ApiData_UserCustomMusicScoreDraft.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest", Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreDraftEditRequest", Sekai_ApiData_UserCustomMusicScoreDraftEditRequest.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreDraftListResponse", Sekai_ApiData_UserCustomMusicScoreDraftListResponse.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest", Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreInfo", Sekai_ApiData_UserCustomMusicScoreInfo.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreLiveResultResponse", Sekai_ApiData_UserCustomMusicScoreLiveResultResponse.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScoreMiniDisplay", Sekai_ApiData_UserCustomMusicScoreMiniDisplay.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScorePublishedBanInfo", Sekai_ApiData_UserCustomMusicScorePublishedBanInfo.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse", Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse", Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScorePublishedListResponse", Sekai_ApiData_UserCustomMusicScorePublishedListResponse.SCHEMA);
+        register("Sekai_ApiData_UserCustomMusicScorePublishRequest", Sekai_ApiData_UserCustomMusicScorePublishRequest.SCHEMA);
         register("Sekai_ApiData_UserEventRankingRewardConditionResponse", Sekai_ApiData_UserEventRankingRewardConditionResponse.SCHEMA);
         register("Sekai_ApiData_UserGachaSelectCharacter", Sekai_ApiData_UserGachaSelectCharacter.SCHEMA);
         register("Sekai_ApiData_UserGachaSelectCharacterRequest", Sekai_ApiData_UserGachaSelectCharacterRequest.SCHEMA);
@@ -1153,6 +1180,8 @@ public final class MsgpackPjsekai {
         register("Sekai_ApiData_UserLiveCharacterArchiveVoice", Sekai_ApiData_UserLiveCharacterArchiveVoice.SCHEMA);
         register("Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest", Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultRequest.SCHEMA);
         register("Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse", Sekai_ApiData_UserLiveCharacterArchiveVoiceLiveResultResponse.SCHEMA);
+        register("Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse", Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse.SCHEMA);
+        register("Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse", Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse.SCHEMA);
         register("Sekai_ApiData_UserMysekaiBlueprint", Sekai_ApiData_UserMysekaiBlueprint.SCHEMA);
         register("Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse", Sekai_ApiData_UserMysekaiBlueprintShopPurchaseResponse.SCHEMA);
         register("Sekai_ApiData_UserMysekaiCanvas", Sekai_ApiData_UserMysekaiCanvas.SCHEMA);
@@ -1279,6 +1308,9 @@ public final class MsgpackPjsekai {
         register("Sekai_ApiData_MasterCharacterArchiveVoice", Sekai_ApiData_MasterCharacterArchiveVoice.SCHEMA);
         register("Sekai_ApiData_MasterCharacterArchiveVoiceTag", Sekai_ApiData_MasterCharacterArchiveVoiceTag.SCHEMA);
         register("Sekai_ApiData_MasterCollaborationMode", Sekai_ApiData_MasterCollaborationMode.SCHEMA);
+        register("Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel", Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel.SCHEMA);
+        register("Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile", Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile.SCHEMA);
+        register("Sekai_ApiData_MasterCustomMusicScoreTag", Sekai_ApiData_MasterCustomMusicScoreTag.SCHEMA);
         register("Sekai_ApiData_MasterCustomProfileGachaShop", Sekai_ApiData_MasterCustomProfileGachaShop.SCHEMA);
         register("Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter", Sekai_ApiData_MasterCustomProfileGachaShopGameCharacter.SCHEMA);
         register("Sekai_ApiData_MasterEventCardBonusLimit", Sekai_ApiData_MasterEventCardBonusLimit.SCHEMA);
@@ -1387,6 +1419,11 @@ public final class MsgpackPjsekai {
         register("Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest", Sekai_ApiData_DebugUserVirtualLiveScheduleStatusUpdateRequest.SCHEMA);
         register("Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest", Sekai_ApiData_UserMysekaiHousingCompetitionEntryRequest.SCHEMA);
         register("Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest", Sekai_ApiData_UserMysekaiHousingCompetitionSketchRequest.SCHEMA);
+        register("Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData", Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData.SCHEMA);
+        register("Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData", Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData.SCHEMA);
+        register("Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData", Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData.SCHEMA);
+        register("Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData", Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData.SCHEMA);
+        register("Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase", Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase.SCHEMA);
         register("Sekai_SuperVirtualLive_RoomUserHonorInfo", Sekai_SuperVirtualLive_RoomUserHonorInfo.SCHEMA);
         register("Sekai_SuperVirtualLive_RoomUserBasicInfo", Sekai_SuperVirtualLive_RoomUserBasicInfo.SCHEMA);
         register("Sekai_SuperVirtualLive_LobbyChatData", Sekai_SuperVirtualLive_LobbyChatData.SCHEMA);
@@ -13487,7 +13524,9 @@ public final class MsgpackPjsekai {
             new FieldInfo("fillerSec", "string", "fillerSec"),
             new FieldInfo("musicCollaborationId", "string", "musicCollaborationId"),
             new FieldInfo("isNewlyWrittenMusic", "string", "isNewlyWrittenMusic"),
-            new FieldInfo("isFullLength", "string", "isFullLength")
+            new FieldInfo("isFullLength", "string", "isFullLength"),
+            new FieldInfo("secForMusicScoreMaker", "string", "secForMusicScoreMaker"),
+            new FieldInfo("isAvailableForMusicScoreMaker", "string", "isAvailableForMusicScoreMaker")
         ));
 
         public Long id;
@@ -13512,6 +13551,8 @@ public final class MsgpackPjsekai {
         public Long musicCollaborationId;
         public Boolean isNewlyWrittenMusic;
         public Boolean isFullLength;
+        public Long secForMusicScoreMaker;
+        public Boolean isAvailableForMusicScoreMaker;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -13537,6 +13578,8 @@ public final class MsgpackPjsekai {
             if (this.musicCollaborationId != null) out.put("musicCollaborationId", this.musicCollaborationId);
             if (this.isNewlyWrittenMusic != null) out.put("isNewlyWrittenMusic", this.isNewlyWrittenMusic);
             if (this.isFullLength != null) out.put("isFullLength", this.isFullLength);
+            if (this.secForMusicScoreMaker != null) out.put("secForMusicScoreMaker", this.secForMusicScoreMaker);
+            if (this.isAvailableForMusicScoreMaker != null) out.put("isAvailableForMusicScoreMaker", this.isAvailableForMusicScoreMaker);
             return out;
         }
 
@@ -13571,6 +13614,8 @@ public final class MsgpackPjsekai {
             value = get(raw, "musicCollaborationId"); if (value != null) this.musicCollaborationId = asLong(value);
             value = get(raw, "isNewlyWrittenMusic"); if (value != null) this.isNewlyWrittenMusic = asBoolean(value);
             value = get(raw, "isFullLength"); if (value != null) this.isFullLength = asBoolean(value);
+            value = get(raw, "secForMusicScoreMaker"); if (value != null) this.secForMusicScoreMaker = asLong(value);
+            value = get(raw, "isAvailableForMusicScoreMaker"); if (value != null) this.isAvailableForMusicScoreMaker = asBoolean(value);
             return this;
         }
     }
@@ -14992,6 +15037,10 @@ public final class MsgpackPjsekai {
             new FieldInfo("virtualLiveGroups", "string", "virtualLiveGroups"),
             new FieldInfo("virtualLiveTransitionItems", "string", "virtualLiveTransitionItems"),
             new FieldInfo("collaborationModes", "string", "collaborationModes"),
+            new FieldInfo("customMusicScoreTags", "string", "customMusicScoreTags"),
+            new FieldInfo("customMusicScoreDifficultyPlayLevels", "string", "customMusicScoreDifficultyPlayLevels"),
+            new FieldInfo("customMusicScoreOfficialCreatorProfiles", "string", "customMusicScoreOfficialCreatorProfiles"),
+            new FieldInfo("customMusicScoreOfficialCreators", "string", "customMusicScoreOfficialCreators"),
             new FieldInfo("mysekaiSites", "string", "mysekaiSites"),
             new FieldInfo("mysekaiSiteLevels", "string", "mysekaiSiteLevels"),
             new FieldInfo("mysekaiSiteGroups", "string", "mysekaiSiteGroups"),
@@ -15380,6 +15429,10 @@ public final class MsgpackPjsekai {
         public Object virtualLiveGroups;
         public Object virtualLiveTransitionItems;
         public Object collaborationModes;
+        public Object customMusicScoreTags;
+        public Object customMusicScoreDifficultyPlayLevels;
+        public Object customMusicScoreOfficialCreatorProfiles;
+        public Object customMusicScoreOfficialCreators;
         public Object mysekaiSites;
         public Object mysekaiSiteLevels;
         public Object mysekaiSiteGroups;
@@ -15769,6 +15822,10 @@ public final class MsgpackPjsekai {
             if (this.virtualLiveGroups != null) out.put("virtualLiveGroups", this.virtualLiveGroups);
             if (this.virtualLiveTransitionItems != null) out.put("virtualLiveTransitionItems", this.virtualLiveTransitionItems);
             if (this.collaborationModes != null) out.put("collaborationModes", this.collaborationModes);
+            if (this.customMusicScoreTags != null) out.put("customMusicScoreTags", this.customMusicScoreTags);
+            if (this.customMusicScoreDifficultyPlayLevels != null) out.put("customMusicScoreDifficultyPlayLevels", this.customMusicScoreDifficultyPlayLevels);
+            if (this.customMusicScoreOfficialCreatorProfiles != null) out.put("customMusicScoreOfficialCreatorProfiles", this.customMusicScoreOfficialCreatorProfiles);
+            if (this.customMusicScoreOfficialCreators != null) out.put("customMusicScoreOfficialCreators", this.customMusicScoreOfficialCreators);
             if (this.mysekaiSites != null) out.put("mysekaiSites", this.mysekaiSites);
             if (this.mysekaiSiteLevels != null) out.put("mysekaiSiteLevels", this.mysekaiSiteLevels);
             if (this.mysekaiSiteGroups != null) out.put("mysekaiSiteGroups", this.mysekaiSiteGroups);
@@ -16167,6 +16224,10 @@ public final class MsgpackPjsekai {
             value = get(raw, "virtualLiveGroups"); if (value != null) this.virtualLiveGroups = asObject(value);
             value = get(raw, "virtualLiveTransitionItems"); if (value != null) this.virtualLiveTransitionItems = asObject(value);
             value = get(raw, "collaborationModes"); if (value != null) this.collaborationModes = asObject(value);
+            value = get(raw, "customMusicScoreTags"); if (value != null) this.customMusicScoreTags = asObject(value);
+            value = get(raw, "customMusicScoreDifficultyPlayLevels"); if (value != null) this.customMusicScoreDifficultyPlayLevels = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreatorProfiles"); if (value != null) this.customMusicScoreOfficialCreatorProfiles = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreators"); if (value != null) this.customMusicScoreOfficialCreators = asObject(value);
             value = get(raw, "mysekaiSites"); if (value != null) this.mysekaiSites = asObject(value);
             value = get(raw, "mysekaiSiteLevels"); if (value != null) this.mysekaiSiteLevels = asObject(value);
             value = get(raw, "mysekaiSiteGroups"); if (value != null) this.mysekaiSiteGroups = asObject(value);
@@ -16548,6 +16609,10 @@ public final class MsgpackPjsekai {
             new FieldInfo("virtualLiveGroups", "string", "virtualLiveGroups"),
             new FieldInfo("virtualLiveTransitionItems", "string", "virtualLiveTransitionItems"),
             new FieldInfo("collaborationModes", "string", "collaborationModes"),
+            new FieldInfo("customMusicScoreTags", "string", "customMusicScoreTags"),
+            new FieldInfo("customMusicScoreDifficultyPlayLevels", "string", "customMusicScoreDifficultyPlayLevels"),
+            new FieldInfo("customMusicScoreOfficialCreatorProfiles", "string", "customMusicScoreOfficialCreatorProfiles"),
+            new FieldInfo("customMusicScoreOfficialCreators", "string", "customMusicScoreOfficialCreators"),
             new FieldInfo("mysekaiSystemFixtures", "string", "mysekaiSystemFixtures"),
             new FieldInfo("mysekaiSystemFixtureTypeIcons", "string", "mysekaiSystemFixtureTypeIcons"),
             new FieldInfo("mysekaiFixtures", "string", "mysekaiFixtures"),
@@ -16925,6 +16990,10 @@ public final class MsgpackPjsekai {
         public Object virtualLiveGroups;
         public Object virtualLiveTransitionItems;
         public Object collaborationModes;
+        public Object customMusicScoreTags;
+        public Object customMusicScoreDifficultyPlayLevels;
+        public Object customMusicScoreOfficialCreatorProfiles;
+        public Object customMusicScoreOfficialCreators;
         public Object mysekaiSystemFixtures;
         public Object mysekaiSystemFixtureTypeIcons;
         public Object mysekaiFixtures;
@@ -17303,6 +17372,10 @@ public final class MsgpackPjsekai {
             if (this.virtualLiveGroups != null) out.put("virtualLiveGroups", this.virtualLiveGroups);
             if (this.virtualLiveTransitionItems != null) out.put("virtualLiveTransitionItems", this.virtualLiveTransitionItems);
             if (this.collaborationModes != null) out.put("collaborationModes", this.collaborationModes);
+            if (this.customMusicScoreTags != null) out.put("customMusicScoreTags", this.customMusicScoreTags);
+            if (this.customMusicScoreDifficultyPlayLevels != null) out.put("customMusicScoreDifficultyPlayLevels", this.customMusicScoreDifficultyPlayLevels);
+            if (this.customMusicScoreOfficialCreatorProfiles != null) out.put("customMusicScoreOfficialCreatorProfiles", this.customMusicScoreOfficialCreatorProfiles);
+            if (this.customMusicScoreOfficialCreators != null) out.put("customMusicScoreOfficialCreators", this.customMusicScoreOfficialCreators);
             if (this.mysekaiSystemFixtures != null) out.put("mysekaiSystemFixtures", this.mysekaiSystemFixtures);
             if (this.mysekaiSystemFixtureTypeIcons != null) out.put("mysekaiSystemFixtureTypeIcons", this.mysekaiSystemFixtureTypeIcons);
             if (this.mysekaiFixtures != null) out.put("mysekaiFixtures", this.mysekaiFixtures);
@@ -17690,6 +17763,10 @@ public final class MsgpackPjsekai {
             value = get(raw, "virtualLiveGroups"); if (value != null) this.virtualLiveGroups = asObject(value);
             value = get(raw, "virtualLiveTransitionItems"); if (value != null) this.virtualLiveTransitionItems = asObject(value);
             value = get(raw, "collaborationModes"); if (value != null) this.collaborationModes = asObject(value);
+            value = get(raw, "customMusicScoreTags"); if (value != null) this.customMusicScoreTags = asObject(value);
+            value = get(raw, "customMusicScoreDifficultyPlayLevels"); if (value != null) this.customMusicScoreDifficultyPlayLevels = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreatorProfiles"); if (value != null) this.customMusicScoreOfficialCreatorProfiles = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreators"); if (value != null) this.customMusicScoreOfficialCreators = asObject(value);
             value = get(raw, "mysekaiSystemFixtures"); if (value != null) this.mysekaiSystemFixtures = asObject(value);
             value = get(raw, "mysekaiSystemFixtureTypeIcons"); if (value != null) this.mysekaiSystemFixtureTypeIcons = asObject(value);
             value = get(raw, "mysekaiFixtures"); if (value != null) this.mysekaiFixtures = asObject(value);
@@ -20890,6 +20967,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("userBirthdayParties", "string", "userBirthdayParties"),
             new FieldInfo("userMysekaiSystemFixtureActions", "string", "userMysekaiSystemFixtureActions"),
             new FieldInfo("userVirtualLiveTransitionItems", "string", "userVirtualLiveTransitionItems"),
+            new FieldInfo("userCustomMusicScorePublisheds", "string", "userCustomMusicScorePublisheds"),
+            new FieldInfo("userCustomMusicScoreBookmarks", "string", "userCustomMusicScoreBookmarks"),
             new FieldInfo("userRateChoiceGachaWishes", "string", "userRateChoiceGachaWishes")
         ));
 
@@ -21076,6 +21155,8 @@ public final class MsgpackPjsekai {
         public Object userBirthdayParties;
         public Object userMysekaiSystemFixtureActions;
         public Object userVirtualLiveTransitionItems;
+        public Object userCustomMusicScorePublisheds;
+        public Object userCustomMusicScoreBookmarks;
         public Object userRateChoiceGachaWishes;
 
         public Map<Object, Object> toMsgpackMap() {
@@ -21263,6 +21344,8 @@ public final class MsgpackPjsekai {
             if (this.userBirthdayParties != null) out.put("userBirthdayParties", this.userBirthdayParties);
             if (this.userMysekaiSystemFixtureActions != null) out.put("userMysekaiSystemFixtureActions", this.userMysekaiSystemFixtureActions);
             if (this.userVirtualLiveTransitionItems != null) out.put("userVirtualLiveTransitionItems", this.userVirtualLiveTransitionItems);
+            if (this.userCustomMusicScorePublisheds != null) out.put("userCustomMusicScorePublisheds", this.userCustomMusicScorePublisheds);
+            if (this.userCustomMusicScoreBookmarks != null) out.put("userCustomMusicScoreBookmarks", this.userCustomMusicScoreBookmarks);
             if (this.userRateChoiceGachaWishes != null) out.put("userRateChoiceGachaWishes", this.userRateChoiceGachaWishes);
             return out;
         }
@@ -21459,6 +21542,8 @@ public final class MsgpackPjsekai {
             value = get(raw, "userBirthdayParties"); if (value != null) this.userBirthdayParties = asObject(value);
             value = get(raw, "userMysekaiSystemFixtureActions"); if (value != null) this.userMysekaiSystemFixtureActions = asObject(value);
             value = get(raw, "userVirtualLiveTransitionItems"); if (value != null) this.userVirtualLiveTransitionItems = asObject(value);
+            value = get(raw, "userCustomMusicScorePublisheds"); if (value != null) this.userCustomMusicScorePublisheds = asObject(value);
+            value = get(raw, "userCustomMusicScoreBookmarks"); if (value != null) this.userCustomMusicScoreBookmarks = asObject(value);
             value = get(raw, "userRateChoiceGachaWishes"); if (value != null) this.userRateChoiceGachaWishes = asObject(value);
             return this;
         }
@@ -27641,7 +27726,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("userObtainedMaterialAutoExchangeMusicVocals", "string", "userObtainedMaterialAutoExchangeMusicVocals"),
             new FieldInfo("shouldReflectWebPayment", "string", "shouldReflectWebPayment"),
             new FieldInfo("receivableUnprocessedSerialCodeCampaignIds", "string", "receivableUnprocessedSerialCodeCampaignIds"),
-            new FieldInfo("displayableOfflineEventIds", "string", "displayableOfflineEventIds")
+            new FieldInfo("displayableOfflineEventIds", "string", "displayableOfflineEventIds"),
+            new FieldInfo("userCustomMusicScorePublishedBanInfos", "string", "userCustomMusicScorePublishedBanInfos")
         ));
 
         public Object updatedResources;
@@ -27656,6 +27742,7 @@ public final class MsgpackPjsekai {
         public Boolean shouldReflectWebPayment;
         public Object receivableUnprocessedSerialCodeCampaignIds;
         public Object displayableOfflineEventIds;
+        public Object userCustomMusicScorePublishedBanInfos;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -27671,6 +27758,7 @@ public final class MsgpackPjsekai {
             if (this.shouldReflectWebPayment != null) out.put("shouldReflectWebPayment", this.shouldReflectWebPayment);
             if (this.receivableUnprocessedSerialCodeCampaignIds != null) out.put("receivableUnprocessedSerialCodeCampaignIds", this.receivableUnprocessedSerialCodeCampaignIds);
             if (this.displayableOfflineEventIds != null) out.put("displayableOfflineEventIds", this.displayableOfflineEventIds);
+            if (this.userCustomMusicScorePublishedBanInfos != null) out.put("userCustomMusicScorePublishedBanInfos", this.userCustomMusicScorePublishedBanInfos);
             return out;
         }
 
@@ -27695,6 +27783,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "shouldReflectWebPayment"); if (value != null) this.shouldReflectWebPayment = asBoolean(value);
             value = get(raw, "receivableUnprocessedSerialCodeCampaignIds"); if (value != null) this.receivableUnprocessedSerialCodeCampaignIds = asObject(value);
             value = get(raw, "displayableOfflineEventIds"); if (value != null) this.displayableOfflineEventIds = asObject(value);
+            value = get(raw, "userCustomMusicScorePublishedBanInfos"); if (value != null) this.userCustomMusicScorePublishedBanInfos = asObject(value);
             return this;
         }
     }
@@ -28232,7 +28321,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("deckId", "string", "deckId"),
             new FieldInfo("boostCount", "string", "boostCount"),
             new FieldInfo("isAuto", "string", "isAuto"),
-            new FieldInfo("musicCategoryName", "string", "musicCategoryName")
+            new FieldInfo("musicCategoryName", "string", "musicCategoryName"),
+            new FieldInfo("customMusicScoreId", "string", "customMusicScoreId")
         ));
 
         public Long musicId;
@@ -28242,6 +28332,7 @@ public final class MsgpackPjsekai {
         public Long boostCount;
         public Boolean isAuto;
         public String musicCategoryName;
+        public String customMusicScoreId;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -28252,6 +28343,7 @@ public final class MsgpackPjsekai {
             if (this.boostCount != null) out.put("boostCount", this.boostCount);
             if (this.isAuto != null) out.put("isAuto", this.isAuto);
             if (this.musicCategoryName != null) out.put("musicCategoryName", this.musicCategoryName);
+            if (this.customMusicScoreId != null) out.put("customMusicScoreId", this.customMusicScoreId);
             return out;
         }
 
@@ -28271,6 +28363,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "boostCount"); if (value != null) this.boostCount = asLong(value);
             value = get(raw, "isAuto"); if (value != null) this.isAuto = asBoolean(value);
             value = get(raw, "musicCategoryName"); if (value != null) this.musicCategoryName = asString(value);
+            value = get(raw, "customMusicScoreId"); if (value != null) this.customMusicScoreId = asString(value);
             return this;
         }
     }
@@ -28522,7 +28615,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("userEventDeviceTransferRestrict", "string", "userEventDeviceTransferRestrict"),
             new FieldInfo("userLivePoint", "string", "userLivePoint"),
             new FieldInfo("isEventMaintenance", "string", "isEventMaintenance"),
-            new FieldInfo("isInBreakTime", "string", "isInBreakTime")
+            new FieldInfo("isInBreakTime", "string", "isInBreakTime"),
+            new FieldInfo("customMusicScoreLiveResult", "string", "customMusicScoreLiveResult")
         ));
 
         public Object updatedResources;
@@ -28556,6 +28650,7 @@ public final class MsgpackPjsekai {
         public Object userLivePoint;
         public Boolean isEventMaintenance;
         public Boolean isInBreakTime;
+        public Object customMusicScoreLiveResult;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -28590,6 +28685,7 @@ public final class MsgpackPjsekai {
             if (this.userLivePoint != null) out.put("userLivePoint", this.userLivePoint);
             if (this.isEventMaintenance != null) out.put("isEventMaintenance", this.isEventMaintenance);
             if (this.isInBreakTime != null) out.put("isInBreakTime", this.isInBreakTime);
+            if (this.customMusicScoreLiveResult != null) out.put("customMusicScoreLiveResult", this.customMusicScoreLiveResult);
             return out;
         }
 
@@ -28633,6 +28729,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "userLivePoint"); if (value != null) this.userLivePoint = asObject(value);
             value = get(raw, "isEventMaintenance"); if (value != null) this.isEventMaintenance = asBoolean(value);
             value = get(raw, "isInBreakTime"); if (value != null) this.isInBreakTime = asBoolean(value);
+            value = get(raw, "customMusicScoreLiveResult"); if (value != null) this.customMusicScoreLiveResult = asObject(value);
             return this;
         }
     }
@@ -29203,7 +29300,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("selectedMusicId3", "string", "selectedMusicId3"),
             new FieldInfo("selectedMusicId4", "string", "selectedMusicId4"),
             new FieldInfo("selectedMusicId5", "string", "selectedMusicId5"),
-            new FieldInfo("privateRoomSettings", "string", "privateRoomSettings")
+            new FieldInfo("privateRoomSettings", "string", "privateRoomSettings"),
+            new FieldInfo("customMusicScoreId", "string", "customMusicScoreId")
         ));
 
         public Long multiLiveLobbyId;
@@ -29226,6 +29324,7 @@ public final class MsgpackPjsekai {
         public Long selectedMusicId4;
         public Long selectedMusicId5;
         public Object privateRoomSettings;
+        public String customMusicScoreId;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -29249,6 +29348,7 @@ public final class MsgpackPjsekai {
             if (this.selectedMusicId4 != null) out.put("selectedMusicId4", this.selectedMusicId4);
             if (this.selectedMusicId5 != null) out.put("selectedMusicId5", this.selectedMusicId5);
             if (this.privateRoomSettings != null) out.put("privateRoomSettings", this.privateRoomSettings);
+            if (this.customMusicScoreId != null) out.put("customMusicScoreId", this.customMusicScoreId);
             return out;
         }
 
@@ -29281,6 +29381,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "selectedMusicId4"); if (value != null) this.selectedMusicId4 = asLong(value);
             value = get(raw, "selectedMusicId5"); if (value != null) this.selectedMusicId5 = asLong(value);
             value = get(raw, "privateRoomSettings"); if (value != null) this.privateRoomSettings = asObject(value);
+            value = get(raw, "customMusicScoreId"); if (value != null) this.customMusicScoreId = asString(value);
             return this;
         }
     }
@@ -29331,7 +29432,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("musicVocalId", "string", "musicVocalId"),
             new FieldInfo("boostCount", "string", "boostCount"),
             new FieldInfo("musicCategoryName", "string", "musicCategoryName"),
-            new FieldInfo("privateRoomSettings", "string", "privateRoomSettings")
+            new FieldInfo("privateRoomSettings", "string", "privateRoomSettings"),
+            new FieldInfo("customMusicScoreId", "string", "customMusicScoreId")
         ));
 
         public String photonRoomName;
@@ -29344,6 +29446,7 @@ public final class MsgpackPjsekai {
         public Long boostCount;
         public String musicCategoryName;
         public Object privateRoomSettings;
+        public String customMusicScoreId;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -29357,6 +29460,7 @@ public final class MsgpackPjsekai {
             if (this.boostCount != null) out.put("boostCount", this.boostCount);
             if (this.musicCategoryName != null) out.put("musicCategoryName", this.musicCategoryName);
             if (this.privateRoomSettings != null) out.put("privateRoomSettings", this.privateRoomSettings);
+            if (this.customMusicScoreId != null) out.put("customMusicScoreId", this.customMusicScoreId);
             return out;
         }
 
@@ -29379,6 +29483,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "boostCount"); if (value != null) this.boostCount = asLong(value);
             value = get(raw, "musicCategoryName"); if (value != null) this.musicCategoryName = asString(value);
             value = get(raw, "privateRoomSettings"); if (value != null) this.privateRoomSettings = asObject(value);
+            value = get(raw, "customMusicScoreId"); if (value != null) this.customMusicScoreId = asString(value);
             return this;
         }
     }
@@ -29633,7 +29738,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("userEventDeviceTransferRestrict", "string", "userEventDeviceTransferRestrict"),
             new FieldInfo("userLivePoint", "string", "userLivePoint"),
             new FieldInfo("isEventMaintenance", "string", "isEventMaintenance"),
-            new FieldInfo("isInBreakTime", "string", "isInBreakTime")
+            new FieldInfo("isInBreakTime", "string", "isInBreakTime"),
+            new FieldInfo("customMusicScoreLiveResult", "string", "customMusicScoreLiveResult")
         ));
 
         public Object updatedResources;
@@ -29669,6 +29775,7 @@ public final class MsgpackPjsekai {
         public Object userLivePoint;
         public Boolean isEventMaintenance;
         public Boolean isInBreakTime;
+        public Object customMusicScoreLiveResult;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -29705,6 +29812,7 @@ public final class MsgpackPjsekai {
             if (this.userLivePoint != null) out.put("userLivePoint", this.userLivePoint);
             if (this.isEventMaintenance != null) out.put("isEventMaintenance", this.isEventMaintenance);
             if (this.isInBreakTime != null) out.put("isInBreakTime", this.isInBreakTime);
+            if (this.customMusicScoreLiveResult != null) out.put("customMusicScoreLiveResult", this.customMusicScoreLiveResult);
             return out;
         }
 
@@ -29750,6 +29858,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "userLivePoint"); if (value != null) this.userLivePoint = asObject(value);
             value = get(raw, "isEventMaintenance"); if (value != null) this.isEventMaintenance = asBoolean(value);
             value = get(raw, "isInBreakTime"); if (value != null) this.isInBreakTime = asBoolean(value);
+            value = get(raw, "customMusicScoreLiveResult"); if (value != null) this.customMusicScoreLiveResult = asObject(value);
             return this;
         }
     }
@@ -35227,6 +35336,7 @@ public final class MsgpackPjsekai {
             new FieldInfo("LastSelectedLiveBoostDialogTabIndex", "string", "LastSelectedLiveBoostDialogTabIndex"),
             new FieldInfo("MusicShopSortFilterData", "string", "MusicShopSortFilterData"),
             new FieldInfo("AnotherMusicShopSortFilterData", "string", "AnotherMusicShopSortFilterData"),
+            new FieldInfo("MusicScoreMakerMusicSelectSortFilterData", "string", "MusicScoreMakerMusicSelectSortFilterData"),
             new FieldInfo("StampMissionPanelCheckStatusDictionary", "string", "StampMissionPanelCheckStatusDictionary"),
             new FieldInfo("mysekaiInventorySortFilterConfigs", "string", "MysekaiInventorySortFilterConfigs"),
             new FieldInfo("MysekaiFixtureFilteredData", "string", "MysekaiFixtureFilteredData"),
@@ -35327,6 +35437,7 @@ public final class MsgpackPjsekai {
         public Long LastSelectedLiveBoostDialogTabIndex;
         public Object MusicShopSortFilterData;
         public Object AnotherMusicShopSortFilterData;
+        public Object MusicScoreMakerMusicSelectSortFilterData;
         public Object StampMissionPanelCheckStatusDictionary;
         public Object mysekaiInventorySortFilterConfigs;
         public Object MysekaiFixtureFilteredData;
@@ -35428,6 +35539,7 @@ public final class MsgpackPjsekai {
             if (this.LastSelectedLiveBoostDialogTabIndex != null) out.put("LastSelectedLiveBoostDialogTabIndex", this.LastSelectedLiveBoostDialogTabIndex);
             if (this.MusicShopSortFilterData != null) out.put("MusicShopSortFilterData", this.MusicShopSortFilterData);
             if (this.AnotherMusicShopSortFilterData != null) out.put("AnotherMusicShopSortFilterData", this.AnotherMusicShopSortFilterData);
+            if (this.MusicScoreMakerMusicSelectSortFilterData != null) out.put("MusicScoreMakerMusicSelectSortFilterData", this.MusicScoreMakerMusicSelectSortFilterData);
             if (this.StampMissionPanelCheckStatusDictionary != null) out.put("StampMissionPanelCheckStatusDictionary", this.StampMissionPanelCheckStatusDictionary);
             if (this.mysekaiInventorySortFilterConfigs != null) out.put("MysekaiInventorySortFilterConfigs", this.mysekaiInventorySortFilterConfigs);
             if (this.MysekaiFixtureFilteredData != null) out.put("MysekaiFixtureFilteredData", this.MysekaiFixtureFilteredData);
@@ -35538,6 +35650,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "LastSelectedLiveBoostDialogTabIndex"); if (value != null) this.LastSelectedLiveBoostDialogTabIndex = asLong(value);
             value = get(raw, "MusicShopSortFilterData"); if (value != null) this.MusicShopSortFilterData = asObject(value);
             value = get(raw, "AnotherMusicShopSortFilterData"); if (value != null) this.AnotherMusicShopSortFilterData = asObject(value);
+            value = get(raw, "MusicScoreMakerMusicSelectSortFilterData"); if (value != null) this.MusicScoreMakerMusicSelectSortFilterData = asObject(value);
             value = get(raw, "StampMissionPanelCheckStatusDictionary"); if (value != null) this.StampMissionPanelCheckStatusDictionary = asObject(value);
             value = get(raw, "MysekaiInventorySortFilterConfigs"); if (value != null) this.mysekaiInventorySortFilterConfigs = asObject(value);
             value = get(raw, "MysekaiFixtureFilteredData"); if (value != null) this.MysekaiFixtureFilteredData = asObject(value);
@@ -37203,7 +37316,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("CustomRoomScoreSettingIndex", "string", "CustomRoomScoreSettingIndex"),
             new FieldInfo("CustomRoomIsDisplayPlayerInfo", "string", "CustomRoomIsDisplayPlayerInfo"),
             new FieldInfo("CustomRoomSelectedDifficulties", "string", "CustomRoomSelectedDifficulties"),
-            new FieldInfo("CustomRoomSelectedMusicType", "string", "CustomRoomSelectedMusicType")
+            new FieldInfo("CustomRoomSelectedMusicType", "string", "CustomRoomSelectedMusicType"),
+            new FieldInfo("ScoreSelectType", "string", "ScoreSelectType")
         ));
 
         public Double NoteSpeed;
@@ -37237,6 +37351,7 @@ public final class MsgpackPjsekai {
         public Boolean CustomRoomIsDisplayPlayerInfo;
         public Object CustomRoomSelectedDifficulties;
         public Long CustomRoomSelectedMusicType;
+        public Long ScoreSelectType;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -37271,6 +37386,7 @@ public final class MsgpackPjsekai {
             if (this.CustomRoomIsDisplayPlayerInfo != null) out.put("CustomRoomIsDisplayPlayerInfo", this.CustomRoomIsDisplayPlayerInfo);
             if (this.CustomRoomSelectedDifficulties != null) out.put("CustomRoomSelectedDifficulties", this.CustomRoomSelectedDifficulties);
             if (this.CustomRoomSelectedMusicType != null) out.put("CustomRoomSelectedMusicType", this.CustomRoomSelectedMusicType);
+            if (this.ScoreSelectType != null) out.put("ScoreSelectType", this.ScoreSelectType);
             return out;
         }
 
@@ -37314,6 +37430,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "CustomRoomIsDisplayPlayerInfo"); if (value != null) this.CustomRoomIsDisplayPlayerInfo = asBoolean(value);
             value = get(raw, "CustomRoomSelectedDifficulties"); if (value != null) this.CustomRoomSelectedDifficulties = asObject(value);
             value = get(raw, "CustomRoomSelectedMusicType"); if (value != null) this.CustomRoomSelectedMusicType = asLong(value);
+            value = get(raw, "ScoreSelectType"); if (value != null) this.ScoreSelectType = asLong(value);
             return this;
         }
     }
@@ -37347,14 +37464,17 @@ public final class MsgpackPjsekai {
 
     public static final class Sekai_MusicSettingData {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
-            new FieldInfo("VocalId", "string", "VocalId")
+            new FieldInfo("VocalId", "string", "VocalId"),
+            new FieldInfo("CustomMusicScoreIds", "string", "CustomMusicScoreIds")
         ));
 
         public Long VocalId;
+        public Object CustomMusicScoreIds;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
             if (this.VocalId != null) out.put("VocalId", this.VocalId);
+            if (this.CustomMusicScoreIds != null) out.put("CustomMusicScoreIds", this.CustomMusicScoreIds);
             return out;
         }
 
@@ -37368,6 +37488,7 @@ public final class MsgpackPjsekai {
             Map<?, ?> raw = (Map<?, ?>)unpacked;
             Object value;
             value = get(raw, "VocalId"); if (value != null) this.VocalId = asLong(value);
+            value = get(raw, "CustomMusicScoreIds"); if (value != null) this.CustomMusicScoreIds = asObject(value);
             return this;
         }
     }
@@ -37614,6 +37735,68 @@ public final class MsgpackPjsekai {
         }
     }
 
+    public static final class Sekai_MusicPlayHistory_MusicPlayHistoryData {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("Entries", "string", "Entries")
+        ));
+
+        public Object Entries;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.Entries != null) out.put("Entries", this.Entries);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_MusicPlayHistory_MusicPlayHistoryData decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "Entries"); if (value != null) this.Entries = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_MusicPlayHistory_MusicPlayHistoryEntry {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("MusicId", "string", "MusicId"),
+            new FieldInfo("Difficulty", "string", "Difficulty"),
+            new FieldInfo("PlayedAtUnixTime", "string", "PlayedAtUnixTime")
+        ));
+
+        public Long MusicId;
+        public Object Difficulty;
+        public Long PlayedAtUnixTime;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.MusicId != null) out.put("MusicId", this.MusicId);
+            if (this.Difficulty != null) out.put("Difficulty", this.Difficulty);
+            if (this.PlayedAtUnixTime != null) out.put("PlayedAtUnixTime", this.PlayedAtUnixTime);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_MusicPlayHistory_MusicPlayHistoryEntry decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "MusicId"); if (value != null) this.MusicId = asLong(value);
+            value = get(raw, "Difficulty"); if (value != null) this.Difficulty = asObject(value);
+            value = get(raw, "PlayedAtUnixTime"); if (value != null) this.PlayedAtUnixTime = asLong(value);
+            return this;
+        }
+    }
+
     public static final class Sekai_ImageCache_ImageCache {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
             new FieldInfo("ImageData", "string", "ImageData")
@@ -37725,7 +37908,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("ConnectStatus", "string", "ConnectStatus"),
             new FieldInfo("FriendRequestStatus", "string", "FriendRequestStatus"),
             new FieldInfo("MemberCharacterRank", "string", "MemberCharacterRank"),
-            new FieldInfo("PlayerFrameId", "string", "PlayerFrameId")
+            new FieldInfo("PlayerFrameId", "string", "PlayerFrameId"),
+            new FieldInfo("CustomScoreId", "string", "CustomScoreId")
         ));
 
         public Long Index;
@@ -37753,6 +37937,7 @@ public final class MsgpackPjsekai {
         public Object FriendRequestStatus;
         public Object MemberCharacterRank;
         public Long PlayerFrameId;
+        public String CustomScoreId;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -37781,6 +37966,7 @@ public final class MsgpackPjsekai {
             if (this.FriendRequestStatus != null) out.put("FriendRequestStatus", this.FriendRequestStatus);
             if (this.MemberCharacterRank != null) out.put("MemberCharacterRank", this.MemberCharacterRank);
             if (this.PlayerFrameId != null) out.put("PlayerFrameId", this.PlayerFrameId);
+            if (this.CustomScoreId != null) out.put("CustomScoreId", this.CustomScoreId);
             return out;
         }
 
@@ -37818,6 +38004,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "FriendRequestStatus"); if (value != null) this.FriendRequestStatus = asObject(value);
             value = get(raw, "MemberCharacterRank"); if (value != null) this.MemberCharacterRank = asObject(value);
             value = get(raw, "PlayerFrameId"); if (value != null) this.PlayerFrameId = asLong(value);
+            value = get(raw, "CustomScoreId"); if (value != null) this.CustomScoreId = asString(value);
             return this;
         }
     }
@@ -38546,7 +38733,8 @@ public final class MsgpackPjsekai {
             new FieldInfo("UserName", "string", "UserName"),
             new FieldInfo("Index", "string", "Index"),
             new FieldInfo("Info", "string", "Info"),
-            new FieldInfo("Difficulty", "string", "Difficulty")
+            new FieldInfo("Difficulty", "string", "Difficulty"),
+            new FieldInfo("CustomScoreId", "string", "CustomScoreId")
         ));
 
         public String UserId;
@@ -38554,6 +38742,7 @@ public final class MsgpackPjsekai {
         public Long Index;
         public Object Info;
         public String Difficulty;
+        public String CustomScoreId;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -38562,6 +38751,7 @@ public final class MsgpackPjsekai {
             if (this.Index != null) out.put("Index", this.Index);
             if (this.Info != null) out.put("Info", this.Info);
             if (this.Difficulty != null) out.put("Difficulty", this.Difficulty);
+            if (this.CustomScoreId != null) out.put("CustomScoreId", this.CustomScoreId);
             return out;
         }
 
@@ -38579,6 +38769,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "Index"); if (value != null) this.Index = asLong(value);
             value = get(raw, "Info"); if (value != null) this.Info = asObject(value);
             value = get(raw, "Difficulty"); if (value != null) this.Difficulty = asString(value);
+            value = get(raw, "CustomScoreId"); if (value != null) this.CustomScoreId = asString(value);
             return this;
         }
     }
@@ -39126,13 +39317,15 @@ public final class MsgpackPjsekai {
             new FieldInfo("scoreCalculateType", "string", "ScoreCalculateType"),
             new FieldInfo("musicSelectionType", "string", "MusicSelectionType"),
             new FieldInfo("musicDifficultyTypes", "string", "MusicDifficultyTypes"),
-            new FieldInfo("isDisplayPlayerInfo", "string", "IsDisplayPlayerInfo")
+            new FieldInfo("isDisplayPlayerInfo", "string", "IsDisplayPlayerInfo"),
+            new FieldInfo("scoreSelectType", "string", "ScoreSelectType")
         ));
 
         public Object scoreCalculateType;
         public Object musicSelectionType;
         public Object musicDifficultyTypes;
         public Boolean isDisplayPlayerInfo;
+        public Object scoreSelectType;
 
         public Map<Object, Object> toMsgpackMap() {
             Map<Object, Object> out = new LinkedHashMap<>();
@@ -39140,6 +39333,7 @@ public final class MsgpackPjsekai {
             if (this.musicSelectionType != null) out.put("MusicSelectionType", this.musicSelectionType);
             if (this.musicDifficultyTypes != null) out.put("MusicDifficultyTypes", this.musicDifficultyTypes);
             if (this.isDisplayPlayerInfo != null) out.put("IsDisplayPlayerInfo", this.isDisplayPlayerInfo);
+            if (this.scoreSelectType != null) out.put("ScoreSelectType", this.scoreSelectType);
             return out;
         }
 
@@ -39156,6 +39350,7 @@ public final class MsgpackPjsekai {
             value = get(raw, "MusicSelectionType"); if (value != null) this.musicSelectionType = asObject(value);
             value = get(raw, "MusicDifficultyTypes"); if (value != null) this.musicDifficultyTypes = asObject(value);
             value = get(raw, "IsDisplayPlayerInfo"); if (value != null) this.isDisplayPlayerInfo = asBoolean(value);
+            value = get(raw, "ScoreSelectType"); if (value != null) this.scoreSelectType = asObject(value);
             return this;
         }
     }
@@ -44979,6 +45174,89 @@ public final class MsgpackPjsekai {
         }
     }
 
+    public static final class Sekai_ApiData_MasterCustomMusicScoreOfficialCreator {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("id", "string", "id"),
+            new FieldInfo("scoreId", "string", "scoreId"),
+            new FieldInfo("customMusicScoreOfficialCreatorProfileId", "string", "customMusicScoreOfficialCreatorProfileId"),
+            new FieldInfo("musicId", "string", "musicId"),
+            new FieldInfo("musicDifficultyType", "string", "musicDifficultyType"),
+            new FieldInfo("playLevel", "string", "playLevel"),
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("description", "string", "description"),
+            new FieldInfo("tagId1", "string", "tagId1"),
+            new FieldInfo("tagId2", "string", "tagId2"),
+            new FieldInfo("tagId3", "string", "tagId3"),
+            new FieldInfo("isDerivativeAllowed", "string", "isDerivativeAllowed"),
+            new FieldInfo("previewStartTimeSec", "string", "previewStartTimeSec"),
+            new FieldInfo("publishedStartAt", "string", "publishedStartAt"),
+            new FieldInfo("publishedEndAt", "string", "publishedEndAt")
+        ));
+
+        public Long id;
+        public String scoreId;
+        public Long customMusicScoreOfficialCreatorProfileId;
+        public Long musicId;
+        public String musicDifficultyType;
+        public Long playLevel;
+        public String title;
+        public String description;
+        public Long tagId1;
+        public Long tagId2;
+        public Long tagId3;
+        public Boolean isDerivativeAllowed;
+        public Double previewStartTimeSec;
+        public Long publishedStartAt;
+        public Long publishedEndAt;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.id != null) out.put("id", this.id);
+            if (this.scoreId != null) out.put("scoreId", this.scoreId);
+            if (this.customMusicScoreOfficialCreatorProfileId != null) out.put("customMusicScoreOfficialCreatorProfileId", this.customMusicScoreOfficialCreatorProfileId);
+            if (this.musicId != null) out.put("musicId", this.musicId);
+            if (this.musicDifficultyType != null) out.put("musicDifficultyType", this.musicDifficultyType);
+            if (this.playLevel != null) out.put("playLevel", this.playLevel);
+            if (this.title != null) out.put("title", this.title);
+            if (this.description != null) out.put("description", this.description);
+            if (this.tagId1 != null) out.put("tagId1", this.tagId1);
+            if (this.tagId2 != null) out.put("tagId2", this.tagId2);
+            if (this.tagId3 != null) out.put("tagId3", this.tagId3);
+            if (this.isDerivativeAllowed != null) out.put("isDerivativeAllowed", this.isDerivativeAllowed);
+            if (this.previewStartTimeSec != null) out.put("previewStartTimeSec", this.previewStartTimeSec);
+            if (this.publishedStartAt != null) out.put("publishedStartAt", this.publishedStartAt);
+            if (this.publishedEndAt != null) out.put("publishedEndAt", this.publishedEndAt);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_MasterCustomMusicScoreOfficialCreator decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "id"); if (value != null) this.id = asLong(value);
+            value = get(raw, "scoreId"); if (value != null) this.scoreId = asString(value);
+            value = get(raw, "customMusicScoreOfficialCreatorProfileId"); if (value != null) this.customMusicScoreOfficialCreatorProfileId = asLong(value);
+            value = get(raw, "musicId"); if (value != null) this.musicId = asLong(value);
+            value = get(raw, "musicDifficultyType"); if (value != null) this.musicDifficultyType = asString(value);
+            value = get(raw, "playLevel"); if (value != null) this.playLevel = asLong(value);
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "description"); if (value != null) this.description = asString(value);
+            value = get(raw, "tagId1"); if (value != null) this.tagId1 = asLong(value);
+            value = get(raw, "tagId2"); if (value != null) this.tagId2 = asLong(value);
+            value = get(raw, "tagId3"); if (value != null) this.tagId3 = asLong(value);
+            value = get(raw, "isDerivativeAllowed"); if (value != null) this.isDerivativeAllowed = asBoolean(value);
+            value = get(raw, "previewStartTimeSec"); if (value != null) this.previewStartTimeSec = asDouble(value);
+            value = get(raw, "publishedStartAt"); if (value != null) this.publishedStartAt = asLong(value);
+            value = get(raw, "publishedEndAt"); if (value != null) this.publishedEndAt = asLong(value);
+            return this;
+        }
+    }
+
     public static final class Sekai_ApiData_MasterCustomProfileCollectionResourceUnit {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
             new FieldInfo("id", "string", "id"),
@@ -49420,6 +49698,105 @@ public final class MsgpackPjsekai {
         }
     }
 
+    public static final class Sekai_ApiData_UserCustomMusicScorePublishedResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreInfoJson", "string", "userCustomMusicScoreInfoJson"),
+            new FieldInfo("userCustomMusicScoreId", "string", "userCustomMusicScoreId"),
+            new FieldInfo("userId", "string", "userId"),
+            new FieldInfo("userName", "string", "userName"),
+            new FieldInfo("musicId", "string", "musicId"),
+            new FieldInfo("customMusicScoreTags", "string", "customMusicScoreTags"),
+            new FieldInfo("musicDifficultyType", "string", "musicDifficultyType"),
+            new FieldInfo("playLevel", "string", "playLevel"),
+            new FieldInfo("description", "string", "description"),
+            new FieldInfo("isDerivativeAllowed", "string", "isDerivativeAllowed"),
+            new FieldInfo("previewStartTimeSec", "string", "previewStartTimeSec"),
+            new FieldInfo("publishedAt", "string", "publishedAt"),
+            new FieldInfo("reviewCount", "string", "reviewCount"),
+            new FieldInfo("playCount", "string", "playCount"),
+            new FieldInfo("fullComboRate", "string", "fullComboRate"),
+            new FieldInfo("customMusicScoreSearchSortValue", "string", "customMusicScoreSearchSortValue"),
+            new FieldInfo("playResult", "string", "playResult"),
+            new FieldInfo("isReviewed", "string", "isReviewed"),
+            new FieldInfo("isReviewAllowed", "string", "isReviewAllowed")
+        ));
+
+        public Object userCustomMusicScoreInfoJson;
+        public String userCustomMusicScoreId;
+        public Long userId;
+        public String userName;
+        public Long musicId;
+        public Object customMusicScoreTags;
+        public String musicDifficultyType;
+        public Long playLevel;
+        public String description;
+        public Boolean isDerivativeAllowed;
+        public Double previewStartTimeSec;
+        public Long publishedAt;
+        public Long reviewCount;
+        public Long playCount;
+        public Double fullComboRate;
+        public Double customMusicScoreSearchSortValue;
+        public String playResult;
+        public Boolean isReviewed;
+        public Boolean isReviewAllowed;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreInfoJson != null) out.put("userCustomMusicScoreInfoJson", this.userCustomMusicScoreInfoJson);
+            if (this.userCustomMusicScoreId != null) out.put("userCustomMusicScoreId", this.userCustomMusicScoreId);
+            if (this.userId != null) out.put("userId", this.userId);
+            if (this.userName != null) out.put("userName", this.userName);
+            if (this.musicId != null) out.put("musicId", this.musicId);
+            if (this.customMusicScoreTags != null) out.put("customMusicScoreTags", this.customMusicScoreTags);
+            if (this.musicDifficultyType != null) out.put("musicDifficultyType", this.musicDifficultyType);
+            if (this.playLevel != null) out.put("playLevel", this.playLevel);
+            if (this.description != null) out.put("description", this.description);
+            if (this.isDerivativeAllowed != null) out.put("isDerivativeAllowed", this.isDerivativeAllowed);
+            if (this.previewStartTimeSec != null) out.put("previewStartTimeSec", this.previewStartTimeSec);
+            if (this.publishedAt != null) out.put("publishedAt", this.publishedAt);
+            if (this.reviewCount != null) out.put("reviewCount", this.reviewCount);
+            if (this.playCount != null) out.put("playCount", this.playCount);
+            if (this.fullComboRate != null) out.put("fullComboRate", this.fullComboRate);
+            if (this.customMusicScoreSearchSortValue != null) out.put("customMusicScoreSearchSortValue", this.customMusicScoreSearchSortValue);
+            if (this.playResult != null) out.put("playResult", this.playResult);
+            if (this.isReviewed != null) out.put("isReviewed", this.isReviewed);
+            if (this.isReviewAllowed != null) out.put("isReviewAllowed", this.isReviewAllowed);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScorePublishedResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreInfoJson"); if (value != null) this.userCustomMusicScoreInfoJson = asObject(value);
+            value = get(raw, "userCustomMusicScoreId"); if (value != null) this.userCustomMusicScoreId = asString(value);
+            value = get(raw, "userId"); if (value != null) this.userId = asLong(value);
+            value = get(raw, "userName"); if (value != null) this.userName = asString(value);
+            value = get(raw, "musicId"); if (value != null) this.musicId = asLong(value);
+            value = get(raw, "customMusicScoreTags"); if (value != null) this.customMusicScoreTags = asObject(value);
+            value = get(raw, "musicDifficultyType"); if (value != null) this.musicDifficultyType = asString(value);
+            value = get(raw, "playLevel"); if (value != null) this.playLevel = asLong(value);
+            value = get(raw, "description"); if (value != null) this.description = asString(value);
+            value = get(raw, "isDerivativeAllowed"); if (value != null) this.isDerivativeAllowed = asBoolean(value);
+            value = get(raw, "previewStartTimeSec"); if (value != null) this.previewStartTimeSec = asDouble(value);
+            value = get(raw, "publishedAt"); if (value != null) this.publishedAt = asLong(value);
+            value = get(raw, "reviewCount"); if (value != null) this.reviewCount = asLong(value);
+            value = get(raw, "playCount"); if (value != null) this.playCount = asLong(value);
+            value = get(raw, "fullComboRate"); if (value != null) this.fullComboRate = asDouble(value);
+            value = get(raw, "customMusicScoreSearchSortValue"); if (value != null) this.customMusicScoreSearchSortValue = asDouble(value);
+            value = get(raw, "playResult"); if (value != null) this.playResult = asString(value);
+            value = get(raw, "isReviewed"); if (value != null) this.isReviewed = asBoolean(value);
+            value = get(raw, "isReviewAllowed"); if (value != null) this.isReviewAllowed = asBoolean(value);
+            return this;
+        }
+    }
+
     public static final class Sekai_ApiData_UserPlayerFrame {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
             new FieldInfo("playerFrameId", "string", "playerFrameId"),
@@ -49625,6 +50002,247 @@ public final class MsgpackPjsekai {
         }
     }
 
+    public static final class Sekai_ApiData_CustomMusicScoreBookmarkListResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreBookmarkList", "string", "userCustomMusicScoreBookmarkList"),
+            new FieldInfo("customMusicScoreOfficialCreatorBookmarkList", "string", "customMusicScoreOfficialCreatorBookmarkList")
+        ));
+
+        public Object userCustomMusicScoreBookmarkList;
+        public Object customMusicScoreOfficialCreatorBookmarkList;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreBookmarkList != null) out.put("userCustomMusicScoreBookmarkList", this.userCustomMusicScoreBookmarkList);
+            if (this.customMusicScoreOfficialCreatorBookmarkList != null) out.put("customMusicScoreOfficialCreatorBookmarkList", this.customMusicScoreOfficialCreatorBookmarkList);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_CustomMusicScoreBookmarkListResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreBookmarkList"); if (value != null) this.userCustomMusicScoreBookmarkList = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreatorBookmarkList"); if (value != null) this.customMusicScoreOfficialCreatorBookmarkList = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_CustomMusicScoreLiveResultResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreLiveResult", "string", "userCustomMusicScoreLiveResult"),
+            new FieldInfo("officialMusicScoreLiveResult", "string", "officialMusicScoreLiveResult")
+        ));
+
+        public Object userCustomMusicScoreLiveResult;
+        public Object officialMusicScoreLiveResult;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreLiveResult != null) out.put("userCustomMusicScoreLiveResult", this.userCustomMusicScoreLiveResult);
+            if (this.officialMusicScoreLiveResult != null) out.put("officialMusicScoreLiveResult", this.officialMusicScoreLiveResult);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_CustomMusicScoreLiveResultResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreLiveResult"); if (value != null) this.userCustomMusicScoreLiveResult = asObject(value);
+            value = get(raw, "officialMusicScoreLiveResult"); if (value != null) this.officialMusicScoreLiveResult = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("customMusicScoreOfficialCreatorPublished", "string", "customMusicScoreOfficialCreatorPublished"),
+            new FieldInfo("bookmarkedAt", "string", "bookmarkedAt")
+        ));
+
+        public Object customMusicScoreOfficialCreatorPublished;
+        public Long bookmarkedAt;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.customMusicScoreOfficialCreatorPublished != null) out.put("customMusicScoreOfficialCreatorPublished", this.customMusicScoreOfficialCreatorPublished);
+            if (this.bookmarkedAt != null) out.put("bookmarkedAt", this.bookmarkedAt);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedBookmarkResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "customMusicScoreOfficialCreatorPublished"); if (value != null) this.customMusicScoreOfficialCreatorPublished = asObject(value);
+            value = get(raw, "bookmarkedAt"); if (value != null) this.bookmarkedAt = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("customMusicScoreId", "string", "customMusicScoreId"),
+            new FieldInfo("reviewCount", "string", "reviewCount"),
+            new FieldInfo("playCount", "string", "playCount"),
+            new FieldInfo("fullComboRate", "string", "fullComboRate"),
+            new FieldInfo("customMusicScoreSearchSortValue", "string", "customMusicScoreSearchSortValue"),
+            new FieldInfo("playResult", "string", "playResult"),
+            new FieldInfo("isReviewed", "string", "isReviewed"),
+            new FieldInfo("isReviewAllowed", "string", "isReviewAllowed")
+        ));
+
+        public String customMusicScoreId;
+        public Long reviewCount;
+        public Long playCount;
+        public Double fullComboRate;
+        public Double customMusicScoreSearchSortValue;
+        public String playResult;
+        public Boolean isReviewed;
+        public Boolean isReviewAllowed;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.customMusicScoreId != null) out.put("customMusicScoreId", this.customMusicScoreId);
+            if (this.reviewCount != null) out.put("reviewCount", this.reviewCount);
+            if (this.playCount != null) out.put("playCount", this.playCount);
+            if (this.fullComboRate != null) out.put("fullComboRate", this.fullComboRate);
+            if (this.customMusicScoreSearchSortValue != null) out.put("customMusicScoreSearchSortValue", this.customMusicScoreSearchSortValue);
+            if (this.playResult != null) out.put("playResult", this.playResult);
+            if (this.isReviewed != null) out.put("isReviewed", this.isReviewed);
+            if (this.isReviewAllowed != null) out.put("isReviewAllowed", this.isReviewAllowed);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_CustomMusicScoreOfficialCreatorPublishedResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "customMusicScoreId"); if (value != null) this.customMusicScoreId = asString(value);
+            value = get(raw, "reviewCount"); if (value != null) this.reviewCount = asLong(value);
+            value = get(raw, "playCount"); if (value != null) this.playCount = asLong(value);
+            value = get(raw, "fullComboRate"); if (value != null) this.fullComboRate = asDouble(value);
+            value = get(raw, "customMusicScoreSearchSortValue"); if (value != null) this.customMusicScoreSearchSortValue = asDouble(value);
+            value = get(raw, "playResult"); if (value != null) this.playResult = asString(value);
+            value = get(raw, "isReviewed"); if (value != null) this.isReviewed = asBoolean(value);
+            value = get(raw, "isReviewAllowed"); if (value != null) this.isReviewAllowed = asBoolean(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_CustomMusicScorePublishedSearchListResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScorePublishedList", "string", "userCustomMusicScorePublishedList"),
+            new FieldInfo("customMusicScoreOfficialCreatorPublishedList", "string", "customMusicScoreOfficialCreatorPublishedList")
+        ));
+
+        public Object userCustomMusicScorePublishedList;
+        public Object customMusicScoreOfficialCreatorPublishedList;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScorePublishedList != null) out.put("userCustomMusicScorePublishedList", this.userCustomMusicScorePublishedList);
+            if (this.customMusicScoreOfficialCreatorPublishedList != null) out.put("customMusicScoreOfficialCreatorPublishedList", this.customMusicScoreOfficialCreatorPublishedList);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_CustomMusicScorePublishedSearchListResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScorePublishedList"); if (value != null) this.userCustomMusicScorePublishedList = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreatorPublishedList"); if (value != null) this.customMusicScoreOfficialCreatorPublishedList = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_CustomMusicScorePublishedSearchResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreInfoJson", "string", "userCustomMusicScoreInfoJson"),
+            new FieldInfo("customMusicScoreOfficialCreatorPublishedResponseJson", "string", "customMusicScoreOfficialCreatorPublishedResponseJson")
+        ));
+
+        public Object userCustomMusicScoreInfoJson;
+        public Object customMusicScoreOfficialCreatorPublishedResponseJson;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreInfoJson != null) out.put("userCustomMusicScoreInfoJson", this.userCustomMusicScoreInfoJson);
+            if (this.customMusicScoreOfficialCreatorPublishedResponseJson != null) out.put("customMusicScoreOfficialCreatorPublishedResponseJson", this.customMusicScoreOfficialCreatorPublishedResponseJson);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_CustomMusicScorePublishedSearchResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreInfoJson"); if (value != null) this.userCustomMusicScoreInfoJson = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreatorPublishedResponseJson"); if (value != null) this.customMusicScoreOfficialCreatorPublishedResponseJson = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_CustomMusicScorePublishedTabListResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScorePublishedList", "string", "userCustomMusicScorePublishedList"),
+            new FieldInfo("customMusicScoreOfficialCreatorPublishedList", "string", "customMusicScoreOfficialCreatorPublishedList")
+        ));
+
+        public Object userCustomMusicScorePublishedList;
+        public Object customMusicScoreOfficialCreatorPublishedList;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScorePublishedList != null) out.put("userCustomMusicScorePublishedList", this.userCustomMusicScorePublishedList);
+            if (this.customMusicScoreOfficialCreatorPublishedList != null) out.put("customMusicScoreOfficialCreatorPublishedList", this.customMusicScoreOfficialCreatorPublishedList);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_CustomMusicScorePublishedTabListResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScorePublishedList"); if (value != null) this.userCustomMusicScorePublishedList = asObject(value);
+            value = get(raw, "customMusicScoreOfficialCreatorPublishedList"); if (value != null) this.customMusicScoreOfficialCreatorPublishedList = asObject(value);
+            return this;
+        }
+    }
+
     public static final class Sekai_ApiData_DebugUserBirthdayPartySetDeliveryTotalPointRequest {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
             new FieldInfo("deliveryPoint", "string", "deliveryPoint")
@@ -49675,6 +50293,60 @@ public final class MsgpackPjsekai {
             Map<?, ?> raw = (Map<?, ?>)unpacked;
             Object value;
             value = get(raw, "count"); if (value != null) this.count = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("createCount", "string", "createCount")
+        ));
+
+        public Long createCount;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.createCount != null) out.put("createCount", this.createCount);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_DebugUserCustomMusicScoreDraftCreateRequest decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "createCount"); if (value != null) this.createCount = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("createCount", "string", "createCount")
+        ));
+
+        public Long createCount;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.createCount != null) out.put("createCount", this.createCount);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_DebugUserCustomMusicScorePublishedCreateRequest decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "createCount"); if (value != null) this.createCount = asLong(value);
             return this;
         }
     }
@@ -50595,6 +51267,37 @@ public final class MsgpackPjsekai {
         }
     }
 
+    public static final class Sekai_ApiData_OfficialMusicScoreLiveResultResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("customMusicScoreId", "string", "customMusicScoreId"),
+            new FieldInfo("isReviewed", "string", "isReviewed")
+        ));
+
+        public String customMusicScoreId;
+        public Boolean isReviewed;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.customMusicScoreId != null) out.put("customMusicScoreId", this.customMusicScoreId);
+            if (this.isReviewed != null) out.put("isReviewed", this.isReviewed);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_OfficialMusicScoreLiveResultResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "customMusicScoreId"); if (value != null) this.customMusicScoreId = asString(value);
+            value = get(raw, "isReviewed"); if (value != null) this.isReviewed = asBoolean(value);
+            return this;
+        }
+    }
+
     public static final class Sekai_ApiData_UserAdReward {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
             new FieldInfo("id", "string", "id"),
@@ -50944,6 +51647,537 @@ public final class MsgpackPjsekai {
         }
     }
 
+    public static final class Sekai_ApiData_UserCustomMusicScoreDraft {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreInfo", "string", "userCustomMusicScoreInfo"),
+            new FieldInfo("slotNo", "string", "slotNo"),
+            new FieldInfo("memo", "string", "memo"),
+            new FieldInfo("baseMusicDifficultyId", "string", "baseMusicDifficultyId"),
+            new FieldInfo("lastSavedAt", "string", "lastSavedAt")
+        ));
+
+        public Object userCustomMusicScoreInfo;
+        public Long slotNo;
+        public String memo;
+        public Long baseMusicDifficultyId;
+        public Long lastSavedAt;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreInfo != null) out.put("userCustomMusicScoreInfo", this.userCustomMusicScoreInfo);
+            if (this.slotNo != null) out.put("slotNo", this.slotNo);
+            if (this.memo != null) out.put("memo", this.memo);
+            if (this.baseMusicDifficultyId != null) out.put("baseMusicDifficultyId", this.baseMusicDifficultyId);
+            if (this.lastSavedAt != null) out.put("lastSavedAt", this.lastSavedAt);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreDraft decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreInfo"); if (value != null) this.userCustomMusicScoreInfo = asObject(value);
+            value = get(raw, "slotNo"); if (value != null) this.slotNo = asLong(value);
+            value = get(raw, "memo"); if (value != null) this.memo = asString(value);
+            value = get(raw, "baseMusicDifficultyId"); if (value != null) this.baseMusicDifficultyId = asLong(value);
+            value = get(raw, "lastSavedAt"); if (value != null) this.lastSavedAt = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("baseMusicScoreId", "string", "baseMusicScoreId"),
+            new FieldInfo("musicId", "string", "musicId"),
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("userCustomMusicScoreJsonGzipBase64", "string", "userCustomMusicScoreJsonGzipBase64"),
+            new FieldInfo("memo", "string", "memo"),
+            new FieldInfo("baseMusicDifficultyId", "string", "baseMusicDifficultyId")
+        ));
+
+        public String baseMusicScoreId;
+        public Long musicId;
+        public String title;
+        public String userCustomMusicScoreJsonGzipBase64;
+        public String memo;
+        public Long baseMusicDifficultyId;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.baseMusicScoreId != null) out.put("baseMusicScoreId", this.baseMusicScoreId);
+            if (this.musicId != null) out.put("musicId", this.musicId);
+            if (this.title != null) out.put("title", this.title);
+            if (this.userCustomMusicScoreJsonGzipBase64 != null) out.put("userCustomMusicScoreJsonGzipBase64", this.userCustomMusicScoreJsonGzipBase64);
+            if (this.memo != null) out.put("memo", this.memo);
+            if (this.baseMusicDifficultyId != null) out.put("baseMusicDifficultyId", this.baseMusicDifficultyId);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreDraftCreateRequest decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "baseMusicScoreId"); if (value != null) this.baseMusicScoreId = asString(value);
+            value = get(raw, "musicId"); if (value != null) this.musicId = asLong(value);
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "userCustomMusicScoreJsonGzipBase64"); if (value != null) this.userCustomMusicScoreJsonGzipBase64 = asString(value);
+            value = get(raw, "memo"); if (value != null) this.memo = asString(value);
+            value = get(raw, "baseMusicDifficultyId"); if (value != null) this.baseMusicDifficultyId = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScoreDraftEditRequest {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("memo", "string", "memo")
+        ));
+
+        public String title;
+        public String memo;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.title != null) out.put("title", this.title);
+            if (this.memo != null) out.put("memo", this.memo);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreDraftEditRequest decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "memo"); if (value != null) this.memo = asString(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScoreDraftListResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreDrafts", "string", "userCustomMusicScoreDrafts")
+        ));
+
+        public Object userCustomMusicScoreDrafts;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreDrafts != null) out.put("userCustomMusicScoreDrafts", this.userCustomMusicScoreDrafts);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreDraftListResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreDrafts"); if (value != null) this.userCustomMusicScoreDrafts = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("baseMusicScoreId", "string", "baseMusicScoreId"),
+            new FieldInfo("musicId", "string", "musicId"),
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("userCustomMusicScoreJsonGzipBase64", "string", "userCustomMusicScoreJsonGzipBase64"),
+            new FieldInfo("memo", "string", "memo"),
+            new FieldInfo("baseMusicDifficultyId", "string", "baseMusicDifficultyId")
+        ));
+
+        public String baseMusicScoreId;
+        public Long musicId;
+        public String title;
+        public String userCustomMusicScoreJsonGzipBase64;
+        public String memo;
+        public Long baseMusicDifficultyId;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.baseMusicScoreId != null) out.put("baseMusicScoreId", this.baseMusicScoreId);
+            if (this.musicId != null) out.put("musicId", this.musicId);
+            if (this.title != null) out.put("title", this.title);
+            if (this.userCustomMusicScoreJsonGzipBase64 != null) out.put("userCustomMusicScoreJsonGzipBase64", this.userCustomMusicScoreJsonGzipBase64);
+            if (this.memo != null) out.put("memo", this.memo);
+            if (this.baseMusicDifficultyId != null) out.put("baseMusicDifficultyId", this.baseMusicDifficultyId);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreDraftUpdateRequest decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "baseMusicScoreId"); if (value != null) this.baseMusicScoreId = asString(value);
+            value = get(raw, "musicId"); if (value != null) this.musicId = asLong(value);
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "userCustomMusicScoreJsonGzipBase64"); if (value != null) this.userCustomMusicScoreJsonGzipBase64 = asString(value);
+            value = get(raw, "memo"); if (value != null) this.memo = asString(value);
+            value = get(raw, "baseMusicDifficultyId"); if (value != null) this.baseMusicDifficultyId = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScoreInfo {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("baseMusicScoreId", "string", "baseMusicScoreId"),
+            new FieldInfo("musicId", "string", "musicId"),
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("userCustomMusicScorePath", "string", "userCustomMusicScorePath")
+        ));
+
+        public String baseMusicScoreId;
+        public Long musicId;
+        public String title;
+        public String userCustomMusicScorePath;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.baseMusicScoreId != null) out.put("baseMusicScoreId", this.baseMusicScoreId);
+            if (this.musicId != null) out.put("musicId", this.musicId);
+            if (this.title != null) out.put("title", this.title);
+            if (this.userCustomMusicScorePath != null) out.put("userCustomMusicScorePath", this.userCustomMusicScorePath);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreInfo decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "baseMusicScoreId"); if (value != null) this.baseMusicScoreId = asString(value);
+            value = get(raw, "musicId"); if (value != null) this.musicId = asLong(value);
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "userCustomMusicScorePath"); if (value != null) this.userCustomMusicScorePath = asString(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScoreLiveResultResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userId", "string", "userId"),
+            new FieldInfo("userName", "string", "userName"),
+            new FieldInfo("customMusicScoreId", "string", "customMusicScoreId"),
+            new FieldInfo("musicId", "string", "musicId"),
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("musicDifficultyType", "string", "musicDifficultyType"),
+            new FieldInfo("playLevel", "string", "playLevel"),
+            new FieldInfo("isReviewed", "string", "isReviewed")
+        ));
+
+        public Long userId;
+        public String userName;
+        public String customMusicScoreId;
+        public Long musicId;
+        public String title;
+        public String musicDifficultyType;
+        public Long playLevel;
+        public Boolean isReviewed;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userId != null) out.put("userId", this.userId);
+            if (this.userName != null) out.put("userName", this.userName);
+            if (this.customMusicScoreId != null) out.put("customMusicScoreId", this.customMusicScoreId);
+            if (this.musicId != null) out.put("musicId", this.musicId);
+            if (this.title != null) out.put("title", this.title);
+            if (this.musicDifficultyType != null) out.put("musicDifficultyType", this.musicDifficultyType);
+            if (this.playLevel != null) out.put("playLevel", this.playLevel);
+            if (this.isReviewed != null) out.put("isReviewed", this.isReviewed);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreLiveResultResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userId"); if (value != null) this.userId = asLong(value);
+            value = get(raw, "userName"); if (value != null) this.userName = asString(value);
+            value = get(raw, "customMusicScoreId"); if (value != null) this.customMusicScoreId = asString(value);
+            value = get(raw, "musicId"); if (value != null) this.musicId = asLong(value);
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "musicDifficultyType"); if (value != null) this.musicDifficultyType = asString(value);
+            value = get(raw, "playLevel"); if (value != null) this.playLevel = asLong(value);
+            value = get(raw, "isReviewed"); if (value != null) this.isReviewed = asBoolean(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScoreMiniDisplay {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreId", "string", "userCustomMusicScoreId"),
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("authorId", "string", "authorId"),
+            new FieldInfo("authorName", "string", "authorName"),
+            new FieldInfo("playLevel", "string", "playLevel"),
+            new FieldInfo("musicDifficulty", "string", "musicDifficulty"),
+            new FieldInfo("userCustomMusicScorePath", "string", "userCustomMusicScorePath")
+        ));
+
+        public String userCustomMusicScoreId;
+        public String title;
+        public Long authorId;
+        public String authorName;
+        public Long playLevel;
+        public String musicDifficulty;
+        public String userCustomMusicScorePath;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreId != null) out.put("userCustomMusicScoreId", this.userCustomMusicScoreId);
+            if (this.title != null) out.put("title", this.title);
+            if (this.authorId != null) out.put("authorId", this.authorId);
+            if (this.authorName != null) out.put("authorName", this.authorName);
+            if (this.playLevel != null) out.put("playLevel", this.playLevel);
+            if (this.musicDifficulty != null) out.put("musicDifficulty", this.musicDifficulty);
+            if (this.userCustomMusicScorePath != null) out.put("userCustomMusicScorePath", this.userCustomMusicScorePath);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScoreMiniDisplay decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreId"); if (value != null) this.userCustomMusicScoreId = asString(value);
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "authorId"); if (value != null) this.authorId = asLong(value);
+            value = get(raw, "authorName"); if (value != null) this.authorName = asString(value);
+            value = get(raw, "playLevel"); if (value != null) this.playLevel = asLong(value);
+            value = get(raw, "musicDifficulty"); if (value != null) this.musicDifficulty = asString(value);
+            value = get(raw, "userCustomMusicScorePath"); if (value != null) this.userCustomMusicScorePath = asString(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScorePublishedBanInfo {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScoreId", "string", "userCustomMusicScoreId"),
+            new FieldInfo("message", "string", "message")
+        ));
+
+        public String userCustomMusicScoreId;
+        public String message;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScoreId != null) out.put("userCustomMusicScoreId", this.userCustomMusicScoreId);
+            if (this.message != null) out.put("message", this.message);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScorePublishedBanInfo decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScoreId"); if (value != null) this.userCustomMusicScoreId = asString(value);
+            value = get(raw, "message"); if (value != null) this.message = asString(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScorePublished", "string", "userCustomMusicScorePublished"),
+            new FieldInfo("bookmarkedAt", "string", "bookmarkedAt")
+        ));
+
+        public Object userCustomMusicScorePublished;
+        public Long bookmarkedAt;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScorePublished != null) out.put("userCustomMusicScorePublished", this.userCustomMusicScorePublished);
+            if (this.bookmarkedAt != null) out.put("bookmarkedAt", this.bookmarkedAt);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScorePublishedBookmarkResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScorePublished"); if (value != null) this.userCustomMusicScorePublished = asObject(value);
+            value = get(raw, "bookmarkedAt"); if (value != null) this.bookmarkedAt = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScorePublishedList", "string", "userCustomMusicScorePublishedList"),
+            new FieldInfo("userCustomMusicScoreAuthorProfile", "string", "userCustomMusicScoreAuthorProfile")
+        ));
+
+        public Object userCustomMusicScorePublishedList;
+        public Object userCustomMusicScoreAuthorProfile;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScorePublishedList != null) out.put("userCustomMusicScorePublishedList", this.userCustomMusicScorePublishedList);
+            if (this.userCustomMusicScoreAuthorProfile != null) out.put("userCustomMusicScoreAuthorProfile", this.userCustomMusicScoreAuthorProfile);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScorePublishedListAuthorResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScorePublishedList"); if (value != null) this.userCustomMusicScorePublishedList = asObject(value);
+            value = get(raw, "userCustomMusicScoreAuthorProfile"); if (value != null) this.userCustomMusicScoreAuthorProfile = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScorePublishedListResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userCustomMusicScorePublishedList", "string", "userCustomMusicScorePublishedList")
+        ));
+
+        public Object userCustomMusicScorePublishedList;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userCustomMusicScorePublishedList != null) out.put("userCustomMusicScorePublishedList", this.userCustomMusicScorePublishedList);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScorePublishedListResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userCustomMusicScorePublishedList"); if (value != null) this.userCustomMusicScorePublishedList = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserCustomMusicScorePublishRequest {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("musicId", "string", "musicId"),
+            new FieldInfo("customMusicScoreTagIds", "string", "customMusicScoreTagIds"),
+            new FieldInfo("musicDifficultyType", "string", "musicDifficultyType"),
+            new FieldInfo("playLevel", "string", "playLevel"),
+            new FieldInfo("title", "string", "title"),
+            new FieldInfo("description", "string", "description"),
+            new FieldInfo("userCustomMusicScoreJsonGzipBase64", "string", "userCustomMusicScoreJsonGzipBase64"),
+            new FieldInfo("userCustomMusicScorePreviewJsonGzipBase64", "string", "userCustomMusicScorePreviewJsonGzipBase64"),
+            new FieldInfo("baseMusicScoreId", "string", "baseMusicScoreId"),
+            new FieldInfo("isDerivativeAllowed", "string", "isDerivativeAllowed"),
+            new FieldInfo("previewStartTimeSec", "string", "previewStartTimeSec"),
+            new FieldInfo("totalNoteCount", "string", "totalNoteCount")
+        ));
+
+        public Long musicId;
+        public Object customMusicScoreTagIds;
+        public String musicDifficultyType;
+        public Long playLevel;
+        public String title;
+        public String description;
+        public String userCustomMusicScoreJsonGzipBase64;
+        public String userCustomMusicScorePreviewJsonGzipBase64;
+        public String baseMusicScoreId;
+        public Boolean isDerivativeAllowed;
+        public Double previewStartTimeSec;
+        public Long totalNoteCount;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.musicId != null) out.put("musicId", this.musicId);
+            if (this.customMusicScoreTagIds != null) out.put("customMusicScoreTagIds", this.customMusicScoreTagIds);
+            if (this.musicDifficultyType != null) out.put("musicDifficultyType", this.musicDifficultyType);
+            if (this.playLevel != null) out.put("playLevel", this.playLevel);
+            if (this.title != null) out.put("title", this.title);
+            if (this.description != null) out.put("description", this.description);
+            if (this.userCustomMusicScoreJsonGzipBase64 != null) out.put("userCustomMusicScoreJsonGzipBase64", this.userCustomMusicScoreJsonGzipBase64);
+            if (this.userCustomMusicScorePreviewJsonGzipBase64 != null) out.put("userCustomMusicScorePreviewJsonGzipBase64", this.userCustomMusicScorePreviewJsonGzipBase64);
+            if (this.baseMusicScoreId != null) out.put("baseMusicScoreId", this.baseMusicScoreId);
+            if (this.isDerivativeAllowed != null) out.put("isDerivativeAllowed", this.isDerivativeAllowed);
+            if (this.previewStartTimeSec != null) out.put("previewStartTimeSec", this.previewStartTimeSec);
+            if (this.totalNoteCount != null) out.put("totalNoteCount", this.totalNoteCount);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserCustomMusicScorePublishRequest decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "musicId"); if (value != null) this.musicId = asLong(value);
+            value = get(raw, "customMusicScoreTagIds"); if (value != null) this.customMusicScoreTagIds = asObject(value);
+            value = get(raw, "musicDifficultyType"); if (value != null) this.musicDifficultyType = asString(value);
+            value = get(raw, "playLevel"); if (value != null) this.playLevel = asLong(value);
+            value = get(raw, "title"); if (value != null) this.title = asString(value);
+            value = get(raw, "description"); if (value != null) this.description = asString(value);
+            value = get(raw, "userCustomMusicScoreJsonGzipBase64"); if (value != null) this.userCustomMusicScoreJsonGzipBase64 = asString(value);
+            value = get(raw, "userCustomMusicScorePreviewJsonGzipBase64"); if (value != null) this.userCustomMusicScorePreviewJsonGzipBase64 = asString(value);
+            value = get(raw, "baseMusicScoreId"); if (value != null) this.baseMusicScoreId = asString(value);
+            value = get(raw, "isDerivativeAllowed"); if (value != null) this.isDerivativeAllowed = asBoolean(value);
+            value = get(raw, "previewStartTimeSec"); if (value != null) this.previewStartTimeSec = asDouble(value);
+            value = get(raw, "totalNoteCount"); if (value != null) this.totalNoteCount = asLong(value);
+            return this;
+        }
+    }
+
     public static final class Sekai_ApiData_UserEventRankingRewardConditionResponse {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
             new FieldInfo("rewardCondition", "string", "rewardCondition")
@@ -51172,6 +52406,68 @@ public final class MsgpackPjsekai {
             Map<?, ?> raw = (Map<?, ?>)unpacked;
             Object value;
             value = get(raw, "updatedResources"); if (value != null) this.updatedResources = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userMultiLivePlayableCustomMusicScores", "string", "userMultiLivePlayableCustomMusicScores")
+        ));
+
+        public Object userMultiLivePlayableCustomMusicScores;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userMultiLivePlayableCustomMusicScores != null) out.put("userMultiLivePlayableCustomMusicScores", this.userMultiLivePlayableCustomMusicScores);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreListResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userMultiLivePlayableCustomMusicScores"); if (value != null) this.userMultiLivePlayableCustomMusicScores = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("userId", "string", "userId"),
+            new FieldInfo("userCustomMusicScores", "string", "userCustomMusicScores"),
+            new FieldInfo("officialCustomMusicScoreIds", "string", "officialCustomMusicScoreIds")
+        ));
+
+        public Long userId;
+        public Object userCustomMusicScores;
+        public Object officialCustomMusicScoreIds;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.userId != null) out.put("userId", this.userId);
+            if (this.userCustomMusicScores != null) out.put("userCustomMusicScores", this.userCustomMusicScores);
+            if (this.officialCustomMusicScoreIds != null) out.put("officialCustomMusicScoreIds", this.officialCustomMusicScoreIds);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_UserMultiLivePlayableCustomMusicScoreResponse decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "userId"); if (value != null) this.userId = asLong(value);
+            value = get(raw, "userCustomMusicScores"); if (value != null) this.userCustomMusicScores = asObject(value);
+            value = get(raw, "officialCustomMusicScoreIds"); if (value != null) this.officialCustomMusicScoreIds = asObject(value);
             return this;
         }
     }
@@ -55694,6 +56990,115 @@ public final class MsgpackPjsekai {
         }
     }
 
+    public static final class Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("id", "string", "id"),
+            new FieldInfo("musicDifficultyType", "string", "musicDifficultyType"),
+            new FieldInfo("minPlayLevel", "string", "minPlayLevel"),
+            new FieldInfo("maxPlayLevel", "string", "maxPlayLevel")
+        ));
+
+        public Long id;
+        public String musicDifficultyType;
+        public Long minPlayLevel;
+        public Long maxPlayLevel;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.id != null) out.put("id", this.id);
+            if (this.musicDifficultyType != null) out.put("musicDifficultyType", this.musicDifficultyType);
+            if (this.minPlayLevel != null) out.put("minPlayLevel", this.minPlayLevel);
+            if (this.maxPlayLevel != null) out.put("maxPlayLevel", this.maxPlayLevel);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_MasterCustomMusicScoreDifficultyPlayLevel decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "id"); if (value != null) this.id = asLong(value);
+            value = get(raw, "musicDifficultyType"); if (value != null) this.musicDifficultyType = asString(value);
+            value = get(raw, "minPlayLevel"); if (value != null) this.minPlayLevel = asLong(value);
+            value = get(raw, "maxPlayLevel"); if (value != null) this.maxPlayLevel = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("id", "string", "id"),
+            new FieldInfo("name", "string", "name")
+        ));
+
+        public Long id;
+        public String name;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.id != null) out.put("id", this.id);
+            if (this.name != null) out.put("name", this.name);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_MasterCustomMusicScoreOfficialCreatorProfile decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "id"); if (value != null) this.id = asLong(value);
+            value = get(raw, "name"); if (value != null) this.name = asString(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_ApiData_MasterCustomMusicScoreTag {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("id", "string", "id"),
+            new FieldInfo("seq", "string", "seq"),
+            new FieldInfo("name", "string", "name"),
+            new FieldInfo("isOfficialCreatorOnly", "string", "isOfficialCreatorOnly")
+        ));
+
+        public Long id;
+        public Long seq;
+        public String name;
+        public Boolean isOfficialCreatorOnly;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.id != null) out.put("id", this.id);
+            if (this.seq != null) out.put("seq", this.seq);
+            if (this.name != null) out.put("name", this.name);
+            if (this.isOfficialCreatorOnly != null) out.put("isOfficialCreatorOnly", this.isOfficialCreatorOnly);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_ApiData_MasterCustomMusicScoreTag decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, "id"); if (value != null) this.id = asLong(value);
+            value = get(raw, "seq"); if (value != null) this.seq = asLong(value);
+            value = get(raw, "name"); if (value != null) this.name = asString(value);
+            value = get(raw, "isOfficialCreatorOnly"); if (value != null) this.isOfficialCreatorOnly = asBoolean(value);
+            return this;
+        }
+    }
+
     public static final class Sekai_ApiData_MasterCustomProfileGachaShop {
         public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
             new FieldInfo("id", "string", "id"),
@@ -59846,6 +61251,337 @@ public final class MsgpackPjsekai {
             value = get(raw, "mysekaiOwnerUserSubmittedAt"); if (value != null) this.mysekaiOwnerUserSubmittedAt = asObject(value);
             value = get(raw, "mysekaiSiteId"); if (value != null) this.mysekaiSiteId = asLong(value);
             value = get(raw, "mysekaiBlueprintId"); if (value != null) this.mysekaiBlueprintId = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("Id", "int", Long.valueOf(0L)),
+            new FieldInfo("CopiedNoteList", "int", Long.valueOf(1L)),
+            new FieldInfo("CopiedEventDataList", "int", Long.valueOf(2L)),
+            new FieldInfo("CreatedAt", "int", Long.valueOf(3L))
+        ));
+
+        public String Id;
+        public Object CopiedNoteList;
+        public Object CopiedEventDataList;
+        public String CreatedAt;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.Id != null) out.put(Long.valueOf(0L), this.Id);
+            if (this.CopiedNoteList != null) out.put(Long.valueOf(1L), this.CopiedNoteList);
+            if (this.CopiedEventDataList != null) out.put(Long.valueOf(2L), this.CopiedEventDataList);
+            if (this.CreatedAt != null) out.put(Long.valueOf(3L), this.CreatedAt);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheData decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, Long.valueOf(0L)); if (value != null) this.Id = asString(value);
+            value = get(raw, Long.valueOf(1L)); if (value != null) this.CopiedNoteList = asObject(value);
+            value = get(raw, Long.valueOf(2L)); if (value != null) this.CopiedEventDataList = asObject(value);
+            value = get(raw, Long.valueOf(3L)); if (value != null) this.CreatedAt = asString(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("Caches", "int", Long.valueOf(0L))
+        ));
+
+        public Object Caches;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.Caches != null) out.put(Long.valueOf(0L), this.Caches);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_MusicScoreMaker_Ingame_Models_ClipboardCacheListData decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, Long.valueOf(0L)); if (value != null) this.Caches = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("id", "int", Long.valueOf(0L)),
+            new FieldInfo("eventType", "int", Long.valueOf(1L)),
+            new FieldInfo("ticks", "int", Long.valueOf(2L)),
+            new FieldInfo("changeValue", "int", Long.valueOf(3L))
+        ));
+
+        public Long id;
+        public Object eventType;
+        public Long ticks;
+        public Object changeValue;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.id != null) out.put(Long.valueOf(0L), this.id);
+            if (this.eventType != null) out.put(Long.valueOf(1L), this.eventType);
+            if (this.ticks != null) out.put(Long.valueOf(2L), this.ticks);
+            if (this.changeValue != null) out.put(Long.valueOf(3L), this.changeValue);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_MusicScoreMaker_Ingame_Models_MusicScoreEventData decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, Long.valueOf(0L)); if (value != null) this.id = asLong(value);
+            value = get(raw, Long.valueOf(1L)); if (value != null) this.eventType = asObject(value);
+            value = get(raw, Long.valueOf(2L)); if (value != null) this.ticks = asLong(value);
+            value = get(raw, Long.valueOf(3L)); if (value != null) this.changeValue = asObject(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("ZoomTimelineStep", "int", Long.valueOf(0L)),
+            new FieldInfo("ZoomTimelineScaleMax", "int", Long.valueOf(1L)),
+            new FieldInfo("ZoomTimelineScaleMin", "int", Long.valueOf(2L)),
+            new FieldInfo("UndoStackLimit", "int", Long.valueOf(3L)),
+            new FieldInfo("AutoSaveEnabled", "int", Long.valueOf(4L)),
+            new FieldInfo("AutoSaveInterval", "int", Long.valueOf(5L)),
+            new FieldInfo("ShowFocusTicksRate", "int", Long.valueOf(6L)),
+            new FieldInfo("TicksPerScrollStep", "int", Long.valueOf(7L)),
+            new FieldInfo("EnableSwipeScroll", "int", Long.valueOf(8L)),
+            new FieldInfo("PlayMusicSEEnabled", "int", Long.valueOf(9L)),
+            new FieldInfo("SetStartMusicTimeMsEnabled", "int", Long.valueOf(10L)),
+            new FieldInfo("PlayStartEffectEnabled", "int", Long.valueOf(11L)),
+            new FieldInfo("TestPlayStartOffsetMs", "int", Long.valueOf(12L)),
+            new FieldInfo("ShowBarLines", "int", Long.valueOf(13L)),
+            new FieldInfo("ShowBeatLines", "int", Long.valueOf(14L)),
+            new FieldInfo("ShowQuantizeLines", "int", Long.valueOf(15L)),
+            new FieldInfo("SelectedLayoutPatternIndex", "int", Long.valueOf(16L)),
+            new FieldInfo("SelectedLayoutPatternIndexPortrait", "int", Long.valueOf(26L)),
+            new FieldInfo("SelectedLayoutPatternIndexLandscape", "int", Long.valueOf(27L)),
+            new FieldInfo("ScoreDisplayScaleHorizontal", "int", Long.valueOf(17L)),
+            new FieldInfo("ScoreDisplayScaleVertical", "int", Long.valueOf(18L)),
+            new FieldInfo("ToolWindowChildScale", "int", Long.valueOf(19L)),
+            new FieldInfo("NoteEdgeWidth", "int", Long.valueOf(24L)),
+            new FieldInfo("EnableInvalidPlacementCheck", "int", Long.valueOf(25L)),
+            new FieldInfo("AreaSelectPartialOverlap", "int", Long.valueOf(28L)),
+            new FieldInfo("NoteYScaleStartThreshold", "int", Long.valueOf(29L)),
+            new FieldInfo("NoteYScaleEndThreshold", "int", Long.valueOf(30L)),
+            new FieldInfo("NoteYScaleMin", "int", Long.valueOf(31L)),
+            new FieldInfo("DrawSmallerTickToBack", "int", Long.valueOf(32L)),
+            new FieldInfo("MaxClipboardCacheCount", "int", Long.valueOf(33L)),
+            new FieldInfo("AutoPlayEnabled", "int", Long.valueOf(34L)),
+            new FieldInfo("TestPlayLiveModeTypeRaw", "int", Long.valueOf(35L))
+        ));
+
+        public Double ZoomTimelineStep;
+        public Double ZoomTimelineScaleMax;
+        public Double ZoomTimelineScaleMin;
+        public Long UndoStackLimit;
+        public Boolean AutoSaveEnabled;
+        public Long AutoSaveInterval;
+        public Double ShowFocusTicksRate;
+        public Double TicksPerScrollStep;
+        public Boolean EnableSwipeScroll;
+        public Boolean PlayMusicSEEnabled;
+        public Boolean SetStartMusicTimeMsEnabled;
+        public Boolean PlayStartEffectEnabled;
+        public Long TestPlayStartOffsetMs;
+        public Boolean ShowBarLines;
+        public Boolean ShowBeatLines;
+        public Boolean ShowQuantizeLines;
+        public Long SelectedLayoutPatternIndex;
+        public Long SelectedLayoutPatternIndexPortrait;
+        public Long SelectedLayoutPatternIndexLandscape;
+        public Double ScoreDisplayScaleHorizontal;
+        public Double ScoreDisplayScaleVertical;
+        public Double ToolWindowChildScale;
+        public Double NoteEdgeWidth;
+        public Boolean EnableInvalidPlacementCheck;
+        public Boolean AreaSelectPartialOverlap;
+        public Double NoteYScaleStartThreshold;
+        public Double NoteYScaleEndThreshold;
+        public Double NoteYScaleMin;
+        public Boolean DrawSmallerTickToBack;
+        public Long MaxClipboardCacheCount;
+        public Boolean AutoPlayEnabled;
+        public Long TestPlayLiveModeTypeRaw;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.ZoomTimelineStep != null) out.put(Long.valueOf(0L), this.ZoomTimelineStep);
+            if (this.ZoomTimelineScaleMax != null) out.put(Long.valueOf(1L), this.ZoomTimelineScaleMax);
+            if (this.ZoomTimelineScaleMin != null) out.put(Long.valueOf(2L), this.ZoomTimelineScaleMin);
+            if (this.UndoStackLimit != null) out.put(Long.valueOf(3L), this.UndoStackLimit);
+            if (this.AutoSaveEnabled != null) out.put(Long.valueOf(4L), this.AutoSaveEnabled);
+            if (this.AutoSaveInterval != null) out.put(Long.valueOf(5L), this.AutoSaveInterval);
+            if (this.ShowFocusTicksRate != null) out.put(Long.valueOf(6L), this.ShowFocusTicksRate);
+            if (this.TicksPerScrollStep != null) out.put(Long.valueOf(7L), this.TicksPerScrollStep);
+            if (this.EnableSwipeScroll != null) out.put(Long.valueOf(8L), this.EnableSwipeScroll);
+            if (this.PlayMusicSEEnabled != null) out.put(Long.valueOf(9L), this.PlayMusicSEEnabled);
+            if (this.SetStartMusicTimeMsEnabled != null) out.put(Long.valueOf(10L), this.SetStartMusicTimeMsEnabled);
+            if (this.PlayStartEffectEnabled != null) out.put(Long.valueOf(11L), this.PlayStartEffectEnabled);
+            if (this.TestPlayStartOffsetMs != null) out.put(Long.valueOf(12L), this.TestPlayStartOffsetMs);
+            if (this.ShowBarLines != null) out.put(Long.valueOf(13L), this.ShowBarLines);
+            if (this.ShowBeatLines != null) out.put(Long.valueOf(14L), this.ShowBeatLines);
+            if (this.ShowQuantizeLines != null) out.put(Long.valueOf(15L), this.ShowQuantizeLines);
+            if (this.SelectedLayoutPatternIndex != null) out.put(Long.valueOf(16L), this.SelectedLayoutPatternIndex);
+            if (this.SelectedLayoutPatternIndexPortrait != null) out.put(Long.valueOf(26L), this.SelectedLayoutPatternIndexPortrait);
+            if (this.SelectedLayoutPatternIndexLandscape != null) out.put(Long.valueOf(27L), this.SelectedLayoutPatternIndexLandscape);
+            if (this.ScoreDisplayScaleHorizontal != null) out.put(Long.valueOf(17L), this.ScoreDisplayScaleHorizontal);
+            if (this.ScoreDisplayScaleVertical != null) out.put(Long.valueOf(18L), this.ScoreDisplayScaleVertical);
+            if (this.ToolWindowChildScale != null) out.put(Long.valueOf(19L), this.ToolWindowChildScale);
+            if (this.NoteEdgeWidth != null) out.put(Long.valueOf(24L), this.NoteEdgeWidth);
+            if (this.EnableInvalidPlacementCheck != null) out.put(Long.valueOf(25L), this.EnableInvalidPlacementCheck);
+            if (this.AreaSelectPartialOverlap != null) out.put(Long.valueOf(28L), this.AreaSelectPartialOverlap);
+            if (this.NoteYScaleStartThreshold != null) out.put(Long.valueOf(29L), this.NoteYScaleStartThreshold);
+            if (this.NoteYScaleEndThreshold != null) out.put(Long.valueOf(30L), this.NoteYScaleEndThreshold);
+            if (this.NoteYScaleMin != null) out.put(Long.valueOf(31L), this.NoteYScaleMin);
+            if (this.DrawSmallerTickToBack != null) out.put(Long.valueOf(32L), this.DrawSmallerTickToBack);
+            if (this.MaxClipboardCacheCount != null) out.put(Long.valueOf(33L), this.MaxClipboardCacheCount);
+            if (this.AutoPlayEnabled != null) out.put(Long.valueOf(34L), this.AutoPlayEnabled);
+            if (this.TestPlayLiveModeTypeRaw != null) out.put(Long.valueOf(35L), this.TestPlayLiveModeTypeRaw);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_MusicScoreMaker_Ingame_Models_MusicScoreMakerSettingData decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, Long.valueOf(0L)); if (value != null) this.ZoomTimelineStep = asDouble(value);
+            value = get(raw, Long.valueOf(1L)); if (value != null) this.ZoomTimelineScaleMax = asDouble(value);
+            value = get(raw, Long.valueOf(2L)); if (value != null) this.ZoomTimelineScaleMin = asDouble(value);
+            value = get(raw, Long.valueOf(3L)); if (value != null) this.UndoStackLimit = asLong(value);
+            value = get(raw, Long.valueOf(4L)); if (value != null) this.AutoSaveEnabled = asBoolean(value);
+            value = get(raw, Long.valueOf(5L)); if (value != null) this.AutoSaveInterval = asLong(value);
+            value = get(raw, Long.valueOf(6L)); if (value != null) this.ShowFocusTicksRate = asDouble(value);
+            value = get(raw, Long.valueOf(7L)); if (value != null) this.TicksPerScrollStep = asDouble(value);
+            value = get(raw, Long.valueOf(8L)); if (value != null) this.EnableSwipeScroll = asBoolean(value);
+            value = get(raw, Long.valueOf(9L)); if (value != null) this.PlayMusicSEEnabled = asBoolean(value);
+            value = get(raw, Long.valueOf(10L)); if (value != null) this.SetStartMusicTimeMsEnabled = asBoolean(value);
+            value = get(raw, Long.valueOf(11L)); if (value != null) this.PlayStartEffectEnabled = asBoolean(value);
+            value = get(raw, Long.valueOf(12L)); if (value != null) this.TestPlayStartOffsetMs = asLong(value);
+            value = get(raw, Long.valueOf(13L)); if (value != null) this.ShowBarLines = asBoolean(value);
+            value = get(raw, Long.valueOf(14L)); if (value != null) this.ShowBeatLines = asBoolean(value);
+            value = get(raw, Long.valueOf(15L)); if (value != null) this.ShowQuantizeLines = asBoolean(value);
+            value = get(raw, Long.valueOf(16L)); if (value != null) this.SelectedLayoutPatternIndex = asLong(value);
+            value = get(raw, Long.valueOf(26L)); if (value != null) this.SelectedLayoutPatternIndexPortrait = asLong(value);
+            value = get(raw, Long.valueOf(27L)); if (value != null) this.SelectedLayoutPatternIndexLandscape = asLong(value);
+            value = get(raw, Long.valueOf(17L)); if (value != null) this.ScoreDisplayScaleHorizontal = asDouble(value);
+            value = get(raw, Long.valueOf(18L)); if (value != null) this.ScoreDisplayScaleVertical = asDouble(value);
+            value = get(raw, Long.valueOf(19L)); if (value != null) this.ToolWindowChildScale = asDouble(value);
+            value = get(raw, Long.valueOf(24L)); if (value != null) this.NoteEdgeWidth = asDouble(value);
+            value = get(raw, Long.valueOf(25L)); if (value != null) this.EnableInvalidPlacementCheck = asBoolean(value);
+            value = get(raw, Long.valueOf(28L)); if (value != null) this.AreaSelectPartialOverlap = asBoolean(value);
+            value = get(raw, Long.valueOf(29L)); if (value != null) this.NoteYScaleStartThreshold = asDouble(value);
+            value = get(raw, Long.valueOf(30L)); if (value != null) this.NoteYScaleEndThreshold = asDouble(value);
+            value = get(raw, Long.valueOf(31L)); if (value != null) this.NoteYScaleMin = asDouble(value);
+            value = get(raw, Long.valueOf(32L)); if (value != null) this.DrawSmallerTickToBack = asBoolean(value);
+            value = get(raw, Long.valueOf(33L)); if (value != null) this.MaxClipboardCacheCount = asLong(value);
+            value = get(raw, Long.valueOf(34L)); if (value != null) this.AutoPlayEnabled = asBoolean(value);
+            value = get(raw, Long.valueOf(35L)); if (value != null) this.TestPlayLiveModeTypeRaw = asLong(value);
+            return this;
+        }
+    }
+
+    public static final class Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase {
+        public static final List<FieldInfo> SCHEMA = Collections.unmodifiableList(Arrays.asList(
+            new FieldInfo("id", "int", Long.valueOf(0L)),
+            new FieldInfo("ticks", "int", Long.valueOf(1L)),
+            new FieldInfo("laneStart", "int", Long.valueOf(2L)),
+            new FieldInfo("laneEnd", "int", Long.valueOf(3L)),
+            new FieldInfo("category", "int", Long.valueOf(4L)),
+            new FieldInfo("type", "int", Long.valueOf(5L)),
+            new FieldInfo("speedRatio", "int", Long.valueOf(6L)),
+            new FieldInfo("noteLineType", "int", Long.valueOf(7L)),
+            new FieldInfo("noteBaseType", "int", Long.valueOf(8L)),
+            new FieldInfo("previousConnectionId", "int", Long.valueOf(9L)),
+            new FieldInfo("nextConnectionId", "int", Long.valueOf(10L)),
+            new FieldInfo("direction", "int", Long.valueOf(11L)),
+            new FieldInfo("isSkip", "int", Long.valueOf(12L))
+        ));
+
+        public Long id;
+        public Long ticks;
+        public Long laneStart;
+        public Long laneEnd;
+        public Object category;
+        public Object type;
+        public Double speedRatio;
+        public Object noteLineType;
+        public Object noteBaseType;
+        public Long previousConnectionId;
+        public Long nextConnectionId;
+        public Object direction;
+        public Boolean isSkip;
+
+        public Map<Object, Object> toMsgpackMap() {
+            Map<Object, Object> out = new LinkedHashMap<>();
+            if (this.id != null) out.put(Long.valueOf(0L), this.id);
+            if (this.ticks != null) out.put(Long.valueOf(1L), this.ticks);
+            if (this.laneStart != null) out.put(Long.valueOf(2L), this.laneStart);
+            if (this.laneEnd != null) out.put(Long.valueOf(3L), this.laneEnd);
+            if (this.category != null) out.put(Long.valueOf(4L), this.category);
+            if (this.type != null) out.put(Long.valueOf(5L), this.type);
+            if (this.speedRatio != null) out.put(Long.valueOf(6L), this.speedRatio);
+            if (this.noteLineType != null) out.put(Long.valueOf(7L), this.noteLineType);
+            if (this.noteBaseType != null) out.put(Long.valueOf(8L), this.noteBaseType);
+            if (this.previousConnectionId != null) out.put(Long.valueOf(9L), this.previousConnectionId);
+            if (this.nextConnectionId != null) out.put(Long.valueOf(10L), this.nextConnectionId);
+            if (this.direction != null) out.put(Long.valueOf(11L), this.direction);
+            if (this.isSkip != null) out.put(Long.valueOf(12L), this.isSkip);
+            return out;
+        }
+
+        public byte[] encode() throws IOException {
+            return packNative(toMsgpackMap());
+        }
+
+        public Sekai_MusicScoreMaker_Ingame_Models_MusicScoreNoteBase decode(byte[] data) throws IOException {
+            Object unpacked = unpackNative(data);
+            if (!(unpacked instanceof Map)) throw new IOException("expected MessagePack map");
+            Map<?, ?> raw = (Map<?, ?>)unpacked;
+            Object value;
+            value = get(raw, Long.valueOf(0L)); if (value != null) this.id = asLong(value);
+            value = get(raw, Long.valueOf(1L)); if (value != null) this.ticks = asLong(value);
+            value = get(raw, Long.valueOf(2L)); if (value != null) this.laneStart = asLong(value);
+            value = get(raw, Long.valueOf(3L)); if (value != null) this.laneEnd = asLong(value);
+            value = get(raw, Long.valueOf(4L)); if (value != null) this.category = asObject(value);
+            value = get(raw, Long.valueOf(5L)); if (value != null) this.type = asObject(value);
+            value = get(raw, Long.valueOf(6L)); if (value != null) this.speedRatio = asDouble(value);
+            value = get(raw, Long.valueOf(7L)); if (value != null) this.noteLineType = asObject(value);
+            value = get(raw, Long.valueOf(8L)); if (value != null) this.noteBaseType = asObject(value);
+            value = get(raw, Long.valueOf(9L)); if (value != null) this.previousConnectionId = asLong(value);
+            value = get(raw, Long.valueOf(10L)); if (value != null) this.nextConnectionId = asLong(value);
+            value = get(raw, Long.valueOf(11L)); if (value != null) this.direction = asObject(value);
+            value = get(raw, Long.valueOf(12L)); if (value != null) this.isSkip = asBoolean(value);
             return this;
         }
     }

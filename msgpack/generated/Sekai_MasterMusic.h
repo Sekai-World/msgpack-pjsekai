@@ -61,6 +61,10 @@ typedef struct Sekai_MasterMusic {
     bool isNewlyWrittenMusic;
     bool has_isFullLength;
     bool isFullLength;
+    bool has_secForMusicScoreMaker;
+    int32_t secForMusicScoreMaker;
+    bool has_isAvailableForMusicScoreMaker;
+    bool isAvailableForMusicScoreMaker;
 } Sekai_MasterMusic;
 
 int Sekai_MasterMusic_pack(msgpack_packer *pk, const Sekai_MasterMusic *value);

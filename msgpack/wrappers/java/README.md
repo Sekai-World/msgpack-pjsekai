@@ -10,7 +10,7 @@ Install from Maven Central after a release is published:
 <dependency>
   <groupId>io.github.sekai-world</groupId>
   <artifactId>msgpack-pjsekai-java</artifactId>
-  <version>6.4.1</version>
+  <version>6.5.0</version>
 </dependency>
 ```
 

@@ -41,6 +41,8 @@ typedef struct Sekai_UserHomeRefreshResponse {
     msgpack_object receivableUnprocessedSerialCodeCampaignIds;
     bool has_displayableOfflineEventIds;
     msgpack_object displayableOfflineEventIds;
+    bool has_userCustomMusicScorePublishedBanInfos;
+    msgpack_object userCustomMusicScorePublishedBanInfos;
 } Sekai_UserHomeRefreshResponse;
 
 int Sekai_UserHomeRefreshResponse_pack(msgpack_packer *pk, const Sekai_UserHomeRefreshResponse *value);

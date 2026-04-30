@@ -185,6 +185,8 @@ typedef struct Sekai_ApplicationLocalSettings {
     msgpack_object MusicShopSortFilterData;
     bool has_AnotherMusicShopSortFilterData;
     msgpack_object AnotherMusicShopSortFilterData;
+    bool has_MusicScoreMakerMusicSelectSortFilterData;
+    msgpack_object MusicScoreMakerMusicSelectSortFilterData;
     bool has_StampMissionPanelCheckStatusDictionary;
     msgpack_object StampMissionPanelCheckStatusDictionary;
     bool has_mysekaiInventorySortFilterConfigs;

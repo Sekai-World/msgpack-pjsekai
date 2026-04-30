@@ -35,6 +35,8 @@ int Sekai_MasterMusic_pack(msgpack_packer *pk, const Sekai_MasterMusic *value) {
     if (value->has_musicCollaborationId) count++;
     if (value->has_isNewlyWrittenMusic) count++;
     if (value->has_isFullLength) count++;
+    if (value->has_secForMusicScoreMaker) count++;
+    if (value->has_isAvailableForMusicScoreMaker) count++;
     msgpack_pack_map(pk, count);
     if (value->has_id) {
         msgpack_pack_str(pk, 2);
@@ -146,6 +148,16 @@ int Sekai_MasterMusic_pack(msgpack_packer *pk, const Sekai_MasterMusic *value) {
         msgpack_pack_str_body(pk, "isFullLength", 12);
         if (value->isFullLength) msgpack_pack_true(pk); else msgpack_pack_false(pk);
     }
+    if (value->has_secForMusicScoreMaker) {
+        msgpack_pack_str(pk, 21);
+        msgpack_pack_str_body(pk, "secForMusicScoreMaker", 21);
+        msgpack_pack_int64(pk, value->secForMusicScoreMaker);
+    }
+    if (value->has_isAvailableForMusicScoreMaker) {
+        msgpack_pack_str(pk, 29);
+        msgpack_pack_str_body(pk, "isAvailableForMusicScoreMaker", 29);
+        if (value->isAvailableForMusicScoreMaker) msgpack_pack_true(pk); else msgpack_pack_false(pk);
+    }
     return 0;
 }
 
@@ -238,6 +250,13 @@ int Sekai_MasterMusic_unpack(const msgpack_object *obj, Sekai_MasterMusic *out) 
         }
         else if (mpj_key_eq_str(key, "isFullLength")) {
             if (val->type == MSGPACK_OBJECT_BOOLEAN) { out->isFullLength = val->via.boolean; out->has_isFullLength = true; }
+        }
+        else if (mpj_key_eq_str(key, "secForMusicScoreMaker")) {
+            if (val->type == MSGPACK_OBJECT_POSITIVE_INTEGER) { out->secForMusicScoreMaker = (int32_t)val->via.u64; out->has_secForMusicScoreMaker = true; }
+            else if (val->type == MSGPACK_OBJECT_NEGATIVE_INTEGER) { out->secForMusicScoreMaker = (int32_t)val->via.i64; out->has_secForMusicScoreMaker = true; }
+        }
+        else if (mpj_key_eq_str(key, "isAvailableForMusicScoreMaker")) {
+            if (val->type == MSGPACK_OBJECT_BOOLEAN) { out->isAvailableForMusicScoreMaker = val->via.boolean; out->has_isAvailableForMusicScoreMaker = true; }
         }
     }
     return 0;

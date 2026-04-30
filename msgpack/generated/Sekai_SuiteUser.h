@@ -383,6 +383,10 @@ typedef struct Sekai_SuiteUser {
     msgpack_object userMysekaiSystemFixtureActions;
     bool has_userVirtualLiveTransitionItems;
     msgpack_object userVirtualLiveTransitionItems;
+    bool has_userCustomMusicScorePublisheds;
+    msgpack_object userCustomMusicScorePublisheds;
+    bool has_userCustomMusicScoreBookmarks;
+    msgpack_object userCustomMusicScoreBookmarks;
     bool has_userRateChoiceGachaWishes;
     msgpack_object userRateChoiceGachaWishes;
 } Sekai_SuiteUser;

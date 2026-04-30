@@ -25,6 +25,8 @@ typedef struct Sekai_MultiLive_CustomRoomSettingData {
     msgpack_object musicDifficultyTypes;
     bool has_isDisplayPlayerInfo;
     bool isDisplayPlayerInfo;
+    bool has_scoreSelectType;
+    msgpack_object scoreSelectType;
 } Sekai_MultiLive_CustomRoomSettingData;
 
 int Sekai_MultiLive_CustomRoomSettingData_pack(msgpack_packer *pk, const Sekai_MultiLive_CustomRoomSettingData *value);

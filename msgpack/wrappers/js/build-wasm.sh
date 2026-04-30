@@ -27,38 +27,9 @@ SOURCES=$(awk -v root="$ROOT" '
   { print root "/" $0 }
 ' "$ROOT/msgpack-pjsekai.files")
 
-EXPORTED_FUNCTIONS='[
-"_malloc",
-"_free",
-"_mpj_buffer_data",
-"_mpj_buffer_delete",
-"_mpj_buffer_size",
-"_mpj_value_array_get",
-"_mpj_value_array_set",
-"_mpj_value_bool",
-"_mpj_value_data",
-"_mpj_value_free",
-"_mpj_value_kind",
-"_mpj_value_map_key",
-"_mpj_value_map_set",
-"_mpj_value_map_value",
-"_mpj_value_new_array",
-"_mpj_value_new_binary",
-"_mpj_value_new_bool",
-"_mpj_value_new_int",
-"_mpj_value_new_map",
-"_mpj_value_new_nil",
-"_mpj_value_new_number",
-"_mpj_value_new_string",
-"_mpj_value_new_uint",
-"_mpj_value_number",
-"_mpj_value_pack_bytes",
-"_mpj_value_size",
-"_mpj_value_unpack_bytes"
-]'
-
 emcc \
   $SOURCES \
+  "$SCRIPT_DIR/msgpack-pjsekai-wasm-bridge.cpp" \
   "$ROOT/deps/src/objectc.c" \
   "$ROOT/deps/src/unpack.c" \
   "$ROOT/deps/src/version.c" \
@@ -68,12 +39,10 @@ emcc \
   -I"$ROOT/generated" \
   -I"$TMP_DIR/include" \
   -I"$ROOT/deps/include" \
-  -O3 \
+  -O1 \
+  --bind \
   -sMODULARIZE=1 \
   -sEXPORT_ES6=1 \
   -sENVIRONMENT=web,node \
   -sALLOW_MEMORY_GROWTH=1 \
-  -sEXPORT_ALL=1 \
-  -sEXPORTED_RUNTIME_METHODS='["ccall"]' \
-  -sEXPORTED_FUNCTIONS="$EXPORTED_FUNCTIONS" \
   -o "$OUT_JS"
